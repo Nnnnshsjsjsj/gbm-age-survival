@@ -1,0 +1,376 @@
+<title>GBM Survival Calculator</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --surface-2:#EDF1F0; --text:#1B2126; --muted:#5B666E; --line:#D5DBDE; --line-strong:#B9C2C7;
+  --accent:#1B7A8C; --accent-ink:#135A67; --accent-soft:#E3F0F3; --band:rgba(27,122,140,.16); --ref:#7E868C;
+  --c2:#A85D1E; --c2-band:rgba(168,93,30,.14); --warn:#8F6410; --warn-bg:#FBF3E2; --warn-line:#E8CF98; --focus:#1B7A8C;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif; --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161A; --surface:#1A2126; --surface-2:#222B31; --text:#E5EAED; --muted:#9AA5AD; --line:#2D383F; --line-strong:#43515A;
+  --accent:#4FB4C9; --accent-ink:#7CCBDB; --accent-soft:#1B2F35; --band:rgba(79,180,201,.2); --ref:#8E979E;
+  --c2:#E09A5A; --c2-band:rgba(224,154,90,.18); --warn:#E3AE45; --warn-bg:#2A2416; --warn-line:#5A4718; --focus:#4FB4C9;}}
+:root[data-theme="dark"]{
+  --bg:#11161A; --surface:#1A2126; --surface-2:#222B31; --text:#E5EAED; --muted:#9AA5AD; --line:#2D383F; --line-strong:#43515A;
+  --accent:#4FB4C9; --accent-ink:#7CCBDB; --accent-soft:#1B2F35; --band:rgba(79,180,201,.2); --ref:#8E979E;
+  --c2:#E09A5A; --c2-band:rgba(224,154,90,.18); --warn:#E3AE45; --warn-bg:#2A2416; --warn-line:#5A4718; --focus:#4FB4C9;}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:0 40px}
+.wrap{max-width:1140px;margin:0 auto}
+header{padding-block:26px 12px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.4vw,32px);margin:0;letter-spacing:-.01em;text-wrap:balance}
+header p{margin:0;color:var(--muted);max-width:62ch}
+.notice{display:flex;gap:12px;align-items:flex-start;background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:8px;padding:10px 14px;margin-block:4px 16px;font-size:14px}
+.notice b{color:var(--warn);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:12px;white-space:nowrap;padding-top:2px}
+/* validation strip */
+.strip{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;margin-bottom:20px}
+@media (max-width:820px){.strip{grid-template-columns:1fr 1fr}.strip .het{grid-column:1/-1}}
+@media (max-width:520px){.strip{grid-template-columns:1fr}}
+.coh{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:auto 1fr;gap:2px 16px;align-items:baseline}
+.coh.c2{border-left-color:var(--c2)}
+.coh .name{font-family:var(--serif);font-weight:600;font-size:16px;grid-column:1/-1}
+.coh .name small{font-family:var(--sans);font-weight:400;color:var(--muted);font-size:12.5px;margin-left:6px}
+.coh dt{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.coh dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:14px}
+.coh dd b{font-weight:500;color:var(--accent-ink)}
+.coh.c2 dd b{color:var(--c2)}
+.het{background:var(--surface-2);border:1px dashed var(--line-strong);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--muted);max-width:26ch;align-self:stretch}
+.het b{display:block;color:var(--text);font-family:var(--mono);font-weight:500;font-size:14px;margin-top:2px}
+/* layout */
+.grid{display:grid;grid-template-columns:330px 1fr;gap:22px;align-items:start}
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.panel h2{font-family:var(--serif);font-size:17px;font-weight:600;margin:0 0 14px}
+.field{display:grid;gap:6px;margin-bottom:16px}
+.field:last-child{margin-bottom:0}
+label,.lbl{font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.row{display:flex;gap:10px;align-items:center}
+input[type=number],select{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:0 10px;min-height:44px;width:100%;transition:border-color .15s}
+input[type=number]:hover,select:hover{border-color:var(--accent)}
+input[type=number]{width:96px;font-family:var(--mono)}
+input[type=range]{width:100%;accent-color:var(--accent);height:44px;margin:0;cursor:pointer}
+.seg{display:flex;border:1px solid var(--line-strong);border-radius:6px;overflow:hidden}
+.seg label{flex:1;text-align:center;padding:0 4px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:500;font-size:13.5px;line-height:1.15;color:var(--text);background:var(--surface);transition:background .15s,color .15s}
+.seg label:hover{background:var(--accent-soft)}
+.seg label+label{border-left:1px solid var(--line-strong)}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg input:checked+label{background:var(--accent);color:#fff}
+.seg input:disabled+label{opacity:.45;cursor:not-allowed}
+.seg input:focus-visible+label{outline:2px solid var(--focus);outline-offset:-3px}
+input:focus-visible,select:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.hint{font-size:12.5px;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400;line-height:1.4}
+.check{display:flex;align-items:center;gap:10px;min-height:44px;font-size:14px;text-transform:none;letter-spacing:0;font-weight:400;color:var(--text);cursor:pointer}
+.check input{accent-color:var(--accent);width:18px;height:18px;cursor:pointer}
+.warnline{color:var(--warn);font-size:13px;margin-top:6px;min-height:1.2em}
+/* output */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.tile .k{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tile .v{font-family:var(--mono);font-size:26px;font-weight:500;line-height:1.15;margin-top:4px;font-variant-numeric:tabular-nums;color:var(--accent-ink)}
+.tile .ci{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tile .c2v{font-family:var(--mono);font-size:12.5px;color:var(--c2);margin-top:2px;font-variant-numeric:tabular-nums}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 10px 6px}
+.chart-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:0 8px 6px;flex-wrap:wrap}
+.chart-head h2{font-family:var(--serif);font-size:16px;font-weight:600;margin:0}
+.readout{font-family:var(--mono);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;min-height:1.3em}
+.readout b{color:var(--text);font-weight:500}
+svg{width:100%;height:auto;display:block;touch-action:none;cursor:crosshair;border-radius:6px}
+.legend{display:flex;flex-wrap:wrap;gap:14px 18px;font-size:13px;color:var(--muted);padding:6px 8px 2px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:22px;height:0;border-top:3px solid var(--accent);border-radius:2px}
+.sw.ref{border-top:2px dashed var(--ref)}
+.sw.band{height:10px;background:var(--band);border:0;border-radius:2px}
+.sw.c2{border-top:3px solid var(--c2)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th,td{text-align:right;padding:6px 8px;border-top:1px solid var(--line);font-family:var(--mono);font-variant-numeric:tabular-nums}
+th{font-family:var(--sans);font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border-top:0}
+th:first-child,td:first-child{text-align:left}
+td.c2{color:var(--c2)}
+.tablewrap{overflow-x:auto;padding:0 4px}
+.model{margin-top:14px;display:grid;grid-template-columns:minmax(280px,1fr) 1.4fr;gap:14px}
+@media (max-width:560px){.model{grid-template-columns:1fr}}
+.model .panel h2{font-size:15px}
+dl.kv{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;font-size:14px}
+dl.kv dt{color:var(--muted)}dl.kv dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eq{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);border-radius:6px;padding:10px 12px;overflow-x:auto;white-space:nowrap;margin-top:10px}
+details{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:0 18px}
+summary{cursor:pointer;padding:14px 0;font-family:var(--serif);font-weight:600;font-size:16px;list-style-position:inside}
+details .body{padding-bottom:16px;max-width:72ch}
+details p{margin:0 0 10px}
+footer{color:var(--muted);font-size:13px;margin-top:22px;max-width:84ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>Glioblastoma survival calculator</h1>
+  <p>Predicted overall survival from age at diagnosis and up to four clinical variables, using Cox models fitted on two public research cohorts.</p>
+</header>
+<div class="notice"><b>Read first</b><div>Educational tool built from retrospective public data. It is not medical advice and must not guide treatment. The models separate groups of patients, not individuals: a concordance index near 0.6–0.7 means two random patients are ranked correctly roughly two times in three.</div></div>
+
+<section class="strip" aria-label="Cohorts and validation summary" id="strip"></section>
+
+<div class="grid">
+  <section class="panel" aria-labelledby="inputs-h">
+    <h2 id="inputs-h">Patient characteristics</h2>
+    <div class="field">
+      <span class="lbl" id="cohort-l">Model fitted on</span>
+      <div class="seg" role="radiogroup" aria-labelledby="cohort-l" id="cohort-seg"></div>
+      <span class="hint" id="cohort-hint"></span>
+    </div>
+    <div class="field">
+      <label for="age">Age at diagnosis, years</label>
+      <div class="row"><input type="number" id="age" min="10" max="95" step="1" value="62" inputmode="numeric"><input type="range" id="age-r" min="18" max="89" step="1" value="62" aria-label="Age slider"></div>
+    </div>
+    <div class="field">
+      <span class="lbl" id="sex-l">Sex</span>
+      <div class="seg" role="radiogroup" aria-labelledby="sex-l">
+        <input type="radio" name="sex" id="sex-na" value="na"><label for="sex-na">Not specified</label>
+        <input type="radio" name="sex" id="sex-f" value="0"><label for="sex-f">Female</label>
+        <input type="radio" name="sex" id="sex-m" value="1" checked><label for="sex-m">Male</label>
+      </div>
+    </div>
+    <div class="field" id="kps-field">
+      <label for="kps">Karnofsky performance score</label>
+      <div class="row"><input type="number" id="kps" min="10" max="100" step="10" value="80" inputmode="numeric"><input type="range" id="kps-r" min="10" max="100" step="10" value="80" aria-label="KPS slider"></div>
+      <label class="check"><input type="checkbox" id="kps-na"> KPS not known</label>
+      <span class="hint" id="kps-hint">0–100; 100 means normal activity with no complaints.</span>
+    </div>
+    <div class="field">
+      <label for="mgmt">MGMT promoter</label>
+      <select id="mgmt"><option value="na">Not specified</option><option value="1">Methylated</option><option value="0">Unmethylated</option></select>
+    </div>
+    <div class="field">
+      <label for="idh">IDH1/IDH2 status</label>
+      <select id="idh"><option value="na">Not specified</option><option value="0">Wildtype</option><option value="1">Mutant</option></select>
+      <span class="hint">Under WHO CNS5 an IDH-mutant tumour is astrocytoma, not glioblastoma; the option stays because both cohorts predate 2021.</span>
+    </div>
+    <div class="field" id="compare-field">
+      <label class="check"><input type="checkbox" id="compare"> Overlay the other cohort's prediction</label>
+    </div>
+    <div class="warnline" id="warn" aria-live="polite"></div>
+  </section>
+
+  <section aria-labelledby="out-h">
+    <h2 id="out-h" hidden>Prediction</h2>
+    <div class="tiles">
+      <div class="tile"><div class="k">Median survival</div><div class="v" id="t-med">–</div><div class="ci" id="t-med-ci"></div><div class="c2v" id="t-med-c2"></div></div>
+      <div class="tile"><div class="k">Alive at 1 year</div><div class="v" id="t-12">–</div><div class="ci" id="t-12-ci"></div><div class="c2v" id="t-12-c2"></div></div>
+      <div class="tile"><div class="k">Alive at 2 years</div><div class="v" id="t-24">–</div><div class="ci" id="t-24-ci"></div><div class="c2v" id="t-24-c2"></div></div>
+      <div class="tile"><div class="k">Alive at 3 years</div><div class="v" id="t-36">–</div><div class="ci" id="t-36-ci"></div><div class="c2v" id="t-36-c2"></div></div>
+    </div>
+    <div class="chart">
+      <div class="chart-head"><h2>Predicted overall survival</h2><div class="readout" id="readout">Hover, touch, or focus the chart and use ← → to read values</div></div>
+      <svg id="svg" viewBox="0 0 760 400" role="img" tabindex="0" aria-label="Predicted survival curve; use arrow keys to read values at each month" aria-describedby="readout"></svg>
+      <div class="legend"><span><i class="sw"></i>This patient</span><span><i class="sw band"></i>95% interval (coefficient uncertainty)</span><span><i class="sw ref"></i>Cohort's average patient</span><span id="lg-c2" hidden><i class="sw c2"></i>Same patient, other cohort</span></div>
+      <div class="tablewrap"><table id="tbl" aria-label="Predicted survival at selected months"></table></div>
+    </div>
+    <div class="model">
+      <div class="panel"><h2>Model used</h2><dl class="kv" id="model-dl"></dl><div class="hint" id="model-note" style="margin-top:10px"></div></div>
+      <div class="panel"><h2>Equation</h2><div class="hint">Log hazard ratio relative to the cohort's average patient:</div><div class="eq" id="eq"></div></div>
+    </div>
+  </section>
+</div>
+
+<details>
+  <summary>How the prediction is made, and what the two cohorts show</summary>
+  <div class="body">
+    <p>For each cohort we fitted a family of Cox proportional hazards models: one for every combination of the optional variables (sex, Karnofsky score, MGMT methylation, IDH status), with age always included. When you leave a variable unspecified, the calculator picks the model that uses exactly the variables you did provide, fitted on the patients for whom those variables were recorded. That is why the sample size in "Model used" changes as you add or remove inputs.</p>
+    <p>The predicted curve is S(t) = S₀(t)<sup>exp(β·(x − x̄))</sup>, where S₀ is the baseline survival of the cohort's average patient, β the fitted coefficients and x̄ the covariate means. The shaded band is a 95% interval from the covariance of the coefficients on the complementary log-log scale. It covers uncertainty in the coefficients only, not uncertainty in the baseline curve, differences between the cohort's treatment era and today's practice, or variables the models never saw, such as extent of resection or treatment received.</p>
+    <p id="explain-compare"></p>
+    <p>TCGA-GBM: The Cancer Genome Atlas glioblastoma cohort via cBioPortal (study gbm_tcga), diagnoses 1989–2013, mostly United States. CGGA: Chinese Glioma Genome Atlas, mRNAseq_693 and mRNAseq_325 clinical tables, restricted to primary WHO grade IV glioblastoma. CGGA records radiotherapy and temozolomide but not Karnofsky score, so the KPS input is disabled for that cohort. Models were fitted with lifelines (Python); the analysis code accompanies the paper this tool belongs to.</p>
+  </div>
+</details>
+<footer id="foot"></footer>
+</div>
+
+<script>
+const COHORTS = /*__MODELS__*/{};
+const COMPARE = /*__COMPARE__*/null;
+const $ = id => document.getElementById(id);
+const Z = 1.959964;
+const ORDER = ["male","kps10","mgmt_meth","idh_mut"];
+const NAMES = {AGE:"age (years)", male:"male sex", kps10:"KPS / 10", mgmt_meth:"MGMT methylated", idh_mut:"IDH mutant"};
+const keys = Object.keys(COHORTS);
+const LONG = {TCGA:"TCGA-GBM", CGGA:"CGGA"};
+const HINT = {TCGA:"The Cancer Genome Atlas glioblastoma cohort (USA, diagnoses 1989–2013).", CGGA:"Chinese Glioma Genome Atlas, primary WHO grade IV glioblastoma. KPS was not recorded."};
+let cursorT = null, lastP = null, lastP2 = null;
+
+// ---------- validation strip ----------
+function strip(){
+  if (!COMPARE){ $("strip").hidden = true; return; }
+  const c = COMPARE.cohorts, f3 = v => v.toFixed(3), pc = v => (v*100).toFixed(0)+"%";
+  const card = (k, cls) => { const d = c[k]; if (!d) return ""; return `<div class="coh ${cls}"><div class="name">${LONG[k]||k}<small>${k==="TCGA"?"discovery":"validation"}</small></div>
+    <dt>Patients</dt><dd>${d.n} · ${d.events} deaths</dd>
+    <dt>Median age</dt><dd>${d.median_age.toFixed(0)} y (${d.age_min.toFixed(0)}–${d.age_max.toFixed(0)})</dd>
+    <dt>Median survival</dt><dd>${d.median_os.toFixed(1)} mo</dd>
+    <dt>HR per year of age</dt><dd><b>${f3(d.hr_year.HR)}</b> (${f3(d.hr_year.lo)}–${f3(d.hr_year.hi)})</dd>
+    <dt>Per decade</dt><dd>${d.hr_decade.HR.toFixed(2)}</dd></div>`; };
+  $("strip").innerHTML = card("TCGA","") + card("CGGA","c2") +
+    `<div class="het">Age effect replicates in direction and stays significant in both cohorts, but is smaller in CGGA. Difference between cohorts:<b>interaction p = ${COMPARE.interaction.p.toFixed(3)}</b>Pooled common slope: HR ${f3(COMPARE.pooled.hr_age)} per year</div>`;
+  const rm = COMPARE.range_matched.find(r => r.range === "18–79") || COMPARE.range_matched[0];
+  $("explain-compare").textContent = `Validation: in CGGA (n = ${c.CGGA.n}) the hazard ratio per year of age was ${f3(c.CGGA.hr_year.HR)} (${f3(c.CGGA.hr_year.lo)}–${f3(c.CGGA.hr_year.hi)}) against ${f3(c.TCGA.hr_year.HR)} in TCGA. Restricting both cohorts to ages ${rm.range} does not close the gap (TCGA ${f3(rm.TCGA.HR)}, CGGA ${f3(rm.CGGA.HR)}), and neither does restricting CGGA to temozolomide-treated patients (${COMPARE.cgga_tmz_only ? f3(COMPARE.cgga_tmz_only.HR) : "n/a"}). The age × cohort interaction has p = ${COMPARE.interaction.p.toFixed(3)}. A model with one common slope for both cohorts gives HR ${f3(COMPARE.pooled.hr_age)} per year, with CGGA patients at ${(COMPARE.pooled.hr_cgga_baseline).toFixed(2)} times the TCGA baseline hazard.`;
+  $("foot").textContent = `Built as the practical component of a student research paper on age and survival in glioblastoma. Discovery cohort TCGA-GBM (cBioPortal, gbm_tcga), validation cohort CGGA (mRNAseq_693 + mRNAseq_325). ${c.TCGA.n + c.CGGA.n} patients in total.`;
+}
+
+// ---------- state ----------
+function readInputs(){
+  const sexEl = document.querySelector('input[name=sex]:checked');
+  const cohEl = document.querySelector('input[name=cohort]:checked');
+  return { cohort: cohEl ? cohEl.value : keys[0], age: +$("age").value,
+    male: sexEl && sexEl.value !== "na" ? +sexEl.value : null,
+    kps10: $("kps-na").checked ? null : (+$("kps").value)/10,
+    mgmt_meth: $("mgmt").value === "na" ? null : +$("mgmt").value,
+    idh_mut: $("idh").value === "na" ? null : +$("idh").value,
+    compare: $("compare").checked };
+}
+function pickModel(cohort, st){
+  const opt = cohort.optional_covariates;
+  const used = ORDER.filter(c => opt.includes(c) && st[c] !== null);
+  const key = ["AGE", ...used].join("+");
+  return {key, model: cohort.models[key]};
+}
+function predict(cohort, m, st){
+  const x = m.covariates.map(c => c === "AGE" ? st.age : st[c]);
+  const d = x.map((v,i) => v - m.means[i]);
+  let lp = 0; for (let i=0;i<d.length;i++) lp += m.beta[i]*d[i];
+  let v = 0; for (let i=0;i<d.length;i++) for (let j=0;j<d.length;j++) v += d[i]*m.cov[i][j]*d[j];
+  const se = Math.sqrt(Math.max(v,0)), r = Math.exp(lp);
+  const cl = s0 => Math.log(-Math.log(s0));
+  return { S: m.baseline_S.map(s0 => Math.pow(s0, r)),
+    lo: m.baseline_S.map(s0 => s0 >= 1 ? 1 : Math.exp(-Math.exp(cl(s0) + lp + Z*se))),
+    hi: m.baseline_S.map(s0 => s0 >= 1 ? 1 : Math.exp(-Math.exp(cl(s0) + lp - Z*se))),
+    ref: m.baseline_S, lp, se, grid: cohort.grid_months, cohort: cohort.cohort, model: m };
+}
+function median(grid, S){
+  for (let i=1;i<S.length;i++) if (S[i] <= .5){ const t0=grid[i-1],t1=grid[i],s0=S[i-1],s1=S[i]; return s0===s1 ? t1 : t0 + (s0-.5)/(s0-s1)*(t1-t0); }
+  return null;
+}
+function at(grid,S,t){ let i = grid.findIndex(g => g >= t); if (i<0) i = S.length-1; return S[i]; }
+const pct = v => (v*100).toFixed(0) + "%";
+const mo = v => v === null ? "> 60 mo" : v.toFixed(1) + " mo";
+
+// ---------- chart ----------
+const W=760,H=400,L=54,R=100,T=18,B=44, w=W-L-R, h=H-T-B;
+const X = t => L + t/60*w, Y = s => T + (1-s)*h;
+function drawChart(P, P2){
+  const path = (g,S) => S.map((s,i)=>(i?"L":"M")+X(g[i]).toFixed(1)+" "+Y(s).toFixed(1)).join(" ");
+  const band = (g,lo,hi) => "M"+hi.map((s,i)=>X(g[i]).toFixed(1)+" "+Y(s).toFixed(1)).join(" L")+" L"+lo.map((s,i)=>X(g[lo.length-1-i]).toFixed(1)+" "+Y(lo[lo.length-1-i]).toFixed(1)).join(" L")+" Z";
+  let s = "";
+  for (let p=0;p<=1.0001;p+=.25) s += `<line x1="${L}" x2="${W-R}" y1="${Y(p)}" y2="${Y(p)}" stroke="var(--line)"/><text x="${L-8}" y="${Y(p)+4}" text-anchor="end" font-size="12" fill="var(--muted)" font-family="var(--mono)">${(p*100).toFixed(0)}%</text>`;
+  for (let t=0;t<=60;t+=12) s += `<line x1="${X(t)}" x2="${X(t)}" y1="${T}" y2="${T+h}" stroke="var(--line)" stroke-dasharray="${t?"2 4":"0"}"/><text x="${X(t)}" y="${T+h+18}" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="var(--mono)">${t}</text>`;
+  s += `<text x="${L+w/2}" y="${H-6}" text-anchor="middle" font-size="12.5" fill="var(--muted)">Months since diagnosis</text>`;
+  s += `<path d="${band(P.grid,P.lo,P.hi)}" fill="var(--band)"/>`;
+  s += `<path d="${path(P.grid,P.ref)}" fill="none" stroke="var(--ref)" stroke-width="2" stroke-dasharray="6 5"/>`;
+  if (P2) s += `<path d="${path(P2.grid,P2.S)}" fill="none" stroke="var(--c2)" stroke-width="2.5"/>`;
+  s += `<path d="${path(P.grid,P.S)}" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round"/>`;
+  // direct end labels
+  const endLab = (S, txt, col, dy) => `<text x="${W-R+6}" y="${Math.min(T+h-2, Y(S[S.length-1])+dy)}" font-size="11.5" fill="${col}" font-family="var(--sans)" font-weight="600">${txt}</text>`;
+  s += endLab(P.S, "this patient", "var(--accent)", 4);
+  s += endLab(P.ref, "cohort avg.", "var(--ref)", P.ref[P.ref.length-1] > P.S[P.S.length-1] ? -6 : 14);
+  if (P2) s += endLab(P2.S, P2.cohort, "var(--c2)", P2.S[P2.S.length-1] > P.S[P.S.length-1] ? -6 : 14);
+  const md = median(P.grid,P.S);
+  if (md !== null) s += `<line x1="${X(md)}" x2="${X(md)}" y1="${Y(.5)}" y2="${T+h}" stroke="var(--accent)" stroke-dasharray="3 3"/><circle cx="${X(md)}" cy="${Y(.5)}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/><text x="${X(md)+7}" y="${Y(.5)-8}" font-size="11.5" fill="var(--accent-ink)" font-family="var(--mono)">median ${md.toFixed(1)} mo</text>`;
+  s += `<g id="cursor" hidden><line id="cur-l" y1="${T}" y2="${T+h}" stroke="var(--line-strong)" stroke-width="1.2"/><circle id="cur-c1" r="5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/><circle id="cur-c2" r="5" fill="var(--c2)" stroke="var(--surface)" stroke-width="2" hidden/></g>`;
+  $("svg").innerHTML = s;
+  lastP = P; lastP2 = P2;
+  if (cursorT !== null) showCursor(cursorT);
+}
+function showCursor(t){
+  if (!lastP) return;
+  t = Math.max(0, Math.min(60, t)); cursorT = t;
+  const g = $("cursor"); g.hidden = false;
+  const v = at(lastP.grid,lastP.S,t), lo = at(lastP.grid,lastP.lo,t), hi = at(lastP.grid,lastP.hi,t);
+  $("cur-l").setAttribute("x1", X(t)); $("cur-l").setAttribute("x2", X(t));
+  $("cur-c1").setAttribute("cx", X(t)); $("cur-c1").setAttribute("cy", Y(v));
+  let txt = `<b>${t.toFixed(0)} mo</b> · this patient <b>${pct(v)}</b> (${pct(lo)}–${pct(hi)}) · cohort avg. ${pct(at(lastP.grid,lastP.ref,t))}`;
+  if (lastP2){ const v2 = at(lastP2.grid,lastP2.S,t); $("cur-c2").hidden = false; $("cur-c2").setAttribute("cx", X(t)); $("cur-c2").setAttribute("cy", Y(v2)); txt += ` · ${lastP2.cohort} <b>${pct(v2)}</b>`; } else $("cur-c2").hidden = true;
+  $("readout").innerHTML = txt;
+}
+function svgPointT(ev){
+  const r = $("svg").getBoundingClientRect(); const px = (ev.clientX - r.left) / r.width * W;
+  return Math.round((px - L) / w * 60);
+}
+$("svg").addEventListener("pointermove", ev => showCursor(svgPointT(ev)));
+$("svg").addEventListener("pointerdown", ev => showCursor(svgPointT(ev)));
+$("svg").addEventListener("pointerleave", () => { if (document.activeElement !== $("svg")) { $("cursor").hidden = true; cursorT = null; $("readout").textContent = "Hover, touch, or focus the chart and use ← → to read values"; } });
+$("svg").addEventListener("focus", () => showCursor(cursorT ?? 12));
+$("svg").addEventListener("keydown", ev => {
+  const step = ev.shiftKey ? 6 : 1;
+  if (ev.key === "ArrowRight"){ showCursor((cursorT ?? 0) + step); ev.preventDefault(); }
+  if (ev.key === "ArrowLeft"){ showCursor((cursorT ?? 0) - step); ev.preventDefault(); }
+  if (ev.key === "Home"){ showCursor(0); ev.preventDefault(); } if (ev.key === "End"){ showCursor(60); ev.preventDefault(); }
+});
+
+function table(P, P2){
+  const ts = [6,12,18,24,36,48,60];
+  let hd = `<tr><th>Month</th><th>This patient</th><th>95% interval</th><th>Cohort avg.</th>${P2?`<th>${P2.cohort}</th>`:""}</tr>`;
+  let rows = ts.map(t => `<tr><td>${t}</td><td>${pct(at(P.grid,P.S,t))}</td><td>${pct(at(P.grid,P.lo,t))}–${pct(at(P.grid,P.hi,t))}</td><td>${pct(at(P.grid,P.ref,t))}</td>${P2?`<td class="c2">${pct(at(P2.grid,P2.S,t))}</td>`:""}</tr>`).join("");
+  $("tbl").innerHTML = hd + rows;
+}
+
+// ---------- render ----------
+function render(){
+  const st = readInputs(); const C = COHORTS[st.cohort]; if (!C) return;
+  let warn = "";
+  if (st.age < C.age_range[0] || st.age > C.age_range[1]) warn = `Age ${st.age} is outside the ${C.age_range[0]}–${C.age_range[1]} year range of the ${C.cohort} data; the curve is an extrapolation.`;
+  const {model} = pickModel(C, st);
+  if (!model){ $("warn").textContent = "No model is available for this combination of inputs in this cohort."; return; }
+  const P = predict(C, model, st);
+  let P2 = null;
+  if (st.compare && keys.length > 1){
+    const other = COHORTS[keys.find(k => k !== st.cohort)];
+    const pm = pickModel(other, st); if (pm.model) P2 = predict(other, pm.model, st);
+  }
+  $("lg-c2").hidden = !P2;
+  const md = median(P.grid,P.S);
+  $("t-med").textContent = mo(md); $("t-med-ci").textContent = md===null ? "" : `${mo(median(P.grid,P.lo))} to ${mo(median(P.grid,P.hi))}`;
+  $("t-med-c2").textContent = P2 ? `${P2.cohort}: ${mo(median(P2.grid,P2.S))}` : "";
+  [12,24,36].forEach(t => { $("t-"+t).textContent = pct(at(P.grid,P.S,t)); $("t-"+t+"-ci").textContent = `${pct(at(P.grid,P.lo,t))} to ${pct(at(P.grid,P.hi,t))}`; $("t-"+t+"-c2").textContent = P2 ? `${P2.cohort}: ${pct(at(P2.grid,P2.S,t))}` : ""; });
+  drawChart(P, P2); table(P, P2);
+  const covs = model.covariates.map(c => NAMES[c]).join(", ");
+  $("model-dl").innerHTML = `<dt>Cohort</dt><dd>${LONG[C.cohort]||C.cohort}</dd><dt>Variables</dt><dd style="font-family:var(--sans)">${covs}</dd><dt>Patients</dt><dd>${model.n} (${model.events} deaths)</dd><dt>C-index</dt><dd>${model.c_index.toFixed(3)}</dd><dt>HR per year of age</dt><dd>${model.hr_age.toFixed(3)} (${model.hr_age_ci[0].toFixed(3)}–${model.hr_age_ci[1].toFixed(3)})</dd><dt>Hazard vs average</dt><dd>× ${Math.exp(P.lp).toFixed(2)}</dd>`;
+  $("model-note").textContent = model.n < 120 ? `Small subgroup (${model.n} patients): the interval is wide and the estimate less stable. Removing a variable uses a larger sample.` : "";
+  $("eq").textContent = model.covariates.map((c,i) => `${i&&model.beta[i]>=0?"+ ":""}${model.beta[i].toFixed(4)}·(${c==="AGE"?"age":c} − ${model.means[i].toFixed(2)})`).join(" ") + `  =  ${P.lp.toFixed(3)}`;
+  $("warn").textContent = warn;
+  try { localStorage.setItem("gbm-calc", JSON.stringify(st)); } catch(e){}
+}
+
+// ---------- wiring ----------
+function setupCohorts(){
+  $("cohort-seg").innerHTML = keys.map((k,i) => `<input type="radio" name="cohort" id="coh-${k}" value="${k}" ${i===0?"checked":""}><label for="coh-${k}">${LONG[k]||k}</label>`).join("");
+  document.querySelectorAll('input[name=cohort]').forEach(r => r.addEventListener("change", ()=>{ onCohort(); render(); }));
+  $("compare-field").hidden = keys.length < 2;
+  onCohort();
+}
+function onCohort(){
+  const st = readInputs(); const C = COHORTS[st.cohort]; if (!C) return;
+  const hasK = C.optional_covariates.includes("kps10");
+  $("kps").disabled = !hasK || $("kps-na").checked; $("kps-r").disabled = !hasK || $("kps-na").checked; $("kps-na").disabled = !hasK;
+  $("kps-hint").textContent = hasK ? "0–100; 100 means normal activity with no complaints." : `${LONG[C.cohort]} did not record KPS, so it is ignored for this cohort (the overlay for TCGA still uses it).`;
+  $("cohort-hint").textContent = HINT[C.cohort] || "";
+}
+function link(a,b){ $(a).addEventListener("input",()=>{ $(b).value=$(a).value; render(); }); }
+link("age","age-r"); link("age-r","age"); link("kps","kps-r"); link("kps-r","kps");
+["mgmt","idh","compare"].forEach(id => $(id).addEventListener("input", render));
+document.querySelectorAll('input[name=sex]').forEach(r => r.addEventListener("change", render));
+$("kps-na").addEventListener("change", ()=>{ onCohort(); render(); });
+
+strip(); setupCohorts();
+try {
+  const saved = JSON.parse(localStorage.getItem("gbm-calc")||"null");
+  if (saved && COHORTS[saved.cohort]){
+    const ce = $("coh-"+saved.cohort); if (ce) ce.checked = true;
+    $("age").value = $("age-r").value = saved.age;
+    $(saved.male===null ? "sex-na" : saved.male ? "sex-m" : "sex-f").checked = true;
+    if (saved.kps10===null) $("kps-na").checked = true; else { $("kps").value = $("kps-r").value = Math.round(saved.kps10*10); }
+    $("mgmt").value = saved.mgmt_meth===null ? "na" : String(saved.mgmt_meth);
+    $("idh").value = saved.idh_mut===null ? "na" : String(saved.idh_mut);
+    $("compare").checked = !!saved.compare;
+    onCohort();
+  }
+} catch(e){}
+render();
+</script>

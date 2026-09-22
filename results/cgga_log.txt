@@ -1,0 +1,73 @@
+raw rows: 1018  (693-batch 693, 325-batch 325)
+PRS_type: {'Primary': 651, 'Recurrent': 333, 'Secondary': 30, nan: 4}
+Histology: {'GBM': 225, 'rGBM': 133, 'A': 131, 'AA': 120, 'rAA': 94, 'O': 93, 'AO': 58, 'rA': 44, 'rAO': 36, 'sGBM': 30, 'rO': 19, 'AOA': 16, 'OA': 8, 'rAOA': 5, nan: 5, 'rOA': 1}
+Grade: {'WHO IV': 388, 'WHO III': 334, 'WHO II': 291, nan: 5}
+duplicate CGGA_IDs across batches removed: 0  -> 1018 patients
+  All patients                                  n = 1018
+  WHO grade IV                                  n = 388
+  Histology GBM (excludes rGBM, sGBM)           n = 225
+  Primary tumour (PRS_type = Primary)           n = 225
+primary GBM: 225 -> complete cases 218 (96.9%)  excluded 7 {'no_os_or_status': 7, 'no_age': 0, 'os_zero': 0}
+deaths 183 (83.9%), censored 35
+age: median 54.0 mean 51.1 IQR 43-60 range 11-79
+sex: {'Male': 133, 'Female': 85}
+IDH known 211, mutant 32 (15.2%)
+MGMT known 200, methylated 95 (47.5%)
+radiotherapy known 211, treated 181; TMZ known 210, treated 170
+median OS 15.5 mo; 1y 63.2% 2y 32.1% 5y 14.4%; median follow-up (reverse KM) 69.6 mo
+[cut59] cut 59: young n=151 d=121 med=19.2 1y=68.1 2y=38.3 | old n=67 d=62 med=12.4 1y=52.2 2y=18.6 | chi2=7.4 p=0.0064
+[median] cut 54: young n=108 d=86 med=19.8 1y=70.8 2y=39.3 | old n=110 d=97 med=12.9 1y=55.8 2y=25.0 | chi2=5.5 p=0.019
+quartile   11–43 n= 56 d= 43 med= 23.9 1y=79.8 2y=49.4
+quartile   44–54 n= 60 d= 49 med= 13.9 1y=62.1 2y=29.6
+quartile   55–60 n= 53 d= 46 med= 12.7 1y=56.6 2y=27.2
+quartile   61–79 n= 49 d= 45 med= 12.4 1y=53.1 2y=21.5
+4-group log-rank chi2=9.0 p=0.029
+
+--- M1  age alone (n=218, deaths=183, C=0.580) ---
+           exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%       p
+covariate                                                             
+AGE             1.02               1.0082                1.032  0.0008
+
+--- M2  + sex (n=218, deaths=183, C=0.578) ---
+           exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%       p
+covariate                                                             
+AGE           1.0199               1.0081               1.0318  0.0009
+male          1.0885               0.8044               1.4729  0.5826
+
+--- M2t + sex + radiotherapy + TMZ (n=210, deaths=175, C=0.618) ---
+           exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%       p
+covariate                                                             
+AGE           1.0224               1.0099               1.0351  0.0004
+male          1.0824               0.7910               1.4812  0.6207
+radio         0.8727               0.5509               1.3825  0.5619
+chemo         0.4153               0.2869               0.6010  0.0000
+
+--- M3  + MGMT (n=200, deaths=168, C=0.563) ---
+           exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%       p
+covariate                                                             
+AGE           1.0184               1.0061               1.0308  0.0032
+mgmt_meth     0.8580               0.6308               1.1670  0.3291
+
+--- M4  + IDH (n=211, deaths=179, C=0.595) ---
+           exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%      p
+covariate                                                            
+AGE           1.0153               1.0035               1.0272  0.011
+idh_mut       0.5906               0.3762               0.9270  0.022
+
+--- M5  full (sex, RT, TMZ, MGMT, IDH) (n=188, deaths=159, C=0.628) ---
+           exp(coef)  exp(coef) lower 95%  exp(coef) upper 95%       p
+covariate                                                             
+AGE           1.0159               1.0029               1.0290  0.0160
+male          1.1063               0.7858               1.5575  0.5627
+radio         0.7857               0.4839               1.2757  0.3294
+chemo         0.3812               0.2572               0.5652  0.0000
+mgmt_meth     0.8960               0.6410               1.2526  0.5207
+idh_mut       0.4619               0.2857               0.7469  0.0016
+
+HR per decade: 1.219 (1.085-1.370)
+time split 0-12 mo: n=218 deaths=79 HR/yr=1.0282 (1.0088-1.0480) p=0.0043
+time split  >12 mo: n=134 deaths=104 HR/yr=1.0150 (1.0003-1.0299) p=0.046
+IDH mutant   n=32 deaths=23 median age=40.0 median OS=28.5
+IDH wildtype n=179 deaths=156 median age=55.0 median OS=13.6
+IDH groups: age p=1.2e-05, survival p=0.0038
+IDH-wildtype only (n=179): HR/yr=1.0184 (1.0054-1.0315) p=0.0053;  all profiled: 1.0187
