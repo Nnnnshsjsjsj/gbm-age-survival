@@ -1,7 +1,0 @@
-__pycache__/
-*.pyc
-.DS_Store
-__MACOSX/
-data/raw/tcga/
-*.zip
-~$*.docx
