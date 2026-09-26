@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+work/
+data/raw/*.txt
+data/raw/*.zip
+data/raw/cohorts/
+!data/raw/cgga/
+platform/node_modules/
+platform/e2e/shots/
+platform/.env
+.DS_Store

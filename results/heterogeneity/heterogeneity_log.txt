@@ -1,0 +1,68 @@
+module sizes: {'MES': 95, 'AC': 39, 'OPC': 50, 'NPC': 89}
+
+=== TCGA expression: Agilent (Neftel's bulk platform) ===
+  Agilent: MES uses 92/95 genes
+  Agilent: AC uses 38/39 genes
+  Agilent: OPC uses 45/50 genes
+  Agilent: NPC uses 80/89 genes
+
+=== TCGA expression: RNA-seq (RSEM) ===
+  RNA-seq: MES uses 86/95 genes
+  RNA-seq: AC uses 37/39 genes
+  RNA-seq: OPC uses 48/50 genes
+  RNA-seq: NPC uses 78/89 genes
+Agilent vs RNA-seq entropy on 120 shared tumours: Spearman rho=0.878 p=1.8e-39
+
+=== TCGA MATH from PanCancer Atlas mutation calls ===
+tumours with mutation data: 388; mutations per tumour median 70 (IQR 56–89)
+after >=10 and <=1000 mutations: 381
+
+TCGA cohort n=593: entropy available 437 (Agilent 399, RNA-seq 38), MATH available 375, both 278
+
+=== CGGA expression (RNA-seq RSEM), scored within each batch ===
+  mRNAseq_693: 133 of 133 cohort patients have expression
+  mRNAseq_693: MES uses 95/95 genes
+  mRNAseq_693: AC uses 39/39 genes
+  mRNAseq_693: OPC uses 50/50 genes
+  mRNAseq_693: NPC uses 85/89 genes
+  mRNAseq_325: 85 of 85 cohort patients have expression
+  mRNAseq_325: MES uses 95/95 genes
+  mRNAseq_325: AC uses 39/39 genes
+  mRNAseq_325: OPC uses 50/50 genes
+  mRNAseq_325: NPC uses 85/89 genes
+CGGA cohort n=218: entropy available 218
+
+=== TCGA: heterogeneity, age and survival ===
+entropy: {'n': 437, 'mean': 0.825, 'sd': 0.159, 'median': 0.876, 'q1': 0.747, 'q3': 0.941} dominant state: {'MES': 163, 'AC': 106, 'NPC': 102, 'OPC': 66}
+age vs entropy: Spearman rho=0.035 p=0.47
+entropy by age band (median): {'<50': (106, 0.852), '50–59': (114, 0.884), '60–69': (119, 0.869), '≥70': (98, 0.868)}
+Kruskal–Wallis across age bands p=0.817
+median age by dominant state: {'AC': 62.0, 'MES': 59.0, 'NPC': 57.0, 'OPC': 59.0}  n: {'MES': 163, 'AC': 106, 'NPC': 102, 'OPC': 66}
+age alone, entropy subset                    n=437 d=367 AGE HR 1.032 (1.024–1.040) p=3.1e-14 C=0.653
+entropy alone (per SD)                       n=437 d=367 ent_sd HR 1.025 (0.922–1.140) p=0.64 C=0.514
+age + entropy                                n=437 d=367 AGE HR 1.032 (1.024–1.040) p=3.3e-14 | ent_sd HR 0.994 (0.893–1.107) p=0.92 C=0.652
+age + entropy + sex + MGMT + IDH             n=168 d=128 AGE HR 1.029 (1.012–1.046) p=0.00067 | ent_sd HR 0.891 (0.736–1.078) p=0.23 | male HR 1.632 (1.118–2.382) p=0.011 | mgmt_meth HR 0.733 (0.491–1.094) p=0.13 | idh_mut HR 0.352 (0.116–1.073) p=0.066 C=0.666
+age + dominant state (ref AC)                n=437 d=367 AGE HR 1.032 (1.024–1.041) p=4.3e-14 | dom_MES HR 1.212 (0.928–1.583) p=0.16 | dom_NPC HR 1.034 (0.763–1.401) p=0.83 | dom_OPC HR 1.160 (0.820–1.641) p=0.4 C=0.655
+entropy tertiles: median OS {'Низкая': (146, 14.9), 'Средняя': (145, 13.3), 'Высокая': (146, 14.3)} log-rank p=0.681
+MATH: n=375 median 35.0 (IQR 26.5–58.1); age vs MATH rho=-0.182 p=0.000406
+MATH vs entropy (n=278): rho=-0.114 p=0.0578
+age alone, MATH subset                       n=375 d=291 AGE HR 1.036 (1.026–1.047) p=1.6e-12 C=0.646
+MATH alone (per SD)                          n=375 d=291 math_sd HR 0.895 (0.798–1.003) p=0.057 C=0.512
+age + MATH                                   n=375 d=291 AGE HR 1.037 (1.026–1.048) p=9e-12 | math_sd HR 1.010 (0.899–1.135) p=0.87 C=0.647
+age + MATH + sex + MGMT + IDH                n=235 d=177 AGE HR 1.036 (1.021–1.050) p=1.5e-06 | math_sd HR 1.075 (0.890–1.299) p=0.45 | male HR 1.800 (1.304–2.485) p=0.00035 | mgmt_meth HR 0.804 (0.578–1.120) p=0.2 | idh_mut HR 0.410 (0.154–1.091) p=0.074 C=0.670
+MATH tertiles: median OS {'Низкая': (125, 13.8), 'Средняя': (125, 14.2), 'Высокая': (125, 15.1)} log-rank p=0.321
+IDH-wildtype only: age + entropy             n=187 d=154 AGE HR 1.025 (1.010–1.041) p=0.001 | ent_sd HR 0.936 (0.781–1.122) p=0.47 C=0.605
+
+=== CGGA: heterogeneity, age and survival ===
+entropy: {'n': 218, 'mean': 0.873, 'sd': 0.137, 'median': 0.921, 'q1': 0.831, 'q3': 0.963} dominant state: {'MES': 77, 'AC': 50, 'NPC': 47, 'OPC': 44}
+age vs entropy: Spearman rho=0.065 p=0.341
+entropy by age band (median): {'<50': (87, 0.923), '50–59': (67, 0.911), '60–69': (51, 0.934), '≥70': (13, 0.925)}
+Kruskal–Wallis across age bands p=0.609
+median age by dominant state: {'AC': 53.0, 'MES': 57.0, 'NPC': 48.0, 'OPC': 51.0}  n: {'MES': 77, 'AC': 50, 'NPC': 47, 'OPC': 44}
+age alone, entropy subset                    n=218 d=183 AGE HR 1.020 (1.008–1.032) p=0.00083 C=0.580
+entropy alone (per SD)                       n=218 d=183 ent_sd HR 1.024 (0.864–1.213) p=0.78 C=0.537
+age + entropy                                n=218 d=183 AGE HR 1.020 (1.008–1.032) p=0.00085 | ent_sd HR 1.018 (0.863–1.202) p=0.83 C=0.579
+age + entropy + sex + MGMT + IDH             n=194 d=165 AGE HR 1.013 (1.001–1.026) p=0.033 | ent_sd HR 0.994 (0.838–1.178) p=0.94 | male HR 1.032 (0.741–1.439) p=0.85 | mgmt_meth HR 0.917 (0.660–1.273) p=0.6 | idh_mut HR 0.544 (0.340–0.870) p=0.011 C=0.583
+age + dominant state (ref AC)                n=218 d=183 AGE HR 1.019 (1.007–1.031) p=0.0019 | dom_MES HR 1.090 (0.740–1.605) p=0.66 | dom_NPC HR 0.968 (0.623–1.505) p=0.89 | dom_OPC HR 0.868 (0.555–1.359) p=0.54 C=0.587
+entropy tertiles: median OS {'Низкая': (73, 19.4), 'Средняя': (72, 13.3), 'Высокая': (73, 13.6)} log-rank p=0.0489
+written het_out

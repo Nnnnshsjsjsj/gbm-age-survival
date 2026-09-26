@@ -1,0 +1,4 @@
+KPS = 0 records (KPS 0 means dead at assessment, so it is not a valid pre-treatment score):
+  TCGA-76-6660: age 73, OS 3.8 months, event 1, sex M
+  TCGA-76-6283: age 71, OS 5.4 months, event 1, sex F
+M2 refit without them: n=437, age HR 1.028 (1.019–1.037); KPS HR per 10 points 0.808; male HR 1.329

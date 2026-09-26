@@ -1,0 +1,32 @@
+TCGA-GBM     n= 593 deaths= 492 median age 59  HR/yr 1.0343 (1.0271–1.0416)  median OS 14.0 mo
+CGGA         n= 218 deaths= 183 median age 54  HR/yr 1.0200 (1.0082–1.0320)  median OS 15.5 mo
+MSK-IMPACT   n= 485 deaths= 223 median age 59  HR/yr 1.0248 (1.0136–1.0362)  median OS 23.5 mo
+CPTAC-GBM    n=  96 deaths=  62 median age 59  HR/yr 1.0275 (1.0062–1.0493)  median OS 16.7 mo
+IPD common-slope model (cohort as covariate): HR 1.0292 (1.0240–1.0344); age×cohort interaction LR=6.15 df=3 p=0.105
+IPD cohorts                  k= 4 HR 1.0278 (95% CI 1.0205–1.0351; HK 1.0160–1.0397) tau=0.0044 I2=38% Q p=0.187 PI 1.003–1.053
+Published cohorts            k= 9 HR 1.0286 (95% CI 1.0228–1.0345; HK 1.0218–1.0356) tau=0.0074 I2=82% Q p=5.13e-07 PI 1.009–1.048
+All cohorts                  k=13 HR 1.0283 (95% CI 1.0236–1.0331; HK 1.0230–1.0336) tau=0.0069 I2=79% Q p=1.27e-07 PI 1.012–1.045
+All without SEER             k=12 HR 1.0274 (95% CI 1.0232–1.0315; HK 1.0227–1.0321) tau=0.0049 I2=49% Q p=0.0269 PI 1.015–1.040
+  LOO without TCGA-GBM       k=12 HR 1.0276 (95% CI 1.0223–1.0330; HK 1.0217–1.0336) tau=0.0075 I2=80% Q p=5.92e-08 PI 1.009–1.046
+  LOO without CGGA           k=12 HR 1.0290 (95% CI 1.0242–1.0338; HK 1.0236–1.0344) tau=0.0066 I2=78% Q p=9.78e-07 PI 1.013–1.045
+  LOO without MSK-IMPACT     k=12 HR 1.0286 (95% CI 1.0237–1.0336; HK 1.0231–1.0342) tau=0.0069 I2=79% Q p=2.6e-07 PI 1.012–1.045
+  LOO without CPTAC-GBM      k=12 HR 1.0283 (95% CI 1.0235–1.0333; HK 1.0229–1.0339) tau=0.0070 I2=80% Q p=6.95e-08 PI 1.012–1.045
+  LOO without NRG/RTOG 0525 (Gittleman k=12 HR 1.0281 (95% CI 1.0229–1.0333; HK 1.0223–1.0339) tau=0.0073 I2=79% Q p=1.41e-07 PI 1.011–1.046
+  LOO without Ohio Brain Tumor Study ( k=12 HR 1.0289 (95% CI 1.0241–1.0337; HK 1.0235–1.0343) tau=0.0067 I2=78% Q p=4.06e-07 PI 1.013–1.045
+  LOO without Copenhagen (Abedi 2021) k=12 HR 1.0297 (95% CI 1.0254–1.0341; HK 1.0249–1.0346) tau=0.0056 I2=70% Q p=0.000128 PI 1.016–1.044
+  LOO without Norway population-based  k=12 HR 1.0291 (95% CI 1.0244–1.0339; HK 1.0238–1.0344) tau=0.0064 I2=76% Q p=3.17e-06 PI 1.014–1.045
+  LOO without SEER (Thumma 2012) k=12 HR 1.0274 (95% CI 1.0232–1.0315; HK 1.0227–1.0321) tau=0.0049 I2=49% Q p=0.0269 PI 1.015–1.040
+  LOO without Dana-Farber (Shi 2022) k=12 HR 1.0273 (95% CI 1.0222–1.0324; HK 1.0216–1.0331) tau=0.0072 I2=80% Q p=7.01e-08 PI 1.010–1.045
+  LOO without Western Norway (Bjorland k=12 HR 1.0281 (95% CI 1.0231–1.0333; HK 1.0224–1.0339) tau=0.0071 I2=80% Q p=9.77e-08 PI 1.011–1.046
+  LOO without RANO resect (Karschnia 2 k=12 HR 1.0281 (95% CI 1.0231–1.0333; HK 1.0224–1.0339) tau=0.0071 I2=80% Q p=9.77e-08 PI 1.011–1.046
+  LOO without Bergen–Oslo (Blakstad 20 k=12 HR 1.0282 (95% CI 1.0231–1.0333; HK 1.0224–1.0339) tau=0.0072 I2=80% Q p=1.16e-07 PI 1.011–1.046
+IDH-wildtype-only cohorts    k= 5 HR 1.0309 (95% CI 1.0252–1.0366; HK 1.0225–1.0393) tau=0.0035 I2=31% Q p=0.215 PI 1.016–1.046
+All-comer cohorts            k= 8 HR 1.0269 (95% CI 1.0202–1.0337; HK 1.0188–1.0351) tau=0.0081 I2=85% Q p=9.95e-08 PI 1.005–1.049
+TMZ-era cohorts              k=10 HR 1.0272 (95% CI 1.0226–1.0317; HK 1.0219–1.0325) tau=0.0047 I2=44% Q p=0.0631 PI 1.015–1.040
+Mixed/pre-TMZ era cohorts    k= 3 HR 1.0317 (95% CI 1.0234–1.0401; HK 1.0104–1.0534) tau=0.0063 I2=82% Q p=0.00359 PI 0.937–1.136
+Adjusted estimates           k= 7 HR 1.0282 (95% CI 1.0209–1.0355; HK 1.0191–1.0373) tau=0.0084 I2=85% Q p=3.24e-07 PI 1.004–1.053
+Unadjusted estimates         k= 6 HR 1.0294 (95% CI 1.0252–1.0335; HK 1.0239–1.0349) tau=0.0000 I2=0% Q p=0.437 PI 1.023–1.035
+Western cohorts              k=12 HR 1.0290 (95% CI 1.0242–1.0338; HK 1.0236–1.0344) tau=0.0066 I2=78% Q p=9.78e-07 PI 1.013–1.045
+meta-regression cohort median age: slope 0.00024 (SE 0.00083) p=0.769; the age HR changes by a factor 1.002 per 10 years of cohort median age; residual tau=0.0071
+meta-regression cohort median age, without SEER: slope 0.00007 (SE 0.00071) p=0.919; the age HR changes by a factor 1.001 per 10 years of cohort median age; residual tau=0.0054
+written meta_out
