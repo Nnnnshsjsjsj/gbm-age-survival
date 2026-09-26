@@ -1,16 +1,26 @@
 import { useId } from 'react';
 import { useT } from '../context/AppContext.jsx';
+import { useSize } from '../hooks/useSize.js';
 
 export const GROUP_COLORS = ['var(--g1)', 'var(--g2)', 'var(--g3)', 'var(--g4)'];
 
+/** Placeholder with the chart's exact footprint, so nothing moves when the data arrives. */
+export function ChartSkeleton() {
+  return <div className="chartbox"><span className="skel skel-block" style={{ position: 'absolute', inset: 0 }} /></div>;
+}
+
 /**
- * SVG step plot of one or more Kaplan–Meier curves.
+ * SVG step plot of one or more Kaplan–Meier curves, drawn at the container's pixel size so text stays readable.
  * series: [{ label, km, color, dashed? }] where km has t, s, lo, hi.
  */
 export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, legend = true }) {
   const t = useT();
   const id = useId();
-  const W = 760, H = 400, m = { l: 54, r: 16, t: 14, b: 46 };
+  const [ref, size] = useSize();
+  const W = Math.max(280, size.width || 760);
+  const H = Math.max(220, size.height || 400);
+  const narrow = W < 520;
+  const m = { l: narrow ? 44 : 56, r: 12, t: 12, b: narrow ? 40 : 46 };
   const tmax = tmaxProp || Math.max(1, ...series.map((s) => s.km.t[s.km.t.length - 1] || 0));
   const x = (v) => m.l + (v / tmax) * (W - m.l - m.r);
   const y = (v) => m.t + (1 - v) * (H - m.t - m.b);
@@ -22,35 +32,36 @@ export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, 
     for (let i = ts.length - 1; i >= 0; i--) d += ` V${y(lo[i]).toFixed(1)} H${x(ts[i]).toFixed(1)}`;
     return d + ' Z';
   };
-  const tickStep = tmax > 120 ? 24 : tmax > 60 ? 12 : tmax > 24 ? 6 : 3;
+  const target = narrow ? 5 : 9;
+  const tickStep = [3, 6, 12, 24, 36, 48, 60].find((s) => tmax / s <= target) || 60;
   const ticks = [];
-  for (let mo = 0; mo <= tmax; mo += tickStep) ticks.push(mo);
+  for (let mo = 0; mo <= tmax + 1e-9; mo += tickStep) ticks.push(mo);
+  const fs = narrow ? 11 : 12;
 
   return (
     <div>
-      <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby={`${id}-title`}>
-        <title id={`${id}-title`}>{title}</title>
-        {[0, 0.25, 0.5, 0.75, 1].map((p) => (
-          <g key={p}>
-            <line x1={m.l} x2={W - m.r} y1={y(p)} y2={y(p)} stroke="var(--line)" />
-            <text className="mono" x={m.l - 8} y={y(p) + 4} textAnchor="end" fontSize="11.5" fill="var(--muted)">{Math.round(p * 100)}%</text>
-          </g>
-        ))}
-        {ticks.map((mo) => (
-          <g key={mo}>
-            <line x1={x(mo)} x2={x(mo)} y1={y(0)} y2={y(0) + 5} stroke="var(--line-strong)" />
-            <text className="mono" x={x(mo)} y={y(0) + 18} textAnchor="middle" fontSize="11.5" fill="var(--muted)">{mo}</text>
-          </g>
-        ))}
-        <text x={(m.l + W - m.r) / 2} y={H - 8} textAnchor="middle" fontSize="12.5" fill="var(--muted)">{t('x_months')}</text>
-        <text transform={`translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`} textAnchor="middle" fontSize="12.5" fill="var(--muted)">{t('y_share')}</text>
-        {showCI && series.map((s, i) => s.km.lo && (
-          <path key={`b${i}`} d={band(s.km.t, s.km.lo.map((v) => (Number.isFinite(v) ? v : 0)), s.km.hi.map((v) => (Number.isFinite(v) ? v : 1)))} fill={s.color} opacity=".13" />
-        ))}
-        {series.map((s, i) => (
-          <path key={`l${i}`} d={step(s.km.t, s.km.s)} fill="none" stroke={s.color} strokeWidth={s.dashed ? 2 : 2.4} strokeDasharray={s.dashed ? '5 4' : undefined} strokeLinejoin="round" />
-        ))}
-      </svg>
+      <div className="chartbox" ref={ref}>
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby={`${id}-title`} preserveAspectRatio="none">
+          <title id={`${id}-title`}>{title}</title>
+          {[0, 0.25, 0.5, 0.75, 1].map((p) => (
+            <g key={p}>
+              <line x1={m.l} x2={W - m.r} y1={y(p)} y2={y(p)} stroke="var(--line)" strokeDasharray={p === 0 ? undefined : '3 5'} />
+              <text className="mono" x={m.l - 10} y={y(p) + 4} textAnchor="end" fontSize={fs} fill="var(--dim)">{Math.round(p * 100)}%</text>
+            </g>
+          ))}
+          {ticks.map((mo) => (
+            <text key={mo} className="mono" x={x(mo)} y={y(0) + 20} textAnchor="middle" fontSize={fs} fill="var(--dim)">{mo}</text>
+          ))}
+          <text x={(m.l + W - m.r) / 2} y={H - 6} textAnchor="middle" fontSize={fs + 0.5} fill="var(--muted)">{t('x_months')}</text>
+          {!narrow && <text transform={`translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`} textAnchor="middle" fontSize={fs + 0.5} fill="var(--muted)">{t('y_share')}</text>}
+          {showCI && series.map((s, i) => s.km.lo && (
+            <path key={`b${i}`} d={band(s.km.t, s.km.lo.map((v) => (Number.isFinite(v) ? v : 0)), s.km.hi.map((v) => (Number.isFinite(v) ? v : 1)))} fill={s.color} opacity=".12" />
+          ))}
+          {series.map((s, i) => (
+            <path key={`l${i}`} d={step(s.km.t, s.km.s)} fill="none" stroke={s.color} strokeWidth={s.dashed ? 2 : 2.5} strokeDasharray={s.dashed ? '6 5' : undefined} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+          ))}
+        </svg>
+      </div>
       {legend && (
         <div className="legend">
           {series.map((s, i) => (

@@ -3,9 +3,25 @@ import { useApp } from '../../context/AppContext.jsx';
 import { useCohort } from '../../context/CohortContext.jsx';
 import { runAnalysis, WORKER_THRESHOLD } from '../../lib/analysis.js';
 import { methodsParagraph } from '../../lib/methods.js';
-import { FocusHeading, Tile, Loading, ErrorBox, CopyButton } from '../../components/ui.jsx';
-import KMChart, { GROUP_COLORS } from '../../components/KMChart.jsx';
+import { FocusHeading, Tile, Notice, CopyButton, Skel } from '../../components/ui.jsx';
+import KMChart, { GROUP_COLORS, ChartSkeleton } from '../../components/KMChart.jsx';
+import { IconArrowRight, IconCheckCircle, IconAlert } from '../../components/Icons.jsx';
 import { fmt, fmtP, pct, hrText, pText } from '../../lib/format.js';
+
+function LoadingResults({ big }) {
+  const { t } = useApp();
+  return (
+    <div className="grid gap-4" aria-busy="true">
+      <p className="sr-only" role="status">{t('computing')}</p>
+      <div className="card card-pad"><Skel w={160} h={16} /><div className="tiles mt-4">{[0, 1, 2, 3, 4, 5].map((i) => <Tile key={i} k={<Skel w={80} h={10} />} loading />)}</div></div>
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="card card-pad"><Skel w={200} h={16} style={{ marginBottom: 16 }} /><ChartSkeleton /></div>
+        <div className="card card-pad"><Skel w={200} h={16} style={{ marginBottom: 16 }} /><ChartSkeleton /></div>
+      </div>
+      {big && <p className="small">{t('an_worker')}</p>}
+    </div>
+  );
+}
 
 export default function StepAnalyse({ go }) {
   const { t, lang } = useApp();
@@ -21,27 +37,29 @@ export default function StepAnalyse({ go }) {
   }, [analysis, checks]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const heading = (
-    <div>
-      <FocusHeading><span id="an-h">{t('an_title')}</span></FocusHeading>
-      {analysis && <p className="text-muted mt-1">{t('an_sub', { n: analysis.n })}</p>}
+    <div className="card-head !mb-0">
+      <div>
+        <FocusHeading className="h3" id="an-h">{t('an_title')}</FocusHeading>
+        <p className="small mt-1">{analysis ? t('an_sub', { n: analysis.n }) : t('computing')}</p>
+      </div>
     </div>
   );
-  if (err) return <section className="grid gap-4" aria-labelledby="an-h">{heading}<ErrorBox msg={t('an_error', { msg: err })} /><div><button type="button" className="btn" onClick={() => go(2)}>{t('back')}</button></div></section>;
-  if (!analysis) return <section className="grid gap-4" aria-labelledby="an-h">{heading}<Loading what={t('computing')} />{checks.kept > WORKER_THRESHOLD && <p className="small">{t('an_worker')}</p>}</section>;
+  if (err) return <section className="grid gap-4" aria-labelledby="an-h"><div className="card card-pad">{heading}</div><Notice kind="error">{t('an_error', { msg: err })}</Notice><div><button type="button" className="btn btn-ghost" onClick={() => go(2)}>{t('back')}</button></div></section>;
+  if (!analysis) return <section className="grid gap-4" aria-labelledby="an-h"><div className="card card-pad">{heading}</div><LoadingResults big={checks.kept > WORKER_THRESHOLD} /></section>;
 
   const a = analysis;
   const m = a.ageModel.model;
   const bandSeries = a.bands.groups.map((g, i) => (g.suppressed ? null : { label: `${g.label} (n=${g.n})`, km: g.km, color: GROUP_COLORS[i] })).filter(Boolean);
   const methods = methodsParagraph(lang, a, { dropped: checks.dropped, timeUnit: mapping.timeUnit });
   const tmax = a.kmAll.t[a.kmAll.t.length - 1];
+  const schOk = a.schoenfeldP != null && a.schoenfeldP > 0.05;
 
   return (
     <section className="grid gap-4" aria-labelledby="an-h">
-      {heading}
-
-      <div className="panel">
-        <h3 className="mb-3">{t('an_desc')}</h3>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-2.5">
+      <div className="card card-pad">
+        {heading}
+        <h3 className="kicker mt-6 mb-3">{t('an_desc')}</h3>
+        <div className="tiles">
           <Tile k={t('n_events')} v={`${a.n} / ${a.events}`} />
           <Tile k={t('an_median_age')} v={fmt(a.desc.medianAge, 0)} ci={`${fmt(a.desc.ageIQR[0], 0)}–${fmt(a.desc.ageIQR[1], 0)}`} />
           <Tile k={t('an_median_os')} v={a.desc.medianOS == null ? '—' : `${fmt(a.desc.medianOS, 1)} ${t('mo')}`} ci={`${a.medianCI[0] == null ? '—' : fmt(a.medianCI[0], 1)}–${a.medianCI[1] == null ? '—' : fmt(a.medianCI[1], 1)}`} />
@@ -52,39 +70,41 @@ export default function StepAnalyse({ go }) {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <div className="panel">
-          <h3 className="mb-3">{t('an_km_all')}</h3>
+        <div className="card card-pad">
+          <h3 className="h4 mb-4">{t('an_km_all')}</h3>
           <KMChart series={[{ label: `${t('whole_cohort')} (n=${a.n})`, km: a.kmAll, color: 'var(--accent)' }]} title={t('km_title', { name: t('whole_cohort') })} tmax={tmax} />
         </div>
-        <div className="panel">
-          <h3 className="mb-3">{t('an_km_age')}</h3>
+        <div className="card card-pad">
+          <h3 className="h4 mb-4">{t('an_km_age')}</h3>
           <KMChart series={bandSeries} title={t('age_band_km_title', { name: t('cmp_yours') })} tmax={tmax} />
-          <div className="legend">
-            {a.bands.groups.filter((g) => g.suppressed).map((g) => <span key={g.label}><i style={{ background: 'var(--line-strong)' }} aria-hidden="true" />{g.label}: {t('suppressed')}</span>)}
-          </div>
+          {a.bands.groups.some((g) => g.suppressed) && <p className="tiny mt-2">{a.bands.groups.filter((g) => g.suppressed).map((g) => `${g.label}: ${t('suppressed')}`).join(' · ')}</p>}
           {a.bands.logrank && <p className="small mt-2">{t('logrank', { p: pText(a.bands.logrank.p) })}</p>}
         </div>
       </div>
 
-      <div className="panel">
-        <h3 className="mb-1">{t('an_cox')}</h3>
-        <p className="small mb-3">{t('an_cox_help')}</p>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-2.5">
+      <div className="card card-pad">
+        <h3 className="h4">{t('an_cox')}</h3>
+        <p className="small mt-1 max-w-[70ch]">{t('an_cox_help')}</p>
+        <div className="tiles mt-4">
           <Tile k={t('hr_year')} v={fmt(m.hr[0])} ci={`${t('ci95')} ${fmt(m.lo[0])}–${fmt(m.hi[0])}`} />
           <Tile k={t('p_value')} v={fmtP(m.p[0])} />
           <Tile k={t('c_index')} v={fmt(m.concordance, 3)} />
           <Tile k={t('n_events')} v={`${a.ageModel.n} / ${a.ageModel.events}`} />
         </div>
-        <p className="mt-3 text-sm" data-testid="age-hr">
+        <p className="mt-4 text-[15px]" data-testid="age-hr">
           {t('hr_year')}: <span className="num font-medium">{hrText(m)}</span>
         </p>
+        <div className={`banner mt-4 ${schOk ? '' : 'banner-warn'}`}>
+          {schOk ? <IconCheckCircle /> : <IconAlert />}
+          <p><b>{t('an_schoenfeld')}.</b> {a.schoenfeldP == null ? '—' : t(schOk ? 'an_sch_ok' : 'an_sch_warn', { p: pText(a.schoenfeldP) })}</p>
+        </div>
         {a.models.length > 1 && (
           <>
-            <h4 className="mt-4 mb-1 text-base">{t('an_models')}</h4>
-            <p className="small mb-2">{t('an_models_help')}</p>
+            <h4 className="h4 mt-8">{t('an_models')}</h4>
+            <p className="small mt-1 mb-2">{t('an_models_help')}</p>
             <div className="tw">
               <table className="tbl">
-                <thead><tr><th>{t('th_model')}</th><th>{t('th_hr')}</th><th>{t('p_value')}</th><th>{t('th_n')}</th><th>{t('th_events')}</th></tr></thead>
+                <thead><tr><th>{t('th_model')}</th><th className="n">{t('th_hr')}</th><th className="n">{t('p_value')}</th><th className="n">{t('th_n')}</th><th className="n">{t('th_events')}</th></tr></thead>
                 <tbody>
                   {a.models.map((mm) => {
                     const i = mm.model.names.indexOf('age');
@@ -105,23 +125,20 @@ export default function StepAnalyse({ go }) {
         )}
       </div>
 
-      <div className="panel">
-        <h3 className="mb-1">{t('an_schoenfeld')}</h3>
-        <p className="text-sm">{a.schoenfeldP == null ? '—' : t(a.schoenfeldP > 0.05 ? 'an_sch_ok' : 'an_sch_warn', { p: pText(a.schoenfeldP) })}</p>
-      </div>
-
-      <div className="panel">
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
-          <h3>{t('an_methods')}</h3>
+      <div className="card card-pad">
+        <div className="card-head">
+          <div>
+            <h3 className="h4">{t('an_methods')}</h3>
+            <p className="small mt-1">{t('an_methods_help')}</p>
+          </div>
           <CopyButton text={methods} />
         </div>
-        <p className="small mb-2">{t('an_methods_help')}</p>
-        <p className="text-[15px] leading-relaxed max-w-[80ch]">{methods}</p>
+        <p className="text-[15px] leading-relaxed max-w-[80ch] p-4 rounded-[8px] bg-tint">{methods}</p>
       </div>
 
-      <div className="flex flex-wrap gap-2 justify-between">
-        <button type="button" className="btn" onClick={() => go(2)}>{t('back')}</button>
-        <button type="button" className="btn btn-primary" onClick={() => go(4)}>{t('an_go_compare')}</button>
+      <div className="actions">
+        <button type="button" className="btn btn-ghost" onClick={() => go(2)}>{t('back')}</button>
+        <div className="right"><button type="button" className="btn btn-primary" onClick={() => go(4)}>{t('an_go_compare')}<IconArrowRight /></button></div>
       </div>
     </section>
   );

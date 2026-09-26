@@ -412,10 +412,11 @@ BODY = [
       "the definition of a medical device in the EU regulation and in the Serbian law aligned with it; and a single "
       "number such as a median of 13 months, shown to a person without context, does harm. Group-level results are a "
       "different matter. They are what this paper reports, and they are what teaching and research need."),
-("p", "The replacement has two parts, both served from the project repository on GitHub Pages. The cohort explorer is a "
-      "single page that shows Kaplan-Meier curves by age band, with confidence bands, for each of the four "
-      "individual-patient cohorts, together with the forest plot of the meta-analysis, in English and Russian. It "
-      "never draws a group of fewer than 10 patients. The platform is a browser application for students and "
+("p", "The replacement is a web application called plateau, after the flat tail of a survival curve where the "
+      "long-term survivors are, served from the project repository on GitHub Pages in English and Russian. Its Explore "
+      "section shows Kaplan-Meier curves by age band, with confidence bands, for each of the four individual-patient "
+      "cohorts, together with the forest plot of the meta-analysis. It never draws a group of fewer than 10 patients. "
+      "Its Analyse section is for students and "
       "researchers who have a cohort of their own. The user loads a spreadsheet, maps its columns to a standard field "
       "list, and the application checks the file, warns about columns that look like names, dates or identifiers, "
       "converts survival times to months, and then runs the same analyses as this paper: Kaplan-Meier curves, the "
@@ -423,8 +424,12 @@ BODY = [
       "user's age hazard ratio on a forest plot next to the four reference cohorts and pools them. Everything runs in "
       "the browser. No patient row is transmitted. A user who wishes to can share a summary of their cohort, which "
       "contains counts, medians and model coefficients only, with age-band counts below 10 removed; an administrator "
-      "reviews it before it joins the pool, and the pooled estimate then updates for everyone. The application also "
-      "holds researcher profiles with topic tags and a moderated discussion thread per dataset."),
+      "reviews it before it joins the pool, and the pooled estimate then updates for everyone. Around the tools sit two "
+      "communities that share one sign-in but are kept apart by the database's access rules: a research space with "
+      "discussion boards per dataset and per method and a directory of researchers, and a family space for patients, "
+      "caregivers and relatives, whose posts only other family members can read, with a list of verified support "
+      "organisations. Every new post in either space is read by a moderator before it appears, and the family space "
+      "does not allow medical advice."),
 ("p", "The statistics inside the platform are our own JavaScript implementation, because sending data to a server was "
       "not acceptable. We verified it against lifelines on all four reference cohorts: 51 automated tests require the "
       "Cox coefficients and standard errors to match to 0.001, the Kaplan-Meier estimates to 0.001, the log-rank "
@@ -742,8 +747,8 @@ BODY = [
      ["95% prediction interval, all thirteen", "", "", "1.012–1.045", ""]]),
 ("fig", "fig11_metaforest", "Figure 11. Forest plot of the hazard ratio per year of age in four individual-patient cohorts (blue) and nine published cohorts (red), with the pooled estimates and the 95% prediction interval. The grey row overlaps our CGGA cohort and is shown but not pooled."),
 ("fig", "fig12_metareg", "Figure 12. Meta-regression of each cohort's age hazard ratio on its median age. Bubble size is the random-effects weight."),
-("h2", "3.13. The cohort explorer and the platform"),
-("p", "Figure 13 shows the public cohort explorer. The reader picks a cohort and sees its survival curves by age band "
+("h2", "3.13. The plateau application"),
+("p", "Figure 13 shows the Explore section of plateau. The reader picks a cohort and sees its survival curves by age band "
       "with confidence bands, a table of patients, deaths, median survival and survival at 12 and 24 months per band, "
       "the log-rank p value, and the cohort's age hazard ratio; below that sits the forest plot of Figure 11. The "
       "platform's analysis wizard produces, for a user's own file, the same outputs as Sections 3.1 to 3.7 of this "
@@ -751,7 +756,7 @@ BODY = [
       "60-patient cohort simulated with a known hazard ratio of 1.030, the platform estimated 1.022 (95% CI 1.003 to "
       "1.042), which is also what lifelines gives for the same file. Both tools state on their first screen that they "
       "show how groups fared in research cohorts and are not for decisions about any person."),
-("fig", "fig13_explorer", "Figure 13. The cohort explorer: cohort choice and description on the left, Kaplan-Meier curves by age band with their table on the right. The interface is available in English and Russian."),
+("fig", "fig13_explorer", "Figure 13. The plateau home page. The same site holds the Explore, Analyse and Pool tools and the two moderated communities, in English and Russian."),
 
 ("h1", "4. Discussion"),
 ("h2", "4.1. Main findings"),
@@ -978,19 +983,18 @@ APPENDICES = [
       "in both languages with its build script. Each script prints the numbers it is responsible for, so any value in "
       "this paper can be traced to one line of output. The proportional-hazards and heterogeneity computations run in "
       "under a minute on a laptop."),
-("h2", "Appendix D. The cohort explorer and the platform"),
-("p", "The explorer is docs/index.html in the repository and is served at nnnnshsjsjsj.github.io/gbm-age-survival. It "
-      "is one file with the group-level curves of all four cohorts embedded; it makes no network requests apart from "
-      "the fonts and stores nothing about the visitor except the chosen language and theme in the browser. The "
-      "platform is in platform/ and is served from the same site under /platform. It is a React application; its "
-      "statistics engine (platform/src/engine/) is a set of plain JavaScript modules for the Kaplan-Meier estimator, "
-      "the log-rank test, Cox regression with Efron tie handling, the Schoenfeld test and random-effects "
-      "meta-analysis, with tests in platform/tests/ that compare them with lifelines on the four reference cohorts and "
-      "on simulated data. The optional shared features use a Supabase database whose schema and row-level security "
-      "rules are in platform/supabase/; the schema stores no field that could hold a patient row, refuses summaries "
-      "with fewer than 10 patients or 10 deaths, and logs every administrative action. A summary that a user chooses "
-      "to share contains counts, medians, survival at fixed times and model coefficients with their standard errors, "
-      "and nothing else."),
+("h2", "Appendix D. The plateau application"),
+("p", "plateau is served at nnnnshsjsjsj.github.io/gbm-age-survival from the docs/ folder of the repository; its source "
+      "is in platform/. It is a React application. Its statistics engine (platform/src/engine/) is a set of plain "
+      "JavaScript modules for the Kaplan-Meier estimator, the log-rank test, Cox regression with Efron tie handling, the "
+      "Schoenfeld test and random-effects meta-analysis, with tests in platform/tests/ that compare them with lifelines "
+      "on the four reference cohorts and on simulated data. Accounts and the two communities use a Supabase database "
+      "hosted in the EU, whose schema and row-level security rules are in platform/supabase/migrations/0002_plateau.sql. "
+      "The rules let a family post be read only by family members and moderators, let a research account alone share a "
+      "cohort summary, hold every new post as pending until a moderator approves it, and send every moderation action "
+      "to an audit log. The database stores no field that could hold a patient row and refuses summaries with fewer "
+      "than 10 patients or 10 deaths. A summary that a user chooses to share contains counts, medians, survival at "
+      "fixed times and model coefficients with their standard errors, and nothing else."),
 ("h2", "Appendix E. Published estimates used in the meta-analysis"),
 ("table", "Table E1. Source and form of each published estimate. All were read from the cited paper's text or tables; the URL in the repository file data/published_estimates.csv points to the page used.",
     ["Cohort", "Reported as", "Read from", "Note"],

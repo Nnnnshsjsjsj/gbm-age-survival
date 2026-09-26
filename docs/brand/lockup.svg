@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268 64" role="img" aria-label="plateau">
+  <rect width="64" height="64" rx="15" fill="#16794A"/>
+  <path d="M12 15 H18 V28 H25 V35 H31 V39.5 H52" fill="none" stroke="#FFFFFF" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 49 H52" stroke="#FFFFFF" stroke-opacity=".32" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="78" y="44" font-family="Inter, Helvetica, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="-1.5" fill="#121714">plateau</text>
+  <rect x="232" y="37.5" width="22" height="4.5" rx="2.25" fill="#16794A"/>
+</svg>

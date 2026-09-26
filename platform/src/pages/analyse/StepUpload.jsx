@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useT } from '../../context/AppContext.jsx';
 import { useCohort } from '../../context/CohortContext.jsx';
 import { parseFile, parseText } from '../../lib/csv.js';
 import { autoMap } from '../../lib/mapping.js';
 import { baseUrl } from '../../lib/reference.js';
-import { FocusHeading, ErrorBox } from '../../components/ui.jsx';
+import { FocusHeading, Notice } from '../../components/ui.jsx';
+import { IconUpload, IconFile, IconArrowRight, IconLock } from '../../components/Icons.jsx';
 
 export default function StepUpload({ go }) {
   const t = useT();
@@ -12,7 +13,6 @@ export default function StepUpload({ go }) {
   const [over, setOver] = useState(false);
   const [err, setErr] = useState('');
   const [busy, setBusy] = useState(false);
-  const inputRef = useRef(null);
 
   const accept = (name, parsed) => {
     if (!parsed.headers.length || !parsed.rows.length) { setErr(t('up_err_empty')); return; }
@@ -30,51 +30,55 @@ export default function StepUpload({ go }) {
       const res = await fetch(`${baseUrl()}reference/demo_cohort_messy.csv`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       accept('demo_cohort_messy.csv', parseText(await res.text()));
-    } catch (e) { setErr(t('error_load', { what: 'demo_cohort_messy.csv' }) + ' ' + e.message); } finally { setBusy(false); }
+    } catch (e) { setErr(`${t('error_load', { what: 'demo_cohort_messy.csv' })} ${e.message}`); } finally { setBusy(false); }
   };
   const onDrop = (e) => { e.preventDefault(); setOver(false); onFile(e.dataTransfer.files?.[0]); };
   const f = cohort.file;
 
   return (
-    <section className="grid gap-4" aria-labelledby="up-h">
-      <FocusHeading><span id="up-h">{t('step_upload')}</span></FocusHeading>
+    <section className="card card-pad" aria-labelledby="up-h">
+      <FocusHeading className="h3" id="up-h">{f ? t('up_loaded') : t('up_title')}</FocusHeading>
+      <p className="small mt-1">{f ? t('up_loaded_sub') : t('up_need')}</p>
       {!f && (
-        <div className="panel grid gap-4">
+        <div className="mt-6 grid gap-4">
           <div className="drop" data-over={over} onDragOver={(e) => { e.preventDefault(); setOver(true); }} onDragLeave={() => setOver(false)} onDrop={onDrop}>
-            <p className="font-medium">{t('up_drop')}</p>
-            <p className="text-muted text-sm my-2">{t('up_or')}</p>
-            <div className="flex flex-wrap gap-2 justify-center">
+            <span className="ic" aria-hidden="true"><IconUpload /></span>
+            <p className="h4">{t('up_drop')}</p>
+            <p className="small mt-1">{t('up_formats')}</p>
+            <div className="btnrow justify-center mt-6">
               <label className="btn btn-primary cursor-pointer">
                 <span>{t('up_pick')}</span>
-                <input ref={inputRef} type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values" className="sr-only" aria-label={t('up_file_label')} onChange={(e) => onFile(e.target.files?.[0])} />
+                <input type="file" accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values" className="sr-only" aria-label={t('up_file_label')} onChange={(e) => onFile(e.target.files?.[0])} />
               </label>
-              <button type="button" className="btn" onClick={onDemo} disabled={busy}>{t('up_demo')}</button>
+              <button type="button" className="btn btn-ghost" onClick={onDemo} disabled={busy}>{t('up_demo')}</button>
             </div>
           </div>
-          <p className="small">{t('up_need')}</p>
-          <p className="small">{t('up_privacy')}</p>
-          {err && <ErrorBox msg={err} />}
+          <p className="small inline-flex items-center gap-2"><IconLock width={16} height={16} className="flex-none" />{t('up_privacy')}</p>
+          {err && <Notice kind="error">{err}</Notice>}
         </div>
       )}
       {f && (
-        <div className="panel grid gap-3">
-          <h3>{t('up_loaded')}</h3>
-          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 m-0 text-sm">
-            <dt className="lbl">{t('up_file_label')}</dt><dd className="m-0 break-all">{f.name}</dd>
-            <dt className="lbl">{t('up_rows')}</dt><dd className="m-0 num">{f.rows.length}</dd>
-            <dt className="lbl">{t('up_cols')}</dt><dd className="m-0 num">{f.headers.length}</dd>
-          </dl>
-          <h3 className="text-base">{t('up_preview')}</h3>
-          <div className="tw">
-            <table className="tbl text-[13px]">
-              <thead><tr>{f.headers.map((h) => <th key={h}>{h}</th>)}</tr></thead>
-              <tbody>{f.rows.slice(0, 5).map((r, i) => <tr key={i}>{f.headers.map((h) => <td key={h} className="whitespace-nowrap">{String(r[h] ?? '')}</td>)}</tr>)}</tbody>
-            </table>
+        <div className="mt-6 grid gap-6">
+          <div className="flex flex-wrap items-center gap-4 p-4 rounded-[12px] bg-tint">
+            <span className="w-11 h-11 rounded-[12px] bg-card flex items-center justify-center text-accent-text flex-none" aria-hidden="true"><IconFile width={22} height={22} /></span>
+            <div className="min-w-0 flex-1">
+              <p className="font-semibold break-all">{f.name}</p>
+              <p className="small"><span className="num">{f.rows.length}</span> {t('up_rows')} · <span className="num">{f.headers.length}</span> {t('up_cols')}</p>
+            </div>
+            <button type="button" className="btn btn-ghost btn-sm" onClick={() => cohort.reset()}>{t('up_replace')}</button>
           </div>
-          <p className="small">{t('up_privacy')}</p>
-          <div className="flex flex-wrap gap-2 justify-between">
-            <button type="button" className="btn" onClick={() => cohort.reset()}>{t('up_replace')}</button>
-            <button type="button" className="btn btn-primary" onClick={() => go(1)}>{t('next')}</button>
+          <div>
+            <h3 className="kicker mb-2">{t('up_preview')}</h3>
+            <div className="tw">
+              <table className="tbl text-[13px]">
+                <thead><tr>{f.headers.map((h) => <th key={h}>{h}</th>)}</tr></thead>
+                <tbody>{f.rows.slice(0, 5).map((r, i) => <tr key={i}>{f.headers.map((h) => <td key={h} className="whitespace-nowrap">{String(r[h] ?? '')}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+          </div>
+          <div className="actions">
+            <p className="small inline-flex items-center gap-2"><IconLock width={16} height={16} className="flex-none" />{t('up_privacy_short')}</p>
+            <div className="right"><button type="button" className="btn btn-primary" onClick={() => go(1)}>{t('next')}<IconArrowRight /></button></div>
           </div>
         </div>
       )}

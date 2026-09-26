@@ -1,11 +1,15 @@
-# Intratumoral heterogeneity, age at diagnosis and overall survival in glioblastoma
+# plateau — glioblastoma cohorts, side by side
+
+![plateau](docs/brand/lockup.svg)
+
+*Research repository: intratumoral heterogeneity, age at diagnosis and overall survival in glioblastoma*
 
 A student research project on public glioblastoma data. It measures the age effect on overall survival in TCGA,
 validates it in CGGA, tests whether two bulk measures of intratumoral heterogeneity explain it (they do not), pools
 the age effect across 13 cohorts and about 40,800 patients, and releases an open cohort explorer and a browser-based
 platform in which other researchers can compare their own cohort with these, without their data leaving their computer.
 
-**Live site:** https://nnnnshsjsjsj.github.io/gbm-age-survival/ (cohort explorer) · https://nnnnshsjsjsj.github.io/gbm-age-survival/platform/ (platform)
+**Live site:** https://nnnnshsjsjsj.github.io/gbm-age-survival/ — Explore, Analyse and Pool for everyone; a moderated research space and a separate family space for signed-in members
 **Paper:** [`paper/Research_Paper_EN.pdf`](paper/Research_Paper_EN.pdf) · [`paper/Research_Paper_RU.pdf`](paper/Research_Paper_RU.pdf)
 
 ## Findings in one table
@@ -25,10 +29,10 @@ platform in which other researchers can compare their own cohort with these, wit
 ```
 analysis/    all Python scripts; run_all.sh reproduces everything; fetch_data.py downloads the large raw inputs
              legacy_calculator/  the withdrawn per-patient calculator (kept for the record, not deployed)
-app/         cohort explorer source (explorer_template.html + explorer_data.json)
-docs/        what GitHub Pages serves: index.html (explorer) and platform/ (built platform)
-platform/    the platform: React + Vite app, the JavaScript statistics engine (src/engine), its tests (tests/),
-             the Supabase schema (supabase/migrations) and the browser end-to-end test (e2e/)
+docs/        what GitHub Pages serves: the built plateau app (do not edit by hand; built from platform/)
+platform/    plateau: React + Vite app, the JavaScript statistics engine (src/engine), its tests (tests/),
+             the Supabase schema (supabase/migrations/0002_plateau.sql) and browser tests (e2e/)
+app/         legacy_calculator/ and legacy_explorer/: earlier versions, kept for the record
 data/        harmonised patient-level tables for TCGA, CGGA, MSK-IMPACT and CPTAC; Neftel gene lists;
              published estimates used in the meta-analysis with their sources; raw/ is filled by fetch_data.py
 results/     every table, log and figure (heterogeneity/, meta/, figures/)
@@ -50,14 +54,13 @@ Each script prints the numbers it is responsible for; `results/` holds the commi
 cd platform
 npm install
 npm test          # 51 engine tests against lifelines golden values
-npm run dev       # local mode: Explore, Analyse and Pool work; sharing and community need Supabase
-npm run build     # writes ../docs/platform
+npm run dev       # the live Supabase project is built in; Explore, Analyse and Pool also work offline
+npm run build     # writes ../docs (the whole site)
 npm run e2e       # browser test of the whole wizard (needs a prior build)
 ```
 
-To enable sign-in, sharing, the researcher directory and the admin queue: create a Supabase project, run
-`platform/supabase/migrations/0001_init.sql` in its SQL editor, copy `platform/.env.example` to `platform/.env` with the
-project URL and anon key, rebuild, and add your own user to the `admins` table after your first sign-in.
+Accounts and the two communities run on Supabase (schema `plateau`, see `platform/supabase/migrations/0002_plateau.sql`).
+Moderators are listed in `plateau.admin_emails`. See `platform/README_PLATFORM.md` for the live test.
 
 ## Data sources
 

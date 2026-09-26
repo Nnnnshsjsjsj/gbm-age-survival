@@ -1,34 +1,65 @@
-import { useT } from '../context/AppContext.jsx';
-import { PageHeader } from '../components/ui.jsx';
+import { Link } from 'react-router-dom';
+import { useApp } from '../context/AppContext.jsx';
 import { LINKS } from '../components/Layout.jsx';
+import { IconGithub, IconFile, IconExternal } from '../components/Icons.jsx';
 
 export default function About() {
-  const t = useT();
-  const Sec = ({ id, title, children }) => (
-    <section className="panel prose" aria-labelledby={id}>
-      <h2 id={id} className="mb-2">{title}</h2>
-      {children}
-    </section>
-  );
+  const { t, lang } = useApp();
   return (
-    <div className="grid gap-4 max-w-[80ch]">
-      <PageHeader title={t('about_title')} />
-      <Sec id="a-what" title={t('about_what_t')}><p>{t('about_what')}</p></Sec>
-      <Sec id="a-methods" title={t('about_methods_t')}>
-        <p>{t('about_methods_1')}</p><p>{t('about_methods_2')}</p><p>{t('about_methods_3')}</p><p>{t('about_methods_4')}</p>
-      </Sec>
-      <Sec id="a-data" title={t('about_data_t')}><p>{t('about_data')}</p></Sec>
-      <Sec id="a-privacy" title={t('about_privacy_t')}>
-        <p>{t('about_privacy_1')}</p><p>{t('about_privacy_2')}</p><p>{t('about_privacy_3')}</p>
-      </Sec>
-      <Sec id="a-device" title={t('about_device_t')}><p>{t('about_device')}</p></Sec>
-      <Sec id="a-contact" title={t('about_contact_t')}>
-        <p>{t('about_contact')}</p>
-        <p className="flex flex-wrap gap-2 mt-3">
-          <a className="btn" href={LINKS.issues}>GitHub issues</a>
-          <a className="btn" href={LINKS.paper}>{t('about_paper')}</a>
+    <div className="shell-narrow doc">
+      <div className="kicker">{t('about_kicker')}</div>
+      <h1 className="h1 mt-3">{t('about_title')}</h1>
+      <p className="lede mt-4">{t('about_lede')}</p>
+      <div className="btnrow mt-8">
+        <a className="btn btn-primary" href={lang === 'ru' ? LINKS.paperRu : LINKS.paperEn} rel="noopener"><IconFile />{t('about_paper')}</a>
+        <a className="btn btn-ghost" href={LINKS.repo} rel="noopener"><IconGithub />GitHub</a>
+      </div>
+
+      <ul className="statchips mt-10 list-none p-0" aria-label={t('about_numbers')}>
+        <li className="statchip"><b>4</b>{t('chip_refs')}</li>
+        <li className="statchip"><b>{t('chip_patients_n')}</b>{t('chip_patients')}</li>
+        <li className="statchip"><b>13</b>{t('chip_pool')}</li>
+        <li className="statchip"><b>51</b>{t('chip_tests')}</li>
+      </ul>
+
+      <section className="mt-12 prose" aria-labelledby="a-paper">
+        <h2 id="a-paper" className="h3 text-ink">{t('about_paper_t')}</h2>
+        <p className="mt-3">{t('about_paper_1')}</p>
+        <p>{t('about_paper_2')}</p>
+        <p className="flex flex-wrap gap-x-4 gap-y-1">
+          <a href={LINKS.paperEn} rel="noopener" className="inline-flex items-center gap-1">{t('about_pdf_en')}<IconExternal width={14} height={14} /></a>
+          <a href={LINKS.paperRu} rel="noopener" className="inline-flex items-center gap-1">{t('about_pdf_ru')}<IconExternal width={14} height={14} /></a>
         </p>
-      </Sec>
+      </section>
+
+      <section className="mt-12 prose" aria-labelledby="a-methods">
+        <h2 id="a-methods" className="h3 text-ink">{t('about_methods_t')}</h2>
+        <ul>
+          <li>{t('about_methods_1')}</li><li>{t('about_methods_2')}</li><li>{t('about_methods_3')}</li><li>{t('about_methods_4')}</li>
+        </ul>
+      </section>
+
+      <section className="mt-12 prose" aria-labelledby="a-data">
+        <h2 id="a-data" className="h3 text-ink">{t('about_data_t')}</h2>
+        <p className="mt-3">{t('about_data')}</p>
+      </section>
+
+      <section className="mt-12 prose" aria-labelledby="a-device">
+        <h2 id="a-device" className="h3 text-ink">{t('about_device_t')}</h2>
+        <p className="mt-3">{t('about_device')}</p>
+        <p><Link to="/privacy">{t('nav_privacy')}</Link> · <Link to="/rules">{t('nav_rules')}</Link></p>
+      </section>
+
+      <section className="mt-12 card card-lg quote" id="contact" aria-labelledby="a-contact">
+        <span className="kicker-pill">{t('about_contact_t')}</span>
+        <h2 id="a-contact" className="h3 mt-4">{t('about_contact_h')}</h2>
+        <p className="small mt-2 max-w-[60ch]">{t('about_contact')}</p>
+        <p className="small mt-2 max-w-[60ch]">{t('about_contact_pw')}</p>
+        <div className="btnrow mt-6">
+          <a className="btn btn-ghost" href={LINKS.issues} rel="noopener"><IconGithub />{t('about_issue')}</a>
+          <Link className="btn btn-soft" to="/research/platform-help">{t('about_board')}</Link>
+        </div>
+      </section>
     </div>
   );
 }

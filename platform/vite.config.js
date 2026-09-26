@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// The app is the site root on GitHub Pages: https://nnnnshsjsjsj.github.io/gbm-age-survival/
 export default defineConfig({
   base: './',
   plugins: [react()],
   build: {
-    outDir: '../docs/platform',
+    outDir: '../docs',
     emptyOutDir: true,
     chunkSizeWarningLimit: 800,
     rollupOptions: {
