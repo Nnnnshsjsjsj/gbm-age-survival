@@ -1,10 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useT } from '../context/AppContext.jsx';
-import { useCommunity } from '../context/CommunityContext.jsx';
 import { allReferenceStats, loadPublished } from '../lib/reference.js';
 import { metaRandomEffects } from '../engine/index.js';
-import { api } from '../lib/api.js';
-import { ageEstimateFromSummary } from '../lib/summary.js';
 import { PageHead, Tile, Notice, Skel, UseNotice } from '../components/ui.jsx';
 import ForestPlot, { ForestSkeleton } from '../components/ForestPlot.jsx';
 import { IconExternal } from '../components/Icons.jsx';
@@ -14,10 +11,7 @@ const Z = 1.959964;
 
 export default function Pool() {
   const t = useT();
-  const community = useCommunity();
   const [refs, setRefs] = useState(null);
-  const [shared, setShared] = useState([]);
-  const [sharedState, setSharedState] = useState('loading'); // loading | ok | down
   const [pub, setPub] = useState(null);
   const [err, setErr] = useState('');
 
@@ -25,22 +19,14 @@ export default function Pool() {
     let alive = true;
     allReferenceStats().then((r) => alive && setRefs(r)).catch((e) => alive && setErr(`${t('error_load', { what: 'reference' })} ${e.message}`));
     loadPublished().then((p) => alive && setPub(p)).catch(() => alive && setPub([]));
-    api.approvedSummaries()
-      .then((s) => { if (alive) { setShared(s || []); setSharedState('ok'); } })
-      .catch((e) => { if (alive) { setSharedState('down'); community.report(e); } });
     return () => { alive = false; };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const studies = useMemo(() => {
     if (!refs) return null;
     const out = refs.map((r) => ({ key: r.key, label: r.name, sub: `${r.country}, ${r.years}`, n: r.stats.n, events: r.stats.deaths, type: 'ref', logHR: r.stats.cox.beta[0], se: r.stats.cox.se[0] }));
-    for (const s of shared) {
-      const est = ageEstimateFromSummary(s);
-      if (!est || !(est.se > 0) || !Number.isFinite(est.logHR)) continue;
-      out.push({ key: s.id, label: s.cohort_name, sub: [s.country, s.years_from && s.years_to ? `${s.years_from}–${s.years_to}` : null].filter(Boolean).join(', '), n: s.n, events: s.events, type: 'shared', logHR: est.logHR, se: est.se });
-    }
     return out;
-  }, [refs, shared]);
+  }, [refs]);
 
   const meta = useMemo(() => (studies && studies.length >= 2 ? metaRandomEffects(studies.map((s) => s.logHR), studies.map((s) => s.se)) : null), [studies]);
   const loo = useMemo(() => {
@@ -71,7 +57,6 @@ export default function Pool() {
     ...(pubPooled ? [{ type: 'pooled', label: t('pool_pub_pooled'), sub: `I²=${Math.round(pubPooled.I2)}%`, hr: pubPooled.HR, lo: pubPooled.loHK, hi: pubPooled.hiHK }] : []),
   ] : null;
 
-  const sharedCount = shared.length;
   return (
     <div className="shell page">
       <PageHead kicker={t('pool_kicker')} title={t('pool_title')} sub={t('pool_sub')} />
@@ -90,14 +75,9 @@ export default function Pool() {
             <h2 id="pool-h" className="h3">{t('pool_ipd')}</h2>
             <p className="small mt-1 max-w-[72ch]">{t('pool_ipd_help')}</p>
           </div>
-          <span className={`badge ${sharedState === 'ok' && sharedCount ? 'badge-blue' : ''}`}>
-            {sharedState === 'loading' ? t('pool_shared_loading') : sharedState === 'down' ? t('pool_shared_off') : t('pool_shared_n', { n: sharedCount })}
-          </span>
         </div>
         {!items && !err && <ForestSkeleton rows={7} />}
         {items && <ForestPlot items={items} title={t('forest_title')} />}
-        {sharedState === 'ok' && sharedCount === 0 && <p className="tiny mt-3">{t('pool_shared_none')}</p>}
-        {sharedState === 'down' && <p className="tiny mt-3">{t('pool_shared_down')}</p>}
         <div className="tw mt-6">
           <table className="tbl">
             <thead><tr><th>{t('th_cohort')}</th><th>{t('th_type')}</th><th className="n">{t('th_n')}</th><th className="n">{t('th_events')}</th><th className="n">{t('th_hr_pub')}</th><th className="n">{t('th_weight')}</th></tr></thead>

@@ -1,25 +1,22 @@
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { createHashRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { AppProvider } from './context/AppContext.jsx';
-import { AuthProvider } from './context/AuthContext.jsx';
-import { CommunityProvider } from './context/CommunityContext.jsx';
-import { UIProvider } from './context/UIContext.jsx';
 import { CohortProvider } from './context/CohortContext.jsx';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 import Explore from './pages/Explore.jsx';
 import Analyse from './pages/Analyse.jsx';
 import Pool from './pages/Pool.jsx';
-import Research from './pages/Research.jsx';
-import ThreadPage from './pages/ThreadPage.jsx';
-import People from './pages/People.jsx';
-import Families from './pages/Families.jsx';
-import Mod from './pages/Mod.jsx';
-import Account from './pages/Account.jsx';
-import Rules from './pages/Rules.jsx';
 import Privacy from './pages/Privacy.jsx';
 import About from './pages/About.jsx';
 import BrainLab from './pages/BrainLab.jsx';
 import NotFound from './pages/NotFound.jsx';
+import { PageSkeleton } from './components/ui.jsx';
+
+// The two guides carry large JSON catalogues and their own 3D scenes: load them on demand.
+const Hub = lazy(() => import('./pages/Hub.jsx'));
+const Patients = lazy(() => import('./pages/Patients.jsx'));
+const lazyPage = (el) => <Suspense fallback={<PageSkeleton />}>{el}</Suspense>;
 
 const router = createHashRouter([
   {
@@ -32,19 +29,20 @@ const router = createHashRouter([
       { path: 'analyse', element: <Analyse /> },
       { path: 'analyse/:step', element: <Analyse /> },
       { path: 'pool', element: <Pool /> },
-      { path: 'research', element: <Research /> },
-      { path: 'research/t/:id', element: <ThreadPage space="research" /> },
-      { path: 'research/:board', element: <Research /> },
-      { path: 'people', element: <People /> },
-      { path: 'families', element: <Families /> },
-      { path: 'families/t/:id', element: <ThreadPage space="family" /> },
-      { path: 'families/:board', element: <Families /> },
-      { path: 'mod', element: <Mod /> },
-      { path: 'account', element: <Account /> },
-      { path: 'rules', element: <Rules /> },
+      { path: 'hub', element: lazyPage(<Hub />) },
+      { path: 'patients', element: lazyPage(<Patients />) },
       { path: 'privacy', element: <Privacy /> },
       { path: 'about', element: <About /> },
-      { path: 'community', element: <Research /> },
+      // v5 addresses that people may have bookmarked
+      { path: 'research/*', element: <Navigate to="/hub" replace /> },
+      { path: 'research', element: <Navigate to="/hub" replace /> },
+      { path: 'people', element: <Navigate to="/hub" replace /> },
+      { path: 'community', element: <Navigate to="/hub" replace /> },
+      { path: 'families/*', element: <Navigate to="/patients" replace /> },
+      { path: 'families', element: <Navigate to="/patients" replace /> },
+      { path: 'rules', element: <Navigate to="/privacy" replace /> },
+      { path: 'account', element: <Navigate to="/" replace /> },
+      { path: 'mod', element: <Navigate to="/" replace /> },
       { path: '*', element: <NotFound /> },
     ],
   },
@@ -53,15 +51,9 @@ const router = createHashRouter([
 export default function App() {
   return (
     <AppProvider>
-      <AuthProvider>
-        <CommunityProvider>
-          <UIProvider>
-            <CohortProvider>
-              <RouterProvider router={router} />
-            </CohortProvider>
-          </UIProvider>
-        </CommunityProvider>
-      </AuthProvider>
+      <CohortProvider>
+        <RouterProvider router={router} />
+      </CohortProvider>
     </AppProvider>
   );
 }

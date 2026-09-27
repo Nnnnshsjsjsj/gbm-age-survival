@@ -1,0 +1,1422 @@
+[
+ {
+  "id": "rs-centar-srce",
+  "country": "RS",
+  "phone": "0800 300 303",
+  "status": "confirmed",
+  "found_number": "0800-300-303",
+  "hours_on_page": "Svakog dana od 17 do 23h",
+  "checked_url": "https://www.centarsrce.org/"
+ },
+ {
+  "id": "rs-sos-lazalazarevic",
+  "country": "RS",
+  "phone": "011 7777 000",
+  "status": "page_unreachable",
+  "found_number": "findahelpline.com lists this service (National SOS line for suicide prevention, sos.lazalazarevic.rs) as 0800/309-309, not 011 7777 000",
+  "hours_on_page": null,
+  "checked_url": "https://www.lazalazarevic.rs/index.php/arhiva-vesti/630-otvorena-nacionalna-sos-linija-za-prevenciju-samoubistva-011-7777-000",
+  "note": "lazalazarevic.rs timed out on 3 attempts (incl. after 60s wait); sos.lazalazarevic.rs homepage shows no numbers"
+ },
+ {
+  "id": "rs-nadel-116111",
+  "country": "RS",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": null,
+  "checked_url": "https://116111.rs/",
+  "note": "page describes it mainly as chat counselling"
+ },
+ {
+  "id": "me-sos-1555",
+  "country": "ME",
+  "phone": "1555",
+  "status": "confirmed",
+  "found_number": "1555",
+  "hours_on_page": null,
+  "checked_url": "https://findahelpline.com/countries/me"
+ },
+ {
+  "id": "ba-plavi-telefon",
+  "country": "BA",
+  "phone": "080 05 03 05",
+  "status": "confirmed",
+  "found_number": "080 05 03 05",
+  "hours_on_page": null,
+  "checked_url": "https://plavitelefon.ba/"
+ },
+ {
+  "id": "hr-kbc-crisis",
+  "country": "HR",
+  "phone": "01 2376 470",
+  "status": "confirmed",
+  "found_number": "01 2376 470",
+  "hours_on_page": "0-24 sata",
+  "checked_url": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/"
+ },
+ {
+  "id": "hr-psych-help-line",
+  "country": "HR",
+  "phone": "01 4828 888",
+  "status": "confirmed",
+  "found_number": "01 4828 888",
+  "hours_on_page": "radnim danom od 10:00 do 22:00",
+  "checked_url": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/"
+ },
+ {
+  "id": "hr-hrabri-telefon",
+  "country": "HR",
+  "phone": "116 111 (children); 0800 0800 (parents)",
+  "status": "confirmed",
+  "found_number": "116 111; 0800 0800",
+  "hours_on_page": "radnim danima od 9 do 20 sati",
+  "checked_url": "https://www.hrabritelefon.hr/"
+ },
+ {
+  "id": "mk-alo-bushavko",
+  "country": "MK",
+  "phone": "+389 70 390 632",
+  "status": "confirmed",
+  "found_number": "+389 70 390 632",
+  "hours_on_page": null,
+  "checked_url": "https://alobushavko.mk/"
+ },
+ {
+  "id": "si-klic-v-dusevni-stiski",
+  "country": "SI",
+  "phone": "01 520 99 00",
+  "status": "confirmed",
+  "found_number": "01 520 99 00",
+  "hours_on_page": "vsak dan med 19. in 7. uro",
+  "checked_url": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/"
+ },
+ {
+  "id": "si-samarijan",
+  "country": "SI",
+  "phone": "116 123",
+  "status": "confirmed",
+  "found_number": "116 123",
+  "hours_on_page": "24 ur/na dan, vsak dan",
+  "checked_url": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/"
+ },
+ {
+  "id": "si-tom",
+  "country": "SI",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": "vsak dan med 12. in 20. uro",
+  "checked_url": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/"
+ },
+ {
+  "id": "bg-116111",
+  "country": "BG",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": "денонощна (24/7)",
+  "checked_url": "https://sacp.government.bg/"
+ },
+ {
+  "id": "ro-arps",
+  "country": "RO",
+  "phone": "0800 801 200",
+  "status": "confirmed",
+  "found_number": "0800 801 200",
+  "hours_on_page": "Vineri-Sambata-Duminica 19.00-07.00",
+  "checked_url": "https://antisuicid.ro/"
+ },
+ {
+  "id": "ro-116111",
+  "country": "RO",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": "L-V: 10:00 - 20:00",
+  "checked_url": "https://116111.ro/"
+ },
+ {
+  "id": "ru-msph-051",
+  "country": "RU",
+  "phone": "051 (landline, Moscow); 8 (495) 051 (mobile)",
+  "status": "confirmed",
+  "found_number": "051; 8 (495) 051",
+  "hours_on_page": null,
+  "checked_url": "https://msph.ru/"
+ },
+ {
+  "id": "ru-mchs-psy",
+  "country": "RU",
+  "phone": "+7 (495) 989-50-50",
+  "status": "confirmed",
+  "found_number": "+7 (495) 989-50-50",
+  "hours_on_page": null,
+  "checked_url": "https://psi.mchs.gov.ru/"
+ },
+ {
+  "id": "ru-children-helpline",
+  "country": "RU",
+  "phone": "8-800-2000-122",
+  "status": "confirmed",
+  "found_number": "8-800-2000-122",
+  "hours_on_page": null,
+  "checked_url": "https://telefon-doveria.ru/"
+ },
+ {
+  "id": "by-133",
+  "country": "BY",
+  "phone": "133",
+  "status": "confirmed",
+  "found_number": "133",
+  "hours_on_page": "круглосуточная (24/7)",
+  "checked_url": "https://mentalhealth.by/jekstrennaja-psihologicheskaja-pomoshh/"
+ },
+ {
+  "id": "by-children-line",
+  "country": "BY",
+  "phone": "8-801-100-16-11",
+  "status": "confirmed",
+  "found_number": "8-801-100-16-11",
+  "hours_on_page": null,
+  "checked_url": "https://gkdpnd.by/"
+ },
+ {
+  "id": "ua-lyudyna-v-bidi",
+  "country": "UA",
+  "phone": "0 800 21 01 60",
+  "status": "confirmed",
+  "found_number": "0 800 21 01 60",
+  "hours_on_page": "цілодобово (24/7)",
+  "checked_url": "https://howareu.com/hot-lines"
+ },
+ {
+  "id": "ua-lastrada",
+  "country": "UA",
+  "phone": "116 123 (mobile); 0 800 500 335",
+  "status": "confirmed",
+  "found_number": "116 123 (mobile only); 0 800 500 335",
+  "hours_on_page": null,
+  "checked_url": "https://la-strada.org.ua/garyachi-liniyi",
+  "note": "line is the national hotline on domestic violence, trafficking and gender discrimination (not a suicide line)"
+ },
+ {
+  "id": "ua-children-line",
+  "country": "UA",
+  "phone": "116 111 (mobile); 0 800 500 225",
+  "status": "confirmed",
+  "found_number": "116 111 (mobile only); 0 800 500 225",
+  "hours_on_page": null,
+  "checked_url": "https://la-strada.org.ua/garyachi-liniyi"
+ },
+ {
+  "id": "kz-111",
+  "country": "KZ",
+  "phone": "111",
+  "status": "confirmed",
+  "found_number": "111",
+  "hours_on_page": null,
+  "checked_url": "https://findahelpline.com/countries/kz"
+ },
+ {
+  "id": "kg-sezim",
+  "country": "KG",
+  "phone": "+996 312 51 26 40",
+  "status": "confirmed",
+  "found_number": "+996 (312) 51-26-40",
+  "hours_on_page": "findahelpline: seven days a week 8:00-20:00",
+  "checked_url": "https://sezim.org/"
+ },
+ {
+  "id": "kg-111-child",
+  "country": "KG",
+  "phone": "111",
+  "status": "confirmed",
+  "found_number": "111",
+  "hours_on_page": null,
+  "checked_url": "https://findahelpline.com/countries/kg"
+ },
+ {
+  "id": "am-emotional-support",
+  "country": "AM",
+  "phone": "0800 00 900",
+  "status": "confirmed",
+  "found_number": "0800 00 900",
+  "hours_on_page": null,
+  "checked_url": "https://hotline.mha.am/"
+ },
+ {
+  "id": "am-far-child",
+  "country": "AM",
+  "phone": "0800 61 111",
+  "status": "confirmed",
+  "found_number": "0800 61 111",
+  "hours_on_page": null,
+  "checked_url": "https://findahelpline.com/countries/am"
+ },
+ {
+  "id": "az-116111",
+  "country": "AZ",
+  "phone": "116111",
+  "status": "confirmed",
+  "found_number": "116111",
+  "hours_on_page": "24/7",
+  "checked_url": "https://116111.az/"
+ },
+ {
+  "id": "md-116111",
+  "country": "MD",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": "24/24",
+  "checked_url": "https://telefonulcopilului.md/"
+ },
+ {
+  "id": "lv-skalbes-116123",
+  "country": "LV",
+  "phone": "116123",
+  "status": "confirmed",
+  "found_number": "116123",
+  "hours_on_page": "diennakts (24/7)",
+  "checked_url": "https://www.skalbes.lv/"
+ },
+ {
+  "id": "lv-116111",
+  "country": "LV",
+  "phone": "116111",
+  "status": "confirmed",
+  "found_number": "116111",
+  "hours_on_page": null,
+  "checked_url": "https://www.bac.gov.lv/lv"
+ },
+ {
+  "id": "lt-vilties-linija",
+  "country": "LT",
+  "phone": "116123",
+  "status": "confirmed",
+  "found_number": "116 123",
+  "hours_on_page": "visą parą, septynias dienas per savaitę",
+  "checked_url": "https://www.viltieslinija.lt/"
+ },
+ {
+  "id": "lt-jaunimo-linija",
+  "country": "LT",
+  "phone": "0 800 28888",
+  "status": "confirmed",
+  "found_number": "0 800 28888",
+  "hours_on_page": "kasdien visą parą",
+  "checked_url": "https://www.jaunimolinija.lt/"
+ },
+ {
+  "id": "lt-vaiku-linija",
+  "country": "LT",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": null,
+  "checked_url": "https://www.vaikulinija.lt/"
+ },
+ {
+  "id": "ee-eluliin",
+  "country": "EE",
+  "phone": "655 8088 (Estonian); 655 5688 (Russian)",
+  "status": "confirmed",
+  "found_number": "655 8088; 655 5688",
+  "hours_on_page": "Russian line 19:00-7:00; Estonian line hours not stated",
+  "checked_url": "https://www.eluliin.ee/"
+ },
+ {
+  "id": "ee-lasteabi",
+  "country": "EE",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": "Telefon töötab 24/7",
+  "checked_url": "https://www.lasteabi.ee/"
+ },
+ {
+  "id": "ee-ohvriabi",
+  "country": "EE",
+  "phone": "116006",
+  "status": "confirmed",
+  "found_number": "116006",
+  "hours_on_page": null,
+  "checked_url": "https://www.palunabi.ee/et",
+  "note": "page says sexual-violence crisis aid available 24/7; no explicit hours for 116006"
+ },
+ {
+  "id": "gb-samaritans",
+  "country": "GB",
+  "phone": "116 123",
+  "status": "confirmed",
+  "found_number": "116 123",
+  "hours_on_page": "Call us free, day or night, 365 days a year",
+  "checked_url": "https://www.samaritans.org/how-we-can-help/contact-samaritan/"
+ },
+ {
+  "id": "ie-samaritans",
+  "country": "IE",
+  "phone": "116 123",
+  "status": "confirmed",
+  "found_number": "116 123",
+  "hours_on_page": "day or night, 365 days a year",
+  "checked_url": "https://www.samaritans.org/ireland/samaritans-ireland/"
+ },
+ {
+  "id": "ie-pieta",
+  "country": "IE",
+  "phone": "1800 247 247",
+  "status": "confirmed",
+  "found_number": "1800 247 247",
+  "hours_on_page": "24-Hour Crisis Helpline",
+  "checked_url": "https://www.pieta.ie/"
+ },
+ {
+  "id": "de-telefonseelsorge",
+  "country": "DE",
+  "phone": "0800 1110111 / 0800 1110222 / 116 123",
+  "status": "confirmed",
+  "found_number": "0800 1110111 / 0800 1110222 / 116 123",
+  "hours_on_page": "Tag und Nacht erreichbar",
+  "checked_url": "https://www.telefonseelsorge.de/"
+ },
+ {
+  "id": "de-nummergegenkummer",
+  "country": "DE",
+  "phone": "116 111",
+  "status": "confirmed",
+  "found_number": "116 111",
+  "hours_on_page": "Montags bis samstags von 14-20 Uhr",
+  "checked_url": "https://www.nummergegenkummer.de/"
+ },
+ {
+  "id": "at-telefonseelsorge",
+  "country": "AT",
+  "phone": "142",
+  "status": "confirmed",
+  "found_number": "142",
+  "hours_on_page": "0-24 Uhr",
+  "checked_url": "https://www.telefonseelsorge.at/"
+ },
+ {
+  "id": "ch-143",
+  "country": "CH",
+  "phone": "143",
+  "status": "confirmed",
+  "found_number": "143",
+  "hours_on_page": "rund um die Uhr, während 365 Tagen im Jahr",
+  "checked_url": "https://www.143.ch/hilfesuchende/hilfesuchende-kontakt/"
+ },
+ {
+  "id": "fr-3114",
+  "country": "FR",
+  "phone": "3114",
+  "status": "confirmed",
+  "found_number": "3114",
+  "hours_on_page": "24h/24 et 7j/7",
+  "checked_url": "https://3114.fr/"
+ },
+ {
+  "id": "be-1813",
+  "country": "BE",
+  "phone": "1813",
+  "status": "confirmed",
+  "found_number": "1813",
+  "hours_on_page": "anoniem en gratis, 24/7",
+  "checked_url": "https://www.watwat.be/praat-erover/zelfmoord1813"
+ },
+ {
+  "id": "nl-113",
+  "country": "NL",
+  "phone": "113",
+  "status": "confirmed",
+  "found_number": "113",
+  "hours_on_page": null,
+  "checked_url": "https://www.113.nl/"
+ },
+ {
+  "id": "lu-sosdetresse",
+  "country": "LU",
+  "phone": "+352 45 45 45",
+  "status": "confirmed",
+  "found_number": "+352 45 45 45",
+  "hours_on_page": "tous les jours de 11h à 23h et les vendredis et samedis jusqu'à 3h du matin",
+  "checked_url": "https://454545.lu/notre-offre/telephone/"
+ },
+ {
+  "id": "it-cevita",
+  "country": "IT",
+  "phone": "02.99777",
+  "status": "confirmed",
+  "found_number": "02.99777",
+  "hours_on_page": "24 ore su 24",
+  "checked_url": "https://telefonoamicocevita.it/"
+ },
+ {
+  "id": "es-024",
+  "country": "ES",
+  "phone": "024",
+  "status": "confirmed",
+  "found_number": "024",
+  "hours_on_page": "24 horas del día, 365 días del año",
+  "checked_url": "https://www.sanidad.gob.es/linea024/home.htm"
+ },
+ {
+  "id": "pt-sosvozamiga",
+  "country": "PT",
+  "phone": "213 544 545",
+  "status": "confirmed",
+  "found_number": "213 544 545",
+  "hours_on_page": "Diariamente das 15h30 às 00h30",
+  "checked_url": "https://www.sosvozamiga.org/contactos",
+  "note": "page also lists national 24h suicide line 1411 (Linha Nacional Prevenção Suicídio)"
+ },
+ {
+  "id": "gr-1018",
+  "country": "GR",
+  "phone": "1018",
+  "status": "confirmed",
+  "found_number": "1018",
+  "hours_on_page": null,
+  "checked_url": "https://www.klimaka.org.gr/",
+  "note": "1018 only appears as a linked logo to suicide-help.gr; no service text/hours on page (suicide-help.gr fetch returned no numbers)"
+ },
+ {
+  "id": "cy-samaritans",
+  "country": "CY",
+  "phone": "80007773",
+  "status": "confirmed",
+  "found_number": "80007773",
+  "hours_on_page": "7 days a week 16:00 - 00:00",
+  "checked_url": "https://www.cyprussamaritans.org/"
+ },
+ {
+  "id": "mt-179",
+  "country": "MT",
+  "phone": "179",
+  "status": "confirmed",
+  "found_number": "179",
+  "hours_on_page": "24 siegħa kuljum/7 ijiem fil-ġimgħa",
+  "checked_url": "https://fsws.gov.mt/en/appogg/"
+ },
+ {
+  "id": "se-sjalvmordslinjen",
+  "country": "SE",
+  "phone": "90101",
+  "status": "confirmed",
+  "found_number": "90101",
+  "hours_on_page": "dygnet runt, årets alla dagar",
+  "checked_url": "https://mind.se/hitta-hjalp/sjalvmordslinjen/"
+ },
+ {
+  "id": "no-mentalhelse",
+  "country": "NO",
+  "phone": "116 123",
+  "status": "confirmed",
+  "found_number": "116 123",
+  "hours_on_page": "alltid åpen",
+  "checked_url": "https://www.mentalhelse.no/"
+ },
+ {
+  "id": "no-kirkenssos",
+  "country": "NO",
+  "phone": "22 40 00 40",
+  "status": "confirmed",
+  "found_number": "22 40 00 40",
+  "hours_on_page": "døgnåpen / hver eneste dag, døgnet rundt",
+  "checked_url": "https://www.kirkens-sos.no/"
+ },
+ {
+  "id": "dk-livslinien",
+  "country": "DK",
+  "phone": "70 201 201",
+  "status": "confirmed",
+  "found_number": "70 201 201",
+  "hours_on_page": "alle årets dage fra kl. 09-05",
+  "checked_url": "https://www.livslinien.dk/"
+ },
+ {
+  "id": "fi-mieli",
+  "country": "FI",
+  "phone": "09 2525 0111",
+  "status": "confirmed",
+  "found_number": "09 2525 0111",
+  "hours_on_page": "suomeksi 24h",
+  "checked_url": "https://mieli.fi/"
+ },
+ {
+  "id": "is-pieta",
+  "country": "IS",
+  "phone": "1799",
+  "status": "confirmed",
+  "found_number": "1799",
+  "hours_on_page": "opinn allan sólarhringinn",
+  "checked_url": "https://pieta.is/"
+ },
+ {
+  "id": "pl-centrumwsparcia",
+  "country": "PL",
+  "phone": "800 70 2222",
+  "status": "confirmed",
+  "found_number": "800 70 2222",
+  "hours_on_page": "Całodobowo, 7 dni w tygodniu",
+  "checked_url": "https://centrumwsparcia.pl/"
+ },
+ {
+  "id": "cz-116123",
+  "country": "CZ",
+  "phone": "116 123",
+  "status": "confirmed",
+  "found_number": "116 123",
+  "hours_on_page": "kdykoli; nonstop (night hours in standby mode)",
+  "checked_url": "https://www.linkapsychickepomoci.cz/"
+ },
+ {
+  "id": "sk-ipcko",
+  "country": "SK",
+  "phone": "0800 500 333",
+  "status": "confirmed",
+  "found_number": "0800 500 333",
+  "hours_on_page": "NONSTOP",
+  "checked_url": "https://www.ipcko.sk/"
+ },
+ {
+  "id": "hu-lesz",
+  "country": "HU",
+  "phone": "116-123",
+  "status": "confirmed",
+  "found_number": "116-123",
+  "hours_on_page": "A nap 24 órájában",
+  "checked_url": "https://sos116-123.hu/"
+ },
+ {
+  "id": "hu-kekvonal",
+  "country": "HU",
+  "phone": "116-111",
+  "status": "confirmed",
+  "found_number": "116-111",
+  "hours_on_page": "Anonim, ingyenes, 0-24",
+  "checked_url": "https://kek-vonal.hu/"
+ },
+ {
+  "id": "tr-alo183",
+  "country": "TR",
+  "phone": "183",
+  "status": "confirmed",
+  "found_number": "ALO 183",
+  "hours_on_page": null,
+  "checked_url": "https://www.aile.gov.tr/",
+  "note": "listed as Sosyal Destek Hattı (social support line), a general social-services line rather than a dedicated suicide line"
+ },
+ {
+  "id": "il-eran",
+  "country": "IL",
+  "phone": "1201",
+  "status": "confirmed",
+  "found_number": "1201",
+  "hours_on_page": "24/7",
+  "checked_url": "https://www.eran.org.il/"
+ },
+ {
+  "id": "us-988",
+  "country": "US",
+  "phone": "988",
+  "status": "confirmed",
+  "found_number": "988",
+  "hours_on_page": "available 24/7/365",
+  "checked_url": "https://988lifeline.org"
+ },
+ {
+  "id": "ca-988",
+  "country": "CA",
+  "phone": "9-8-8",
+  "status": "confirmed",
+  "found_number": "9-8-8",
+  "hours_on_page": "24 hours a day, 7 days a week",
+  "checked_url": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html"
+ },
+ {
+  "id": "ca-hope-wellness",
+  "country": "CA",
+  "phone": "1-855-242-3310",
+  "status": "confirmed",
+  "found_number": "1-855-242-3310",
+  "hours_on_page": "24 hours a day, 7 days a week",
+  "checked_url": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html"
+ },
+ {
+  "id": "ca-khp",
+  "country": "CA",
+  "phone": "1-800-668-6868",
+  "status": "confirmed",
+  "found_number": "1-800-668-6868",
+  "hours_on_page": "24 hours a day, 7 days a week",
+  "checked_url": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html"
+ },
+ {
+  "id": "mx-linea-vida",
+  "country": "MX",
+  "phone": "800 911 2000",
+  "status": "confirmed",
+  "found_number": "800 911 2000",
+  "hours_on_page": "24 horas de los 365 días del año",
+  "checked_url": "https://salud.michoacan.gob.mx/llama-a-la-linea-de-la-vida-y-recibe-atencion-gratuita-en-salud-mental-y-adicciones/"
+ },
+ {
+  "id": "mx-saptel",
+  "country": "MX",
+  "phone": "(55) 5259-8121",
+  "status": "confirmed",
+  "found_number": "(55) 5259-8121",
+  "hours_on_page": "Servicio gratuito las 24 horas",
+  "checked_url": "https://www.saptel.org.mx/"
+ },
+ {
+  "id": "br-cvv",
+  "country": "BR",
+  "phone": "188",
+  "status": "confirmed",
+  "found_number": "188",
+  "hours_on_page": "24 horas por dia",
+  "checked_url": "https://cvv.org.br/"
+ },
+ {
+  "id": "ar-salud-mental",
+  "country": "AR",
+  "phone": "0800-999-0091",
+  "status": "confirmed",
+  "found_number": "0800-999-0091",
+  "hours_on_page": "las 24 horas, los 365 días del año",
+  "checked_url": "https://www.argentina.gob.ar/noticias/la-linea-nacional-de-orientacion-y-apoyo-en-la-urgencia-de-salud-mental-funciona-las-24"
+ },
+ {
+  "id": "ar-135",
+  "country": "AR",
+  "phone": "135",
+  "status": "confirmed",
+  "found_number": "135",
+  "hours_on_page": null,
+  "checked_url": "https://www.argentina.gob.ar/tema/emergencias"
+ },
+ {
+  "id": "cl-4141",
+  "country": "CL",
+  "phone": "*4141",
+  "status": "confirmed",
+  "found_number": "*4141",
+  "hours_on_page": "de lunes a domingo, las 24 horas del día",
+  "checked_url": "https://www.minsal.cl/linea-de-atencion-4141-no-estas-solo-no-estas-sola/"
+ },
+ {
+  "id": "co-106",
+  "country": "CO",
+  "phone": "106",
+  "status": "confirmed",
+  "found_number": "106",
+  "hours_on_page": "gratuita, confidencial y funciona 24/7",
+  "checked_url": "https://www.minsalud.gov.co/salud/publica/salud-mental/Paginas/linea-106.aspx"
+ },
+ {
+  "id": "au-lifeline",
+  "country": "AU",
+  "phone": "13 11 14",
+  "status": "confirmed",
+  "found_number": "13 11 14",
+  "hours_on_page": "24/7 (implied)",
+  "checked_url": "https://www.lifeline.org.au/"
+ },
+ {
+  "id": "nz-1737",
+  "country": "NZ",
+  "phone": "1737",
+  "status": "confirmed",
+  "found_number": "1737",
+  "hours_on_page": "call or txt 24 hours a day, 7 days a week",
+  "checked_url": "https://info.health.nz/mental-health/where-to-get-help/"
+ },
+ {
+  "id": "nz-lifeline",
+  "country": "NZ",
+  "phone": "0800 543 354",
+  "status": "confirmed",
+  "found_number": "0800 543 354",
+  "hours_on_page": "24 hours a day, seven days a week",
+  "checked_url": "https://www.lifeline.org.nz/services/lifeline-helpline"
+ },
+ {
+  "id": "nz-suicide-crisis",
+  "country": "NZ",
+  "phone": "0508 828 865",
+  "status": "confirmed",
+  "found_number": "0508 TAUTOKO (828 865)",
+  "hours_on_page": "free, 24/7",
+  "checked_url": "https://www.lifeline.org.nz/"
+ },
+ {
+  "id": "jp-inochi",
+  "country": "JP",
+  "phone": "0120-783-556",
+  "status": "confirmed",
+  "found_number": "0120-783-556",
+  "hours_on_page": "毎日16時から21時まで; 毎月10日午前8時から翌日午前8時まで",
+  "checked_url": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/"
+ },
+ {
+  "id": "jp-yorisoi",
+  "country": "JP",
+  "phone": "0120-279-338",
+  "status": "confirmed",
+  "found_number": "0120-279-338",
+  "hours_on_page": "24時間対応",
+  "checked_url": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/"
+ },
+ {
+  "id": "kr-109",
+  "country": "KR",
+  "phone": "109",
+  "status": "confirmed",
+  "found_number": "109",
+  "hours_on_page": "24시간",
+  "checked_url": "https://www.129.go.kr/109"
+ },
+ {
+  "id": "cn-bpcric",
+  "country": "CN",
+  "phone": "010-82951332",
+  "status": "confirmed",
+  "found_number": "010-82951332",
+  "hours_on_page": null,
+  "checked_url": "https://www.crisis.org.cn/",
+  "note": "page says 010-82951332 is for mobile callers; landline callers use 800-810-1117"
+ },
+ {
+  "id": "cn-lifeline",
+  "country": "CN",
+  "phone": "400 821 1215",
+  "status": "confirmed",
+  "found_number": "400 821 1215",
+  "hours_on_page": "10 AM – 10 PM, 365 days a year",
+  "checked_url": "https://www.lifelinechina.org/"
+ },
+ {
+  "id": "in-vandrevala",
+  "country": "IN",
+  "phone": "+91 9999 666 555",
+  "status": "confirmed",
+  "found_number": "+91 9999 666 555",
+  "hours_on_page": "Available 24 X 7 X 365",
+  "checked_url": "https://www.vandrevalafoundation.com/free-counseling"
+ },
+ {
+  "id": "sg-sos",
+  "country": "SG",
+  "phone": "1767",
+  "status": "confirmed",
+  "found_number": "1767",
+  "hours_on_page": "24-hour Hotline",
+  "checked_url": "https://www.sos.org.sg/"
+ },
+ {
+  "id": "za-sadag",
+  "country": "ZA",
+  "phone": "0800 567 567",
+  "status": "confirmed",
+  "found_number": "0800 567 567",
+  "hours_on_page": "24-hour toll-free",
+  "checked_url": "https://www.sadag.org/"
+ },
+ {
+  "id": "za-lifeline",
+  "country": "ZA",
+  "phone": "0861-322-322",
+  "status": "confirmed",
+  "found_number": "0861-322-322",
+  "hours_on_page": null,
+  "checked_url": "https://lifelinesa.co.za/"
+ },
+ {
+  "id": "ng-mani",
+  "country": "NG",
+  "phone": "08091116264",
+  "status": "confirmed",
+  "found_number": "08091116264",
+  "hours_on_page": null,
+  "checked_url": "https://mentallyaware.org/contact"
+ },
+ {
+  "id": "ng-surpin",
+  "country": "NG",
+  "phone": "+234-8000787746",
+  "status": "confirmed",
+  "found_number": "+234-8000787746",
+  "hours_on_page": null,
+  "checked_url": "https://surpinng.com/",
+  "note": "listed under generic 'Hotlines' with 3 other numbers; 24/7 not stated on page"
+ },
+ {
+  "id": "rs-iors-psychosocial",
+  "country": "RS",
+  "phone": "011 2067 158",
+  "status": "confirmed",
+  "found_number": "011/2067-158",
+  "hours_on_page": null,
+  "checked_url": "https://www.ncrc.ac.rs/savetovaliste-za-psihosocijalnu-podrsku-i-rehabilitaciju/",
+  "note": "number is for scheduling counselling appointments"
+ },
+ {
+  "id": "rs-ionv-psychooncology",
+  "country": "RS",
+  "phone": "021 480 5486",
+  "status": "confirmed",
+  "found_number": "021 480 5486",
+  "hours_on_page": "Mon 8-9 group chemo prep, 12-14 family talks; Tue 11-12 breast-cancer group; Thu 11-12 gynae-cancer group; individual by appointment",
+  "checked_url": "http://www.onk.ns.ac.rs/pacijenti-savetovanje.htm"
+ },
+ {
+  "id": "hr-hzjz-counselling",
+  "country": "HR",
+  "phone": "01 4863 363",
+  "status": "confirmed",
+  "found_number": "01 4863 363",
+  "hours_on_page": null,
+  "checked_url": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/",
+  "note": "page labels it information phone; Wed 11-15 hours not seen in extraction"
+ },
+ {
+  "id": "hr-sve-za-nju",
+  "country": "HR",
+  "phone": "01 641 8765",
+  "status": "confirmed",
+  "found_number": "01 641 8765",
+  "hours_on_page": null,
+  "checked_url": "https://www.svezanju.hr/"
+ },
+ {
+  "id": "mk-psychiatry-clinic",
+  "country": "MK",
+  "phone": "070 291 657",
+  "status": "confirmed",
+  "found_number": "070 291 657",
+  "hours_on_page": null,
+  "checked_url": "https://findahelpline.com/countries/mk"
+ },
+ {
+  "id": "si-oi-psychooncology",
+  "country": "SI",
+  "phone": "01 5879 170",
+  "status": "confirmed",
+  "found_number": "01 5879 170",
+  "hours_on_page": "7.30–8.00 (temporarily shortened due to staffing)",
+  "checked_url": "https://www.onko-i.si/za-bolnike/podporno-zdravljenje/psihoonkoloska-obravnava"
+ },
+ {
+  "id": "bg-brc-psychosocial",
+  "country": "BG",
+  "phone": "0800 114 66",
+  "status": "confirmed",
+  "found_number": "0800 114 66",
+  "hours_on_page": null,
+  "checked_url": "https://findahelpline.com/countries/bg"
+ },
+ {
+  "id": "ro-deprehub",
+  "country": "RO",
+  "phone": "0374 456 420",
+  "status": "confirmed",
+  "found_number": "0374 456 420",
+  "hours_on_page": "page mentions '24/7 Helpline and Teenline' generally",
+  "checked_url": "https://deprehub.ro/"
+ },
+ {
+  "id": "ru-yasnoe-utro",
+  "country": "RU",
+  "phone": "8-800-100-0191",
+  "status": "confirmed",
+  "found_number": "8-800-100-0191",
+  "hours_on_page": "Круглосуточно",
+  "checked_url": "https://yasnoeutro.ru/"
+ },
+ {
+  "id": "ru-oncologica",
+  "country": "RU",
+  "phone": "8 800 350 57 85",
+  "status": "confirmed",
+  "found_number": "8 800 350 57 85",
+  "hours_on_page": "Ежедневно с 8:00 до 22:00 по МСК",
+  "checked_url": "https://oncologica.ru/"
+ },
+ {
+  "id": "by-omr-psychology",
+  "country": "BY",
+  "phone": "+375 (17) 389-96-91",
+  "status": "confirmed",
+  "found_number": "+375(17) 389-96-91",
+  "hours_on_page": "с 8.30 до 17.00, с 9.30 до 18.00",
+  "checked_url": "https://omr.by/o-nas/otdeleniya/vse-otdelenya/mediko-psikhologicheskoe-otdelenie",
+  "note": "number is for booking a psychologist appointment"
+ },
+ {
+  "id": "ua-vartozhyty-5522",
+  "country": "UA",
+  "phone": "5522",
+  "status": "confirmed",
+  "found_number": "5522",
+  "hours_on_page": "11:00 - 19:00 з понеділка по п'ятницю",
+  "checked_url": "https://vartozhyty.com.ua/"
+ },
+ {
+  "id": "lv-skalbes-crisis",
+  "country": "LV",
+  "phone": "+371 67222922",
+  "status": "confirmed",
+  "found_number": "+371 67222922",
+  "hours_on_page": null,
+  "checked_url": "https://www.skalbes.lv/",
+  "note": "listed under crisis phones in footer, no hours given (entry says 24/7)"
+ },
+ {
+  "id": "gb-macmillan",
+  "country": "GB",
+  "phone": "0808 808 00 00",
+  "status": "confirmed",
+  "found_number": "0808 808 00 00",
+  "hours_on_page": "Monday to Sunday - 8AM-8PM",
+  "checked_url": "https://www.macmillan.org.uk/cancer-information-and-support/get-help/emotional-help/macmillan-support-line"
+ },
+ {
+  "id": "gb-maggies",
+  "country": "GB",
+  "phone": "0300 123 1801",
+  "status": "confirmed",
+  "found_number": "0300 123 1801",
+  "hours_on_page": null,
+  "checked_url": "https://www.maggies.org/"
+ },
+ {
+  "id": "ie-ics",
+  "country": "IE",
+  "phone": "1800 200 700",
+  "status": "confirmed",
+  "found_number": "1800 200 700",
+  "hours_on_page": "Monday to Friday from 9am to 5pm",
+  "checked_url": "https://www.cancer.ie/"
+ },
+ {
+  "id": "de-kid",
+  "country": "DE",
+  "phone": "0800 420 30 40",
+  "status": "confirmed",
+  "found_number": "0800 420 30 40",
+  "hours_on_page": "täglich von 8 bis 20 Uhr",
+  "checked_url": "https://www.krebsinformationsdienst.de/"
+ },
+ {
+  "id": "de-infonetz",
+  "country": "DE",
+  "phone": "0800 80708877",
+  "status": "confirmed",
+  "found_number": "0800 80708877",
+  "hours_on_page": "Montag bis Freitag zwischen 8 und 17 Uhr",
+  "checked_url": "https://www.krebshilfe.de/helfen/rat-hilfe/persoenliche-krebsberatung-infonetzkrebs/"
+ },
+ {
+  "id": "de-dhh-psy",
+  "country": "DE",
+  "phone": "03437 999 68 67",
+  "status": "confirmed",
+  "found_number": "03437-999 68 67",
+  "hours_on_page": "Montag bis Freitag, 7:00 - 16:00 Uhr nach Terminvereinbarung",
+  "checked_url": "https://www.hirntumorhilfe.de/projekte/sorgentelefon/"
+ },
+ {
+  "id": "at-krebshilfe",
+  "country": "AT",
+  "phone": "01/7966450",
+  "status": "confirmed",
+  "found_number": "01/7966450",
+  "hours_on_page": null,
+  "checked_url": "https://www.krebshilfe.net/beratung-hilfe",
+  "note": "number is the head-office line in Vienna"
+ },
+ {
+  "id": "ch-krebstelefon",
+  "country": "CH",
+  "phone": "0800 11 88 11",
+  "status": "confirmed",
+  "found_number": "0800 11 88 11",
+  "hours_on_page": "unter der Woche von 10 Uhr bis 18 Uhr",
+  "checked_url": "https://www.krebsliga.ch/",
+  "note": "service now branded 'KrebsInfo' (formerly Krebstelefon)"
+ },
+ {
+  "id": "fr-ligue",
+  "country": "FR",
+  "phone": "0 800 940 939",
+  "status": "confirmed",
+  "found_number": "0 800 940 939",
+  "hours_on_page": "du lundi au vendredi de 9h à 19h et le samedi de 9h à 14h",
+  "checked_url": "https://www.ligue-cancer.net/mes-droits-mes-demarches/vos-interlocuteurs/les-plateformes-telephoniques-decoute-et-dinformation"
+ },
+ {
+  "id": "be-cancerinfo",
+  "country": "BE",
+  "phone": "0800 15 801",
+  "status": "confirmed",
+  "found_number": "0800 15 801",
+  "hours_on_page": "lu-ve 9h à 18h",
+  "checked_url": "https://www.cancer.be/"
+ },
+ {
+  "id": "be-kankerlijn",
+  "country": "BE",
+  "phone": "0800 35 445",
+  "status": "confirmed",
+  "found_number": "0800 35 445",
+  "hours_on_page": "Ma-vr (9-12u, 13-17u)",
+  "checked_url": "https://www.komoptegenkanker.be/kankerlijn"
+ },
+ {
+  "id": "nl-kankernl",
+  "country": "NL",
+  "phone": "0800-0226622",
+  "status": "confirmed",
+  "found_number": "0800-0226622",
+  "hours_on_page": "van 12.00 tot 17.00 uur (weekdays)",
+  "checked_url": "https://www.kanker.nl/hulp-en-ondersteuning/de-kankernl-infolijn"
+ },
+ {
+  "id": "lu-fondationcancer",
+  "country": "LU",
+  "phone": "+352 45 30 331",
+  "status": "confirmed",
+  "found_number": "+352 45 30 331",
+  "hours_on_page": "8h à 17 h tous les jours ouvrables",
+  "checked_url": "https://www.cancer.lu/fr/contact"
+ },
+ {
+  "id": "it-aimac",
+  "country": "IT",
+  "phone": "06 42989570 / 3408472343",
+  "status": "confirmed",
+  "found_number": "06 42989570; 340 8472343",
+  "hours_on_page": "dal lunedì al venerdì dalle 9:00 alle 19:00",
+  "checked_url": "https://www.aimac.it/aimac-per-te/help-line"
+ },
+ {
+  "id": "it-lilt",
+  "country": "IT",
+  "phone": "800.998877",
+  "status": "confirmed",
+  "found_number": "800.998877",
+  "hours_on_page": "dal lunedì al venerdì 10.00-15.00",
+  "checked_url": "https://www.lilt.it/"
+ },
+ {
+  "id": "es-aecc",
+  "country": "ES",
+  "phone": "900 100 036",
+  "status": "confirmed",
+  "found_number": "900 100 036",
+  "hours_on_page": "24 horas al día, 7 días a la semana",
+  "checked_url": "https://www.contraelcancer.es/es/te-ayudamos"
+ },
+ {
+  "id": "gr-hcs",
+  "country": "GR",
+  "phone": "215.215.2121",
+  "status": "confirmed",
+  "found_number": "215.215.2121",
+  "hours_on_page": null,
+  "checked_url": "https://www.cancerhellas.org/"
+ },
+ {
+  "id": "cy-acs",
+  "country": "CY",
+  "phone": "77771080",
+  "status": "confirmed",
+  "found_number": "77771080",
+  "hours_on_page": null,
+  "checked_url": "https://www.anticancersociety.org.cy/",
+  "note": "general contact number, no service description"
+ },
+ {
+  "id": "mt-richmond",
+  "country": "MT",
+  "phone": "1770",
+  "status": "confirmed",
+  "found_number": "1770",
+  "hours_on_page": "Monday to Friday from 8 AM to 8 PM, and on Saturdays until 4 PM",
+  "checked_url": "https://www.richmond.org.mt/our-services/get-help-now/"
+ },
+ {
+  "id": "se-cancerlinjen",
+  "country": "SE",
+  "phone": "010-199 10 10",
+  "status": "confirmed",
+  "found_number": "010-199 10 10",
+  "hours_on_page": "Mon 9-16; Tue 10-16; Wed-Fri 9-16",
+  "checked_url": "https://www.cancerfonden.se/cancerlinjen"
+ },
+ {
+  "id": "no-kreftlinjen",
+  "country": "NO",
+  "phone": "21 49 49 21",
+  "status": "confirmed",
+  "found_number": "21 49 49 21",
+  "hours_on_page": "Mandag–fredag: 09.00–15.00",
+  "checked_url": "https://www.kreftforeningen.no/",
+  "note": "page calls it Kreftforeningens rådgivningstjeneste, not 'Kreftlinjen'"
+ },
+ {
+  "id": "dk-kraeftlinjen",
+  "country": "DK",
+  "phone": "80 30 10 30",
+  "status": "confirmed",
+  "found_number": "80 30 10 30",
+  "hours_on_page": "Mon-Fri 9-21; Sat-Sun 12-17 (meta description says 9-17 at weekends); closed public holidays",
+  "checked_url": "https://www.cancer.dk/faa-raadgivning/kraeftlinjen/aabningstider/"
+ },
+ {
+  "id": "fi-luoto",
+  "country": "FI",
+  "phone": "0800 19414",
+  "status": "confirmed",
+  "found_number": "0800 19414",
+  "hours_on_page": "Mon & Thu 10-18; Tue, Wed, Fri 10-15",
+  "checked_url": "https://www.syopajarjestot.fi/"
+ },
+ {
+  "id": "is-krabb",
+  "country": "IS",
+  "phone": "800 4040",
+  "status": "confirmed",
+  "found_number": "800 4040",
+  "hours_on_page": null,
+  "checked_url": "https://www.krabb.is/"
+ },
+ {
+  "id": "pl-onkocafe",
+  "country": "PL",
+  "phone": "+48 537 888 789",
+  "status": "confirmed",
+  "found_number": "+48 537 888 789",
+  "hours_on_page": null,
+  "checked_url": "https://onkocafe.pl/"
+ },
+ {
+  "id": "cz-amelie",
+  "country": "CZ",
+  "phone": "+420 739 001 123 / +420 283 880 316",
+  "status": "confirmed",
+  "found_number": "+420 739 001 123; +420 283 880 316",
+  "hours_on_page": "Linka Amelie 'denně od 9:00-15:00' (page does not tie these numbers to the helpline; they are listed as Prague centre contacts)",
+  "checked_url": "https://www.amelie-zs.cz/"
+ },
+ {
+  "id": "sk-lpr",
+  "country": "SK",
+  "phone": "0800 11 88 11",
+  "status": "confirmed",
+  "found_number": "0800 11 88 11",
+  "hours_on_page": "Každý deň",
+  "checked_url": "https://www.lpr.sk/"
+ },
+ {
+  "id": "hu-ooi",
+  "country": "HU",
+  "phone": "+36 1 224 8600",
+  "status": "confirmed",
+  "found_number": "+36 1 224 8600",
+  "hours_on_page": null,
+  "checked_url": "https://onkol.hu/",
+  "note": "general institute switchboard, not a psycho-oncology line"
+ },
+ {
+  "id": "tr-tkd",
+  "country": "TR",
+  "phone": "+90 212 238 30 30",
+  "status": "confirmed",
+  "found_number": "+90 212 238 30 30",
+  "hours_on_page": null,
+  "checked_url": "https://www.turkkanserdernegi.org/",
+  "note": "general landline of the association"
+ },
+ {
+  "id": "il-ica",
+  "country": "IL",
+  "phone": "1-800-599-995",
+  "status": "confirmed",
+  "found_number": "1-800-599-995",
+  "hours_on_page": null,
+  "checked_url": "https://www.cancer.org.il/"
+ },
+ {
+  "id": "us-acs",
+  "country": "US",
+  "phone": "1-800-227-2345",
+  "status": "confirmed",
+  "found_number": "1-800-227-2345",
+  "hours_on_page": "24/7 - any time of day or night",
+  "checked_url": "https://www.cancer.org/about-us/online-help/contact-us.html"
+ },
+ {
+  "id": "us-cancercare",
+  "country": "US",
+  "phone": "800-813-HOPE (4673)",
+  "status": "confirmed",
+  "found_number": "800-813-HOPE (4673)",
+  "hours_on_page": null,
+  "checked_url": "https://www.cancercare.org"
+ },
+ {
+  "id": "us-csc",
+  "country": "US",
+  "phone": "888-793-9355",
+  "status": "confirmed",
+  "found_number": "888-793-9355",
+  "hours_on_page": "Mon–Thu 9 am–7 pm ET; Fri 9 am–6 pm ET",
+  "checked_url": "https://www.cancersupportcommunity.org/helpline",
+  "note": "page now lists CSC-867-5309 (272-867-5309) as the main helpline number; 888-793-9355 shown as the 'outside U.S., toll-free' alternative"
+ },
+ {
+  "id": "ca-ccs",
+  "country": "CA",
+  "phone": "1-888-939-3333",
+  "status": "confirmed",
+  "found_number": "1-888-939-3333",
+  "hours_on_page": "Monday to Friday in English and French",
+  "checked_url": "https://cancer.ca/en/living-with-cancer/how-we-can-help/talk-to-an-information-specialist"
+ },
+ {
+  "id": "co-192",
+  "country": "CO",
+  "phone": "192 (opción 4)",
+  "status": "confirmed",
+  "found_number": "Línea 192 opción 4",
+  "hours_on_page": null,
+  "checked_url": "https://www.minsalud.gov.co/Paginas/Mas-de-18-mil-atenciones-en-salud-mental-en-opcion-4-de-Linea-192.aspx",
+  "note": "source is a 2020 press release; confirms 192 option 4 but is dated"
+ },
+ {
+  "id": "co-liga",
+  "country": "CO",
+  "phone": "3242536269",
+  "status": "confirmed",
+  "found_number": "WhatsApp 3242536269",
+  "hours_on_page": null,
+  "checked_url": "https://www.ligacancercolombia.org/programa-de-apoyo-psicosocial/",
+  "note": "page gives it as a WhatsApp contact, not a voice line"
+ },
+ {
+  "id": "au-beyondblue",
+  "country": "AU",
+  "phone": "1300 22 4636",
+  "status": "confirmed",
+  "found_number": "1300 22 4636",
+  "hours_on_page": "24/7 for brief counselling",
+  "checked_url": "https://www.beyondblue.org.au/"
+ },
+ {
+  "id": "au-cc-131120",
+  "country": "AU",
+  "phone": "13 11 20",
+  "status": "confirmed",
+  "found_number": "13 11 20",
+  "hours_on_page": null,
+  "checked_url": "https://www.cancer.org.au/support-and-services"
+ },
+ {
+  "id": "nz-cancer-society",
+  "country": "NZ",
+  "phone": "0800 226 237",
+  "status": "confirmed",
+  "found_number": "0800 226 237",
+  "hours_on_page": null,
+  "checked_url": "https://www.cancer.org.nz/"
+ },
+ {
+  "id": "jp-kokoro",
+  "country": "JP",
+  "phone": "0570-064-556",
+  "status": "confirmed",
+  "found_number": "0570-064-556",
+  "hours_on_page": "都道府県によって異なります",
+  "checked_url": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/"
+ },
+ {
+  "id": "kr-129",
+  "country": "KR",
+  "phone": "129",
+  "status": "confirmed",
+  "found_number": "129",
+  "hours_on_page": "평일 09:00 ~ 18:00; emergency counselling incl. mental health 24시",
+  "checked_url": "https://www.129.go.kr/"
+ },
+ {
+  "id": "in-icall",
+  "country": "IN",
+  "phone": "9152987821",
+  "status": "confirmed",
+  "found_number": "9152987821",
+  "hours_on_page": "Monday to Saturday: 8:00 am to 9:00 pm",
+  "checked_url": "https://icallhelpline.org/"
+ },
+ {
+  "id": "sg-samh",
+  "country": "SG",
+  "phone": "1800-283-7019",
+  "status": "confirmed",
+  "found_number": "1800-283-7019",
+  "hours_on_page": null,
+  "checked_url": "https://www.samhealth.org.sg/"
+ },
+ {
+  "id": "sg-scs",
+  "country": "SG",
+  "phone": "1800-727-3333",
+  "status": "confirmed",
+  "found_number": "1800-727-3333",
+  "hours_on_page": "Mondays to Fridays 9.00AM to 5.30PM; closed weekends and public holidays",
+  "checked_url": "https://www.singaporecancersociety.org.sg/"
+ },
+ {
+  "id": "za-cansa",
+  "country": "ZA",
+  "phone": "0800 22 6622",
+  "status": "confirmed",
+  "found_number": "0800 22 6622",
+  "hours_on_page": null,
+  "checked_url": "https://cansa.org.za/"
+ },
+ {
+  "id": "ae-focp",
+  "country": "AE",
+  "phone": "+971 6 506 5542",
+  "status": "confirmed",
+  "found_number": "+971 6 506 5542",
+  "hours_on_page": null,
+  "checked_url": "https://www.focp.ae/",
+  "note": "general contact number"
+ },
+ {
+  "id": "ng-asido",
+  "country": "NG",
+  "phone": "+234 902 808 0416",
+  "status": "confirmed",
+  "found_number": "+234 902 808 0416",
+  "hours_on_page": "24/7 Helpline via WhatsApp",
+  "checked_url": "https://www.asidofoundation.com/",
+  "note": "non-www source URL rendered without the number; www version shows it"
+ },
+ {
+  "id": "ng-ppb",
+  "country": "NG",
+  "phone": "0818 834 7020",
+  "status": "confirmed",
+  "found_number": "0818 834 7020",
+  "hours_on_page": null,
+  "checked_url": "https://projectpinkblue.org/",
+  "note": "listed as Patient Navigators line"
+ }
+]

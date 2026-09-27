@@ -54,17 +54,16 @@ export default function About() {
       <section className="mt-12 prose" aria-labelledby="a-device">
         <h2 id="a-device" className="h3 text-ink">{t('about_device_t')}</h2>
         <p className="mt-3">{t('about_device')}</p>
-        <p><Link to="/privacy">{t('nav_privacy')}</Link> · <Link to="/rules">{t('nav_rules')}</Link></p>
+        <p><Link to="/privacy">{t('nav_privacy')}</Link></p>
       </section>
 
       <section className="mt-12 card card-lg quote" id="contact" aria-labelledby="a-contact">
         <span className="kicker-pill">{t('about_contact_t')}</span>
         <h2 id="a-contact" className="h3 mt-4">{t('about_contact_h')}</h2>
         <p className="small mt-2 max-w-[60ch]">{t('about_contact')}</p>
-        <p className="small mt-2 max-w-[60ch]">{t('about_contact_pw')}</p>
         <div className="btnrow mt-6">
           <a className="btn btn-ghost" href={LINKS.issues} rel="noopener"><IconGithub />{t('about_issue')}</a>
-          <Link className="btn btn-soft" to="/research/platform-help">{t('about_board')}</Link>
+          <Link className="btn btn-soft" to="/hub#suggest">{t('about_suggest')}</Link>
         </div>
       </section>
     </div>

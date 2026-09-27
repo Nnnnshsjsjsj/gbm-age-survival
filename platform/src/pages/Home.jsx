@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext.jsx';
-import { useCommunity } from '../context/CommunityContext.jsx';
+import { HUB_STATS } from '../data/hubStats.js';
 import KMChart, { GROUP_COLORS, ChartSkeleton } from '../components/KMChart.jsx';
 import ForestPlot, { ForestSkeleton } from '../components/ForestPlot.jsx';
 import { BrainStage, StoryCanvas, BrainFallback } from '../components/BrainStage.jsx';
@@ -299,11 +299,10 @@ function ChapterYou() {
   );
 }
 
-/* ---------------------------------------------------------------- chapter 06: people */
-function ChapterPeople() {
+/* ---------------------------------------------------------------- chapter 06: two guides */
+function ChapterGuides() {
   const { t } = useApp();
-  const { stats } = useCommunity();
-  const researchers = stats && Number(stats.researchers) > 0 ? Number(stats.researchers) : 0;
+  const S = HUB_STATS;
   return (
     <section className="st-chapter st-ch6" id="ch6" aria-labelledby="ch6-h">
       <div className="shell" data-pose="people">
@@ -312,16 +311,17 @@ function ChapterPeople() {
         <div className="st-people">
           <Reveal className="card spot st-person" data-space="research">
             <span className="ic" aria-hidden="true"><IconBook /></span>
-            <h3>{t('nav_research')}</h3>
+            <h3>{t('nav_hub')}</h3>
             <p>{t('ch6_research')}</p>
-            {researchers > 0 && <p className="mono small" data-testid="chip-researchers"><span className="live" aria-hidden="true" />{researchers} {t('chip_researchers')}</p>}
-            <Link to="/research" className="st-link">{t('ch6_research_link')}<IconArrowRight /></Link>
+            <p className="mono small st-counts"><span><b>{S.papers}</b> {t('ch6_n_papers')}</span><span><b>{S.tools}</b> {t('ch6_n_tools')}</span><span><b>{S.paths}</b> {t('ch6_n_paths')}</span></p>
+            <Link to="/hub" className="st-link">{t('ch6_research_link')}<IconArrowRight /></Link>
           </Reveal>
           <Reveal className="card spot st-person" data-space="family" i={1}>
             <span className="ic" aria-hidden="true"><IconHeart /></span>
-            <h3>{t('nav_families')}</h3>
+            <h3>{t('nav_patients')}</h3>
             <p>{t('ch6_family')}</p>
-            <Link to="/families" className="st-link">{t('ch6_family_link')}<IconArrowRight /></Link>
+            <p className="mono small st-counts"><span><b>{S.services}</b> {t('ch6_n_services')}</span><span><b>{S.countries}</b> {t('ch6_n_countries')}</span><span><b>{S.reading}</b> {t('ch6_n_reading')}</span></p>
+            <Link to="/patients" className="st-link">{t('ch6_family_link')}<IconArrowRight /></Link>
           </Reveal>
         </div>
         <Reveal as="p" className="st-mod mono"><IconShield width={16} height={16} />{t('ch6_mod')}</Reveal>
@@ -403,7 +403,7 @@ export default function Home() {
       <ChapterAge />
       <ChapterCohorts />
       <ChapterYou />
-      <ChapterPeople />
+      <ChapterGuides />
     </div>
   );
 }

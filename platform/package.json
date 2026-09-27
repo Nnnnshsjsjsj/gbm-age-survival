@@ -8,13 +8,11 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "test": "node --test tests/*.test.js",
-    "e2e": "node e2e/wizard.spec.mjs",
-    "e2e:live": "node e2e/live.spec.mjs"
+    "e2e": "node e2e/wizard.spec.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
-    "@supabase/supabase-js": "^2.45.0",
     "gsap": "^3.15.0",
     "lenis": "^1.3.26",
     "papaparse": "^5.4.1",

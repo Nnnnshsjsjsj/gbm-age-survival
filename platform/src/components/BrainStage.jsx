@@ -5,6 +5,10 @@ import BrainFallback from './BrainFallback.jsx';
 
 export const StoryCanvas = lazy(() => import('../three/StoryCanvas.jsx'));
 export const LabCanvas = lazy(() => import('../three/LabCanvas.jsx'));
+export const Constellation = lazy(() => import('../three/hub/Constellation.jsx'));
+export const CellStates = lazy(() => import('../three/hub/CellStates.jsx'));
+export const MriScene = lazy(() => import('../three/hub/MriScene.jsx'));
+export const Globe = lazy(() => import('../three/hub/Globe.jsx'));
 
 /** Catches a failed GL context or chunk load and shows the fallback instead. */
 export class GLBoundary extends Component {

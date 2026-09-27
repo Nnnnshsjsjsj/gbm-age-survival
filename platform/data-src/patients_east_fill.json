@@ -1,0 +1,921 @@
+{
+  "generated": "2026-09-27",
+  "note": "Fill for patients_east.json. Numbers copied from each entry's `source`; via_directory=true means only confirmed on Find A Helpline, not on the organisation's own site. Emergency numbers from Wikipedia list unless noted.",
+  "countries": [
+    {
+      "code": "ME",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "122"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "124"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "123"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "me-sos-1555",
+          "name": "SOS line 1555",
+          "name_local": "SOS servis – linija 1555",
+          "url": "https://www.kccg.me/vijesti/obavjestenje-za-javnost-3/",
+          "kind": "crisis",
+          "phone": "1555",
+          "hours": null,
+          "langs": [
+            "cnr"
+          ],
+          "free": null,
+          "desc_en": "Short-number counselling line for anyone in distress, linked to a Clinical Centre of Montenegro notice; hours not stated.",
+          "desc_ru": "Короткий номер психологической поддержки для всех; связан с объявлением Клинического центра Черногории; часы работы не указаны.",
+          "source": "https://findahelpline.com/countries/me",
+          "via_directory": true,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "BA",
+      "emergency": [
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "122"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "124"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "123"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "ba-plavi-telefon",
+          "name": "Blue Phone – helpline for children, young people and parents",
+          "name_local": "Plavi telefon",
+          "url": "https://plavitelefon.ba/",
+          "kind": "crisis",
+          "phone": "080 05 03 05",
+          "hours": null,
+          "langs": [
+            "bs",
+            "hr",
+            "sr"
+          ],
+          "free": true,
+          "desc_en": "Free, anonymous and confidential counselling by phone, chat and e-mail for ages 6–30 and parents; run by the association Nova generacija.",
+          "desc_ru": "Бесплатная анонимная поддержка по телефону, в чате и по e-mail для детей и молодёжи 6–30 лет и родителей (ассоциация «Nova generacija»).",
+          "source": "https://plavitelefon.ba/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "ba-kcus-oncology",
+          "name": "Clinical Center of the University of Sarajevo – Oncology Clinic",
+          "name_local": "Klinički centar Univerziteta u Sarajevu – Klinika za onkologiju",
+          "url": "https://www.kcus.ba/",
+          "kind": "tumour",
+          "phone": "+387 33 297 000",
+          "hours": null,
+          "langs": [
+            "bs",
+            "hr",
+            "sr"
+          ],
+          "free": null,
+          "desc_en": "The country's largest tertiary hospital, with a dedicated oncology clinic; number is the central switchboard.",
+          "desc_ru": "Крупнейшая клиническая больница страны с онкологической клиникой; номер — центральный коммутатор.",
+          "source": "https://www.kcus.ba/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "MK",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "192"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "194"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "193"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "mk-lastrada-sos",
+          "name": "Open Gate / La Strada SOS line",
+          "name_local": "Отворена Порта / Ла Страда – СОС линија",
+          "url": "https://www.lastrada.org.mk/",
+          "kind": "crisis",
+          "phone": "0800 11111",
+          "hours": "24/7",
+          "langs": [
+            "mk"
+          ],
+          "free": true,
+          "desc_en": "Free, anonymous, round-the-clock SOS line focused on victims of human trafficking and exploitation.",
+          "desc_ru": "Бесплатная анонимная круглосуточная SOS-линия, прежде всего для пострадавших от торговли людьми.",
+          "source": "https://www.lastrada.org.mk/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "mk-sos-domestic-violence",
+          "name": "National SOS line for victims of domestic violence",
+          "name_local": "Национална СОС линија за жртви на семејно насилство",
+          "url": "https://krizencentar.org.mk/",
+          "kind": "crisis",
+          "phone": "02 15 315",
+          "hours": "24/7",
+          "langs": [
+            "mk"
+          ],
+          "free": null,
+          "desc_en": "Round-the-clock national helpline for people facing domestic violence; the crisis centre also answers e-mail.",
+          "desc_ru": "Круглосуточная национальная линия для пострадавших от домашнего насилия; кризисный центр отвечает и по e-mail.",
+          "source": "https://krizencentar.org.mk/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "mk-alo-bushavko",
+          "name": "Alo Bushavko – child helpline",
+          "name_local": "Ало Бушавко",
+          "url": "https://alobushavko.mk/",
+          "kind": "crisis",
+          "phone": "+389 70 390 632",
+          "hours": null,
+          "langs": [
+            "mk"
+          ],
+          "free": true,
+          "desc_en": "Free psychosocial and legal counselling for children, teenagers, parents and school staff by phone, e-mail and web chat.",
+          "desc_ru": "Бесплатная психосоциальная и юридическая помощь детям, подросткам, родителям и школьным работникам: телефон, e-mail, чат.",
+          "source": "https://alobushavko.mk/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "mk-psychiatry-clinic",
+          "name": "University Clinic of Psychiatry Skopje – helpline",
+          "name_local": "ЈЗУ Универзитетска клиника за психијатрија – Скопје",
+          "url": "https://www.facebook.com/UKpsihijatrija/",
+          "kind": "mental",
+          "phone": "070 291 657",
+          "hours": null,
+          "langs": [
+            "mk"
+          ],
+          "free": null,
+          "desc_en": "Counsellor-staffed support line of the state psychiatric clinic in Skopje, open to everyone.",
+          "desc_ru": "Линия поддержки государственной психиатрической клиники в Скопье; отвечают консультанты, звонить может любой.",
+          "source": "https://findahelpline.com/countries/mk",
+          "via_directory": true,
+          "checked": "2026-09"
+        },
+        {
+          "id": "mk-borka",
+          "name": "Borka – cancer patient association",
+          "name_local": "Борка",
+          "url": "https://borka.org.mk/",
+          "kind": "tumour",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "mk"
+          ],
+          "free": null,
+          "desc_en": "Macedonian cancer patient advocacy group, member of several European patient networks; publishes plain-language articles on cancer and treatment.",
+          "desc_ru": "Македонская организация пациентов с онкологией, член европейских пациентских сетей; публикует понятные статьи о раке и лечении.",
+          "source": "https://borka.org.mk/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "KZ",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "101"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "kz-111",
+          "name": "111 – contact centre for family, women and children",
+          "name_local": "111 Қызметі",
+          "url": "https://gov4c.kz/en/",
+          "kind": "crisis",
+          "phone": "111",
+          "hours": null,
+          "langs": [
+            "kk",
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "State short-number line where counsellors help women, children and families, listed by Find A Helpline.",
+          "desc_ru": "Государственный короткий номер: консультанты помогают женщинам, детям и семьям.",
+          "source": "https://findahelpline.com/countries/kz",
+          "via_directory": true,
+          "checked": "2026-09"
+        },
+        {
+          "id": "kz-kazior",
+          "name": "Kazakh Research Institute of Oncology and Radiology",
+          "name_local": "Қазақ онкология және радиология ғылыми-зерттеу институты",
+          "url": "https://onco.kz/",
+          "kind": "tumour",
+          "phone": "+7 727 310 90 23",
+          "hours": null,
+          "langs": [
+            "kk",
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "National cancer institute in Almaty with a department of psychological and social support for patients in treatment.",
+          "desc_ru": "Национальный онкологический институт в Алматы; есть отдел психологической и социальной помощи пациентам.",
+          "source": "https://onco.kz/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "UZ",
+      "emergency": [
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "101"
+        },
+        {
+          "label_en": "Emergency service",
+          "label_ru": "Служба экстренного реагирования",
+          "number": "1050"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "uz-cancercenter",
+          "name": "Republican Specialized Scientific-Practical Medical Center of Oncology and Radiology",
+          "name_local": "Respublika ixtisoslashtirilgan onkologiya va radiologiya ilmiy-amaliy tibbiyot markazi",
+          "url": "https://cancercenter.uz/",
+          "kind": "tumour",
+          "phone": "1303",
+          "hours": null,
+          "langs": [
+            "uz",
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Uzbekistan's national cancer centre in Tashkent; short call-centre number and a patient-relations department.",
+          "desc_ru": "Национальный онкологический центр Узбекистана в Ташкенте; короткий номер колл-центра, отдел работы с пациентами.",
+          "source": "https://cancercenter.uz/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "KG",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "101"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "kg-sezim",
+          "name": "Crisis Center Sezim – hotline",
+          "name_local": "Кризисный центр «Сезим»",
+          "url": "https://sezim.org/",
+          "kind": "crisis",
+          "phone": "+996 312 51 26 40",
+          "hours": null,
+          "langs": [
+            "ky",
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Bishkek crisis centre helping women, girls and families affected by domestic or gender-based violence and trafficking.",
+          "desc_ru": "Кризисный центр в Бишкеке: помощь женщинам, девушкам и семьям, пострадавшим от насилия и торговли людьми.",
+          "source": "https://sezim.org/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "kg-111-child",
+          "name": "Child's Rights Defenders League hotline",
+          "name_local": "Горячая линия Лиги защитников прав ребенка",
+          "url": null,
+          "kind": "crisis",
+          "phone": "111",
+          "hours": null,
+          "langs": [
+            "ky",
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Short-number line for children and young people, staffed by counsellors and volunteers.",
+          "desc_ru": "Короткий номер для детей и молодёжи; отвечают консультанты и волонтёры.",
+          "source": "https://findahelpline.com/countries/kg",
+          "via_directory": true,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "AM",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "101"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "am-emotional-support",
+          "name": "Emotional Support Hotline",
+          "name_local": "Հուզական աջակցության թեժ գիծ",
+          "url": "https://hotline.mha.am/",
+          "kind": "crisis",
+          "phone": "0800 00 900",
+          "hours": null,
+          "langs": [
+            "hy"
+          ],
+          "free": true,
+          "desc_en": "Free line for anyone in emotional crisis, anxiety or loneliness; run by the Mental Health Awareness Initiative, with sign-language video calls.",
+          "desc_ru": "Бесплатная линия для всех в эмоциональном кризисе, тревоге, одиночестве; есть видеосвязь на жестовом языке.",
+          "source": "https://hotline.mha.am/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "am-oncology-center",
+          "name": "Fanarjyan National Center of Oncology",
+          "name_local": "Վ. Ա. Ֆանարջյանի անվան ուռուցքաբանության ազգային կենտրոն",
+          "url": "https://oncology.am/",
+          "kind": "tumour",
+          "phone": "+374 10 20-50-50",
+          "hours": null,
+          "langs": [
+            "hy"
+          ],
+          "free": null,
+          "desc_en": "National cancer centre in Yerevan; psychosocial department offers free support to patients and families, plus a palliative care clinic.",
+          "desc_ru": "Национальный онкоцентр в Ереване: бесплатная психосоциальная помощь пациентам и семьям, паллиативная клиника.",
+          "source": "https://oncology.am/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "am-far-child",
+          "name": "FAR Child Protection Hotline",
+          "name_local": "FAR – երեխաների պաշտպանության թեժ գիծ",
+          "url": "https://www.farusa.org/",
+          "kind": "crisis",
+          "phone": "0800 61 111",
+          "hours": null,
+          "langs": [
+            "hy"
+          ],
+          "free": null,
+          "desc_en": "Helpline on child safety and rights for children, young people and parents; SMS also possible.",
+          "desc_ru": "Линия по безопасности и правам детей для детей, молодёжи и родителей; можно писать SMS.",
+          "source": "https://findahelpline.com/countries/am",
+          "via_directory": true,
+          "checked": "2026-09"
+        },
+        {
+          "id": "am-sacc",
+          "name": "Sexual Assault Crisis Center hotline",
+          "name_local": "Սեռական բռնության ճգնաժամային կենտրոն",
+          "url": "https://saccarmenia.org/",
+          "kind": "crisis",
+          "phone": "+374 77 991 280",
+          "hours": "24/7",
+          "langs": [
+            "hy"
+          ],
+          "free": null,
+          "desc_en": "Round-the-clock social, psychological and legal support for people, including minors, affected by sexual violence.",
+          "desc_ru": "Круглосуточная социальная, психологическая и юридическая помощь пострадавшим от сексуального насилия, включая несовершеннолетних.",
+          "source": "https://saccarmenia.org/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "am-women-support",
+          "name": "Women's Support Center",
+          "name_local": "Կանանց աջակցման կենտրոն",
+          "url": "https://womensupportcenter.com/",
+          "kind": "crisis",
+          "phone": "099 88 78 08",
+          "hours": "24/7",
+          "langs": [
+            "hy"
+          ],
+          "free": true,
+          "desc_en": "Free, confidential help and shelter for women facing domestic violence; office line weekdays 8:00–16:00.",
+          "desc_ru": "Бесплатная конфиденциальная помощь и убежище для женщин, пострадавших от домашнего насилия.",
+          "source": "https://womensupportcenter.com/contact-us/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "GE",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "ge-116006",
+          "name": "Consultation hotline for victims of violence",
+          "name_local": "ძალადობის მსხვერპლთა დახმარების საკონსულტაციო ცხელი ხაზი",
+          "url": "https://atipfund.moh.gov.ge/",
+          "kind": "crisis",
+          "phone": "116 006",
+          "hours": null,
+          "langs": [
+            "ka"
+          ],
+          "free": null,
+          "desc_en": "State hotline advising victims of violence against women and domestic violence; staffed by counsellors and volunteers.",
+          "desc_ru": "Государственная линия консультаций для пострадавших от насилия в отношении женщин и домашнего насилия.",
+          "source": "https://findahelpline.com/countries/ge",
+          "via_directory": true,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "AZ",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "101"
+        }
+      ],
+      "emergency_source": "https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers",
+      "entries": [
+        {
+          "id": "az-116111",
+          "name": "Child Helpline Azerbaijan",
+          "name_local": "Uşaq Qaynar Xətti",
+          "url": "https://116111.az/",
+          "kind": "crisis",
+          "phone": "116111",
+          "hours": "24/7",
+          "langs": [
+            "az",
+            "en",
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Free, anonymous round-the-clock line for under-18s with psychologists and lawyers; also live chat and a mobile app.",
+          "desc_ru": "Бесплатная анонимная круглосуточная линия для детей до 18 лет: психологи и юристы, чат и мобильное приложение.",
+          "source": "https://116111.az/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "MD",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://112.md/",
+      "entries": [
+        {
+          "id": "md-116111",
+          "name": "Child Helpline Moldova",
+          "name_local": "Telefonul Copilului 116 111",
+          "url": "https://telefonulcopilului.md/",
+          "kind": "crisis",
+          "phone": "116 111",
+          "hours": "24/7",
+          "langs": [
+            "ro",
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Free, confidential round-the-clock line for children and parents, including abuse and neglect; chat and e-mail too.",
+          "desc_ru": "Бесплатная конфиденциальная круглосуточная линия для детей и родителей; также чат и e-mail.",
+          "source": "https://telefonulcopilului.md/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "md-lastrada-trust",
+          "name": "La Strada – trust line for women and girls",
+          "name_local": "La Strada – Telefonul de Încredere pentru Femei și Fete",
+          "url": "https://lastrada.md/",
+          "kind": "crisis",
+          "phone": "0 8008 8008",
+          "hours": null,
+          "langs": [
+            "ro",
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Free line on violence against women and girls: domestic, sexual and digital abuse. From abroad: +373 22 240 624.",
+          "desc_ru": "Бесплатная линия по насилию над женщинами и девушками (домашнее, сексуальное, цифровое). Из-за рубежа: +373 22 240 624.",
+          "source": "https://lastrada.md/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "md-pentruviata",
+          "name": "Green line for suicide prevention",
+          "name_local": "Linia Verde Prevenire Suicid",
+          "url": "https://pentruviata.md/",
+          "kind": "crisis",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "ro",
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Volunteer suicide-prevention service open to everyone; the directory lists no phone number, so contact via the website.",
+          "desc_ru": "Волонтёрская служба профилактики суицида для всех; номер телефона в справочнике не указан — связь через сайт.",
+          "source": "https://findahelpline.com/countries/md",
+          "via_directory": true,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "BG",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://digital-strategy.ec.europa.eu/en/policies/112",
+      "entries": [
+        {
+          "id": "bg-brc-psychosocial",
+          "name": "Bulgarian Red Cross – psychosocial support hotline",
+          "name_local": "Гореща линия за психосоциална подкрепа на БЧК",
+          "url": "https://en.redcross.bg/",
+          "kind": "mental",
+          "phone": "0800 114 66",
+          "hours": null,
+          "langs": [
+            "bg"
+          ],
+          "free": true,
+          "desc_en": "Free, confidential telephone support for anyone, staffed by counsellors and volunteers.",
+          "desc_ru": "Бесплатная конфиденциальная телефонная поддержка для всех; отвечают консультанты и волонтёры.",
+          "source": "https://findahelpline.com/countries/bg",
+          "via_directory": true,
+          "checked": "2026-09"
+        },
+        {
+          "id": "bg-animus",
+          "name": "Animus Association – national hotline for victims of violence",
+          "name_local": "Национална гореща линия за пострадали от насилие",
+          "url": "https://animusassociation.org/",
+          "kind": "crisis",
+          "phone": "0800 1 8676",
+          "hours": null,
+          "langs": [
+            "bg"
+          ],
+          "free": null,
+          "desc_en": "Volunteer line for anyone living with violence, including those not yet ready to act.",
+          "desc_ru": "Волонтёрская линия для всех, кто живёт в ситуации насилия, даже если пока не готов что-то менять.",
+          "source": "https://findahelpline.com/countries/bg",
+          "via_directory": true,
+          "checked": "2026-09"
+        },
+        {
+          "id": "bg-demetra-dv",
+          "name": "Demetra – hotline for survivors of domestic violence",
+          "name_local": "Гореща линия за пострадали от домашно насилие",
+          "url": "https://www.demetra.bg/",
+          "kind": "crisis",
+          "phone": "0700 40 150",
+          "hours": null,
+          "langs": [
+            "bg"
+          ],
+          "free": null,
+          "desc_en": "Hotline for domestic-violence survivors; the association also runs a sexual-assault line, 0800 18 017.",
+          "desc_ru": "Линия для пострадавших от домашнего насилия; также линия для пострадавших от сексуального насилия 0800 18 017.",
+          "source": "https://www.demetra.bg/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "bg-sbal-oncology",
+          "name": "University Hospital for Oncology “Prof. Ivan Chernozemski”, Sofia",
+          "name_local": "УСБАЛ по онкология „Проф. Иван Черноземски“",
+          "url": "https://www.sbaloncology.bg/",
+          "kind": "tumour",
+          "phone": "+359 28 076 160",
+          "hours": "reception 7:30–15:00",
+          "langs": [
+            "bg"
+          ],
+          "free": null,
+          "desc_en": "Bulgaria's national oncology hospital in Sofia; online appointments and results checks.",
+          "desc_ru": "Национальная онкологическая больница Болгарии в Софии; онлайн-запись и проверка результатов.",
+          "source": "https://www.sbaloncology.bg/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "RO",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://digital-strategy.ec.europa.eu/en/policies/112",
+      "entries": [
+        {
+          "id": "ro-deprehub",
+          "name": "DepreHUB helpline",
+          "name_local": "DepreHUB",
+          "url": "https://deprehub.ro/",
+          "kind": "mental",
+          "phone": "0374 456 420",
+          "hours": "24/7",
+          "langs": [
+            "ro"
+          ],
+          "free": true,
+          "desc_en": "Free 24/7 line for depression, anxiety and suicidal thoughts; separate lines for teens (0374 461 461) and new mothers.",
+          "desc_ru": "Бесплатная круглосуточная линия при депрессии, тревоге, суицидальных мыслях; отдельные линии для подростков и молодых мам.",
+          "source": "https://deprehub.ro/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "ro-116111",
+          "name": "Telefonul Copilului – child helpline",
+          "name_local": "Telefonul Copilului 116 111",
+          "url": "https://116111.ro/",
+          "kind": "crisis",
+          "phone": "116 111",
+          "hours": "Mon–Fri 10:00–20:00",
+          "langs": [
+            "ro"
+          ],
+          "free": true,
+          "desc_en": "Free, confidential line for children and teens facing bullying, abuse, depression, anxiety or discrimination.",
+          "desc_ru": "Бесплатная конфиденциальная линия для детей и подростков: травля, насилие, депрессия, тревога, дискриминация.",
+          "source": "https://116111.ro/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "ro-little-people",
+          "name": "Little People Association",
+          "name_local": "Asociația Little People",
+          "url": "https://www.thelittlepeople.ro/",
+          "kind": "tumour",
+          "phone": "0743 773 843",
+          "hours": null,
+          "langs": [
+            "ro"
+          ],
+          "free": null,
+          "desc_en": "Supports children and young people with cancer in paediatric oncology wards across Romania and Chișinău: camps, VR therapy, peer community.",
+          "desc_ru": "Помогает детям и молодёжи с онкологией в детских онкоотделениях Румынии и Кишинёва: лагеря, VR-терапия, сообщество.",
+          "source": "https://www.thelittlepeople.ro/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "ro-fabc",
+          "name": "Federation of Cancer Patient Associations",
+          "name_local": "Federația Asociațiilor Bolnavilor de Cancer",
+          "url": "https://www.fabc.ro/",
+          "kind": "info",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "ro"
+          ],
+          "free": null,
+          "desc_en": "Umbrella patient federation: free second opinions, telemedicine app, legal support, clinical-trial information and patient education.",
+          "desc_ru": "Федерация пациентских организаций: бесплатное второе мнение, телемедицина, юридическая помощь, информация о клинических исследованиях.",
+          "source": "https://www.fabc.ro/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "ro-iob",
+          "name": "Oncology Institute “Prof. Dr. Alexandru Trestioreanu”, Bucharest",
+          "name_local": "Institutul Oncologic „Prof. Dr. Alexandru Trestioreanu” București",
+          "url": "https://www.iob.ro/",
+          "kind": "tumour",
+          "phone": "021 227 1000",
+          "hours": null,
+          "langs": [
+            "ro"
+          ],
+          "free": null,
+          "desc_en": "Romania's largest cancer hospital, in Bucharest; switchboard number shown.",
+          "desc_ru": "Крупнейшая онкологическая больница Румынии (Бухарест); номер — коммутатор.",
+          "source": "https://www.iob.ro/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    },
+    {
+      "code": "LV",
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "113"
+        }
+      ],
+      "emergency_source": "https://www.nmpd.gov.lv/",
+      "entries": [
+        {
+          "id": "lv-marta",
+          "name": "Centre MARTA",
+          "name_local": "Centrs MARTA",
+          "url": "https://www.marta.lv/",
+          "kind": "crisis",
+          "phone": "+371 67 378 539",
+          "hours": "weekdays 10:00–18:00",
+          "langs": [
+            "lv"
+          ],
+          "free": true,
+          "desc_en": "Free help for people facing domestic or partner violence, trafficking or sexual exploitation; offices in Riga, Liepāja and Rēzekne.",
+          "desc_ru": "Бесплатная помощь при домашнем насилии, торговле людьми и сексуальной эксплуатации; офисы в Риге, Лиепае и Резекне.",
+          "source": "https://www.marta.lv/",
+          "via_directory": false,
+          "checked": "2026-09"
+        },
+        {
+          "id": "lv-bkus",
+          "name": "Children's Clinical University Hospital",
+          "name_local": "Bērnu klīniskā universitātes slimnīca",
+          "url": "https://www.bkus.lv/",
+          "kind": "tumour",
+          "phone": "80708866",
+          "hours": "call centre weekdays 8:00–17:00",
+          "langs": [
+            "lv"
+          ],
+          "free": null,
+          "desc_en": "Latvia's largest children's hospital; from abroad call +371 67064461.",
+          "desc_ru": "Крупнейшая детская больница Латвии; из-за рубежа: +371 67064461.",
+          "source": "https://www.bkus.lv/",
+          "via_directory": false,
+          "checked": "2026-09"
+        }
+      ]
+    }
+  ]
+}

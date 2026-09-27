@@ -422,14 +422,17 @@ BODY = [
       "converts survival times to months, and then runs the same analyses as this paper: Kaplan-Meier curves, the "
       "log-rank test, the nested Cox models, the Schoenfeld test and a written methods paragraph. It then places the "
       "user's age hazard ratio on a forest plot next to the four reference cohorts and pools them. Everything runs in "
-      "the browser. No patient row is transmitted. A user who wishes to can share a summary of their cohort, which "
-      "contains counts, medians and model coefficients only, with age-band counts below 10 removed; an administrator "
-      "reviews it before it joins the pool, and the pooled estimate then updates for everyone. Around the tools sit two "
-      "communities that share one sign-in but are kept apart by the database's access rules: a research space with "
-      "discussion boards per dataset and per method and a directory of researchers, and a family space for patients, "
-      "caregivers and relatives, whose posts only other family members can read, with a list of verified support "
-      "organisations. Every new post in either space is read by a moderator before it appears, and the family space "
-      "does not allow medical advice. The home page tells the study as a scroll-driven story around an interactive 3D "
+      "the browser. No patient row is transmitted. A user who wishes to can download a summary of their cohort, which "
+      "contains counts, medians and model coefficients only, with age-band counts below 10 removed, and offer it for the "
+      "pooled analysis through the repository. The site has no accounts and no server of its own. Next to the tools sit "
+      "two guides. The research hub is for students and researchers new to glioblastoma: five ordered reading paths, a "
+      "library of 100 papers checked against their DOI and PubMed records with a plain summary of each in English and "
+      "Russian, 109 datasets, programs, guidelines, trial registries and courses, and small 3D models (the four Neftel "
+      "cell states with their entropy, and an MRI slice moving through a model head). The guide for patients and "
+      "families lists helplines, psychological and psycho-oncology services, patient organisations and palliative care "
+      "in 64 countries, international directories, common questions and reading, each link opened and checked by hand; "
+      "it gives no medical advice and says nothing about any one person's outlook. "
+      "The home page tells the study as a scroll-driven story around an interactive 3D "
       "model of a brain with a glioblastoma, and a Brain lab page lets the reader turn the model, cut through it and "
       "switch its layers on and off: the necrotic core, the enhancing rim, the oedema, and the infiltrating cells "
       "coloured by the four Neftel states. The model is generated mathematically in the browser and is an "
@@ -760,7 +763,7 @@ BODY = [
       "60-patient cohort simulated with a known hazard ratio of 1.030, the platform estimated 1.022 (95% CI 1.003 to "
       "1.042), which is also what lifelines gives for the same file. Both tools state on their first screen that they "
       "show how groups fared in research cohorts and are not for decisions about any person."),
-("fig", "fig13_explorer", "Figure 13. The cohortex home page. The same site holds the Explore, Analyse and Pool tools and the two moderated communities, in English and Russian."),
+("fig", "fig13_explorer", "Figure 13. The cohortex home page. The same site holds the Explore, Analyse and Pool tools, a research hub for newcomers and a support guide for patients and families, in English and Russian."),
 
 ("h1", "4. Discussion"),
 ("h2", "4.1. Main findings"),
@@ -900,9 +903,9 @@ BODY = [
       "cohort a user chooses to share adds a row to Figure 11, and the first outside cohorts will show whether the "
       "prediction interval holds. The platform itself needs a usability study with five to eight students, each given "
       "the demonstration file and asked to reach the comparison step, measuring time and errors and collecting a "
-      "System Usability Scale score; that study is planned as the next step of the project. A patient and family "
-      "space, kept separate from the research platform and moderated by a clinician, is planned after the research "
-      "side is stable."),
+      "System Usability Scale score; that study is planned as the next step of the project. The support directory needs "
+      "a fixed review cycle, because helpline numbers and hours change, and a clinician and a psycho-oncologist "
+      "should read it before it is promoted to patients."),
 ]
 
 APPENDICES = [
@@ -992,13 +995,12 @@ APPENDICES = [
       "is in platform/. It is a React application. Its statistics engine (platform/src/engine/) is a set of plain "
       "JavaScript modules for the Kaplan-Meier estimator, the log-rank test, Cox regression with Efron tie handling, the "
       "Schoenfeld test and random-effects meta-analysis, with tests in platform/tests/ that compare them with lifelines "
-      "on the four reference cohorts and on simulated data. Accounts and the two communities use a Supabase database "
-      "hosted in the EU, whose schema and row-level security rules are in platform/supabase/migrations/0002_plateau.sql. "
-      "The rules let a family post be read only by family members and moderators, let a research account alone share a "
-      "cohort summary, hold every new post as pending until a moderator approves it, and send every moderation action "
-      "to an audit log. The database stores no field that could hold a patient row and refuses summaries with fewer "
-      "than 10 patients or 10 deaths. A summary that a user chooses to share contains counts, medians, survival at "
-      "fixed times and model coefficients with their standard errors, and nothing else."),
+      "on the four reference cohorts and on simulated data. The site is static: it has no accounts and no database, and "
+      "the reference cohorts, the research catalogue (public/hub/research.json) and the support directory "
+      "(public/hub/patients.json) are plain files served with it. A cohort summary is written only to the user's own "
+      "computer when they click download; it contains counts, medians, survival at fixed times and model coefficients "
+      "with their standard errors, and nothing else. An earlier version (v5) ran moderated forums on a Supabase "
+      "database; they were closed in v6 and replaced by the two guides."),
 ("h2", "Appendix E. Published estimates used in the meta-analysis"),
 ("table", "Table E1. Source and form of each published estimate. All were read from the cited paper's text or tables; the URL in the repository file data/published_estimates.csv points to the page used.",
     ["Cohort", "Reported as", "Read from", "Note"],

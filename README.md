@@ -8,8 +8,13 @@ A student research project on public glioblastoma data. It measures the age effe
 validates it in CGGA, tests whether two bulk measures of intratumoral heterogeneity explain it (they do not), pools
 the age effect across 13 cohorts and about 40,800 patients, and releases an open cohort explorer and a browser-based
 platform in which other researchers can compare their own cohort with these, without their data leaving their computer.
+The site also carries two guides: a research hub for newcomers to glioblastoma research and a support guide for patients
+and families.
 
-**Live site:** https://nnnnshsjsjsj.github.io/gbm-age-survival/ — a scroll-driven story around an interactive 3D brain with a glioblastoma, a Brain lab to explore it, and — Explore, Analyse and Pool for everyone; a moderated research space and a separate family space for signed-in members
+**Live site:** https://nnnnshsjsjsj.github.io/gbm-age-survival/ — a scroll-driven story around an interactive 3D brain with
+a glioblastoma, a Brain lab to explore it, the cohort tools (Explore, Analyse, Pool), a **Research hub** (reading paths,
+100 papers with plain summaries, 109 datasets and tools, 3D models) and a **Patients & families** guide (helplines,
+psychological support, patient organisations and reading for 64 countries). No accounts, no server: everything is static.
 **Paper:** [`paper/Research_Paper_EN.pdf`](paper/Research_Paper_EN.pdf) · [`paper/Research_Paper_RU.pdf`](paper/Research_Paper_RU.pdf)
 
 ## Findings in one table
@@ -30,8 +35,8 @@ platform in which other researchers can compare their own cohort with these, wit
 analysis/    all Python scripts; run_all.sh reproduces everything; fetch_data.py downloads the large raw inputs
              legacy_calculator/  the withdrawn per-patient calculator (kept for the record, not deployed)
 docs/        what GitHub Pages serves: the built cohortex app (do not edit by hand; built from platform/)
-platform/    cohortex: React + Vite app, the JavaScript statistics engine (src/engine), its tests (tests/),
-             the Supabase schema (supabase/migrations/0002_plateau.sql) and browser tests (e2e/)
+platform/    cohortex: React + Vite + Tailwind app, the JavaScript statistics engine (src/engine), its tests (tests/),
+             browser tests (e2e/) and the hand-checked guide catalogues with their build script (data-src/)
 app/         legacy_calculator/ and legacy_explorer/: earlier versions, kept for the record
 data/        harmonised patient-level tables for TCGA, CGGA, MSK-IMPACT and CPTAC; Neftel gene lists;
              published estimates used in the meta-analysis with their sources; raw/ is filled by fetch_data.py
@@ -54,13 +59,13 @@ Each script prints the numbers it is responsible for; `results/` holds the commi
 cd platform
 npm install
 npm test          # 51 engine tests against lifelines golden values
-npm run dev       # the live Supabase project is built in; Explore, Analyse and Pool also work offline
+npm run dev       # everything works offline
 npm run build     # writes ../docs (the whole site)
 npm run e2e       # browser test of the whole wizard (needs a prior build)
 ```
 
-Accounts and the two communities run on Supabase (internal schema name `plateau`, see `platform/supabase/migrations/0002_plateau.sql`).
-Moderators are listed in `plateau.admin_emails`. See `platform/README_PLATFORM.md` for the live test.
+The guide catalogues are plain JSON. To fix a phone number or add a paper, edit `platform/data-src/*.json` and run
+`python3 platform/data-src/merge.py`, then rebuild. See `platform/README_PLATFORM.md`.
 
 ## Data sources
 
@@ -72,7 +77,7 @@ pages in `data/published_estimates.csv`.
 ## What this is not
 
 Not a prognosis tool and not medical advice. Everything here describes how groups of patients in research cohorts
-fared. The earlier per-patient calculator was withdrawn for that reason and is kept only under `legacy_calculator/`.
+fared. The patient guide points to support services; it does not replace a care team. The earlier per-patient calculator was withdrawn for that reason and is kept only under `legacy_calculator/`.
 
 ## License
 

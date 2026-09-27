@@ -2,30 +2,21 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useT } from '../../context/AppContext.jsx';
 import { useCohort } from '../../context/CohortContext.jsx';
-import { useAuth } from '../../context/AuthContext.jsx';
-import { useCommunity } from '../../context/CommunityContext.jsx';
-import { useUI } from '../../context/UIContext.jsx';
 import { allReferenceStats } from '../../lib/reference.js';
 import { metaRandomEffects } from '../../engine/index.js';
-import { buildSummary, summaryToRow, downloadJson, compactJson } from '../../lib/summary.js';
-import { api, friendly, isDown, classify } from '../../lib/api.js';
-import { FocusHeading, Notice, CalmBanner } from '../../components/ui.jsx';
+import { buildSummary, downloadJson, compactJson } from '../../lib/summary.js';
+import { FocusHeading, Notice } from '../../components/ui.jsx';
+import { LINKS } from '../../components/Layout.jsx';
 import ForestPlot, { ForestSkeleton } from '../../components/ForestPlot.jsx';
-import { IconDownload, IconArrowRight, IconCheckCircle, IconChevronDown } from '../../components/Icons.jsx';
+import { IconDownload, IconArrowUpRight, IconCheckCircle, IconChevronDown } from '../../components/Icons.jsx';
 import { fmt } from '../../lib/format.js';
 
 export default function StepCompare({ go }) {
   const t = useT();
   const cohort = useCohort();
   const { analysis, share, setShare } = cohort;
-  const auth = useAuth();
-  const community = useCommunity();
-  const ui = useUI();
   const [refs, setRefs] = useState(null);
   const [err, setErr] = useState('');
-  const [ethics, setEthics] = useState(false);
-  const [sendState, setSendState] = useState('idle');
-  const [sendErr, setSendErr] = useState('');
 
   useEffect(() => {
     let alive = true;
@@ -48,18 +39,6 @@ export default function StepCompare({ go }) {
     { type: 'pooled', label: t('cmp_pooled'), sub: `k=${refs.length + 1}, I²=${Math.round(meta.I2)}%`, hr: meta.HR, lo: meta.loHK, hi: meta.hiHK },
   ] : null;
   const overlaps = meta ? m.lo[0] <= meta.hiHK && m.hi[0] >= meta.loHK : null;
-  const canSend = ethics && summary.cohort_name.trim().length >= 2 && analysis.n >= 10 && analysis.events >= 10;
-  const research = auth.user && auth.profile?.space === 'research';
-
-  const send = async () => {
-    setSendState('sending'); setSendErr('');
-    try { await api.insertSummary(summaryToRow(summary, auth.user.id, ethics)); setSendState('sent'); } catch (e) {
-      const c = classify(e);
-      community.report(c);
-      if (!isDown(c)) setSendErr(friendly(c, t));
-      setSendState('idle');
-    }
-  };
   const field = (key, label, type = 'text', extra = {}) => (
     <div className="field">
       <label htmlFor={`sh-${key}`}>{label}</label>
@@ -101,32 +80,11 @@ export default function StepCompare({ go }) {
         </details>
 
         <div className="mt-4 grid gap-4">
-          {community.down ? (
-            <>
-              <CalmBanner />
-              <div className="btnrow">{download}</div>
-            </>
-          ) : research ? (
-            <>
-              <label className="checkcard"><input type="checkbox" checked={ethics} onChange={(e) => setEthics(e.target.checked)} /><span>{t('share_ethics')}</span></label>
-              {sendState === 'sent' ? <p className="inline-ok" role="status"><IconCheckCircle />{t('share_sent')}</p> : null}
-              {sendErr && <p className="inline-err" role="alert">{sendErr}</p>}
-              <div className="actions">
-                {download}
-                <div className="right"><button type="button" className="btn btn-primary" disabled={!canSend || sendState !== 'idle'} onClick={send}>{sendState === 'sending' ? t('working') : t('share_send')}</button></div>
-              </div>
-            </>
-          ) : (
-            <>
-              <Notice kind="info">
-                <p><b>{t(auth.user ? 'share_research_only' : 'share_join_t')}</b> {t(auth.user ? 'share_research_only_b' : 'share_join_b')}</p>
-              </Notice>
-              <div className="actions">
-                {download}
-                {!auth.user && <div className="right"><button type="button" className="btn btn-primary" onClick={() => ui.openJoin({ space: 'research' })}>{t('share_join_btn')}<IconArrowRight /></button></div>}
-              </div>
-            </>
-          )}
+          <Notice kind="lock"><p>{t('share_local')}</p></Notice>
+          <div className="actions">
+            {download}
+            <div className="right"><a className="btn btn-soft" href={`${LINKS.issues}/new?labels=cohort-summary&title=${encodeURIComponent('Cohort summary')}`} rel="noopener" target="_blank">{t('share_issue')}<IconArrowUpRight /></a></div>
+          </div>
         </div>
       </div>
 

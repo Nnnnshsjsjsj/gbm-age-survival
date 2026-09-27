@@ -1,0 +1,87 @@
+[
+  {
+    "id": "first-week",
+    "title_en": "First week: what glioblastoma is",
+    "title_ru": "Первая неделя: что такое глиобластома",
+    "blurb_en": "Start here. A readable clinical review, the key numbers on who gets glioblastoma, the modern definition, the trial that set today's standard treatment and its biomarker, then expert overviews of management and of why cure is so hard.",
+    "blurb_ru": "Начните отсюда. Доступный клинический обзор, ключевые цифры о том, кто заболевает глиобластомой, современное определение болезни, исследование, задавшее стандарт лечения, и его биомаркер, а затем экспертные обзоры о лечении и о том, почему вылечить её так трудно.",
+    "steps": [
+      "schaff2023",
+      "price2024",
+      "ostrom2014",
+      "louis2021",
+      "stupp2005",
+      "hegi2005",
+      "wen2020",
+      "aldape2019"
+    ]
+  },
+  {
+    "id": "molecular-classification",
+    "title_en": "Molecular classification",
+    "title_ru": "Молекулярная классификация",
+    "blurb_en": "How genomics turned 'glioblastoma' from a microscopic diagnosis into a molecular one: TCGA, the discovery of IDH, expression subtypes, the TERT/EGFR/+7/−10 criteria and methylation profiling, ending with WHO CNS5.",
+    "blurb_ru": "Как геномика превратила «глиобластому» из морфологического диагноза в молекулярный: TCGA, открытие IDH, экспрессионные подтипы, критерии TERT/EGFR/+7/−10 и профилирование метилирования — вплоть до классификации ВОЗ CNS5.",
+    "steps": [
+      "tcga2008",
+      "parsons2008",
+      "yan2009",
+      "verhaak2010",
+      "eckelpassow2015",
+      "brat2018",
+      "capper2018",
+      "louis2021"
+    ]
+  },
+  {
+    "id": "heterogeneity-single-cell",
+    "title_en": "Heterogeneity and single-cell biology",
+    "title_ru": "Гетерогенность и биология отдельных клеток",
+    "blurb_en": "Why one tumour is really many: multi-region sampling, single-cell RNA-seq, cellular states and plasticity, evolution under therapy, spatial organisation, and a simple score (MATH) for measuring genetic heterogeneity in bulk data.",
+    "blurb_ru": "Почему одна опухоль — это на самом деле множество: мультирегионные образцы, секвенирование РНК отдельных клеток, клеточные состояния и пластичность, эволюция под действием терапии, пространственная организация и простой индекс MATH для оценки генетической гетерогенности по объёмным данным.",
+    "steps": [
+      "sottoriva2013",
+      "patel2014",
+      "neftel2019",
+      "wang2016",
+      "barthel2019",
+      "varn2022",
+      "greenwald2024",
+      "mroz2013"
+    ]
+  },
+  {
+    "id": "survival-statistics",
+    "title_en": "Survival statistics for clinical cohorts",
+    "title_ru": "Статистика выживаемости для клинических когорт",
+    "blurb_en": "The toolkit for analysing survival in glioblastoma cohorts: a four-part tutorial on Kaplan–Meier and Cox models, classic prognostic-factor studies where age dominates, and the reporting checklists for biomarker and prediction-model studies.",
+    "blurb_ru": "Инструменты для анализа выживаемости в когортах пациентов с глиобластомой: руководство из четырёх частей по методу Каплана–Мейера и моделям Кокса, классические работы о прогностических факторах, где главную роль играет возраст, и контрольные списки для исследований биомаркеров и прогностических моделей.",
+    "steps": [
+      "clark2003a",
+      "bradburn2003a",
+      "bradburn2003b",
+      "clark2003b",
+      "curran1993",
+      "thumma2012",
+      "mcshane2005",
+      "collins2015"
+    ]
+  },
+  {
+    "id": "treatment-and-trials",
+    "title_en": "Treatment and trials",
+    "title_ru": "Лечение и клинические исследования",
+    "blurb_en": "The landmark trials behind current care—chemoradiotherapy, treatment of older patients, surgery, tumour-treating fields—followed by instructive negative trials and an analysis of why promising phase II results so often fail.",
+    "blurb_ru": "Ключевые исследования, лежащие в основе современного лечения, — химиолучевая терапия, лечение пожилых, хирургия, TTFields, — а затем поучительные отрицательные исследования и анализ того, почему многообещающие результаты II фазы так часто не подтверждаются.",
+    "steps": [
+      "stupp2005",
+      "perry2017",
+      "molinaro2020",
+      "stupp2017",
+      "gilbert2014",
+      "wick2017",
+      "reardon2020",
+      "mandel2018"
+    ]
+  }
+]

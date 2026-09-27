@@ -1,0 +1,2254 @@
+{
+ "countries": [
+  {
+   "code": "US",
+   "name_en": "United States",
+   "name_ru": "США",
+   "lat": 38.9,
+   "lng": -77.04,
+   "emergency": [
+    {
+     "label_en": "Emergency (police, fire, ambulance)",
+     "label_ru": "Экстренные службы (полиция, пожарные, скорая)",
+     "number": "911"
+    }
+   ],
+   "entries": [
+    {
+     "id": "us-988",
+     "name": "988 Suicide & Crisis Lifeline",
+     "name_local": null,
+     "url": "https://988lifeline.org",
+     "kind": "crisis",
+     "phone": "988",
+     "hours": "24/7",
+     "langs": [
+      "en",
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Free, confidential call, text or chat support for anyone in emotional distress or suicidal crisis; Spanish text and chat available.",
+     "desc_ru": "Бесплатная конфиденциальная помощь по телефону, SMS или в чате при эмоциональном кризисе или суицидальных мыслях; есть испанский язык.",
+     "source": "https://988lifeline.org",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-nci-cis",
+     "name": "NCI Cancer Information Service",
+     "name_local": null,
+     "url": "https://www.cancer.gov/contact",
+     "kind": "info",
+     "phone": "1-800-4-CANCER (1-800-422-6237)",
+     "hours": "Mon–Fri 9:00–21:00 ET",
+     "langs": [
+      "en",
+      "es"
+     ],
+     "free": true,
+     "desc_en": "National Cancer Institute information specialists answer questions about cancer, treatment and clinical trials by phone, chat or email.",
+     "desc_ru": "Специалисты Национального института рака США отвечают на вопросы о раке, лечении и клинических исследованиях по телефону, в чате и по e-mail.",
+     "source": "https://www.cancer.gov/contact",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-nci-pdq",
+     "name": "Adult Central Nervous System Tumors Treatment (PDQ®) – Patient Version",
+     "name_local": null,
+     "url": "https://www.cancer.gov/types/brain/patient/adult-brain-treatment-pdq",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en",
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Expert-reviewed NCI summary of adult brain and spinal cord tumour types, including glioblastoma, and their standard treatments.",
+     "desc_ru": "Экспертный обзор NCI о типах опухолей головного и спинного мозга у взрослых, включая глиобластому, и стандартах их лечения.",
+     "source": "https://www.cancer.gov/types/brain/patient/adult-brain-treatment-pdq",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-acs",
+     "name": "American Cancer Society helpline",
+     "name_local": null,
+     "url": "https://www.cancer.org/about-us/online-help/contact-us.html",
+     "kind": "mental",
+     "phone": "1-800-227-2345",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Round-the-clock line staffed by cancer information specialists offering answers, guidance and referrals to support programmes.",
+     "desc_ru": "Круглосуточная линия специалистов Американского онкологического общества: ответы на вопросы, советы и направление в программы поддержки.",
+     "source": "https://www.cancer.org/about-us/online-help/contact-us.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-acs-brain",
+     "name": "Brain Tumors in Adults — American Cancer Society",
+     "name_local": null,
+     "url": "https://www.cancer.org/cancer/types/brain-spinal-cord-tumors-adults.html",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en",
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Plain-language guide to adult brain and spinal cord tumours, including astrocytomas and glioblastomas, diagnosis and treatment.",
+     "desc_ru": "Понятное руководство об опухолях головного и спинного мозга у взрослых, включая астроцитомы и глиобластомы, диагностику и лечение.",
+     "source": "https://www.cancer.org/cancer/types/brain-spinal-cord-tumors-adults.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-cancercare",
+     "name": "CancerCare",
+     "name_local": null,
+     "url": "https://www.cancercare.org",
+     "kind": "mental",
+     "phone": "800-813-HOPE (4673)",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Oncology social workers provide free counselling, support groups (including brain tumour groups), education and financial help for patients and families.",
+     "desc_ru": "Онкологические социальные работники бесплатно консультируют, ведут группы поддержки (в т.ч. по опухолям мозга), обучают и помогают финансово.",
+     "source": "https://www.cancercare.org",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-csc",
+     "name": "Cancer Support Community Helpline",
+     "name_local": null,
+     "url": "https://www.cancersupportcommunity.org/helpline",
+     "kind": "mental",
+     "phone": "888-793-9355",
+     "hours": "Mon–Thu 9:00–19:00 ET; Fri 9:00–18:00 ET",
+     "langs": [
+      "en",
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Free personalised phone navigation and emotional support for anyone affected by cancer, in English and Spanish.",
+     "desc_ru": "Бесплатная персональная навигация и эмоциональная поддержка по телефону для всех, кого коснулся рак, на английском и испанском.",
+     "source": "https://www.cancersupportcommunity.org/helpline",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-nbts",
+     "name": "National Brain Tumor Society — Personalized Support",
+     "name_local": null,
+     "url": "https://braintumor.org/support-services/personalized-support/contact-us/",
+     "kind": "tumour",
+     "phone": "617.924.9997",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free brain-tumour navigation for patients and care partners; request help via online form, reply within 48–72 hours. Also support groups and peer mentors.",
+     "desc_ru": "Бесплатная навигация для пациентов с опухолями мозга и близких: заявка через форму, ответ за 48–72 часа. Также группы поддержки и наставники.",
+     "source": "https://braintumor.org",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-nbts-questions",
+     "name": "NBTS Key Questions to Ask",
+     "name_local": null,
+     "url": "https://braintumor.org/support-services/toolkit/key-questions/",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Printable question lists for each stage — diagnosis, surgery, treatment, recurrence, survivorship, end of life — to bring to appointments.",
+     "desc_ru": "Списки вопросов для печати на каждом этапе — диагноз, операция, лечение, рецидив, жизнь после лечения, конец жизни — чтобы взять на приём.",
+     "source": "https://braintumor.org/support-services/toolkit/key-questions/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-abta",
+     "name": "American Brain Tumor Association CareLine",
+     "name_local": null,
+     "url": "https://www.abta.org/",
+     "kind": "tumour",
+     "phone": "800-886-ABTA (2282)",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Brain tumour organisation offering a CareLine, educational materials and support resources for patients and caregivers.",
+     "desc_ru": "Организация по опухолям мозга: линия помощи CareLine, образовательные материалы и ресурсы поддержки для пациентов и близких.",
+     "source": "https://www.abta.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-gbmf",
+     "name": "Glioblastoma Foundation",
+     "name_local": null,
+     "url": "https://glioblastomafoundation.org/",
+     "kind": "tumour",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Nonprofit focused on glioblastoma, offering patient education, support groups for patients and caregivers, and research news.",
+     "desc_ru": "Некоммерческий фонд по глиобластоме: обучающие материалы, группы поддержки для пациентов и ухаживающих, новости исследований.",
+     "source": "https://glioblastomafoundation.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-nccn",
+     "name": "NCCN Guidelines for Patients®: Gliomas",
+     "name_local": null,
+     "url": "https://www.nccn.org/patients/guidelines/content/PDF/brain-gliomas-patient.pdf",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Patient version of NCCN guidelines explaining glioma grades, testing, biomarkers, surgery, radiotherapy, chemotherapy and clinical trials (2021 edition).",
+     "desc_ru": "Версия рекомендаций NCCN для пациентов: степени глиом, анализы, биомаркеры, операция, лучевая и химиотерапия, клинические исследования (изд. 2021).",
+     "source": "https://www.nccn.org/patients/guidelines/content/PDF/brain-gliomas-patient.pdf",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-fca",
+     "name": "Family Caregiver Alliance",
+     "name_local": null,
+     "url": "https://www.caregiver.org/",
+     "kind": "caregiver",
+     "phone": "800.445.8106",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Information, state-by-state services locator, the CareNav tool and support groups for family caregivers of adults with chronic or serious illness.",
+     "desc_ru": "Информация, поиск услуг по штатам, инструмент CareNav и группы поддержки для родственников, ухаживающих за тяжелобольными взрослыми.",
+     "source": "https://www.caregiver.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-can",
+     "name": "Caregiver Action Network — National Caregiver Help Desk",
+     "name_local": null,
+     "url": "https://www.caregiveraction.org/helpdesk/",
+     "kind": "caregiver",
+     "phone": "(855) 227-3640",
+     "hours": "Mon–Fri 8:00–19:00 ET",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Help desk where family caregivers can talk to caregiving specialists, plus chat and virtual support groups.",
+     "desc_ru": "Справочная служба, где ухаживающие родственники могут поговорить со специалистами; также чат и онлайн-группы поддержки.",
+     "source": "https://www.caregiveraction.org/helpdesk/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-caringbridge",
+     "name": "CaringBridge",
+     "name_local": null,
+     "url": "https://www.caringbridge.org/",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": null,
+     "desc_en": "Private online journal to share health updates with family and friends so no one goes through a health journey alone.",
+     "desc_ru": "Закрытый онлайн-дневник, чтобы делиться новостями о здоровье с родными и друзьями и не проходить болезнь в одиночку.",
+     "source": "https://www.caringbridge.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "us-lotsa",
+     "name": "Lotsa Helping Hands",
+     "name_local": null,
+     "url": "https://lotsahelpinghands.com/",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free web and app calendar for friends and family to coordinate meals, rides and other help for someone who is ill.",
+     "desc_ru": "Бесплатный календарь (сайт и приложение), чтобы друзья и родные распределяли еду, поездки и другую помощь больному.",
+     "source": "https://lotsahelpinghands.com/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "CA",
+   "name_en": "Canada",
+   "name_ru": "Канада",
+   "lat": 45.42,
+   "lng": -75.7,
+   "emergency": [
+    {
+     "label_en": "Emergency (police, fire, ambulance)",
+     "label_ru": "Экстренные службы (полиция, пожарные, скорая)",
+     "number": "911"
+    }
+   ],
+   "entries": [
+    {
+     "id": "ca-988",
+     "name": "9-8-8 Suicide Crisis Helpline",
+     "name_local": null,
+     "url": "https://988.ca/",
+     "kind": "crisis",
+     "phone": "9-8-8",
+     "hours": "24/7",
+     "langs": [
+      "en",
+      "fr"
+     ],
+     "free": true,
+     "desc_en": "Call or text 9-8-8 to reach a trained crisis responder without judgement, anywhere in Canada.",
+     "desc_ru": "Позвоните или отправьте SMS на 9-8-8, чтобы связаться с кризисным консультантом в любой точке Канады.",
+     "source": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ca-hope-wellness",
+     "name": "Hope for Wellness Help Line",
+     "name_local": null,
+     "url": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+     "kind": "crisis",
+     "phone": "1-855-242-3310",
+     "hours": "24/7",
+     "langs": [
+      "en",
+      "fr"
+     ],
+     "free": true,
+     "desc_en": "Round-the-clock counselling and crisis support for First Nations, Inuit and Métis Peoples.",
+     "desc_ru": "Круглосуточная психологическая и кризисная поддержка для коренных народов: Первых наций, инуитов и метисов.",
+     "source": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ca-khp",
+     "name": "Kids Help Phone",
+     "name_local": null,
+     "url": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+     "kind": "crisis",
+     "phone": "1-800-668-6868",
+     "hours": "24/7",
+     "langs": [
+      "en",
+      "fr"
+     ],
+     "free": true,
+     "desc_en": "24/7 support for young people aged 5 to 29 — useful for children and teens of a parent with a brain tumour.",
+     "desc_ru": "Круглосуточная поддержка детей и молодёжи 5–29 лет — полезна детям и подросткам, чей родитель болен опухолью мозга.",
+     "source": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ca-ccs",
+     "name": "Canadian Cancer Society — Cancer Information Helpline",
+     "name_local": null,
+     "url": "https://cancer.ca/en/living-with-cancer/how-we-can-help/talk-to-an-information-specialist",
+     "kind": "mental",
+     "phone": "1-888-939-3333",
+     "hours": "Mon–Fri",
+     "langs": [
+      "en",
+      "fr"
+     ],
+     "free": true,
+     "desc_en": "National toll-free line with cancer information specialists; interpreter service for other languages; also live chat.",
+     "desc_ru": "Национальная бесплатная линия специалистов по онкологии; переводчик для других языков; есть онлайн-чат.",
+     "source": "https://cancer.ca/en/living-with-cancer/how-we-can-help/talk-to-an-information-specialist",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ca-ccs-brain",
+     "name": "Brain and spinal cord tumours — Canadian Cancer Society",
+     "name_local": null,
+     "url": "https://cancer.ca/en/cancer-information/cancer-types/brain-and-spinal-cord",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en",
+      "fr"
+     ],
+     "free": true,
+     "desc_en": "Canadian overview of brain and spinal cord tumours: risks, diagnosis, grading, treatment and supportive care.",
+     "desc_ru": "Канадский обзор опухолей головного и спинного мозга: факторы риска, диагностика, степени, лечение и поддерживающая терапия.",
+     "source": "https://cancer.ca/en/cancer-information/cancer-types/brain-and-spinal-cord",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ca-cancerconnection",
+     "name": "CancerConnection.ca",
+     "name_local": null,
+     "url": "https://cancer.ca/en/living-with-cancer/how-we-can-help/online-support",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en",
+      "fr"
+     ],
+     "free": true,
+     "desc_en": "Free Canadian Cancer Society online community (18+) where patients, caregivers and survivors share experiences and support.",
+     "desc_ru": "Бесплатное онлайн-сообщество Канадского онкологического общества (18+), где пациенты, близкие и выжившие делятся опытом.",
+     "source": "https://cancer.ca/en/living-with-cancer/how-we-can-help/online-support",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ca-btfc",
+     "name": "Brain Tumour Foundation of Canada",
+     "name_local": null,
+     "url": "https://www.braintumour.ca/",
+     "kind": "tumour",
+     "phone": "1-800-265-5106",
+     "hours": "Mon–Fri 8:30–16:30 ET",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "One-on-one support specialists, peer support groups, webinars and handbooks for adult, paediatric and caregiver audiences.",
+     "desc_ru": "Индивидуальные консультанты, группы взаимоподдержки, вебинары и справочники для взрослых пациентов, детей и ухаживающих.",
+     "source": "https://www.braintumour.ca/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ca-wellspring",
+     "name": "Wellspring",
+     "name_local": null,
+     "url": "https://www.wellspring.ca/",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free, no-referral programmes for people with cancer and caregivers: individual and group support, symptom management, arts, exercise; online nationwide.",
+     "desc_ru": "Бесплатные программы без направления для больных и близких: индивидуальная и групповая поддержка, симптомы, арт, спорт; онлайн по всей Канаде.",
+     "source": "https://www.wellspring.ca/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "MX",
+   "name_en": "Mexico",
+   "name_ru": "Мексика",
+   "lat": 19.43,
+   "lng": -99.13,
+   "emergency": [
+    {
+     "label_en": "Emergency",
+     "label_ru": "Экстренные службы",
+     "number": "911"
+    }
+   ],
+   "entries": [
+    {
+     "id": "mx-linea-vida",
+     "name": "Línea de la Vida",
+     "name_local": null,
+     "url": "https://www.gob.mx/lineadelavida",
+     "kind": "crisis",
+     "phone": "800 911 2000",
+     "hours": "24/7",
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Free national line for mental health: listening, crisis intervention, suicide-risk support and referral to local services.",
+     "desc_ru": "Бесплатная национальная линия психологической помощи: выслушают, помогут в кризисе и при суицидальном риске, направят к специалистам.",
+     "source": "https://salud.michoacan.gob.mx/llama-a-la-linea-de-la-vida-y-recibe-atencion-gratuita-en-salud-mental-y-adicciones/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "mx-saptel",
+     "name": "SAPTEL",
+     "name_local": null,
+     "url": "https://www.saptel.org.mx/",
+     "kind": "crisis",
+     "phone": "(55) 5259-8121",
+     "hours": "24/7",
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "National telephone service for psychological counselling and crisis intervention, free of charge.",
+     "desc_ru": "Национальная телефонная служба психологического консультирования и кризисной помощи, бесплатно.",
+     "source": "https://www.saptel.org.mx/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "mx-amlcc",
+     "name": "Asociación Mexicana de Lucha Contra el Cáncer (AMLCC)",
+     "name_local": null,
+     "url": "https://amlcc.org/",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": null,
+     "desc_en": "Non-profit that accompanies, informs and supports people with cancer and their families across Mexico.",
+     "desc_ru": "Некоммерческая организация, которая сопровождает, информирует и поддерживает людей с раком и их семьи по всей Мексике.",
+     "source": "https://amlcc.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "mx-complices",
+     "name": "Cómplices AC",
+     "name_local": null,
+     "url": "https://www.complicesac.org/",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": null,
+     "desc_en": "Jalisco non-profit offering psychology, thanatology (grief support), second opinions and palliative care to cancer patients of all incomes.",
+     "desc_ru": "Некоммерческая организация в Халиско: психолог, танатология (помощь в горе), второе мнение и паллиатив для онкобольных с любым доходом.",
+     "source": "https://www.complicesac.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "mx-nci-es",
+     "name": "NCI — Tumores cerebrales (Spanish)",
+     "name_local": "Instituto Nacional del Cáncer de EE. UU.",
+     "url": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "US National Cancer Institute's Spanish-language patient pages on brain tumours, including adult CNS tumour treatment (PDQ).",
+     "desc_ru": "Испаноязычные страницы Национального института рака США об опухолях мозга, включая лечение опухолей ЦНС у взрослых (PDQ).",
+     "source": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "checked": "2026-09"
+    },
+    {
+     "id": "mx-acs-es",
+     "name": "American Cancer Society — Tumores de encéfalo (Spanish)",
+     "name_local": null,
+     "url": "https://www.cancer.org/es/cancer/tipos/tumores-de-encefalo-o-de-medula-espinal/acerca/tipos-de-tumores-de-encefalo.html",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Spanish-language explanation of adult brain tumour types, including glioblastoma, from the American Cancer Society.",
+     "desc_ru": "Объяснение на испанском о типах опухолей мозга у взрослых, включая глиобластому, от Американского онкологического общества.",
+     "source": "https://www.cancer.org/es/cancer/tipos/tumores-de-encefalo-o-de-medula-espinal/acerca/tipos-de-tumores-de-encefalo.html",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "BR",
+   "name_en": "Brazil",
+   "name_ru": "Бразилия",
+   "lat": -15.79,
+   "lng": -47.88,
+   "emergency": [
+    {
+     "label_en": "Ambulance (SAMU)",
+     "label_ru": "Скорая помощь (SAMU)",
+     "number": "192"
+    },
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "190"
+    },
+    {
+     "label_en": "Fire brigade",
+     "label_ru": "Пожарные",
+     "number": "193"
+    }
+   ],
+   "entries": [
+    {
+     "id": "br-cvv",
+     "name": "CVV — Centro de Valorização da Vida",
+     "name_local": null,
+     "url": "https://cvv.org.br/",
+     "kind": "crisis",
+     "phone": "188",
+     "hours": "24/7",
+     "langs": [
+      "pt"
+     ],
+     "free": true,
+     "desc_en": "Free volunteer emotional support and suicide prevention by phone, chat and e-mail anywhere in Brazil.",
+     "desc_ru": "Бесплатная эмоциональная поддержка и профилактика суицида от волонтёров по телефону, в чате и по почте по всей Бразилии.",
+     "source": "https://cvv.org.br/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "br-oncoguia",
+     "name": "Instituto Oncoguia — Fale com o Oncoguia",
+     "name_local": null,
+     "url": "https://www.oncoguia.org.br/",
+     "kind": "info",
+     "phone": "+55 11 94242-8536",
+     "hours": null,
+     "langs": [
+      "pt"
+     ],
+     "free": true,
+     "desc_en": "Patient-advocacy NGO answering questions on cancer care and patients' rights; contact via WhatsApp.",
+     "desc_ru": "НКО по защите интересов пациентов: отвечает на вопросы о лечении рака и правах пациентов; связь через WhatsApp.",
+     "source": "https://www.oncoguia.org.br/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "br-oncoguia-brain",
+     "name": "Vivendo com tumores cerebrais/SNC — Oncoguia",
+     "name_local": null,
+     "url": "https://www.oncoguia.org.br/conteudo/vivendo-com-o-cancer/885/176/",
+     "kind": "tumour",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "pt"
+     ],
+     "free": true,
+     "desc_en": "Portuguese guide to life with a brain/CNS tumour: follow-up, side effects, recurrence and emotional support.",
+     "desc_ru": "Руководство на португальском о жизни с опухолью мозга/ЦНС: наблюдение, побочные эффекты, рецидив, эмоциональная поддержка.",
+     "source": "https://www.oncoguia.org.br/conteudo/vivendo-com-o-cancer/885/176/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "br-inca",
+     "name": "INCA — Câncer do sistema nervoso central",
+     "name_local": null,
+     "url": "https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/sistema-nervoso-central",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "pt"
+     ],
+     "free": true,
+     "desc_en": "Brazil's National Cancer Institute page on central nervous system cancers.",
+     "desc_ru": "Страница Национального онкологического института Бразилии о раке центральной нервной системы.",
+     "source": "https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/sistema-nervoso-central",
+     "checked": "2026-09"
+    },
+    {
+     "id": "br-ancp",
+     "name": "Academia Nacional de Cuidados Paliativos (ANCP)",
+     "name_local": null,
+     "url": "https://paliativo.org.br/",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "pt"
+     ],
+     "free": true,
+     "desc_en": "National palliative-care body; its Atlas and institution lists help families find palliative services in Brazil.",
+     "desc_ru": "Национальная ассоциация паллиативной помощи; её атлас и списки учреждений помогают семьям найти паллиативные службы.",
+     "source": "https://paliativo.org.br/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "AR",
+   "name_en": "Argentina",
+   "name_ru": "Аргентина",
+   "lat": -34.6,
+   "lng": -58.38,
+   "emergency": [
+    {
+     "label_en": "Emergency (police, ambulance)",
+     "label_ru": "Экстренные службы (полиция, скорая)",
+     "number": "911"
+    },
+    {
+     "label_en": "Medical emergencies SAME (Buenos Aires area)",
+     "label_ru": "Скорая SAME (Буэнос-Айрес и окрестности)",
+     "number": "107"
+    },
+    {
+     "label_en": "Fire brigade",
+     "label_ru": "Пожарные",
+     "number": "100"
+    }
+   ],
+   "entries": [
+    {
+     "id": "ar-salud-mental",
+     "name": "Línea Nacional de Orientación y Apoyo en la Urgencia de Salud Mental",
+     "name_local": null,
+     "url": "https://www.argentina.gob.ar/noticias/la-linea-nacional-de-orientacion-y-apoyo-en-la-urgencia-de-salud-mental-funciona-las-24",
+     "kind": "crisis",
+     "phone": "0800-999-0091",
+     "hours": "24/7",
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Free, confidential Ministry of Health line: listening, risk assessment and activation of emergency resources if needed.",
+     "desc_ru": "Бесплатная конфиденциальная линия Минздрава: выслушают, оценят риск и при необходимости вызовут экстренную помощь.",
+     "source": "https://www.argentina.gob.ar/noticias/la-linea-nacional-de-orientacion-y-apoyo-en-la-urgencia-de-salud-mental-funciona-las-24",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ar-135",
+     "name": "Línea de Prevención del Suicidio 135",
+     "name_local": null,
+     "url": "https://www.argentina.gob.ar/tema/emergencias",
+     "kind": "crisis",
+     "phone": "135",
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Suicide-prevention line listed among Argentina's official emergency numbers.",
+     "desc_ru": "Линия профилактики суицида из официального списка экстренных номеров Аргентины.",
+     "source": "https://www.argentina.gob.ar/tema/emergencias",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ar-lalcec",
+     "name": "LALCEC — Acompañamiento a pacientes",
+     "name_local": null,
+     "url": "https://www.lalcec.org.ar/pacientes",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": null,
+     "desc_en": "Psycho-oncology, support groups by illness stage, grief groups for caregivers and social guidance; some services free, some paid.",
+     "desc_ru": "Психоонкология, группы поддержки по этапам болезни, группы горевания для близких, соцконсультации; часть услуг бесплатна, часть платная.",
+     "source": "https://www.lalcec.org.ar/pacientes",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ar-inc",
+     "name": "Instituto Nacional del Cáncer (Argentina)",
+     "name_local": null,
+     "url": "https://www.argentina.gob.ar/salud/instituto-nacional-del-cancer",
+     "kind": "info",
+     "phone": "0800-333-3586",
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "National Cancer Institute: government information on cancer control, prevention and patient services; toll-free contact line.",
+     "desc_ru": "Национальный институт рака: государственная информация о контроле рака, профилактике и услугах для пациентов; бесплатная линия.",
+     "source": "https://www.argentina.gob.ar/salud/instituto-nacional-del-cancer",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ar-nci-es",
+     "name": "NCI — Tumores cerebrales (Spanish)",
+     "name_local": "Instituto Nacional del Cáncer de EE. UU.",
+     "url": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "US National Cancer Institute's Spanish-language patient pages on brain tumours, including adult CNS tumour treatment (PDQ).",
+     "desc_ru": "Испаноязычные страницы Национального института рака США об опухолях мозга, включая лечение опухолей ЦНС у взрослых (PDQ).",
+     "source": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "CL",
+   "name_en": "Chile",
+   "name_ru": "Чили",
+   "lat": -33.45,
+   "lng": -70.67,
+   "emergency": [
+    {
+     "label_en": "Ambulance (SAMU)",
+     "label_ru": "Скорая помощь (SAMU)",
+     "number": "131"
+    },
+    {
+     "label_en": "Fire brigade",
+     "label_ru": "Пожарные",
+     "number": "132"
+    },
+    {
+     "label_en": "Police (Carabineros)",
+     "label_ru": "Полиция (Карабинеры)",
+     "number": "133"
+    }
+   ],
+   "entries": [
+    {
+     "id": "cl-4141",
+     "name": "Línea de Prevención del Suicidio *4141",
+     "name_local": null,
+     "url": "https://www.minsal.cl/linea-de-atencion-4141-no-estas-solo-no-estas-sola/",
+     "kind": "crisis",
+     "phone": "*4141",
+     "hours": "24/7",
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Free Ministry of Health line where a psychologist listens and helps during a mental health crisis.",
+     "desc_ru": "Бесплатная линия Минздрава: психолог выслушает и поможет в кризисной ситуации.",
+     "source": "https://www.minsal.cl/linea-de-atencion-4141-no-estas-solo-no-estas-sola/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "cl-salud-responde",
+     "name": "Salud Responde",
+     "name_local": null,
+     "url": "https://www.ventanillaunicasocial.gob.cl/ficha/311/fono-salud-responde",
+     "kind": "info",
+     "phone": "600 360 7777",
+     "hours": "24/7",
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Ministry of Health line staffed by doctors and nurses: health information, benefits navigation and support in illness.",
+     "desc_ru": "Линия Минздрава с врачами и медсёстрами: медицинская информация, помощь с льготами и поддержка при болезни.",
+     "source": "https://www.ventanillaunicasocial.gob.cl/ficha/311/fono-salud-responde",
+     "checked": "2026-09"
+    },
+    {
+     "id": "cl-paliativos",
+     "name": "Ley de Cuidados Paliativos (Ley 21.375)",
+     "name_local": null,
+     "url": "https://saludresponde.minsal.cl/ley-de-cuidados-paliativos/",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Explains Chile's universal palliative-care law: symptom relief plus psychological, spiritual and family support for serious illness.",
+     "desc_ru": "Разъяснение закона Чили о всеобщей паллиативной помощи: облегчение симптомов, психологическая, духовная и семейная поддержка.",
+     "source": "https://saludresponde.minsal.cl/ley-de-cuidados-paliativos/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "cl-oncoloop",
+     "name": "Fundación Oncoloop — ONCORED",
+     "name_local": null,
+     "url": "https://www.oncoloop.cl/oncoloop",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Non-profit offering cancer education, psychological support and ONCORED, an online community connecting patients with peers and specialists.",
+     "desc_ru": "НКО: обучение, психологическая поддержка и ONCORED — онлайн-сообщество, связывающее пациентов с другими больными и врачами.",
+     "source": "https://www.oncoloop.cl/oncoloop",
+     "checked": "2026-09"
+    },
+    {
+     "id": "cl-nci-es",
+     "name": "NCI — Tumores cerebrales (Spanish)",
+     "name_local": "Instituto Nacional del Cáncer de EE. UU.",
+     "url": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "US National Cancer Institute's Spanish-language patient pages on brain tumours, including adult CNS tumour treatment (PDQ).",
+     "desc_ru": "Испаноязычные страницы Национального института рака США об опухолях мозга, включая лечение опухолей ЦНС у взрослых (PDQ).",
+     "source": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "CO",
+   "name_en": "Colombia",
+   "name_ru": "Колумбия",
+   "lat": 4.71,
+   "lng": -74.07,
+   "emergency": [
+    {
+     "label_en": "Emergency",
+     "label_ru": "Экстренные службы",
+     "number": "123"
+    }
+   ],
+   "entries": [
+    {
+     "id": "co-106",
+     "name": "Línea 106",
+     "name_local": null,
+     "url": "https://www.minsalud.gov.co/salud/publica/salud-mental/Paginas/linea-106.aspx",
+     "kind": "crisis",
+     "phone": "106",
+     "hours": "24/7",
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Free, confidential mental-health line: listening, psychological first aid, crisis intervention and referral.",
+     "desc_ru": "Бесплатная конфиденциальная линия: выслушают, окажут первую психологическую помощь, помогут в кризисе и направят к специалистам.",
+     "source": "https://www.minsalud.gov.co/salud/publica/salud-mental/Paginas/linea-106.aspx",
+     "checked": "2026-09"
+    },
+    {
+     "id": "co-192",
+     "name": "Línea 192 opción 4 — Teleorientación en salud mental",
+     "name_local": null,
+     "url": "https://www.minsalud.gov.co/Paginas/Mas-de-18-mil-atenciones-en-salud-mental-en-opcion-4-de-Linea-192.aspx",
+     "kind": "mental",
+     "phone": "192 (opción 4)",
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": null,
+     "desc_en": "Ministry of Health tele-guidance: psychological first aid, counselling and referral by mental-health professionals nationwide.",
+     "desc_ru": "Телеконсультации Минздрава: первая психологическая помощь, консультирование и направление к специалистам по всей стране.",
+     "source": "https://www.minsalud.gov.co/Paginas/Mas-de-18-mil-atenciones-en-salud-mental-en-opcion-4-de-Linea-192.aspx",
+     "checked": "2026-09"
+    },
+    {
+     "id": "co-liga",
+     "name": "Liga Colombiana Contra el Cáncer — Apoyo psicosocial",
+     "name_local": null,
+     "url": "https://www.ligacancercolombia.org/programa-de-apoyo-psicosocial/",
+     "kind": "mental",
+     "phone": "3242536269",
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Free psychosocial programmes for patients, survivors and caregivers, including 'Cuidando a Cuidadores' groups; number is WhatsApp.",
+     "desc_ru": "Бесплатные психосоциальные программы для пациентов, выживших и ухаживающих, включая группы «Забота о заботящихся»; номер — WhatsApp.",
+     "source": "https://www.ligacancercolombia.org/programa-de-apoyo-psicosocial/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "co-neuronas",
+     "name": "Fundación Neuronas con Corazón",
+     "name_local": null,
+     "url": "https://www.fundacionneuronas.org/",
+     "kind": "tumour",
+     "phone": "+57 317 646 3863",
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "Bogotá foundation for children with brain tumours; covers diagnostic sample and shipping costs so families pay nothing.",
+     "desc_ru": "Фонд в Боготе для детей с опухолями мозга: оплачивает диагностические образцы и их пересылку, семьи ничего не платят.",
+     "source": "https://www.fundacionneuronas.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "co-nci-es",
+     "name": "NCI — Tumores cerebrales (Spanish)",
+     "name_local": "Instituto Nacional del Cáncer de EE. UU.",
+     "url": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "es"
+     ],
+     "free": true,
+     "desc_en": "US National Cancer Institute's Spanish-language patient pages on brain tumours, including adult CNS tumour treatment (PDQ).",
+     "desc_ru": "Испаноязычные страницы Национального института рака США об опухолях мозга, включая лечение опухолей ЦНС у взрослых (PDQ).",
+     "source": "https://www.cancer.gov/espanol/tipos/cerebro",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "AU",
+   "name_en": "Australia",
+   "name_ru": "Австралия",
+   "lat": -35.28,
+   "lng": 149.13,
+   "emergency": [
+    {
+     "label_en": "Emergency (Triple Zero)",
+     "label_ru": "Экстренные службы (Triple Zero)",
+     "number": "000"
+    },
+    {
+     "label_en": "Emergency from mobile (alternative)",
+     "label_ru": "Экстренный номер с мобильного (альтернативный)",
+     "number": "112"
+    },
+    {
+     "label_en": "Text emergency (TTY)",
+     "label_ru": "Текстовый экстренный вызов (TTY)",
+     "number": "106"
+    }
+   ],
+   "entries": [
+    {
+     "id": "au-lifeline",
+     "name": "Lifeline Australia",
+     "name_local": null,
+     "url": "https://www.lifeline.org.au/",
+     "kind": "crisis",
+     "phone": "13 11 14",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "24-hour crisis support and suicide prevention by phone, text (0477 13 11 14) or online chat.",
+     "desc_ru": "Круглосуточная кризисная поддержка и профилактика суицида по телефону, SMS (0477 13 11 14) или в онлайн-чате.",
+     "source": "https://www.lifeline.org.au/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "au-beyondblue",
+     "name": "Beyond Blue Support Service",
+     "name_local": null,
+     "url": "https://www.beyondblue.org.au/",
+     "kind": "mental",
+     "phone": "1300 22 4636",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free, confidential brief counselling by phone or chat for anxiety, depression and stress.",
+     "desc_ru": "Бесплатное конфиденциальное краткое консультирование по телефону или в чате при тревоге, депрессии и стрессе.",
+     "source": "https://www.beyondblue.org.au/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "au-cc-131120",
+     "name": "Cancer Council 13 11 20",
+     "name_local": null,
+     "url": "https://www.cancer.org.au/support-and-services",
+     "kind": "mental",
+     "phone": "13 11 20",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free, confidential cancer information and emotional or practical support run by Cancer Councils in every state and territory.",
+     "desc_ru": "Бесплатная конфиденциальная информация о раке, эмоциональная и практическая поддержка от Cancer Council во всех штатах.",
+     "source": "https://www.cancer.org.au/support-and-services",
+     "checked": "2026-09"
+    },
+    {
+     "id": "au-cc-brain",
+     "name": "Brain cancer — Cancer Council Australia",
+     "name_local": null,
+     "url": "https://www.cancer.org.au/cancer-information/types-of-cancer/brain-cancer",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Overview of brain cancer types including glioblastoma, symptoms, diagnosis and treatment such as radiotherapy with temozolomide.",
+     "desc_ru": "Обзор видов рака мозга, включая глиобластому: симптомы, диагностика, лечение, в т.ч. лучевая терапия с темозоломидом.",
+     "source": "https://www.cancer.org.au/cancer-information/types-of-cancer/brain-cancer",
+     "checked": "2026-09"
+    },
+    {
+     "id": "au-btaa",
+     "name": "Brain Tumour Alliance Australia (BTAA)",
+     "name_local": null,
+     "url": "https://btaa.org.au/",
+     "kind": "tumour",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Patient-led alliance: forums, support-group directory and care-coordination info. Its helpline is currently paused; contact enquiries@btaa.org.au.",
+     "desc_ru": "Альянс пациентов: форумы, каталог групп поддержки, координация помощи. Горячая линия сейчас приостановлена; пишите на enquiries@btaa.org.au.",
+     "source": "https://btaa.org.au/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "au-cbcf",
+     "name": "Cure Brain Cancer Foundation — Support Hub",
+     "name_local": null,
+     "url": "https://www.curebraincancer.org.au/",
+     "kind": "tumour",
+     "phone": "02 8973 1400",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Information hub for people with brain cancer, carers and parents, plus a support-services directory and end-of-life resources.",
+     "desc_ru": "Информационный центр для больных раком мозга, ухаживающих и родителей; каталог служб поддержки и материалы о конце жизни.",
+     "source": "https://www.curebraincancer.org.au/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "au-mhf",
+     "name": "Mark Hughes Foundation",
+     "name_local": null,
+     "url": "https://markhughesfoundation.com.au/",
+     "kind": "tumour",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Brain cancer charity funding Brain Cancer Care Nurses, patient packs and a survivorship diary.",
+     "desc_ru": "Благотворительный фонд по раку мозга: оплачивает работу медсестёр-координаторов, наборы для пациентов и дневник выживших.",
+     "source": "https://markhughesfoundation.com.au/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "au-carer-gateway",
+     "name": "Carer Gateway",
+     "name_local": null,
+     "url": "https://www.carergateway.gov.au/",
+     "kind": "caregiver",
+     "phone": "1800 422 737",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free Australian Government service for unpaid carers: counselling, peer support, coaching and respite.",
+     "desc_ru": "Бесплатная государственная служба для неоплачиваемых ухаживающих: консультирование, взаимоподдержка, коучинг и передышка.",
+     "source": "https://www.carergateway.gov.au/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "NZ",
+   "name_en": "New Zealand",
+   "name_ru": "Новая Зеландия",
+   "lat": -41.29,
+   "lng": 174.78,
+   "emergency": [
+    {
+     "label_en": "Emergency",
+     "label_ru": "Экстренные службы",
+     "number": "111"
+    }
+   ],
+   "entries": [
+    {
+     "id": "nz-1737",
+     "name": "1737 Need to talk?",
+     "name_local": null,
+     "url": "https://1737.org.nz/",
+     "kind": "crisis",
+     "phone": "1737",
+     "hours": "24/7",
+     "langs": [
+      "en",
+      "mi"
+     ],
+     "free": true,
+     "desc_en": "Free call or text any time to talk with a trained counsellor.",
+     "desc_ru": "Бесплатно позвоните или напишите SMS в любое время, чтобы поговорить с обученным консультантом.",
+     "source": "https://info.health.nz/mental-health/where-to-get-help/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "nz-lifeline",
+     "name": "Lifeline Aotearoa",
+     "name_local": null,
+     "url": "https://www.lifeline.org.nz/services/lifeline-helpline",
+     "kind": "crisis",
+     "phone": "0800 543 354",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free confidential support from counsellors and trained volunteers; also text HELP (4357).",
+     "desc_ru": "Бесплатная конфиденциальная поддержка консультантов и волонтёров; также SMS HELP (4357).",
+     "source": "https://www.lifeline.org.nz/services/lifeline-helpline",
+     "checked": "2026-09"
+    },
+    {
+     "id": "nz-suicide-crisis",
+     "name": "Suicide Crisis Helpline",
+     "name_local": null,
+     "url": "https://www.lifeline.org.nz/",
+     "kind": "crisis",
+     "phone": "0508 828 865",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free line (0508 TAUTOKO) for anyone thinking about suicide or who has attempted it.",
+     "desc_ru": "Бесплатная линия (0508 TAUTOKO) для тех, кто думает о суициде или пытался его совершить.",
+     "source": "https://www.lifeline.org.nz/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "nz-cancer-society",
+     "name": "Cancer Society NZ — Cancer Information Helpline",
+     "name_local": null,
+     "url": "https://www.cancer.org.nz/",
+     "kind": "mental",
+     "phone": "0800 226 237",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Information and support on how a cancer diagnosis affects every part of life, for patients and whānau.",
+     "desc_ru": "Информация и поддержка о том, как диагноз рак влияет на все стороны жизни, для пациентов и их семей.",
+     "source": "https://www.cancer.org.nz/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "nz-bts",
+     "name": "Brain Tumour Support NZ",
+     "name_local": null,
+     "url": "https://www.braintumoursupport.org.nz/",
+     "kind": "tumour",
+     "phone": "027 292 3337",
+     "hours": "Mon–Fri 9:00–16:00",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Nationwide charity: free Brain Box packs, support-friend matching, online groups, webinars and a children's programme (BTSKidz).",
+     "desc_ru": "Национальная благотворительная организация: бесплатные наборы Brain Box, поддержка «друга», онлайн-группы, вебинары, детская программа.",
+     "source": "https://www.braintumoursupport.org.nz/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "nz-white-matter",
+     "name": "White Matter Brain Cancer Trust",
+     "name_local": null,
+     "url": "https://www.whitematterbraincancertrust.nz/",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Charity giving financial and practical help — transport, accommodation, family experiences — to New Zealanders affected by brain cancer.",
+     "desc_ru": "Фонд, оказывающий финансовую и практическую помощь — транспорт, жильё, семейный отдых — людям с раком мозга в Новой Зеландии.",
+     "source": "https://www.whitematterbraincancertrust.nz/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "nz-carers",
+     "name": "Carers NZ",
+     "name_local": null,
+     "url": "https://carers.net.nz/",
+     "kind": "caregiver",
+     "phone": "0800 777 797",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "National carer helpline plus guides, respite information and wellbeing resources for family carers.",
+     "desc_ru": "Национальная линия для ухаживающих, справочники, информация о передышке и ресурсы для благополучия близких.",
+     "source": "https://carers.net.nz/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "JP",
+   "name_en": "Japan",
+   "name_ru": "Япония",
+   "lat": 35.68,
+   "lng": 139.69,
+   "emergency": [
+    {
+     "label_en": "Ambulance / fire",
+     "label_ru": "Скорая помощь / пожарные",
+     "number": "119"
+    },
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "110"
+    }
+   ],
+   "entries": [
+    {
+     "id": "jp-inochi",
+     "name": "Inochi no Denwa (toll-free line)",
+     "name_local": "いのちの電話",
+     "url": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/",
+     "kind": "crisis",
+     "phone": "0120-783-556",
+     "hours": "Daily 16:00–21:00; 10th of each month 8:00 to 8:00 next day",
+     "langs": [
+      "ja"
+     ],
+     "free": true,
+     "desc_en": "Nationwide toll-free line of the Inochi no Denwa federation for people in emotional distress or with suicidal thoughts.",
+     "desc_ru": "Бесплатная общенациональная линия федерации «Иноти но дэнва» для людей в душевном кризисе или с суицидальными мыслями.",
+     "source": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "jp-yorisoi",
+     "name": "Yorisoi Hotline",
+     "name_local": "よりそいホットライン",
+     "url": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/",
+     "kind": "crisis",
+     "phone": "0120-279-338",
+     "hours": "24/7",
+     "langs": [
+      "ja"
+     ],
+     "free": true,
+     "desc_en": "Free 24-hour listening line for any kind of worry, listed by the Ministry of Health, Labour and Welfare.",
+     "desc_ru": "Бесплатная круглосуточная линия для любых тревог, в списке Министерства здравоохранения Японии.",
+     "source": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "jp-kokoro",
+     "name": "Mental health consultation unified dial",
+     "name_local": "こころの健康相談統一ダイヤル",
+     "url": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/",
+     "kind": "mental",
+     "phone": "0570-064-556",
+     "hours": "Varies by prefecture",
+     "langs": [
+      "ja"
+     ],
+     "free": null,
+     "desc_en": "Connects to the public mental-health consultation service of your prefecture; call charges apply.",
+     "desc_ru": "Соединяет с государственной службой психологических консультаций вашей префектуры; звонок платный по тарифу.",
+     "source": "https://www.mhlw.go.jp/mamorouyokokoro/soudan/tel/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "jp-gan-soudan",
+     "name": "Cancer Consultation Support Centres",
+     "name_local": "がん相談支援センター",
+     "url": "https://ganjoho.jp/public/institution/consultation/cisc/cisc.html",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ja"
+     ],
+     "free": true,
+     "desc_en": "Free, anonymous consultations by nurses and social workers at designated cancer hospitals — treatment, money, work, family and feelings.",
+     "desc_ru": "Бесплатные анонимные консультации медсестёр и соцработников при онкоцентрах: лечение, деньги, работа, семья, переживания.",
+     "source": "https://ganjoho.jp/public/institution/consultation/cisc/cisc.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "jp-ganjoho-support",
+     "name": "Cancer Information Service Support Centre",
+     "name_local": "がん情報サービスサポートセンター",
+     "url": "https://ganjoho.jp/public/institution/consultation/support_center/guide.html",
+     "kind": "info",
+     "phone": "0570-02-3410",
+     "hours": "Weekdays 10:00–15:00",
+     "langs": [
+      "ja"
+     ],
+     "free": true,
+     "desc_en": "National Cancer Center phone and chat help for finding cancer information; consultation free, call charges apply.",
+     "desc_ru": "Телефонная и чат-помощь Национального онкоцентра в поиске информации о раке; консультация бесплатна, звонок по тарифу.",
+     "source": "https://ganjoho.jp/public/institution/consultation/support_center/guide.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "jp-ganjoho-brain",
+     "name": "Brain tumours (adult) — ganjoho.jp",
+     "name_local": "脳腫瘍〈成人〉",
+     "url": "https://ganjoho.jp/public/cancer/brain_adult/index.html",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ja"
+     ],
+     "free": true,
+     "desc_en": "National Cancer Center Japan patient information on adult brain tumours, with linked pages on glioma.",
+     "desc_ru": "Информация Национального онкоцентра Японии об опухолях мозга у взрослых со ссылками на страницы о глиомах.",
+     "source": "https://ganjoho.jp/public/cancer/brain_adult/index.html",
+     "checked": "2026-09"
+    },
+    {
+     "id": "jp-jbta",
+     "name": "Japan Brain Tumor Alliance (JBTA)",
+     "name_local": "NPO法人脳腫瘍ネットワーク",
+     "url": "https://www.jbta.org/",
+     "kind": "tumour",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ja"
+     ],
+     "free": true,
+     "desc_en": "NPO supporting brain tumour patients and families nationwide: exchange meetings, treatment and hospital info, family-house search.",
+     "desc_ru": "НКО поддержки пациентов с опухолями мозга и их семей: встречи, информация о лечении и клиниках, поиск жилья для семей.",
+     "source": "https://www.jbta.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "jp-pbtn",
+     "name": "Pediatric Brain Tumor Network Japan",
+     "name_local": "小児脳腫瘍の会",
+     "url": "https://www.pbtn.jp",
+     "kind": "tumour",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ja"
+     ],
+     "free": true,
+     "desc_en": "Patient group for children with brain tumours and their families: lectures, family events and information resources.",
+     "desc_ru": "Объединение детей с опухолями мозга и их семей: лекции, семейные мероприятия, информационные материалы.",
+     "source": "https://www.pbtn.jp",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "KR",
+   "name_en": "South Korea",
+   "name_ru": "Южная Корея",
+   "lat": 37.57,
+   "lng": 126.98,
+   "emergency": [
+    {
+     "label_en": "Fire / ambulance",
+     "label_ru": "Пожарные / скорая помощь",
+     "number": "119"
+    },
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "112"
+    }
+   ],
+   "entries": [
+    {
+     "id": "kr-109",
+     "name": "Suicide prevention counselling line 109",
+     "name_local": "자살예방상담전화 109",
+     "url": "https://www.129.go.kr/109",
+     "kind": "crisis",
+     "phone": "109",
+     "hours": "24/7",
+     "langs": [
+      "ko"
+     ],
+     "free": true,
+     "desc_en": "Unified national 24-hour suicide-prevention line (since 2024), free and confidential.",
+     "desc_ru": "Единая национальная круглосуточная линия профилактики суицида (с 2024 г.), бесплатно и конфиденциально.",
+     "source": "https://www.129.go.kr/109",
+     "checked": "2026-09"
+    },
+    {
+     "id": "kr-129",
+     "name": "Health & Welfare Call Centre 129",
+     "name_local": "보건복지상담센터 129",
+     "url": "https://www.129.go.kr/",
+     "kind": "mental",
+     "phone": "129",
+     "hours": "Weekdays 9:00–18:00; crisis and mental-health counselling 24/7",
+     "langs": [
+      "ko"
+     ],
+     "free": true,
+     "desc_en": "Government counselling on health, welfare and emergency assistance, including mental-health crisis support; sign-language video available.",
+     "desc_ru": "Государственные консультации по здоровью, соцпомощи и экстренной поддержке, включая психологический кризис; есть видеосвязь на жестовом языке.",
+     "source": "https://www.129.go.kr/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "kr-mhwc",
+     "name": "Community Mental Health Welfare Centres",
+     "name_local": "기초정신건강복지센터",
+     "url": "https://www.mohw.go.kr/menu.es?mid=a10706040300",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ko"
+     ],
+     "free": true,
+     "desc_en": "Ministry of Health and Welfare directory of local public mental-health centres with addresses and phone numbers.",
+     "desc_ru": "Каталог Министерства здравоохранения с адресами и телефонами местных государственных центров психического здоровья.",
+     "source": "https://www.mohw.go.kr/menu.es?mid=a10706040300",
+     "checked": "2026-09"
+    },
+    {
+     "id": "kr-ncic",
+     "name": "National Cancer Information Center",
+     "name_local": "국가암정보센터",
+     "url": "https://www.cancer.go.kr/",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ko"
+     ],
+     "free": true,
+     "desc_en": "Government cancer information portal run by the National Cancer Center, with expert answers to patient questions.",
+     "desc_ru": "Государственный портал об онкологии Национального онкоцентра с ответами экспертов на вопросы пациентов.",
+     "source": "https://www.cancer.go.kr/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "CN",
+   "name_en": "China",
+   "name_ru": "Китай",
+   "lat": 39.9,
+   "lng": 116.41,
+   "emergency": [
+    {
+     "label_en": "Ambulance",
+     "label_ru": "Скорая помощь",
+     "number": "120"
+    },
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "110"
+    },
+    {
+     "label_en": "Fire",
+     "label_ru": "Пожарные",
+     "number": "119"
+    }
+   ],
+   "entries": [
+    {
+     "id": "cn-bpcric",
+     "name": "Beijing Psychological Crisis Research and Intervention Center hotline",
+     "name_local": "北京心理危机研究与干预中心",
+     "url": "https://www.crisis.org.cn/",
+     "kind": "crisis",
+     "phone": "010-82951332",
+     "hours": null,
+     "langs": [
+      "zh"
+     ],
+     "free": true,
+     "desc_en": "Psychological assistance hotline; from landlines dial 800-810-1117, from mobiles 010-82951332.",
+     "desc_ru": "Линия психологической помощи: со стационарного телефона — 800-810-1117, с мобильного — 010-82951332.",
+     "source": "https://www.crisis.org.cn/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "cn-lifeline",
+     "name": "Lifeline China",
+     "name_local": null,
+     "url": "https://www.lifelinechina.org/",
+     "kind": "crisis",
+     "phone": "400 821 1215",
+     "hours": "10:00–22:00 daily",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Free, confidential volunteer emotional-support line for the English-speaking community across China; also WeChat.",
+     "desc_ru": "Бесплатная конфиденциальная волонтёрская линия эмоциональной поддержки на английском для жителей Китая; также WeChat.",
+     "source": "https://www.lifelinechina.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "cn-findahelpline",
+     "name": "Find A Helpline — China",
+     "name_local": null,
+     "url": "https://findahelpline.com/countries/cn",
+     "kind": "crisis",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "zh",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Vetted directory of free Chinese helplines, including the national psychological assistance line and NGO hotlines.",
+     "desc_ru": "Проверенный каталог бесплатных линий помощи в Китае, включая национальную психологическую линию и линии НКО.",
+     "source": "https://findahelpline.com/countries/cn",
+     "checked": "2026-09"
+    },
+    {
+     "id": "cn-cicams",
+     "name": "Cancer Hospital, Chinese Academy of Medical Sciences (National Cancer Center)",
+     "name_local": "中国医学科学院肿瘤医院",
+     "url": "https://www.cicams.ac.cn/",
+     "kind": "info",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "zh"
+     ],
+     "free": true,
+     "desc_en": "China's national cancer centre; public site with patient services and cancer information.",
+     "desc_ru": "Национальный онкологический центр Китая; сайт с информацией для пациентов и об онкологии.",
+     "source": "https://www.cicams.ac.cn/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "IN",
+   "name_en": "India",
+   "name_ru": "Индия",
+   "lat": 28.61,
+   "lng": 77.21,
+   "emergency": [
+    {
+     "label_en": "Emergency (police, fire, medical)",
+     "label_ru": "Экстренные службы (полиция, пожарные, медпомощь)",
+     "number": "112"
+    }
+   ],
+   "entries": [
+    {
+     "id": "in-telemanas",
+     "name": "Tele-MANAS (national tele-mental-health)",
+     "name_local": null,
+     "url": "https://telemanas.mohfw.gov.in/",
+     "kind": "crisis",
+     "phone": null,
+     "hours": "24/7",
+     "langs": [
+      "en",
+      "hi"
+     ],
+     "free": true,
+     "desc_en": "Government of India free tele-mental-health service. Number not verified from the official site at time of checking.",
+     "desc_ru": "Бесплатная государственная телефонная служба психического здоровья Индии. Номер не удалось проверить на официальном сайте.",
+     "source": "https://findahelpline.com/countries/in",
+     "checked": "2026-09"
+    },
+    {
+     "id": "in-vandrevala",
+     "name": "Vandrevala Foundation Mental Health Helpline",
+     "name_local": null,
+     "url": "https://www.vandrevalafoundation.com/free-counseling",
+     "kind": "crisis",
+     "phone": "+91 9999 666 555",
+     "hours": "24/7",
+     "langs": [
+      "en",
+      "hi"
+     ],
+     "free": true,
+     "desc_en": "Free all-India mental-health and crisis counselling by phone or WhatsApp, round the clock.",
+     "desc_ru": "Бесплатная психологическая и кризисная помощь по всей Индии по телефону или WhatsApp, круглосуточно.",
+     "source": "https://www.vandrevalafoundation.com/free-counseling",
+     "checked": "2026-09"
+    },
+    {
+     "id": "in-icall",
+     "name": "iCALL (TISS)",
+     "name_local": null,
+     "url": "https://icallhelpline.org/",
+     "kind": "mental",
+     "phone": "9152987821",
+     "hours": "Mon–Sat 8:00–21:00",
+     "langs": [
+      "en",
+      "hi"
+     ],
+     "free": true,
+     "desc_en": "Free telephone and online counselling by trained professionals at the Tata Institute of Social Sciences.",
+     "desc_ru": "Бесплатное консультирование по телефону и онлайн от специалистов Института социальных наук Тата.",
+     "source": "https://icallhelpline.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "in-ics",
+     "name": "Indian Cancer Society helpline",
+     "name_local": null,
+     "url": "https://www.indiancancersociety.org/",
+     "kind": "info",
+     "phone": "1800-22-1951",
+     "hours": null,
+     "langs": [
+      "en",
+      "hi"
+     ],
+     "free": true,
+     "desc_en": "Toll-free cancer helpline; the society also offers financial aid for underprivileged patients and survivor support groups.",
+     "desc_ru": "Бесплатная онколиния; общество также помогает деньгами малоимущим пациентам и ведёт группы поддержки выживших.",
+     "source": "https://www.indiancancersociety.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "in-cansupport",
+     "name": "CanSupport — Saath Saath helpline",
+     "name_local": null,
+     "url": "https://www.cansupport.org/",
+     "kind": "caregiver",
+     "phone": "1800 202 7777",
+     "hours": "Mon–Sat 10:00–18:00",
+     "langs": [
+      "en",
+      "hi"
+     ],
+     "free": true,
+     "desc_en": "Free home-based palliative care, counselling and caregiver support in several North Indian states; national toll-free helpline.",
+     "desc_ru": "Бесплатная паллиативная помощь на дому, консультации и поддержка ухаживающих в ряде штатов Северной Индии; бесплатная линия.",
+     "source": "https://www.cansupport.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "in-pallium",
+     "name": "Pallium India",
+     "name_local": null,
+     "url": "https://palliumindia.org/",
+     "kind": "caregiver",
+     "phone": "+91 964 588 4889",
+     "hours": null,
+     "langs": [
+      "en",
+      "ml"
+     ],
+     "free": true,
+     "desc_en": "Palliative-care helpline for phone consultations and a directory of palliative care centres across India.",
+     "desc_ru": "Линия паллиативной помощи с телефонными консультациями и каталог паллиативных центров по всей Индии.",
+     "source": "https://palliumindia.org/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "SG",
+   "name_en": "Singapore",
+   "name_ru": "Сингапур",
+   "lat": 1.35,
+   "lng": 103.82,
+   "emergency": [
+    {
+     "label_en": "Ambulance / fire",
+     "label_ru": "Скорая помощь / пожарные",
+     "number": "995"
+    },
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "999"
+    }
+   ],
+   "entries": [
+    {
+     "id": "sg-sos",
+     "name": "Samaritans of Singapore (SOS)",
+     "name_local": null,
+     "url": "https://www.sos.org.sg/",
+     "kind": "crisis",
+     "phone": "1767",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "24-hour suicide-prevention hotline; CareText via WhatsApp at 9151 1767.",
+     "desc_ru": "Круглосуточная линия профилактики суицида; текстовая поддержка CareText через WhatsApp: 9151 1767.",
+     "source": "https://www.sos.org.sg/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "sg-samh",
+     "name": "Singapore Association for Mental Health (SAMH)",
+     "name_local": null,
+     "url": "https://www.samhealth.org.sg/",
+     "kind": "mental",
+     "phone": "1800-283-7019",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Toll-free helpline and counselling for mental-health concerns.",
+     "desc_ru": "Бесплатная линия и консультации по вопросам психического здоровья.",
+     "source": "https://www.samhealth.org.sg/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "sg-scs",
+     "name": "Singapore Cancer Society — Cancer Helpline",
+     "name_local": null,
+     "url": "https://www.singaporecancersociety.org.sg/",
+     "kind": "mental",
+     "phone": "1800-727-3333",
+     "hours": "Mon–Fri 9:00–17:30",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Cancer helpline, psychosocial counselling and Cancer Care Navigators for patients and families.",
+     "desc_ru": "Онколиния, психосоциальное консультирование и навигаторы помощи для пациентов и семей.",
+     "source": "https://www.singaporecancersociety.org.sg/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "sg-aic",
+     "name": "Agency for Integrated Care (AIC)",
+     "name_local": null,
+     "url": "https://www.aic.sg/",
+     "kind": "caregiver",
+     "phone": "1800-650-6060",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Government agency for caregivers: caregiving guides, end-of-life preparation, grants and training support.",
+     "desc_ru": "Государственное агентство для ухаживающих: руководства, подготовка к концу жизни, гранты и обучение.",
+     "source": "https://www.aic.sg/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "sg-shc",
+     "name": "Singapore Hospice Council",
+     "name_local": null,
+     "url": "https://www.singaporehospice.org.sg/",
+     "kind": "caregiver",
+     "phone": "+65 6277 8222",
+     "hours": "Mon–Fri 9:00–21:00; Sat, Sun, PH 9:00–18:00",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Umbrella body of 28 hospice and palliative providers; helpline and directory of home, inpatient and day hospice care.",
+     "desc_ru": "Объединение 28 хосписов и паллиативных служб; линия помощи и каталог домашнего, стационарного и дневного хосписа.",
+     "source": "https://www.singaporehospice.org.sg/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "ZA",
+   "name_en": "South Africa",
+   "name_ru": "ЮАР",
+   "lat": -25.75,
+   "lng": 28.19,
+   "emergency": [
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "10111"
+    },
+    {
+     "label_en": "Ambulance",
+     "label_ru": "Скорая помощь",
+     "number": "10177"
+    },
+    {
+     "label_en": "Emergency from mobile",
+     "label_ru": "Экстренный номер с мобильного",
+     "number": "112"
+    }
+   ],
+   "entries": [
+    {
+     "id": "za-sadag",
+     "name": "SADAG Suicide Crisis Helpline",
+     "name_local": null,
+     "url": "https://www.sadag.org/",
+     "kind": "crisis",
+     "phone": "0800 567 567",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Toll-free 24-hour suicide crisis line from the South African Depression and Anxiety Group; WhatsApp lines daytime.",
+     "desc_ru": "Бесплатная круглосуточная кризисная линия группы SADAG; днём также работают линии в WhatsApp.",
+     "source": "https://www.sadag.org/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "za-lifeline",
+     "name": "LifeLine South Africa — National Counselling Line",
+     "name_local": null,
+     "url": "https://lifelinesa.co.za/",
+     "kind": "crisis",
+     "phone": "0861-322-322",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": null,
+     "desc_en": "Counselling line for trauma, suicidal thoughts and life difficulties; WhatsApp chat also available.",
+     "desc_ru": "Линия консультирования при травме, суицидальных мыслях и жизненных трудностях; есть чат в WhatsApp.",
+     "source": "https://lifelinesa.co.za/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "za-cansa",
+     "name": "CANSA — Cancer Association of South Africa",
+     "name_local": null,
+     "url": "https://cansa.org.za/",
+     "kind": "mental",
+     "phone": "0800 22 6622",
+     "hours": null,
+     "langs": [
+      "en",
+      "af",
+      "zu",
+      "xh",
+      "st",
+      "tn"
+     ],
+     "free": true,
+     "desc_en": "Toll-free line, tele-counselling, virtual support groups and care homes; WhatsApp text support in several South African languages.",
+     "desc_ru": "Бесплатная линия, дистанционные консультации, онлайн-группы и дома ухода; поддержка в WhatsApp на нескольких языках ЮАР.",
+     "source": "https://cansa.org.za/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "za-apcc",
+     "name": "Association of Palliative Care Centres (APCC)",
+     "name_local": null,
+     "url": "https://apcc.org.za/",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Network of accredited hospices, mostly home-based; map directory to find a palliative care centre near you.",
+     "desc_ru": "Сеть аккредитованных хосписов, в основном с помощью на дому; карта для поиска ближайшего паллиативного центра.",
+     "source": "https://apcc.org.za/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "AE",
+   "name_en": "United Arab Emirates",
+   "name_ru": "ОАЭ",
+   "lat": 24.45,
+   "lng": 54.38,
+   "emergency": [
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "999"
+    },
+    {
+     "label_en": "Ambulance",
+     "label_ru": "Скорая помощь",
+     "number": "998"
+    },
+    {
+     "label_en": "Fire (Civil Defence)",
+     "label_ru": "Пожарные (гражданская оборона)",
+     "number": "997"
+    }
+   ],
+   "entries": [
+    {
+     "id": "ae-focp",
+     "name": "Friends of Cancer Patients",
+     "name_local": "جمعية أصدقاء مرضى السرطان",
+     "url": "https://www.focp.ae/",
+     "kind": "mental",
+     "phone": "+971 6 506 5542",
+     "hours": null,
+     "langs": [
+      "ar",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Sharjah-based charity offering moral support, financial help with treatment and awareness programmes for cancer patients in the UAE.",
+     "desc_ru": "Благотворительная организация из Шарджи: моральная поддержка, финансовая помощь в лечении и просвещение для онкобольных в ОАЭ.",
+     "source": "https://www.focp.ae/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ae-mental",
+     "name": "UAE Government — Mental health services",
+     "name_local": null,
+     "url": "https://u.ae/en/information-and-services/health-and-fitness/mental-health",
+     "kind": "mental",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ar",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Official portal page pointing to public mental-health services, including Al Amal Psychiatric Hospital and Abu Dhabi Public Health Centre.",
+     "desc_ru": "Официальный портал с перечнем государственных служб психического здоровья, включая больницу «Аль-Амаль» и центр здоровья Абу-Даби.",
+     "source": "https://u.ae/en/information-and-services/health-and-fitness/mental-health",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ae-aljalila",
+     "name": "Al Jalila Foundation — A'awen patient support",
+     "name_local": null,
+     "url": "https://www.aljalilafoundation.ae/",
+     "kind": "caregiver",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ar",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Dubai charity whose A'awen programme helps patients who cannot afford treatment.",
+     "desc_ru": "Благотворительный фонд Дубая: программа A'awen помогает пациентам, которые не могут оплатить лечение.",
+     "source": "https://www.aljalilafoundation.ae/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ae-findahelpline",
+     "name": "Find A Helpline — UAE",
+     "name_local": null,
+     "url": "https://findahelpline.com/countries/ae",
+     "kind": "crisis",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ar",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Vetted directory of free, confidential helplines available in the UAE.",
+     "desc_ru": "Проверенный каталог бесплатных конфиденциальных линий помощи в ОАЭ.",
+     "source": "https://findahelpline.com/countries/ae",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "EG",
+   "name_en": "Egypt",
+   "name_ru": "Египет",
+   "lat": 30.04,
+   "lng": 31.24,
+   "emergency": [
+    {
+     "label_en": "Ambulance",
+     "label_ru": "Скорая помощь",
+     "number": "123"
+    },
+    {
+     "label_en": "Police",
+     "label_ru": "Полиция",
+     "number": "122"
+    },
+    {
+     "label_en": "Fire",
+     "label_ru": "Пожарные",
+     "number": "180"
+    }
+   ],
+   "entries": [
+    {
+     "id": "eg-57357",
+     "name": "Children's Cancer Hospital Egypt 57357",
+     "name_local": "مستشفى سرطان الأطفال 57357",
+     "url": "https://www.57357.org/en/",
+     "kind": "tumour",
+     "phone": "19057",
+     "hours": null,
+     "langs": [
+      "ar",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Large free paediatric cancer hospital in Cairo that treats children with brain tumours; international line +20-2-2535-1500.",
+     "desc_ru": "Крупная бесплатная детская онкобольница в Каире, лечит детей с опухолями мозга; международный номер +20-2-2535-1500.",
+     "source": "https://www.57357.org/en/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "eg-nci",
+     "name": "National Cancer Institute, Cairo University",
+     "name_local": "المعهد القومي للأورام",
+     "url": "https://www.nci.cu.edu.eg/",
+     "kind": "info",
+     "phone": "19514",
+     "hours": null,
+     "langs": [
+      "ar"
+     ],
+     "free": true,
+     "desc_en": "Government cancer institute providing free treatment for all ages, with 40+ specialty clinics.",
+     "desc_ru": "Государственный онкологический институт: бесплатное лечение для всех возрастов, более 40 специализированных клиник.",
+     "source": "https://www.nci.cu.edu.eg/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "eg-befrienders",
+     "name": "Befrienders Worldwide — find a helpline",
+     "name_local": null,
+     "url": "https://befrienders.org/find-support-now/",
+     "kind": "crisis",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ar",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Search tool for confidential emotional-support helplines by country.",
+     "desc_ru": "Поиск конфиденциальных линий эмоциональной поддержки по странам.",
+     "source": "https://befrienders.org/find-support-now/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "eg-findahelpline",
+     "name": "Find A Helpline",
+     "name_local": null,
+     "url": "https://findahelpline.com/",
+     "kind": "crisis",
+     "phone": null,
+     "hours": null,
+     "langs": [
+      "ar",
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Global vetted directory of free, confidential helplines in 175+ countries, searchable by topic.",
+     "desc_ru": "Глобальный проверенный каталог бесплатных конфиденциальных линий помощи в 175+ странах, поиск по темам.",
+     "source": "https://findahelpline.com/",
+     "checked": "2026-09"
+    }
+   ]
+  },
+  {
+   "code": "NG",
+   "name_en": "Nigeria",
+   "name_ru": "Нигерия",
+   "lat": 9.06,
+   "lng": 7.49,
+   "emergency": [
+    {
+     "label_en": "Emergency",
+     "label_ru": "Экстренные службы",
+     "number": "112"
+    }
+   ],
+   "entries": [
+    {
+     "id": "ng-mani",
+     "name": "Mentally Aware Nigeria Initiative (MANI)",
+     "name_local": null,
+     "url": "https://mentallyaware.org/contact",
+     "kind": "crisis",
+     "phone": "08091116264",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Youth-led mental-health organisation with free, confidential helpline and WhatsApp support.",
+     "desc_ru": "Молодёжная организация в сфере психического здоровья: бесплатная конфиденциальная линия и поддержка в WhatsApp.",
+     "source": "https://mentallyaware.org/contact",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ng-surpin",
+     "name": "SURPIN — Suicide Research and Prevention Initiative",
+     "name_local": null,
+     "url": "https://surpinng.com/",
+     "kind": "crisis",
+     "phone": "+234-8000787746",
+     "hours": "24/7",
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "24/7 trained counsellors for emotional support and crisis intervention; several hotline numbers listed on the site.",
+     "desc_ru": "Круглосуточные консультанты для эмоциональной поддержки и кризисной помощи; на сайте указано несколько номеров.",
+     "source": "https://surpinng.com/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ng-asido",
+     "name": "Asido Foundation",
+     "name_local": null,
+     "url": "https://asidofoundation.com/",
+     "kind": "mental",
+     "phone": "+234 902 808 0416",
+     "hours": "24/7 (WhatsApp)",
+     "langs": [
+      "en"
+     ],
+     "free": null,
+     "desc_en": "Mental-health charity offering psychological first aid, a 24/7 WhatsApp helpline and wellness self-assessments.",
+     "desc_ru": "Благотворительная организация: первая психологическая помощь, круглосуточная линия в WhatsApp и тесты самооценки.",
+     "source": "https://asidofoundation.com/",
+     "checked": "2026-09"
+    },
+    {
+     "id": "ng-ppb",
+     "name": "Project PINK BLUE",
+     "name_local": null,
+     "url": "https://projectpinkblue.org/",
+     "kind": "mental",
+     "phone": "0818 834 7020",
+     "hours": null,
+     "langs": [
+      "en"
+     ],
+     "free": true,
+     "desc_en": "Cancer non-profit offering patient navigation, psychological support centre and cancer support groups.",
+     "desc_ru": "Онкологическая НКО: навигация пациентов, центр психологической поддержки и группы поддержки.",
+     "source": "https://projectpinkblue.org/",
+     "checked": "2026-09"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1969 @@
+[
+  {
+    "id": "wen2020",
+    "title": "Glioblastoma in adults: a Society for Neuro-Oncology (SNO) and European Society of Neuro-Oncology (EANO) consensus review on current management and future directions",
+    "authors": "Wen PY, Weller M, Lee EQ, et al.",
+    "year": 2020,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/noaa106",
+    "pmid": "32328653",
+    "pmcid": "PMC7594557",
+    "open_access": true,
+    "topics": [
+      "start",
+      "treatment"
+    ],
+    "level": "start",
+    "summary_en": "A joint US–European expert overview of how adult glioblastoma is diagnosed and treated today, and which research directions look most promising. A single, trustworthy map of the field for a newcomer.",
+    "summary_ru": "Совместный обзор американских и европейских экспертов о том, как сегодня диагностируют и лечат глиобластому у взрослых и какие направления исследований наиболее перспективны. Надёжная «карта» области для новичка.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "weller2021",
+    "title": "EANO guidelines on the diagnosis and treatment of diffuse gliomas of adulthood",
+    "authors": "Weller M, van den Bent M, Preusser M, et al.",
+    "year": 2021,
+    "journal": "Nat Rev Clin Oncol",
+    "doi": "10.1038/s41571-020-00447-z",
+    "pmid": "33293629",
+    "pmcid": "PMC7904519",
+    "open_access": true,
+    "topics": [
+      "start",
+      "treatment",
+      "classification"
+    ],
+    "level": "start",
+    "summary_en": "European clinical guideline for adult diffuse gliomas, aligned with molecular classification. Shows the evidence-based standard of care for each tumour type, including IDH-wildtype glioblastoma, and how strong the evidence behind each recommendation is.",
+    "summary_ru": "Европейские клинические рекомендации по диффузным глиомам взрослых, согласованные с молекулярной классификацией. Показывают стандарт лечения для каждого типа опухоли, включая IDH-дикого типа глиобластому, и уровень доказательности каждой рекомендации.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "schaff2023",
+    "title": "Glioblastoma and Other Primary Brain Malignancies in Adults: A Review",
+    "authors": "Schaff LR, Mellinghoff IK.",
+    "year": 2023,
+    "journal": "JAMA",
+    "doi": "10.1001/jama.2023.0023",
+    "pmid": "36809318",
+    "pmcid": "PMC11445779",
+    "open_access": true,
+    "topics": [
+      "start"
+    ],
+    "level": "start",
+    "summary_en": "A concise, clinician-oriented review of adult primary brain cancers with glioblastoma at the centre: symptoms, diagnosis, molecular markers, standard therapy and prognosis. Probably the quickest readable introduction to the disease.",
+    "summary_ru": "Краткий клинический обзор первичных злокачественных опухолей головного мозга у взрослых с акцентом на глиобластому: симптомы, диагностика, молекулярные маркеры, стандартное лечение и прогноз. Пожалуй, самое быстрое и доступное введение в тему.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "tan2020",
+    "title": "Management of glioblastoma: State of the art and future directions",
+    "authors": "Tan AC, Ashley DM, López GY, et al.",
+    "year": 2020,
+    "journal": "CA Cancer J Clin",
+    "doi": "10.3322/caac.21613",
+    "pmid": "32478924",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "start",
+      "treatment"
+    ],
+    "level": "start",
+    "summary_en": "A broad review covering epidemiology, molecular pathology, surgery, radiotherapy, chemotherapy and experimental therapies for glioblastoma. Good for understanding why progress has been slow and where new trials are heading.",
+    "summary_ru": "Широкий обзор эпидемиологии, молекулярной патологии, хирургии, лучевой терапии, химиотерапии и экспериментальных методов лечения глиобластомы. Помогает понять, почему прогресс идёт медленно и куда движутся новые исследования.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "weller2024",
+    "title": "Glioma",
+    "authors": "Weller M, Wen PY, Chang SM, et al.",
+    "year": 2024,
+    "journal": "Nat Rev Dis Primers",
+    "doi": "10.1038/s41572-024-00516-y",
+    "pmid": "38724526",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "start",
+      "classification"
+    ],
+    "level": "start",
+    "summary_en": "The updated Nature Reviews Disease Primer on adult and paediatric gliomas: biology, epidemiology, WHO 2021 classification, diagnosis, treatment and quality of life. A structured textbook-style overview of the whole field.",
+    "summary_ru": "Обновлённый обзор Nature Reviews Disease Primers о глиомах у взрослых и детей: биология, эпидемиология, классификация ВОЗ 2021, диагностика, лечение и качество жизни. Структурированный обзор всей области в формате учебника.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "thumma2012",
+    "title": "Effect of pretreatment clinical factors on overall survival in glioblastoma multiforme: a Surveillance Epidemiology and End Results (SEER) population analysis",
+    "authors": "Thumma SR, Fairbanks RK, Lamoreaux WT, et al.",
+    "year": 2012,
+    "journal": "World J Surg Oncol",
+    "doi": "10.1186/1477-7819-10-75",
+    "pmid": "22553975",
+    "pmcid": "PMC3502257",
+    "open_access": true,
+    "topics": [
+      "age",
+      "epidemiology"
+    ],
+    "level": "start",
+    "summary_en": "A US population-based (SEER) analysis showing that older age at diagnosis is one of the strongest pretreatment predictors of shorter overall survival in glioblastoma. A simple, open-access example of a registry survival study.",
+    "summary_ru": "Популяционный анализ данных SEER (США), показавший, что более старший возраст на момент диагноза — один из сильнейших дотерапевтических предикторов меньшей общей выживаемости при глиобластоме. Простой пример регистрового исследования выживаемости в открытом доступе.",
+    "note_en": "Registry data: no molecular markers (IDH, MGMT) and limited treatment detail.",
+    "note_ru": "Регистровые данные: нет молекулярных маркеров (IDH, MGMT), сведения о лечении ограничены."
+  },
+  {
+    "id": "price2024",
+    "title": "CBTRUS Statistical Report: Primary Brain and Other Central Nervous System Tumors Diagnosed in the United States in 2017–2021",
+    "authors": "Price M, Ballard C, Benedetti J, et al.",
+    "year": 2024,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/noae145",
+    "pmid": "39371035",
+    "pmcid": "PMC11456825",
+    "open_access": true,
+    "topics": [
+      "start",
+      "epidemiology",
+      "age"
+    ],
+    "level": "core",
+    "summary_en": "The annual US population registry report on brain tumour incidence and survival by histology, age, sex and race. The standard source for how common glioblastoma is and how survival changes with age.",
+    "summary_ru": "Ежегодный отчёт популяционного регистра США о заболеваемости и выживаемости при опухолях головного мозга в разрезе гистологии, возраста, пола и расы. Основной источник данных о частоте глиобластомы и о том, как выживаемость меняется с возрастом.",
+    "note_en": "Published annually; check for a newer edition before citing figures.",
+    "note_ru": "Отчёт выходит ежегодно; перед цитированием цифр проверьте, нет ли более свежего выпуска."
+  },
+  {
+    "id": "aldape2019",
+    "title": "Challenges to curing primary brain tumours",
+    "authors": "Aldape K, Brindle KM, Chesler L, et al.",
+    "year": 2019,
+    "journal": "Nat Rev Clin Oncol",
+    "doi": "10.1038/s41571-019-0177-5",
+    "pmid": "30733593",
+    "pmcid": "PMC6650350",
+    "open_access": true,
+    "topics": [
+      "start",
+      "trials-design"
+    ],
+    "level": "core",
+    "summary_en": "A multi-author analysis of why brain tumours remain so hard to cure: the blood–brain barrier, heterogeneity, immunosuppression, weak preclinical models and trial design. A good framework for thinking critically about new therapies.",
+    "summary_ru": "Коллективный анализ того, почему опухоли мозга так трудно вылечить: гематоэнцефалический барьер, гетерогенность, иммуносупрессия, несовершенные доклинические модели и дизайн исследований. Хорошая основа для критической оценки новых методов лечения.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "louis2021",
+    "title": "The 2021 WHO Classification of Tumors of the Central Nervous System: a summary",
+    "authors": "Louis DN, Perry A, Wesseling P, et al.",
+    "year": 2021,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/noab106",
+    "pmid": "34185076",
+    "pmcid": "PMC8328013",
+    "open_access": true,
+    "topics": [
+      "classification",
+      "start"
+    ],
+    "level": "core",
+    "summary_en": "Summary of WHO CNS5, which defines glioblastoma as an IDH-wildtype adult diffuse astrocytic tumour and allows the diagnosis from molecular markers (TERT, EGFR, +7/−10) even without classic histology. Essential for reading any post-2021 paper.",
+    "summary_ru": "Краткое изложение классификации ВОЗ CNS5: глиобластома определяется как диффузная астроцитарная опухоль взрослых IDH-дикого типа, а диагноз можно поставить по молекулярным маркерам (TERT, EGFR, +7/−10) даже без классической гистологии. Обязательно для чтения любых работ после 2021 года.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "brat2018",
+    "title": "cIMPACT-NOW update 3: recommended diagnostic criteria for \"Diffuse astrocytic glioma, IDH-wildtype, with molecular features of glioblastoma, WHO grade IV\"",
+    "authors": "Brat DJ, Aldape K, Colman H, et al.",
+    "year": 2018,
+    "journal": "Acta Neuropathol",
+    "doi": "10.1007/s00401-018-1913-0",
+    "pmid": "30259105",
+    "pmcid": "PMC6204285",
+    "open_access": true,
+    "topics": [
+      "classification"
+    ],
+    "level": "core",
+    "summary_en": "Proposed that IDH-wildtype diffuse astrocytomas with EGFR amplification, +7/−10 or TERT promoter mutation behave like glioblastoma and should be graded as such. This became the basis for 'molecular glioblastoma' in WHO 2021.",
+    "summary_ru": "Предложено считать диффузные астроцитомы IDH-дикого типа с амплификацией EGFR, +7/−10 или мутацией промотора TERT аналогом глиобластомы и присваивать им соответствующую степень. Это стало основой «молекулярной глиобластомы» в классификации ВОЗ 2021.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "louis2020",
+    "title": "cIMPACT-NOW update 6: new entity and diagnostic principle recommendations of the cIMPACT-Utrecht meeting on future CNS tumor classification and grading",
+    "authors": "Louis DN, Wesseling P, Aldape K, et al.",
+    "year": 2020,
+    "journal": "Brain Pathol",
+    "doi": "10.1111/bpa.12832",
+    "pmid": "32307792",
+    "pmcid": "PMC8018152",
+    "open_access": true,
+    "topics": [
+      "classification"
+    ],
+    "level": "advanced",
+    "summary_en": "Consensus recommendations that directly shaped WHO CNS5, including restricting 'glioblastoma' to IDH-wildtype tumours and renaming IDH-mutant high-grade astrocytomas. Explains the logic behind the new names you will see in papers.",
+    "summary_ru": "Консенсусные рекомендации, напрямую определившие классификацию ВОЗ CNS5, в том числе ограничение термина «глиобластома» опухолями IDH-дикого типа и переименование IDH-мутантных астроцитом высокой степени. Объясняет логику новых названий в статьях.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "capper2018",
+    "title": "DNA methylation-based classification of central nervous system tumours",
+    "authors": "Capper D, Jones DTW, Sill M, et al.",
+    "year": 2018,
+    "journal": "Nature",
+    "doi": "10.1038/nature26000",
+    "pmid": "29539639",
+    "pmcid": "PMC6093218",
+    "open_access": true,
+    "topics": [
+      "classification",
+      "genomics"
+    ],
+    "level": "core",
+    "summary_en": "Built a machine-learning classifier that assigns CNS tumours to classes from genome-wide DNA methylation profiles, and showed it changes the diagnosis in a meaningful fraction of cases. Methylation profiling is now a routine diagnostic tool.",
+    "summary_ru": "Создан классификатор на основе машинного обучения, относящий опухоли ЦНС к классам по полногеномному профилю метилирования ДНК; он заметно чаще уточнял или менял диагноз. Профилирование метилирования теперь стало рутинным диагностическим инструментом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "eckelpassow2015",
+    "title": "Glioma Groups Based on 1p/19q, IDH, and TERT Promoter Mutations in Tumors",
+    "authors": "Eckel-Passow JE, Lachance DH, Molinaro AM, et al.",
+    "year": 2015,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa1407279",
+    "pmid": "26061753",
+    "pmcid": "PMC4489704",
+    "open_access": true,
+    "topics": [
+      "classification",
+      "genomics"
+    ],
+    "level": "core",
+    "summary_en": "Showed that three markers—IDH, 1p/19q codeletion and TERT promoter mutation—split gliomas into groups with distinct age at diagnosis and survival. The TERT-only (IDH-wildtype) group had the worst outcome, matching glioblastoma.",
+    "summary_ru": "Показано, что три маркера — IDH, коделеция 1p/19q и мутация промотора TERT — делят глиомы на группы с разным возрастом на момент диагноза и разной выживаемостью. Группа только с мутацией TERT (IDH-дикого типа) имела худший прогноз, как глиобластома.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "ostrom2014",
+    "title": "The epidemiology of glioma in adults: a \"state of the science\" review",
+    "authors": "Ostrom QT, Bauchet L, Davis FG, et al.",
+    "year": 2014,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/nou087",
+    "pmid": "24842956",
+    "pmcid": "PMC4057143",
+    "open_access": true,
+    "topics": [
+      "epidemiology",
+      "start"
+    ],
+    "level": "start",
+    "summary_en": "Reviews who gets glioma and why: incidence by age, sex and region, and the few established risk factors (ionising radiation, rare inherited syndromes, germline variants). Clear reference for the epidemiology section of any paper.",
+    "summary_ru": "Обзор того, кто и почему заболевает глиомой: заболеваемость по возрасту, полу и регионам и немногие доказанные факторы риска (ионизирующее излучение, редкие наследственные синдромы, герминальные варианты). Удобный источник для эпидемиологического раздела статьи.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "curran1993",
+    "title": "Recursive partitioning analysis of prognostic factors in three Radiation Therapy Oncology Group malignant glioma trials",
+    "authors": "Curran WJ Jr, Scott CB, Horton J, et al.",
+    "year": 1993,
+    "journal": "J Natl Cancer Inst",
+    "doi": "10.1093/jnci/85.9.704",
+    "pmid": "8478956",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "age",
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Used recursive partitioning on RTOG trial patients to define prognostic classes; age (with 50 years as a key split), performance status and histology dominated survival. The origin of the RTOG RPA classes still quoted today.",
+    "summary_ru": "С помощью рекурсивного разбиения данных пациентов из исследований RTOG выделены прогностические классы; наибольшее влияние на выживаемость оказали возраст (ключевой порог — 50 лет), функциональный статус и гистология. Отсюда происходят классы RTOG RPA, которые цитируют до сих пор.",
+    "note_en": "Pre-molecular era: cohorts mix tumours that would be classified differently today.",
+    "note_ru": "Домолекулярная эпоха: когорты включают опухоли, которые сегодня классифицировались бы иначе."
+  },
+  {
+    "id": "lamborn2004",
+    "title": "Prognostic factors for survival of patients with glioblastoma: recursive partitioning analysis",
+    "authors": "Lamborn KR, Chang SM, Prados MD.",
+    "year": 2004,
+    "journal": "Neuro Oncol",
+    "doi": "10.1215/S1152851703000620",
+    "pmid": "15279715",
+    "pmcid": "PMC1871999",
+    "open_access": true,
+    "topics": [
+      "age",
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Pooled glioblastoma patients from phase II trials and used recursive partitioning to identify prognostic groups, with age, performance status and extent of resection leading. A key reference for age as an independent predictor of survival.",
+    "summary_ru": "На объединённых данных пациентов с глиобластомой из исследований II фазы с помощью рекурсивного разбиения выделены прогностические группы; ведущими факторами оказались возраст, функциональный статус и объём резекции. Ключевой источник о возрасте как независимом предикторе выживаемости.",
+    "note_en": "Pre-molecular era; IDH status unknown.",
+    "note_ru": "Домолекулярная эпоха; статус IDH неизвестен."
+  },
+  {
+    "id": "mirimanoff2006",
+    "title": "Radiotherapy and temozolomide for newly diagnosed glioblastoma: recursive partitioning analysis of the EORTC 26981/22981-NCIC CE3 phase III randomized trial",
+    "authors": "Mirimanoff RO, Gorlia T, Mason W, et al.",
+    "year": 2006,
+    "journal": "J Clin Oncol",
+    "doi": "10.1200/JCO.2005.04.5963",
+    "pmid": "16735709",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "age",
+      "treatment"
+    ],
+    "level": "advanced",
+    "summary_en": "Applied RPA prognostic classes to the landmark Stupp trial and found the temozolomide benefit across classes, while age, performance status and resection still separated outcomes. Shows how prognostic factors and treatment effects interact.",
+    "summary_ru": "Прогностические классы RPA применены к данным ключевого исследования Stupp: польза темозоломида сохранялась во всех классах, а возраст, функциональный статус и объём резекции по-прежнему разделяли исходы. Показывает взаимодействие прогностических факторов и эффекта лечения.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "ladomersky2020",
+    "title": "Advanced Age Increases Immunosuppression in the Brain and Decreases Immunotherapeutic Efficacy in Subjects with Glioblastoma",
+    "authors": "Ladomersky E, Zhai L, Lauing KL, et al.",
+    "year": 2020,
+    "journal": "Clin Cancer Res",
+    "doi": "10.1158/1078-0432.CCR-19-3874",
+    "pmid": "32546647",
+    "pmcid": "PMC7541490",
+    "open_access": true,
+    "topics": [
+      "age",
+      "microenvironment"
+    ],
+    "level": "advanced",
+    "summary_en": "Combined human data and mouse models to show that the ageing brain is more immunosuppressive (including higher IDO1 expression) and that immunotherapy works less well in older hosts. Offers a biological explanation for worse outcomes with age.",
+    "summary_ru": "На данных пациентов и мышиных моделях показано, что стареющий мозг более иммуносупрессивен (в том числе из-за повышенной экспрессии IDO1), а иммунотерапия у старших особей менее эффективна. Предлагает биологическое объяснение худшего прогноза с возрастом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "kim2021",
+    "title": "Glioblastoma as an age-related neurological disorder in adults",
+    "authors": "Kim M, Ladomersky E, Mozny A, et al.",
+    "year": 2021,
+    "journal": "Neurooncol Adv",
+    "doi": "10.1093/noajnl/vdab125",
+    "pmid": "34647022",
+    "pmcid": "PMC8500689",
+    "open_access": true,
+    "topics": [
+      "age",
+      "epidemiology"
+    ],
+    "level": "start",
+    "summary_en": "Review arguing that glioblastoma should be viewed partly as a disease of ageing, summarising how incidence peaks in older adults and how ageing immunity and brain biology may shape tumour behaviour and treatment response.",
+    "summary_ru": "Обзор, в котором глиобластома рассматривается отчасти как болезнь старения: заболеваемость достигает пика у пожилых, а возрастные изменения иммунитета и биологии мозга могут влиять на поведение опухоли и ответ на лечение.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "keimeguibert2007",
+    "title": "Radiotherapy for glioblastoma in the elderly",
+    "authors": "Keime-Guibert F, Chinot O, Taillandier L, et al.",
+    "year": 2007,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa065901",
+    "pmid": "17429084",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "age",
+      "treatment"
+    ],
+    "level": "core",
+    "summary_en": "Randomised trial in patients aged 70 or older: radiotherapy plus supportive care modestly prolonged survival compared with supportive care alone, without worsening quality of life. Established that older patients benefit from active treatment.",
+    "summary_ru": "Рандомизированное исследование у пациентов 70 лет и старше: лучевая терапия в сочетании с поддерживающей терапией умеренно продлевала жизнь по сравнению с одной поддерживающей терапией без ухудшения качества жизни. Доказано, что пожилым пациентам активное лечение приносит пользу.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "minniti2019",
+    "title": "Glioblastoma in Elderly Patients: Current Management and Future Perspectives",
+    "authors": "Minniti G, Lombardi G, Paolini S.",
+    "year": 2019,
+    "journal": "Cancers (Basel)",
+    "doi": "10.3390/cancers11030336",
+    "pmid": "30857221",
+    "pmcid": "PMC6469025",
+    "open_access": true,
+    "topics": [
+      "age",
+      "treatment"
+    ],
+    "level": "start",
+    "summary_en": "Open-access review of how glioblastoma is managed in older adults: surgery, short-course radiotherapy, temozolomide and the role of MGMT methylation in choosing between them. A practical summary of the elderly trials.",
+    "summary_ru": "Обзор в открытом доступе о лечении глиобластомы у пожилых: хирургия, гипофракционированная лучевая терапия, темозоломид и роль метилирования промотора MGMT при выборе между ними. Практичное резюме исследований у пожилых пациентов.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "stupp2005",
+    "title": "Radiotherapy plus Concomitant and Adjuvant Temozolomide for Glioblastoma",
+    "authors": "Stupp R, Mason WP, van den Bent MJ, et al.",
+    "year": 2005,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa043330",
+    "pmid": "15758009",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment"
+    ],
+    "level": "core",
+    "summary_en": "The EORTC–NCIC phase III trial that created today's standard: adding temozolomide during and after radiotherapy raised median survival from about 12 to 15 months and two-year survival from 10% to 27%.",
+    "summary_ru": "Исследование III фазы EORTC–NCIC, сформировавшее современный стандарт: добавление темозоломида во время и после лучевой терапии увеличило медиану общей выживаемости примерно с 12 до 15 месяцев, а двухлетнюю выживаемость — с 10% до 27%.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "hegi2005",
+    "title": "MGMT Gene Silencing and Benefit from Temozolomide in Glioblastoma",
+    "authors": "Hegi ME, Diserens AC, Gorlia T, et al.",
+    "year": 2005,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa043331",
+    "pmid": "15758010",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "genomics"
+    ],
+    "level": "core",
+    "summary_en": "Companion analysis to the Stupp trial: patients whose tumours had a methylated MGMT promoter benefited most from temozolomide. MGMT methylation remains the most important predictive biomarker in glioblastoma.",
+    "summary_ru": "Сопутствующий анализ исследования Stupp: наибольшую пользу от темозоломида получили пациенты с метилированием промотора MGMT в опухоли. Метилирование MGMT по-прежнему остаётся главным предиктивным биомаркером при глиобластоме.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "stupp2009",
+    "title": "Effects of radiotherapy with concomitant and adjuvant temozolomide versus radiotherapy alone on survival in glioblastoma in a randomised phase III study: 5-year analysis of the EORTC-NCIC trial",
+    "authors": "Stupp R, Hegi ME, Mason WP, et al.",
+    "year": 2009,
+    "journal": "Lancet Oncol",
+    "doi": "10.1016/S1470-2045(09)70025-7",
+    "pmid": "19269895",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "treatment"
+    ],
+    "level": "core",
+    "summary_en": "Five-year follow-up confirmed that the temozolomide benefit is durable: about 10% of patients were alive at five years versus 2% with radiotherapy alone, again most clearly in MGMT-methylated tumours.",
+    "summary_ru": "Пятилетнее наблюдение подтвердило стойкость эффекта темозоломида: через пять лет живы около 10% пациентов против 2% при одной лучевой терапии, причём эффект снова был наиболее выражен при метилировании MGMT.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "perry2017",
+    "title": "Short-Course Radiation plus Temozolomide in Elderly Patients with Glioblastoma",
+    "authors": "Perry JR, Laperriere N, O'Callaghan CJ, et al.",
+    "year": 2017,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa1611977",
+    "pmid": "28296618",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "age"
+    ],
+    "level": "core",
+    "summary_en": "In patients aged 65 or older, adding temozolomide to a three-week course of radiotherapy improved survival versus short-course radiotherapy alone, with the largest gain in MGMT-methylated tumours. Now a standard option for older patients.",
+    "summary_ru": "У пациентов 65 лет и старше добавление темозоломида к трёхнедельному курсу лучевой терапии улучшило выживаемость по сравнению с одной короткой лучевой терапией; наибольший выигрыш — при метилировании MGMT. Сейчас это стандартный вариант для пожилых.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "malmstrom2012",
+    "title": "Temozolomide versus standard 6-week radiotherapy versus hypofractionated radiotherapy in patients older than 60 years with glioblastoma: the Nordic randomised, phase 3 trial",
+    "authors": "Malmström A, Grønberg BH, Marosi C, et al.",
+    "year": 2012,
+    "journal": "Lancet Oncol",
+    "doi": "10.1016/S1470-2045(12)70265-6",
+    "pmid": "22877848",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "treatment",
+      "age"
+    ],
+    "level": "core",
+    "summary_en": "Compared temozolomide alone, standard six-week radiotherapy and short hypofractionated radiotherapy in patients over 60. Standard radiotherapy was worst for those over 70; temozolomide helped mainly when MGMT was methylated.",
+    "summary_ru": "Сравнивались монотерапия темозоломидом, стандартная шестинедельная лучевая терапия и гипофракционированная лучевая терапия у пациентов старше 60 лет. У пациентов старше 70 лет стандартная лучевая терапия была наименее эффективной; темозоломид помогал в основном при метилировании MGMT.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "wick2012",
+    "title": "Temozolomide chemotherapy alone versus radiotherapy alone for malignant astrocytoma in the elderly: the NOA-08 randomised, phase 3 trial",
+    "authors": "Wick W, Platten M, Meisner C, et al.",
+    "year": 2012,
+    "journal": "Lancet Oncol",
+    "doi": "10.1016/S1470-2045(12)70164-X",
+    "pmid": "22578793",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "age"
+    ],
+    "level": "core",
+    "summary_en": "In patients over 65, temozolomide alone was not inferior to radiotherapy alone, and MGMT methylation predicted who did better with chemotherapy. Supports MGMT testing to choose treatment in frail older patients.",
+    "summary_ru": "У пациентов старше 65 лет монотерапия темозоломидом не уступала одной лучевой терапии, а метилирование MGMT предсказывало, кому химиотерапия подходит лучше. Обосновывает тестирование MGMT для выбора лечения у ослабленных пожилых пациентов.",
+    "note_en": "Included anaplastic astrocytomas as well as glioblastoma.",
+    "note_ru": "Включены также анапластические астроцитомы, а не только глиобластомы."
+  },
+  {
+    "id": "stupp2017",
+    "title": "Effect of Tumor-Treating Fields Plus Maintenance Temozolomide vs Maintenance Temozolomide Alone on Survival in Patients With Glioblastoma: A Randomized Clinical Trial",
+    "authors": "Stupp R, Taillibert S, Kanner A, et al.",
+    "year": 2017,
+    "journal": "JAMA",
+    "doi": "10.1001/jama.2017.18718",
+    "pmid": "29260225",
+    "pmcid": "PMC5820703",
+    "open_access": true,
+    "topics": [
+      "treatment"
+    ],
+    "level": "core",
+    "summary_en": "The EF-14 trial: wearing a device that delivers alternating electric fields to the scalp, added to maintenance temozolomide, extended median overall survival by about five months. The only positive add-on to Stupp therapy since 2005.",
+    "summary_ru": "Исследование EF-14: ношение устройства, воздействующего на опухоль переменными электрическими полями (TTFields), вместе с поддерживающим темозоломидом увеличило медиану общей выживаемости примерно на пять месяцев. Единственное успешное дополнение к схеме Stupp с 2005 года.",
+    "note_en": "Open-label without a sham device; uptake and interpretation remain debated.",
+    "note_ru": "Открытое исследование без имитации устройства; интерпретация результатов и внедрение до сих пор обсуждаются."
+  },
+  {
+    "id": "chinot2014",
+    "title": "Bevacizumab plus Radiotherapy–Temozolomide for Newly Diagnosed Glioblastoma",
+    "authors": "Chinot OL, Wick W, Mason W, et al.",
+    "year": 2014,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa1308345",
+    "pmid": "24552318",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "trials-design"
+    ],
+    "level": "core",
+    "summary_en": "AVAglio: adding the anti-VEGF antibody bevacizumab to standard therapy lengthened progression-free survival but did not improve overall survival. A classic example of a PFS gain that did not translate into longer life.",
+    "summary_ru": "AVAglio: добавление анти-VEGF антитела бевацизумаба к стандартной терапии увеличило выживаемость без прогрессирования, но не общую выживаемость. Классический пример того, как выигрыш по ВБП не превращается в увеличение продолжительности жизни.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "gilbert2014",
+    "title": "A Randomized Trial of Bevacizumab for Newly Diagnosed Glioblastoma",
+    "authors": "Gilbert MR, Dignam JJ, Armstrong TS, et al.",
+    "year": 2014,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa1308573",
+    "pmid": "24552317",
+    "pmcid": "PMC4201043",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "trials-design"
+    ],
+    "level": "core",
+    "summary_en": "RTOG 0825 reached the same conclusion as AVAglio—no overall survival benefit from first-line bevacizumab—and added data suggesting more symptoms and cognitive decline in the bevacizumab arm.",
+    "summary_ru": "RTOG 0825 пришло к тому же выводу, что и AVAglio: бевацизумаб в первой линии не улучшает общую выживаемость; кроме того, в группе бевацизумаба отмечено больше симптомов и когнитивного снижения.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "herrlinger2019",
+    "title": "Lomustine-temozolomide combination therapy versus standard temozolomide therapy in patients with newly diagnosed glioblastoma with methylated MGMT promoter (CeTeG/NOA-09): a randomised, open-label, phase 3 trial",
+    "authors": "Herrlinger U, Tzaridis T, Mack F, et al.",
+    "year": 2019,
+    "journal": "Lancet",
+    "doi": "10.1016/S0140-6736(18)31791-4",
+    "pmid": "30782343",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment"
+    ],
+    "level": "advanced",
+    "summary_en": "In MGMT-methylated glioblastoma, adding lomustine to temozolomide suggested longer overall survival in a small phase 3 trial. Illustrates biomarker-selected trial design, though the sample was small.",
+    "summary_ru": "При глиобластоме с метилированием MGMT добавление ломустина к темозоломиду в небольшом исследовании III фазы показало тенденцию к увеличению общей выживаемости. Иллюстрирует дизайн исследования с отбором по биомаркеру.",
+    "note_en": "Small trial (about 130 patients) with a borderline result in a modified intention-to-treat analysis; not yet a universal standard.",
+    "note_ru": "Небольшое исследование (около 130 пациентов) с пограничным результатом в модифицированной ITT-популяции; универсальным стандартом пока не стало."
+  },
+  {
+    "id": "lacroix2001",
+    "title": "A multivariate analysis of 416 patients with glioblastoma multiforme: prognosis, extent of resection, and survival",
+    "authors": "Lacroix M, Abi-Said D, Fourney DR, et al.",
+    "year": 2001,
+    "journal": "J Neurosurg",
+    "doi": "10.3171/jns.2001.95.2.0190",
+    "pmid": "11780887",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "treatment",
+      "age"
+    ],
+    "level": "core",
+    "summary_en": "A large surgical series in which age, performance status, imaging features and removing at least 98% of the tumour were independently linked to longer survival. Started the modern debate on how much resection matters.",
+    "summary_ru": "Крупная хирургическая серия, в которой возраст, функциональный статус, особенности МРТ и удаление не менее 98% опухоли были независимо связаны с большей выживаемостью. С этой работы началась современная дискуссия о значении объёма резекции.",
+    "note_en": "Retrospective single-centre data; confounding by patient selection is possible.",
+    "note_ru": "Ретроспективные данные одного центра; возможна систематическая ошибка отбора."
+  },
+  {
+    "id": "sanai2011",
+    "title": "An extent of resection threshold for newly diagnosed glioblastomas",
+    "authors": "Sanai N, Polley MY, McDermott MW, et al.",
+    "year": 2011,
+    "journal": "J Neurosurg",
+    "doi": "10.3171/2011.2.JNS10998",
+    "pmid": "21417701",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "treatment"
+    ],
+    "level": "advanced",
+    "summary_en": "Using volumetric MRI in 500 patients, found that survival benefit begins at roughly 78% resection of the enhancing tumour and keeps rising towards complete removal. Refined the idea that even subtotal resection can help.",
+    "summary_ru": "По данным объёмной МРТ у 500 пациентов показано, что польза для выживаемости появляется примерно с 78% резекции контрастируемой части опухоли и продолжает расти по мере приближения к полному удалению. Уточнило представление о пользе даже субтотальной резекции.",
+    "note_en": "Retrospective single-centre series.",
+    "note_ru": "Ретроспективная серия одного центра."
+  },
+  {
+    "id": "molinaro2020",
+    "title": "Association of Maximal Extent of Resection of Contrast-Enhanced and Non-Contrast-Enhanced Tumor With Survival Within Molecular Subgroups of Patients With Newly Diagnosed Glioblastoma",
+    "authors": "Molinaro AM, Hervey-Jumper S, Morshed RA, et al.",
+    "year": 2020,
+    "journal": "JAMA Oncol",
+    "doi": "10.1001/jamaoncol.2019.6143",
+    "pmid": "32027343",
+    "pmcid": "PMC7042822",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "age"
+    ],
+    "level": "core",
+    "summary_en": "In a large multicentre cohort, removing all enhancing tumour plus part of the non-enhancing region was linked to longer survival, particularly in younger IDH-wildtype patients. Brings molecular subgroups and age into the resection question.",
+    "summary_ru": "В большой многоцентровой когорте удаление всей контрастируемой части опухоли и части неконтрастируемой зоны было связано с большей выживаемостью, особенно у более молодых пациентов с IDH-диким типом. Связывает вопрос о резекции с молекулярными подгруппами и возрастом.",
+    "note_en": "Observational; surgical extent is not randomised.",
+    "note_ru": "Наблюдательное исследование; объём резекции не рандомизирован."
+  },
+  {
+    "id": "stummer2006",
+    "title": "Fluorescence-guided surgery with 5-aminolevulinic acid for resection of malignant glioma: a randomised controlled multicentre phase III trial",
+    "authors": "Stummer W, Pichlmeier U, Meinel T, et al.",
+    "year": 2006,
+    "journal": "Lancet Oncol",
+    "doi": "10.1016/S1470-2045(06)70665-9",
+    "pmid": "16648043",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "treatment"
+    ],
+    "level": "core",
+    "summary_en": "Randomised trial showing that 5-ALA, which makes tumour tissue fluoresce during surgery, markedly increased the rate of complete resection of enhancing tumour and improved six-month progression-free survival. Now widely used in glioma surgery.",
+    "summary_ru": "Рандомизированное исследование: 5-аминолевулиновая кислота (5-АЛК), вызывающая флуоресценцию опухолевой ткани во время операции, заметно повысила частоту полного удаления контрастируемой опухоли и улучшила шестимесячную выживаемость без прогрессирования. Метод широко применяется в хирургии глиом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "lombardi2019",
+    "title": "Regorafenib compared with lomustine in patients with relapsed glioblastoma (REGOMA): a multicentre, open-label, randomised, controlled, phase 2 trial",
+    "authors": "Lombardi G, De Salvo GL, Brandes AA, et al.",
+    "year": 2019,
+    "journal": "Lancet Oncol",
+    "doi": "10.1016/S1470-2045(18)30675-2",
+    "pmid": "30522967",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "treatment"
+    ],
+    "level": "advanced",
+    "summary_en": "In recurrent glioblastoma, the multikinase inhibitor regorafenib gave longer overall survival than lomustine in a randomised phase 2 trial, leading to its inclusion in some national guidelines.",
+    "summary_ru": "При рецидивирующей глиобластоме мультикиназный ингибитор регорафениб в рандомизированном исследовании II фазы обеспечил большую общую выживаемость, чем ломустин, и был включён в некоторые национальные рекомендации.",
+    "note_en": "Phase 2 with a small sample; later trials (e.g. GBM AGILE) did not confirm a benefit.",
+    "note_ru": "Исследование II фазы с небольшой выборкой; последующие исследования (например, GBM AGILE) пользу не подтвердили."
+  },
+  {
+    "id": "wick2017",
+    "title": "Lomustine and Bevacizumab in Progressive Glioblastoma",
+    "authors": "Wick W, Gorlia T, Bendszus M, et al.",
+    "year": 2017,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa1707358",
+    "pmid": "29141164",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "trials-design"
+    ],
+    "level": "core",
+    "summary_en": "EORTC 26101: at first progression, adding bevacizumab to lomustine prolonged progression-free but not overall survival. Established lomustine as the usual control arm for recurrent-glioblastoma trials.",
+    "summary_ru": "EORTC 26101: при первом прогрессировании добавление бевацизумаба к ломустину продлило выживаемость без прогрессирования, но не общую выживаемость. Утвердило ломустин в качестве стандартной контрольной группы в исследованиях рецидивирующей глиобластомы.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "reardon2020",
+    "title": "Effect of Nivolumab vs Bevacizumab in Patients With Recurrent Glioblastoma: The CheckMate 143 Phase 3 Randomized Clinical Trial",
+    "authors": "Reardon DA, Brandes AA, Omuro A, et al.",
+    "year": 2020,
+    "journal": "JAMA Oncol",
+    "doi": "10.1001/jamaoncol.2020.1024",
+    "pmid": "32437507",
+    "pmcid": "PMC7243167",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "microenvironment"
+    ],
+    "level": "core",
+    "summary_en": "The first phase 3 trial of a PD-1 checkpoint inhibitor in glioblastoma: nivolumab did not improve survival over bevacizumab at recurrence. A key lesson on the immunologically 'cold' nature of this tumour.",
+    "summary_ru": "Первое исследование III фазы ингибитора контрольной точки PD-1 при глиобластоме: ниволумаб при рецидиве не улучшил выживаемость по сравнению с бевацизумабом. Важный урок об иммунологически «холодной» природе этой опухоли.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "omuro2023",
+    "title": "Radiotherapy combined with nivolumab or temozolomide for newly diagnosed glioblastoma with unmethylated MGMT promoter: An international randomized phase III trial",
+    "authors": "Omuro A, Brandes AA, Carpentier AF, et al.",
+    "year": 2023,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/noac099",
+    "pmid": "35419607",
+    "pmcid": "PMC9825306",
+    "open_access": true,
+    "topics": [
+      "treatment"
+    ],
+    "level": "advanced",
+    "summary_en": "CheckMate 498: in MGMT-unmethylated glioblastoma, replacing temozolomide with nivolumab alongside radiotherapy gave shorter, not longer, survival. Confirms that checkpoint blockade alone does not replace chemotherapy.",
+    "summary_ru": "CheckMate 498: при глиобластоме без метилирования MGMT замена темозоломида на ниволумаб на фоне лучевой терапии привела к меньшей, а не большей выживаемости. Подтверждает, что блокада контрольных точек сама по себе не заменяет химиотерапию.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "lim2022",
+    "title": "Phase III trial of chemoradiotherapy with temozolomide plus nivolumab or placebo for newly diagnosed glioblastoma with methylated MGMT promoter",
+    "authors": "Lim M, Weller M, Idbaih A, et al.",
+    "year": 2022,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/noac116",
+    "pmid": "35511454",
+    "pmcid": "PMC9629431",
+    "open_access": true,
+    "topics": [
+      "treatment"
+    ],
+    "level": "advanced",
+    "summary_en": "CheckMate 548: adding nivolumab to standard chemoradiotherapy in MGMT-methylated glioblastoma did not improve survival. Together with CheckMate 143 and 498, it closed the door on PD-1 monotherapy approaches in this disease.",
+    "summary_ru": "CheckMate 548: добавление ниволумаба к стандартной химиолучевой терапии при глиобластоме с метилированием MGMT не улучшило выживаемость. Вместе с CheckMate 143 и 498 закрыло вопрос о монотерапии анти-PD-1 при этом заболевании.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "mellinghoff2023",
+    "title": "Vorasidenib in IDH1- or IDH2-Mutant Low-Grade Glioma",
+    "authors": "Mellinghoff IK, van den Bent MJ, Blumenthal DT, et al.",
+    "year": 2023,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa2304194",
+    "pmid": "37272516",
+    "pmcid": "PMC11445763",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "classification"
+    ],
+    "level": "advanced",
+    "summary_en": "INDIGO: the brain-penetrant IDH inhibitor vorasidenib delayed progression in grade 2 IDH-mutant gliomas. The first successful targeted therapy in gliomas, showing what a true driver-targeted drug can achieve.",
+    "summary_ru": "INDIGO: проникающий в мозг ингибитор IDH ворасидениб отсрочил прогрессирование IDH-мутантных глиом 2-й степени. Первая успешная таргетная терапия при глиомах, показывающая возможности препаратов, направленных на истинный драйвер.",
+    "note_en": "Context only: IDH-mutant low-grade glioma, not IDH-wildtype glioblastoma.",
+    "note_ru": "Для контекста: IDH-мутантные глиомы низкой степени, а не глиобластома IDH-дикого типа."
+  },
+  {
+    "id": "liau2023",
+    "title": "Association of Autologous Tumor Lysate-Loaded Dendritic Cell Vaccination With Extension of Survival Among Patients With Newly Diagnosed and Recurrent Glioblastoma: A Phase 3 Prospective Externally Controlled Cohort Trial",
+    "authors": "Liau LM, Ashkan K, Brem S, et al.",
+    "year": 2023,
+    "journal": "JAMA Oncol",
+    "doi": "10.1001/jamaoncol.2022.5370",
+    "pmid": "36394838",
+    "pmcid": "PMC9673026",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "trials-design"
+    ],
+    "level": "advanced",
+    "summary_en": "Reported longer survival with the dendritic cell vaccine DCVax-L compared with external (historical) control patients. Worth reading as a case study in how trial design changes the strength of a claim.",
+    "summary_ru": "Сообщается о большей выживаемости при использовании дендритноклеточной вакцины DCVax-L по сравнению с внешней (исторической) контрольной группой. Полезно читать как учебный пример того, как дизайн исследования влияет на силу выводов.",
+    "note_en": "Debated: the primary endpoint was changed and comparison relies on external controls rather than the randomised placebo arm.",
+    "note_ru": "Результаты спорны: первичная конечная точка была изменена, а сравнение проводится с внешним контролем, а не с рандомизированной группой плацебо."
+  },
+  {
+    "id": "choi2024",
+    "title": "Intraventricular CARv3-TEAM-E T Cells in Recurrent Glioblastoma",
+    "authors": "Choi BD, Gerstner ER, Frigault MJ, et al.",
+    "year": 2024,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa2314390",
+    "pmid": "38477966",
+    "pmcid": "PMC11162836",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "microenvironment"
+    ],
+    "level": "advanced",
+    "summary_en": "Three patients with recurrent glioblastoma received CAR T cells targeting EGFRvIII that also secrete a T-cell engager against wild-type EGFR; tumours shrank rapidly but responses were mostly transient. A proof of concept for next-generation CAR T cells.",
+    "summary_ru": "Трое пациентов с рецидивирующей глиобластомой получили CAR-T-клетки против EGFRvIII, дополнительно секретирующие биспецифический активатор T-клеток против EGFR дикого типа; опухоли быстро уменьшались, но ответы в основном были кратковременными. Доказательство концепции CAR-T нового поколения.",
+    "note_en": "Three patients only; very early-stage evidence.",
+    "note_ru": "Всего три пациента; доказательства очень ранней стадии."
+  },
+  {
+    "id": "bagley2024",
+    "title": "Intrathecal bivalent CAR T cells targeting EGFR and IL13Rα2 in recurrent glioblastoma: phase 1 trial interim results",
+    "authors": "Bagley SJ, Logun M, Fraietta JA, et al.",
+    "year": 2024,
+    "journal": "Nat Med",
+    "doi": "10.1038/s41591-024-02893-z",
+    "pmid": "38480922",
+    "pmcid": "PMC13123313",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "microenvironment"
+    ],
+    "level": "advanced",
+    "summary_en": "Interim phase 1 results for CAR T cells recognising two targets (EGFR and IL13Rα2) given into the cerebrospinal fluid: early tumour shrinkage in several patients, with manageable neurotoxicity. Shows dual targeting against antigen escape.",
+    "summary_ru": "Промежуточные результаты I фазы для CAR-T-клеток к двум мишеням (EGFR и IL13Rα2), вводимых в спинномозговую жидкость: у ряда пациентов наблюдалось раннее уменьшение опухоли при контролируемой нейротоксичности. Демонстрирует двойное нацеливание против ускользания антигена.",
+    "note_en": "Small interim phase 1 report.",
+    "note_ru": "Небольшой промежуточный отчёт I фазы."
+  },
+  {
+    "id": "todo2022",
+    "title": "Intratumoral oncolytic herpes virus G47Δ for residual or recurrent glioblastoma: a phase 2 trial",
+    "authors": "Todo T, Ito H, Ino Y, et al.",
+    "year": 2022,
+    "journal": "Nat Med",
+    "doi": "10.1038/s41591-022-01897-x",
+    "pmid": "35864254",
+    "pmcid": "PMC9388376",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "microenvironment"
+    ],
+    "level": "advanced",
+    "summary_en": "Single-arm trial of a genetically engineered herpes virus injected into the tumour; one-year survival was higher than historical expectations and tumours showed immune cell infiltration. Led to conditional approval in Japan.",
+    "summary_ru": "Одногрупповое исследование генно-инженерного вируса герпеса, вводимого непосредственно в опухоль: годичная выживаемость превысила исторические ожидания, в опухолях отмечалась инфильтрация иммунными клетками. Привело к условному одобрению в Японии.",
+    "note_en": "Single-arm, small (n=19); compared against historical controls.",
+    "note_ru": "Одногрупповое небольшое исследование (19 пациентов) со сравнением с историческим контролем."
+  },
+  {
+    "id": "brown2016",
+    "title": "Association of the Extent of Resection With Survival in Glioblastoma: A Systematic Review and Meta-analysis",
+    "authors": "Brown TJ, Brennan MC, Li M, et al.",
+    "year": 2016,
+    "journal": "JAMA Oncol",
+    "doi": "10.1001/jamaoncol.2016.1373",
+    "pmid": "27310651",
+    "pmcid": "PMC6438173",
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Pooled dozens of studies and found that gross total resection is associated with lower mortality at one and two years than subtotal resection. A useful model of a meta-analysis on an observational clinical question.",
+    "summary_ru": "Объединены данные десятков исследований: тотальная резекция ассоциирована с меньшей смертностью через один и два года по сравнению с субтотальной. Хороший пример метаанализа по клиническому вопросу на наблюдательных данных.",
+    "note_en": "Based on observational studies; residual confounding likely.",
+    "note_ru": "Основан на наблюдательных исследованиях; вероятны остаточные искажения."
+  },
+  {
+    "id": "weller2017",
+    "title": "Rindopepimut with temozolomide for patients with newly diagnosed, EGFRvIII-expressing glioblastoma (ACT IV): a randomised, double-blind, international phase 3 trial",
+    "authors": "Weller M, Butowski N, Tran DD, et al.",
+    "year": 2017,
+    "journal": "Lancet Oncol",
+    "doi": "10.1016/S1470-2045(17)30517-X",
+    "pmid": "28844499",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "treatment",
+      "trials-design"
+    ],
+    "level": "advanced",
+    "summary_en": "A peptide vaccine against EGFRvIII failed to improve survival in phase 3 despite promising single-arm phase 2 data. A textbook example of why uncontrolled early results in glioblastoma often do not hold up.",
+    "summary_ru": "Пептидная вакцина против EGFRvIII не улучшила выживаемость в исследовании III фазы, несмотря на обнадёживающие одногрупповые данные II фазы. Хрестоматийный пример того, почему неконтролируемые ранние результаты при глиобластоме часто не подтверждаются.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "tcga2008",
+    "title": "Comprehensive genomic characterization defines human glioblastoma genes and core pathways",
+    "authors": "Cancer Genome Atlas Research Network",
+    "year": 2008,
+    "journal": "Nature",
+    "doi": "10.1038/nature07385",
+    "pmid": "18772890",
+    "pmcid": "PMC2671642",
+    "open_access": true,
+    "topics": [
+      "genomics"
+    ],
+    "level": "core",
+    "summary_en": "The first TCGA project: DNA copy number, expression, methylation and sequencing of glioblastomas revealed three core pathways (RTK/RAS/PI3K, p53 and RB) altered in most tumours. The foundation of glioblastoma genomics.",
+    "summary_ru": "Первый проект TCGA: анализ числа копий ДНК, экспрессии, метилирования и секвенирование глиобластом выявили три ключевых сигнальных пути (RTK/RAS/PI3K, p53 и RB), нарушенных в большинстве опухолей. Фундамент геномики глиобластомы.",
+    "note_en": "Pre-WHO-2016 cohort: some 'glioblastomas' were IDH-mutant tumours now classified differently.",
+    "note_ru": "Когорта до классификации ВОЗ 2016: часть «глиобластом» была IDH-мутантными опухолями, которые сегодня классифицируются иначе."
+  },
+  {
+    "id": "brennan2013",
+    "title": "The Somatic Genomic Landscape of Glioblastoma",
+    "authors": "Brennan CW, Verhaak RG, McKenna A, et al.",
+    "year": 2013,
+    "journal": "Cell",
+    "doi": "10.1016/j.cell.2013.09.034",
+    "pmid": "24120142",
+    "pmcid": "PMC3910500",
+    "open_access": true,
+    "topics": [
+      "genomics"
+    ],
+    "level": "core",
+    "summary_en": "Expanded TCGA analysis of over 500 glioblastomas, cataloguing recurrent mutations, copy-number changes, TERT promoter alterations and EGFR variants. The standard reference for which genes are altered and how often.",
+    "summary_ru": "Расширенный анализ TCGA более 500 глиобластом: каталог повторяющихся мутаций, изменений числа копий, альтераций промотора TERT и вариантов EGFR. Стандартный источник о том, какие гены и с какой частотой изменены.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "verhaak2010",
+    "title": "Integrated Genomic Analysis Identifies Clinically Relevant Subtypes of Glioblastoma Characterized by Abnormalities in PDGFRA, IDH1, EGFR, and NF1",
+    "authors": "Verhaak RG, Hoadley KA, Purdom E, et al.",
+    "year": 2010,
+    "journal": "Cancer Cell",
+    "doi": "10.1016/j.ccr.2009.12.020",
+    "pmid": "20129251",
+    "pmcid": "PMC2818769",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "heterogeneity"
+    ],
+    "level": "core",
+    "summary_en": "Defined expression-based subtypes of glioblastoma (proneural, neural, classical, mesenchymal), each linked to characteristic genetic changes. These labels appear throughout the literature, so knowing them is essential.",
+    "summary_ru": "Выделены подтипы глиобластомы по экспрессии генов (пронейральный, нейральный, классический, мезенхимальный), каждый связан с характерными генетическими изменениями. Эти названия встречаются во всей литературе, поэтому их нужно знать.",
+    "note_en": "The 'neural' subtype was later attributed to normal tissue contamination; the proneural group included IDH-mutant tumours.",
+    "note_ru": "«Нейральный» подтип позже объяснили примесью нормальной ткани; пронейральная группа включала IDH-мутантные опухоли."
+  },
+  {
+    "id": "wang2017",
+    "title": "Tumor Evolution of Glioma-Intrinsic Gene Expression Subtypes Associates with Immunological Changes in the Microenvironment",
+    "authors": "Wang Q, Hu B, Hu X, et al.",
+    "year": 2017,
+    "journal": "Cancer Cell",
+    "doi": "10.1016/j.ccell.2017.06.003",
+    "pmid": "28697342",
+    "pmcid": "PMC5599156",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "microenvironment",
+      "heterogeneity"
+    ],
+    "level": "core",
+    "summary_en": "Removed the signal of non-tumour cells to redefine glioblastoma subtypes as proneural, classical and mesenchymal, and linked the mesenchymal state to more macrophages and microglia. The current version of the Verhaak subtypes.",
+    "summary_ru": "После исключения сигнала неопухолевых клеток подтипы глиобластомы переопределены как пронейральный, классический и мезенхимальный; мезенхимальное состояние связано с большим числом макрофагов и микроглии. Актуальная версия подтипов Verhaak.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "parsons2008",
+    "title": "An Integrated Genomic Analysis of Human Glioblastoma Multiforme",
+    "authors": "Parsons DW, Jones S, Zhang X, et al.",
+    "year": 2008,
+    "journal": "Science",
+    "doi": "10.1126/science.1164382",
+    "pmid": "18772396",
+    "pmcid": "PMC2820389",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "classification"
+    ],
+    "level": "core",
+    "summary_en": "Sequencing of glioblastoma genomes discovered recurrent IDH1 mutations, found mainly in younger patients and secondary tumours with better survival. This discovery ultimately redefined how gliomas are classified.",
+    "summary_ru": "Секвенирование геномов глиобластом выявило повторяющиеся мутации IDH1, встречавшиеся преимущественно у более молодых пациентов и во вторичных опухолях с лучшей выживаемостью. Это открытие в итоге изменило классификацию глиом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "yan2009",
+    "title": "IDH1 and IDH2 Mutations in Gliomas",
+    "authors": "Yan H, Parsons DW, Jin G, et al.",
+    "year": 2009,
+    "journal": "N Engl J Med",
+    "doi": "10.1056/NEJMoa0808710",
+    "pmid": "19228619",
+    "pmcid": "PMC2820383",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "classification"
+    ],
+    "level": "core",
+    "summary_en": "Showed that IDH1 or IDH2 mutations are common in lower-grade gliomas and secondary glioblastomas but rare in primary glioblastoma, and that they mark a much better prognosis. Why IDH status is the first question in glioma diagnosis.",
+    "summary_ru": "Показано, что мутации IDH1 или IDH2 часты в глиомах низкой степени и во вторичных глиобластомах, но редки в первичной глиобластоме и связаны со значительно лучшим прогнозом. Поэтому статус IDH — первый вопрос в диагностике глиом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "ceccarelli2016",
+    "title": "Molecular Profiling Reveals Biologically Discrete Subsets and Pathways of Progression in Diffuse Glioma",
+    "authors": "Ceccarelli M, Barthel FP, Malta TM, et al.",
+    "year": 2016,
+    "journal": "Cell",
+    "doi": "10.1016/j.cell.2015.12.028",
+    "pmid": "26824661",
+    "pmcid": "PMC4754110",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "classification"
+    ],
+    "level": "advanced",
+    "summary_en": "Joint TCGA analysis of lower-grade gliomas and glioblastomas that grouped tumours by IDH status and DNA methylation rather than grade. Shows that molecular class, not histology, best predicts behaviour.",
+    "summary_ru": "Совместный анализ TCGA глиом низкой степени и глиобластом, сгруппировавший опухоли по статусу IDH и метилированию ДНК, а не по степени злокачественности. Показывает, что молекулярный класс, а не гистология, лучше всего предсказывает поведение опухоли.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "barthel2019",
+    "title": "Longitudinal molecular trajectories of diffuse glioma in adults",
+    "authors": "Barthel FP, Johnson KC, Varn FS, et al.",
+    "year": 2019,
+    "journal": "Nature",
+    "doi": "10.1038/s41586-019-1775-1",
+    "pmid": "31748746",
+    "pmcid": "PMC6897368",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "heterogeneity"
+    ],
+    "level": "core",
+    "summary_en": "The GLASS consortium compared paired primary and recurrent gliomas and found that treatment and time reshape the genome in predictable ways, including hypermutation after temozolomide in some tumours. Key for understanding recurrence.",
+    "summary_ru": "Консорциум GLASS сравнил парные первичные и рецидивные глиомы и показал, что лечение и время предсказуемо меняют геном, в том числе вызывают гипермутацию после темозоломида в части опухолей. Ключевая работа для понимания рецидивов.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "wang2016",
+    "title": "Clonal evolution of glioblastoma under therapy",
+    "authors": "Wang J, Cazzato E, Ladewig E, et al.",
+    "year": 2016,
+    "journal": "Nat Genet",
+    "doi": "10.1038/ng.3590",
+    "pmid": "27270107",
+    "pmcid": "PMC5627776",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "heterogeneity"
+    ],
+    "level": "advanced",
+    "summary_en": "Sequenced matched primary and recurrent glioblastomas and found that recurrences often grow from clones that split off early, with many driver mutations changed. Explains why targeting the primary tumour's mutations may fail at relapse.",
+    "summary_ru": "Секвенирование парных первичных и рецидивных глиобластом показало, что рецидив часто растёт из клонов, отделившихся на раннем этапе, со сменой многих драйверных мутаций. Объясняет, почему таргетирование мутаций первичной опухоли может не работать при рецидиве.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "wang2021",
+    "title": "Proteogenomic and metabolomic characterization of human glioblastoma",
+    "authors": "Wang LB, Karpova A, Gritsenko MA, et al.",
+    "year": 2021,
+    "journal": "Cancer Cell",
+    "doi": "10.1016/j.ccell.2021.01.006",
+    "pmid": "33577785",
+    "pmcid": "PMC8044053",
+    "open_access": true,
+    "topics": [
+      "genomics"
+    ],
+    "level": "advanced",
+    "summary_en": "CPTAC added proteomics, phosphoproteomics, metabolomics and more to genomic data from about 100 glioblastomas, showing how genetic changes translate into signalling activity. A reference dataset for multi-omics projects.",
+    "summary_ru": "Консорциум CPTAC дополнил геномные данные примерно 100 глиобластом протеомикой, фосфопротеомикой, метаболомикой и другими слоями, показав, как генетические изменения превращаются в активность сигнальных путей. Эталонный набор данных для мультиомных проектов.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "zhao2021",
+    "title": "Chinese Glioma Genome Atlas (CGGA): A Comprehensive Resource with Functional Genomic Data from Chinese Glioma Patients",
+    "authors": "Zhao Z, Zhang KN, Wang Q, et al.",
+    "year": 2021,
+    "journal": "Genomics Proteomics Bioinformatics",
+    "doi": "10.1016/j.gpb.2020.10.005",
+    "pmid": "33662628",
+    "pmcid": "PMC8498921",
+    "open_access": true,
+    "topics": [
+      "genomics"
+    ],
+    "level": "core",
+    "summary_en": "Describes the CGGA database: expression, sequencing and methylation data with clinical follow-up for more than 2,000 Chinese glioma patients. A major public validation cohort alongside TCGA.",
+    "summary_ru": "Описание базы данных CGGA: данные экспрессии, секвенирования и метилирования с клиническим наблюдением более чем 2000 пациентов с глиомами из Китая. Крупная публичная когорта для валидации наряду с TCGA.",
+    "note_en": "Uses older histology-based labels for many samples; reclassify by IDH status before analysis.",
+    "note_ru": "Для многих образцов используются прежние гистологические диагнозы; перед анализом переклассифицируйте опухоли по статусу IDH."
+  },
+  {
+    "id": "noushmehr2010",
+    "title": "Identification of a CpG Island Methylator Phenotype that Defines a Distinct Subgroup of Glioma",
+    "authors": "Noushmehr H, Weisenberger DJ, Diefes K, et al.",
+    "year": 2010,
+    "journal": "Cancer Cell",
+    "doi": "10.1016/j.ccr.2010.03.017",
+    "pmid": "20399149",
+    "pmcid": "PMC2872684",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "classification"
+    ],
+    "level": "advanced",
+    "summary_en": "Discovered G-CIMP, a widespread DNA hypermethylation pattern tightly linked to IDH1 mutation, younger age and better survival. Helps explain why IDH-mutant tumours are biologically distinct from glioblastoma.",
+    "summary_ru": "Открыт фенотип G-CIMP — распространённое гиперметилирование ДНК, тесно связанное с мутацией IDH1, более молодым возрастом и лучшей выживаемостью. Помогает понять, почему IDH-мутантные опухоли биологически отличаются от глиобластомы.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "killela2013",
+    "title": "TERT promoter mutations occur frequently in gliomas and a subset of tumors derived from cells with low rates of self-renewal",
+    "authors": "Killela PJ, Reitman ZJ, Jiao Y, et al.",
+    "year": 2013,
+    "journal": "Proc Natl Acad Sci U S A",
+    "doi": "10.1073/pnas.1303607110",
+    "pmid": "23530248",
+    "pmcid": "PMC3625331",
+    "open_access": true,
+    "topics": [
+      "genomics",
+      "classification"
+    ],
+    "level": "advanced",
+    "summary_en": "Found that TERT promoter mutations, which reactivate telomerase, are present in most primary glioblastomas. TERT promoter mutation is now one of the molecular criteria for diagnosing glioblastoma.",
+    "summary_ru": "Показано, что мутации промотора TERT, реактивирующие теломеразу, присутствуют в большинстве первичных глиобластом. Сейчас мутация промотора TERT — один из молекулярных критериев диагноза глиобластомы.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "patel2014",
+    "title": "Single-cell RNA-seq highlights intratumoral heterogeneity in primary glioblastoma",
+    "authors": "Patel AP, Tirosh I, Trombetta JJ, et al.",
+    "year": 2014,
+    "journal": "Science",
+    "doi": "10.1126/science.1254257",
+    "pmid": "24925914",
+    "pmcid": "PMC4123637",
+    "open_access": true,
+    "topics": [
+      "heterogeneity"
+    ],
+    "level": "core",
+    "summary_en": "The first single-cell RNA-seq study of glioblastoma: cells from one tumour showed a mix of subtype programmes and stemness states. Showed that a single biopsy-level label hides a population of very different cells.",
+    "summary_ru": "Первое исследование глиобластомы методом секвенирования РНК отдельных клеток: клетки одной опухоли демонстрировали смесь программ разных подтипов и состояний стволовости. Показано, что одна метка на уровне биопсии скрывает популяцию очень разных клеток.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "neftel2019",
+    "title": "An Integrative Model of Cellular States, Plasticity, and Genetics for Glioblastoma",
+    "authors": "Neftel C, Laffy J, Filbin MG, et al.",
+    "year": 2019,
+    "journal": "Cell",
+    "doi": "10.1016/j.cell.2019.06.024",
+    "pmid": "31327527",
+    "pmcid": "PMC6703186",
+    "open_access": true,
+    "topics": [
+      "heterogeneity"
+    ],
+    "level": "core",
+    "summary_en": "Showed that glioblastoma cells occupy four main states (neural-progenitor-like, oligodendrocyte-progenitor-like, astrocyte-like and mesenchymal-like), that genetics shifts their proportions, and that cells can switch between states.",
+    "summary_ru": "Показано, что клетки глиобластомы находятся в четырёх основных состояниях (подобных нейральным предшественникам, предшественникам олигодендроцитов, астроцитам и мезенхимальным клеткам), генетика смещает их соотношение, а клетки могут переходить из одного состояния в другое.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "sottoriva2013",
+    "title": "Intratumor heterogeneity in human glioblastoma reflects cancer evolutionary dynamics",
+    "authors": "Sottoriva A, Spiteri I, Piccirillo SG, et al.",
+    "year": 2013,
+    "journal": "Proc Natl Acad Sci U S A",
+    "doi": "10.1073/pnas.1219747110",
+    "pmid": "23412337",
+    "pmcid": "PMC3593922",
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "genomics"
+    ],
+    "level": "core",
+    "summary_en": "Took multiple spatially separated samples from each tumour and found that different regions of one glioblastoma can belong to different expression subtypes, and reconstructed the order in which genetic changes occurred.",
+    "summary_ru": "По нескольким пространственно разнесённым образцам из каждой опухоли показано, что разные участки одной глиобластомы могут относиться к разным экспрессионным подтипам; восстановлен порядок возникновения генетических изменений.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "darmanis2017",
+    "title": "Single-Cell RNA-Seq Analysis of Infiltrating Neoplastic Cells at the Migrating Front of Human Glioblastoma",
+    "authors": "Darmanis S, Sloan SA, Croote D, et al.",
+    "year": 2017,
+    "journal": "Cell Rep",
+    "doi": "10.1016/j.celrep.2017.10.030",
+    "pmid": "29091775",
+    "pmcid": "PMC5810554",
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "microenvironment"
+    ],
+    "level": "advanced",
+    "summary_en": "Compared single cells from the tumour core and the surrounding brain and found infiltrating tumour cells beyond the visible margin, with shared migratory programmes. Relevant to why surgery cannot remove every tumour cell.",
+    "summary_ru": "Сравнение отдельных клеток из ядра опухоли и окружающей ткани мозга выявило инфильтрирующие опухолевые клетки за пределами видимой границы с общими миграционными программами. Объясняет, почему хирургия не может удалить все опухолевые клетки.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "couturier2020",
+    "title": "Single-cell RNA-seq reveals that glioblastoma recapitulates a normal neurodevelopmental hierarchy",
+    "authors": "Couturier CP, Ayyadhury S, Le PU, et al.",
+    "year": 2020,
+    "journal": "Nat Commun",
+    "doi": "10.1038/s41467-020-17186-5",
+    "pmid": "32641768",
+    "pmcid": "PMC7343844",
+    "open_access": true,
+    "topics": [
+      "heterogeneity"
+    ],
+    "level": "advanced",
+    "summary_en": "Compared glioblastoma cells with human fetal brain cells and found that tumours follow a developmental-like hierarchy centred on a progenitor population, with implications for which cells drive regrowth.",
+    "summary_ru": "Сравнение клеток глиобластомы с клетками мозга плода человека показало, что опухоль повторяет подобную развитию иерархию с центром в популяции клеток-предшественников; это важно для понимания того, какие клетки обеспечивают повторный рост.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "johnson2021",
+    "title": "Single-cell multimodal glioma analyses identify epigenetic regulators of cellular plasticity and environmental stress response",
+    "authors": "Johnson KC, Anderson KJ, Courtois ET, et al.",
+    "year": 2021,
+    "journal": "Nat Genet",
+    "doi": "10.1038/s41588-021-00926-8",
+    "pmid": "34594038",
+    "pmcid": "PMC8570135",
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "genomics"
+    ],
+    "level": "advanced",
+    "summary_en": "Combined single-cell DNA methylation and gene expression in gliomas to show that epigenetic disorder is linked to cellular plasticity and stress responses. Adds an epigenetic layer to single-cell state models.",
+    "summary_ru": "Совмещение данных о метилировании ДНК и экспрессии генов в отдельных клетках глиом показало, что эпигенетическая неупорядоченность связана с клеточной пластичностью и ответом на стресс. Добавляет эпигенетический уровень к моделям клеточных состояний.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "varn2022",
+    "title": "Glioma progression is shaped by genetic evolution and microenvironment interactions",
+    "authors": "Varn FS, Johnson KC, Martinek J, et al.",
+    "year": 2022,
+    "journal": "Cell",
+    "doi": "10.1016/j.cell.2022.04.038",
+    "pmid": "35649412",
+    "pmcid": "PMC9189056",
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "microenvironment",
+      "genomics"
+    ],
+    "level": "advanced",
+    "summary_en": "GLASS longitudinal study integrating genomics, expression and imaging of paired samples: at recurrence, glioblastomas tend to shift towards mesenchymal states and neuron-like interactions, shaped by both genetics and the microenvironment.",
+    "summary_ru": "Лонгитюдное исследование GLASS, объединяющее геномику, экспрессию и визуализацию парных образцов: при рецидиве глиобластомы смещаются к мезенхимальным состояниям и взаимодействию с нейронами под влиянием генетики и микроокружения.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "mroz2013",
+    "title": "MATH, a novel measure of intratumor genetic heterogeneity, is high in poor-outcome classes of head and neck squamous cell carcinoma",
+    "authors": "Mroz EA, Rocco JW.",
+    "year": 2013,
+    "journal": "Oral Oncol",
+    "doi": "10.1016/j.oraloncology.2012.09.007",
+    "pmid": "23079694",
+    "pmcid": "PMC3570658",
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "methods"
+    ],
+    "level": "advanced",
+    "summary_en": "Introduced MATH (mutant-allele tumour heterogeneity), a simple score of genetic heterogeneity computed from the spread of variant allele frequencies in standard sequencing data. A practical method you can apply to TCGA glioblastoma data.",
+    "summary_ru": "Предложен индекс MATH (гетерогенность мутантных аллелей в опухоли) — простая мера генетической гетерогенности, рассчитываемая по разбросу частот вариантных аллелей в стандартных данных секвенирования. Практичный метод, применимый к данным TCGA по глиобластоме.",
+    "note_en": "Developed in head and neck cancer, not glioblastoma.",
+    "note_ru": "Метод разработан на раке головы и шеи, а не на глиобластоме."
+  },
+  {
+    "id": "mroz2015",
+    "title": "Intra-tumor Genetic Heterogeneity and Mortality in Head and Neck Cancer: Analysis of Data from The Cancer Genome Atlas",
+    "authors": "Mroz EA, Tward AD, Pickering CR, et al.",
+    "year": 2015,
+    "journal": "PLoS Med",
+    "doi": "10.1371/journal.pmed.1001786",
+    "pmid": "25668320",
+    "pmcid": "PMC4323109",
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "methods"
+    ],
+    "level": "advanced",
+    "summary_en": "Applied the MATH score to TCGA data and found that higher heterogeneity predicted higher mortality independently of standard clinical factors. A template for testing heterogeneity as a prognostic factor in survival models.",
+    "summary_ru": "Индекс MATH применён к данным TCGA: более высокая гетерогенность предсказывала более высокую смертность независимо от стандартных клинических факторов. Образец проверки гетерогенности как прогностического фактора в моделях выживаемости.",
+    "note_en": "Head and neck cancer cohort; method transferable to glioblastoma.",
+    "note_ru": "Когорта рака головы и шеи; метод переносим на глиобластому."
+  },
+  {
+    "id": "ravi2022",
+    "title": "Spatially resolved multi-omics deciphers bidirectional tumor-host interdependence in glioblastoma",
+    "authors": "Ravi VM, Will P, Kueckelhaus J, et al.",
+    "year": 2022,
+    "journal": "Cancer Cell",
+    "doi": "10.1016/j.ccell.2022.05.009",
+    "pmid": "35700707",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "microenvironment"
+    ],
+    "level": "advanced",
+    "summary_en": "Used spatial transcriptomics, metabolomics and proteomics on tissue sections to map where tumour cell programmes sit relative to hypoxia, reactive brain and immune cells. Shows that cell states are organised by local environment.",
+    "summary_ru": "С помощью пространственной транскриптомики, метаболомики и протеомики на срезах тканей построена карта расположения программ опухолевых клеток относительно гипоксии, реактивной ткани мозга и иммунных клеток. Показано, что клеточные состояния организованы локальным окружением.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "greenwald2024",
+    "title": "Integrative spatial analysis reveals a multi-layered organization of glioblastoma",
+    "authors": "Greenwald AC, Darnell NG, Hoefflin R, et al.",
+    "year": 2024,
+    "journal": "Cell",
+    "doi": "10.1016/j.cell.2024.03.029",
+    "pmid": "38653236",
+    "pmcid": "PMC11088502",
+    "open_access": true,
+    "topics": [
+      "heterogeneity",
+      "microenvironment"
+    ],
+    "level": "advanced",
+    "summary_en": "Spatial transcriptomics and proteomics revealed that glioblastoma is organised in layers, with hypoxia structuring the arrangement of tumour cell states around necrotic zones. An up-to-date view of tumour architecture.",
+    "summary_ru": "Пространственная транскриптомика и протеомика показали, что глиобластома организована слоями, а гипоксия упорядочивает расположение состояний опухолевых клеток вокруг зон некроза. Современный взгляд на архитектуру опухоли.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "hambardzumyan2016",
+    "title": "The role of microglia and macrophages in glioma maintenance and progression",
+    "authors": "Hambardzumyan D, Gutmann DH, Kettenmann H.",
+    "year": 2016,
+    "journal": "Nat Neurosci",
+    "doi": "10.1038/nn.4185",
+    "pmid": "26713745",
+    "pmcid": "PMC4876023",
+    "open_access": true,
+    "topics": [
+      "microenvironment"
+    ],
+    "level": "start",
+    "summary_en": "Review explaining that microglia and blood-derived macrophages can make up a large share of cells in a glioma and mostly support tumour growth. A readable entry point to the glioma immune microenvironment.",
+    "summary_ru": "Обзор, объясняющий, что микроглия и макрофаги из крови могут составлять значительную долю клеток глиомы и в основном поддерживают рост опухоли. Доступное введение в иммунное микроокружение глиом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "quail2017",
+    "title": "The Microenvironmental Landscape of Brain Tumors",
+    "authors": "Quail DF, Joyce JA.",
+    "year": 2017,
+    "journal": "Cancer Cell",
+    "doi": "10.1016/j.ccell.2017.02.009",
+    "pmid": "28292436",
+    "pmcid": "PMC5424263",
+    "open_access": true,
+    "topics": [
+      "microenvironment",
+      "start"
+    ],
+    "level": "start",
+    "summary_en": "A broad review of the non-tumour components of brain tumours—immune cells, vessels, astrocytes, neurons and the extracellular matrix—and how they can be targeted. Good orientation before the specialised papers.",
+    "summary_ru": "Широкий обзор неопухолевых компонентов опухолей мозга — иммунных клеток, сосудов, астроцитов, нейронов и внеклеточного матрикса — и возможностей воздействия на них. Хорошая ориентировка перед специализированными работами.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "venkataramani2019",
+    "title": "Glutamatergic synaptic input to glioma cells drives brain tumour progression",
+    "authors": "Venkataramani V, Tanev DI, Strahle C, et al.",
+    "year": 2019,
+    "journal": "Nature",
+    "doi": "10.1038/s41586-019-1564-x",
+    "pmid": "31534219",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "microenvironment"
+    ],
+    "level": "core",
+    "summary_en": "Found true synapses between neurons and glioma cells: neuronal glutamate activates AMPA receptors on tumour cells and promotes invasion and growth. Launched the field of cancer neuroscience in glioma.",
+    "summary_ru": "Обнаружены настоящие синапсы между нейронами и клетками глиомы: нейрональный глутамат активирует AMPA-рецепторы опухолевых клеток и стимулирует инвазию и рост. Положило начало направлению «онконейронауки» в изучении глиом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "venkatesh2019",
+    "title": "Electrical and synaptic integration of glioma into neural circuits",
+    "authors": "Venkatesh HS, Morishita W, Geraghty AC, et al.",
+    "year": 2019,
+    "journal": "Nature",
+    "doi": "10.1038/s41586-019-1563-y",
+    "pmid": "31534222",
+    "pmcid": "PMC7038898",
+    "open_access": true,
+    "topics": [
+      "microenvironment"
+    ],
+    "level": "core",
+    "summary_en": "Published alongside Venkataramani et al.: glioma cells form synapses with neurons and are electrically coupled to each other, and this electrical activity drives tumour proliferation. Suggests neural activity itself as a therapeutic target.",
+    "summary_ru": "Опубликовано одновременно с работой Venkataramani и соавт.: клетки глиомы образуют синапсы с нейронами и электрически связаны друг с другом, а эта электрическая активность стимулирует пролиферацию опухоли. Предлагает нейронную активность как мишень терапии.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "osswald2015",
+    "title": "Brain tumour cells interconnect to a functional and resistant network",
+    "authors": "Osswald M, Jung E, Sahm F, et al.",
+    "year": 2015,
+    "journal": "Nature",
+    "doi": "10.1038/nature16071",
+    "pmid": "26536111",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "microenvironment",
+      "heterogeneity"
+    ],
+    "level": "core",
+    "summary_en": "Showed that astrocytic glioma cells extend long membrane tubes (tumour microtubes) that connect them into a network, helping the tumour invade, repair damage and resist radiotherapy.",
+    "summary_ru": "Показано, что клетки астроцитарных глиом образуют длинные мембранные трубки (опухолевые микротрубки), объединяющие их в сеть; это помогает опухоли распространяться, восстанавливаться после повреждений и противостоять лучевой терапии.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "bao2006",
+    "title": "Glioma stem cells promote radioresistance by preferential activation of the DNA damage response",
+    "authors": "Bao S, Wu Q, McLendon RE, et al.",
+    "year": 2006,
+    "journal": "Nature",
+    "doi": "10.1038/nature05236",
+    "pmid": "17051156",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "microenvironment",
+      "heterogeneity",
+      "treatment"
+    ],
+    "level": "core",
+    "summary_en": "Showed that stem-like CD133-positive glioma cells survive radiation better because they repair DNA damage more efficiently. A classic explanation for why glioblastoma recurs after radiotherapy.",
+    "summary_ru": "Показано, что стволовоподобные CD133-положительные клетки глиомы лучше переживают облучение благодаря более эффективной репарации повреждений ДНК. Классическое объяснение рецидивов глиобластомы после лучевой терапии.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "wen2010",
+    "title": "Updated response assessment criteria for high-grade gliomas: response assessment in neuro-oncology working group",
+    "authors": "Wen PY, Macdonald DR, Reardon DA, et al.",
+    "year": 2010,
+    "journal": "J Clin Oncol",
+    "doi": "10.1200/JCO.2009.26.3541",
+    "pmid": "20231676",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "imaging",
+      "trials-design"
+    ],
+    "level": "core",
+    "summary_en": "Introduced the RANO criteria for judging response and progression on MRI, adding non-enhancing tumour and rules for pseudoprogression and steroid use. The standard language of response in glioma trials.",
+    "summary_ru": "Введены критерии RANO для оценки ответа и прогрессирования по МРТ: учтены неконтрастируемая часть опухоли, правила для псевдопрогрессирования и приёма стероидов. Стандартный язык оценки ответа в исследованиях глиом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "wen2023",
+    "title": "RANO 2.0: Update to the Response Assessment in Neuro-Oncology Criteria for High- and Low-Grade Gliomas in Adults",
+    "authors": "Wen PY, van den Bent M, Youssef G, et al.",
+    "year": 2023,
+    "journal": "J Clin Oncol",
+    "doi": "10.1200/JCO.23.01059",
+    "pmid": "37774317",
+    "pmcid": "PMC10860967",
+    "open_access": true,
+    "topics": [
+      "imaging",
+      "trials-design"
+    ],
+    "level": "core",
+    "summary_en": "Updated and unified response criteria for adult gliomas, using the post-radiotherapy scan as baseline and clarifying how to handle pseudoprogression. Read this for any imaging endpoint in current trials.",
+    "summary_ru": "Обновлённые единые критерии ответа для глиом взрослых: базовым считается снимок после лучевой терапии, уточнены правила при псевдопрогрессировании. Необходимо для понимания визуализационных конечных точек в современных исследованиях.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "menze2015",
+    "title": "The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS)",
+    "authors": "Menze BH, Jakab A, Bauer S, et al.",
+    "year": 2015,
+    "journal": "IEEE Trans Med Imaging",
+    "doi": "10.1109/TMI.2014.2377694",
+    "pmid": "25494501",
+    "pmcid": "PMC4833122",
+    "open_access": true,
+    "topics": [
+      "imaging"
+    ],
+    "level": "core",
+    "summary_en": "Described the BraTS challenge: a public set of multimodal MRI scans with expert tumour labels used to compare automatic segmentation algorithms. The starting point for machine-learning work on glioma imaging.",
+    "summary_ru": "Описан конкурс BraTS: открытый набор мультимодальных МРТ с экспертной разметкой опухолей для сравнения алгоритмов автоматической сегментации. Отправная точка для работ по машинному обучению в визуализации глиом.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "bakas2017",
+    "title": "Advancing The Cancer Genome Atlas glioma MRI collections with expert segmentation labels and radiomic features",
+    "authors": "Bakas S, Akbari H, Sotiras A, et al.",
+    "year": 2017,
+    "journal": "Sci Data",
+    "doi": "10.1038/sdata.2017.117",
+    "pmid": "28872634",
+    "pmcid": "PMC5685212",
+    "open_access": true,
+    "topics": [
+      "imaging",
+      "genomics"
+    ],
+    "level": "advanced",
+    "summary_en": "Released expert tumour segmentations and radiomic features for the TCGA glioma MRI scans, linking imaging to TCGA genomic data. Enables radiogenomic analyses without having to segment images yourself.",
+    "summary_ru": "Опубликованы экспертные сегментации опухолей и радиомические признаки для МРТ глиом из TCGA, связывающие изображения с геномными данными TCGA. Позволяет проводить радиогеномный анализ без самостоятельной сегментации.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "singh2021",
+    "title": "Radiomics and radiogenomics in gliomas: a contemporary update",
+    "authors": "Singh G, Manjila S, Sakla N, et al.",
+    "year": 2021,
+    "journal": "Br J Cancer",
+    "doi": "10.1038/s41416-021-01387-w",
+    "pmid": "33958734",
+    "pmcid": "PMC8405677",
+    "open_access": true,
+    "topics": [
+      "imaging",
+      "start"
+    ],
+    "level": "start",
+    "summary_en": "Reviews how quantitative MRI features and machine learning are used to predict glioma genotype (IDH, MGMT and others), prognosis and treatment response, along with the methodological pitfalls. A good first read on radiogenomics.",
+    "summary_ru": "Обзор того, как количественные признаки МРТ и машинное обучение используются для предсказания генотипа глиомы (IDH, MGMT и др.), прогноза и ответа на лечение, а также методологических ловушек. Хорошее первое чтение по радиогеномике.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "kaplan1958",
+    "title": "Nonparametric Estimation from Incomplete Observations",
+    "authors": "Kaplan EL, Meier P.",
+    "year": 1958,
+    "journal": "J Am Stat Assoc",
+    "doi": "10.1080/01621459.1958.10501452",
+    "pmid": null,
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Introduced the product-limit (Kaplan–Meier) estimator of survival when some patients are censored. Every survival curve in a glioblastoma paper traces back to this method.",
+    "summary_ru": "Предложен множительный (Каплана–Мейера) метод оценки выживаемости при наличии цензурированных наблюдений. Каждая кривая выживаемости в статьях о глиобластоме восходит к этому методу.",
+    "note_en": "Statistics journal not indexed in PubMed, so no PMID.",
+    "note_ru": "Статистический журнал не индексируется в PubMed, поэтому PMID отсутствует."
+  },
+  {
+    "id": "cox1972",
+    "title": "Regression Models and Life-Tables",
+    "authors": "Cox DR.",
+    "year": 1972,
+    "journal": "J R Stat Soc Series B Stat Methodol",
+    "doi": "10.1111/j.2517-6161.1972.tb00899.x",
+    "pmid": null,
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Introduced the proportional hazards regression model, which estimates how factors such as age or MGMT status change the hazard of death without specifying the baseline survival curve. The workhorse of clinical survival analysis.",
+    "summary_ru": "Предложена регрессионная модель пропорциональных рисков, оценивающая, как факторы вроде возраста или статуса MGMT меняют риск смерти без задания базовой кривой выживаемости. Основной инструмент клинического анализа выживаемости.",
+    "note_en": "Statistics journal not indexed in PubMed, so no PMID.",
+    "note_ru": "Статистический журнал не индексируется в PubMed, поэтому PMID отсутствует."
+  },
+  {
+    "id": "grambsch1994",
+    "title": "Proportional hazards tests and diagnostics based on weighted residuals",
+    "authors": "Grambsch PM, Therneau TM.",
+    "year": 1994,
+    "journal": "Biometrika",
+    "doi": "10.1093/biomet/81.3.515",
+    "pmid": null,
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "methods"
+    ],
+    "level": "advanced",
+    "summary_en": "Developed the scaled Schoenfeld residual test for checking whether a Cox model's proportional hazards assumption holds. This is the test behind cox.zph in R—important when effects like age change over follow-up.",
+    "summary_ru": "Разработан тест на основе масштабированных остатков Шенфельда для проверки допущения о пропорциональности рисков в модели Кокса. Именно он реализован в функции cox.zph в R; важен, когда эффект, например возраста, меняется со временем.",
+    "note_en": "Statistics journal not indexed in PubMed, so no PMID.",
+    "note_ru": "Статистический журнал не индексируется в PubMed, поэтому PMID отсутствует."
+  },
+  {
+    "id": "clark2003a",
+    "title": "Survival analysis part I: basic concepts and first analyses",
+    "authors": "Clark TG, Bradburn MJ, Love SB, Altman DG.",
+    "year": 2003,
+    "journal": "Br J Cancer",
+    "doi": "10.1038/sj.bjc.6601118",
+    "pmid": "12865907",
+    "pmcid": "PMC2394262",
+    "open_access": true,
+    "topics": [
+      "methods",
+      "start"
+    ],
+    "level": "start",
+    "summary_en": "First part of a free four-part tutorial for cancer researchers: censoring, Kaplan–Meier curves, median survival and the log-rank test, explained with worked examples. The best place to start learning survival analysis.",
+    "summary_ru": "Первая часть бесплатного руководства из четырёх статей для онкологов-исследователей: цензурирование, кривые Каплана–Мейера, медиана выживаемости и лог-ранговый критерий с разобранными примерами. Лучшее место, чтобы начать изучать анализ выживаемости.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "bradburn2003a",
+    "title": "Survival analysis part II: multivariate data analysis--an introduction to concepts and methods",
+    "authors": "Bradburn MJ, Clark TG, Love SB, Altman DG.",
+    "year": 2003,
+    "journal": "Br J Cancer",
+    "doi": "10.1038/sj.bjc.6601119",
+    "pmid": "12888808",
+    "pmcid": "PMC2394368",
+    "open_access": true,
+    "topics": [
+      "methods"
+    ],
+    "level": "start",
+    "summary_en": "Second tutorial part: introduces Cox regression and parametric models for analysing several prognostic factors at once, and how to interpret hazard ratios.",
+    "summary_ru": "Вторая часть руководства: введение в регрессию Кокса и параметрические модели для одновременного анализа нескольких прогностических факторов и интерпретация отношений рисков.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "bradburn2003b",
+    "title": "Survival analysis part III: multivariate data analysis--choosing a model and assessing its adequacy and fit",
+    "authors": "Bradburn MJ, Clark TG, Love SB, Altman DG.",
+    "year": 2003,
+    "journal": "Br J Cancer",
+    "doi": "10.1038/sj.bjc.6601120",
+    "pmid": "12915864",
+    "pmcid": "PMC2376927",
+    "open_access": true,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Third tutorial part: how to choose covariates, check the proportional hazards assumption and assess whether a survival model fits the data. Directly relevant before publishing any Cox model.",
+    "summary_ru": "Третья часть руководства: как выбирать ковариаты, проверять допущение о пропорциональности рисков и оценивать соответствие модели выживаемости данным. Прямо необходима перед публикацией любой модели Кокса.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "clark2003b",
+    "title": "Survival analysis part IV: further concepts and methods in survival analysis",
+    "authors": "Clark TG, Bradburn MJ, Love SB, Altman DG.",
+    "year": 2003,
+    "journal": "Br J Cancer",
+    "doi": "10.1038/sj.bjc.6601117",
+    "pmid": "12942105",
+    "pmcid": "PMC2394469",
+    "open_access": true,
+    "topics": [
+      "methods"
+    ],
+    "level": "advanced",
+    "summary_en": "Final tutorial part covering more advanced topics such as time-dependent covariates, competing risks, frailty and missing data. A guide to what to learn next.",
+    "summary_ru": "Заключительная часть руководства: более сложные темы — зависящие от времени ковариаты, конкурирующие риски, модели «хрупкости» и пропущенные данные. Ориентир для дальнейшего изучения.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "mcshane2005",
+    "title": "Reporting recommendations for tumor marker prognostic studies (REMARK)",
+    "authors": "McShane LM, Altman DG, Sauerbrei W, et al.",
+    "year": 2005,
+    "journal": "J Natl Cancer Inst",
+    "doi": "10.1093/jnci/dji237",
+    "pmid": "16106022",
+    "pmcid": null,
+    "open_access": true,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "A checklist for reporting studies of prognostic tumour markers (e.g., MGMT, IDH, or a heterogeneity score): patients, assay, statistical analysis and results. Use it to plan and write any biomarker–survival study.",
+    "summary_ru": "Контрольный список для публикации исследований прогностических опухолевых маркеров (например, MGMT, IDH или индекса гетерогенности): пациенты, методика анализа, статистика и результаты. Используйте его при планировании и описании любого исследования «биомаркер–выживаемость».",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "collins2015",
+    "title": "Transparent reporting of a multivariable prediction model for individual prognosis or diagnosis (TRIPOD): the TRIPOD statement",
+    "authors": "Collins GS, Reitsma JB, Altman DG, Moons KG.",
+    "year": 2015,
+    "journal": "BMC Med",
+    "doi": "10.1186/s12916-014-0241-z",
+    "pmid": "25563062",
+    "pmcid": "PMC4284921",
+    "open_access": true,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "The TRIPOD checklist for developing or validating prediction models, such as a survival calculator. Covers how to report predictors, handling of missing data, model performance and validation.",
+    "summary_ru": "Контрольный список TRIPOD для разработки и валидации прогностических моделей, например калькулятора выживаемости. Описывает, как сообщать о предикторах, обработке пропущенных данных, качестве и валидации модели.",
+    "note_en": "Published simultaneously in several journals; this is the open-access BMC Medicine version. TRIPOD+AI (2024) extends it to machine-learning models.",
+    "note_ru": "Опубликован одновременно в нескольких журналах; здесь указана версия в открытом доступе в BMC Medicine. TRIPOD+AI (2024) расширяет его на модели машинного обучения."
+  },
+  {
+    "id": "dersimonian1986",
+    "title": "Meta-analysis in clinical trials",
+    "authors": "DerSimonian R, Laird N.",
+    "year": 1986,
+    "journal": "Control Clin Trials",
+    "doi": "10.1016/0197-2456(86)90046-2",
+    "pmid": "3802833",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Introduced the classic random-effects method for combining study results when true effects differ between studies. Still the default in many meta-analyses, so you need to know it—and its weaknesses.",
+    "summary_ru": "Предложен классический метод случайных эффектов для объединения результатов исследований, когда истинные эффекты различаются. До сих пор используется по умолчанию во многих метаанализах, поэтому его и его недостатки нужно знать.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "inthout2014",
+    "title": "The Hartung-Knapp-Sidik-Jonkman method for random effects meta-analysis is straightforward and considerably outperforms the standard DerSimonian-Laird method",
+    "authors": "IntHout J, Ioannidis JP, Borm GF.",
+    "year": 2014,
+    "journal": "BMC Med Res Methodol",
+    "doi": "10.1186/1471-2288-14-25",
+    "pmid": "24548571",
+    "pmcid": "PMC4015721",
+    "open_access": true,
+    "topics": [
+      "methods"
+    ],
+    "level": "advanced",
+    "summary_en": "Simulations showing that the DerSimonian–Laird method gives overly narrow confidence intervals when there are few studies, and that the Hartung–Knapp adjustment performs much better. Relevant to small glioblastoma meta-analyses.",
+    "summary_ru": "Моделирование показало, что метод ДерСимониан–Лэрд даёт слишком узкие доверительные интервалы при малом числе исследований, а поправка Хартунга–Кнаппа работает значительно лучше. Актуально для небольших метаанализов по глиобластоме.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "higgins2002",
+    "title": "Quantifying heterogeneity in a meta-analysis",
+    "authors": "Higgins JP, Thompson SG.",
+    "year": 2002,
+    "journal": "Stat Med",
+    "doi": "10.1002/sim.1186",
+    "pmid": "12111919",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "methods"
+    ],
+    "level": "advanced",
+    "summary_en": "Proposed the I² and H statistics to describe how much of the variation between studies reflects real differences rather than chance. The technical basis for heterogeneity reporting in meta-analyses.",
+    "summary_ru": "Предложены статистики I² и H, показывающие, какая доля различий между исследованиями отражает реальные различия, а не случайность. Техническая основа описания гетерогенности в метаанализах.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "higgins2003",
+    "title": "Measuring inconsistency in meta-analyses",
+    "authors": "Higgins JP, Thompson SG, Deeks JJ, Altman DG.",
+    "year": 2003,
+    "journal": "BMJ",
+    "doi": "10.1136/bmj.327.7414.557",
+    "pmid": "12958120",
+    "pmcid": "PMC192859",
+    "open_access": true,
+    "topics": [
+      "methods",
+      "start"
+    ],
+    "level": "start",
+    "summary_en": "A short, accessible explanation of the I² statistic and how to interpret low, moderate and high heterogeneity between studies. The paper to read first on heterogeneity in meta-analysis.",
+    "summary_ru": "Короткое доступное объяснение статистики I² и того, как интерпретировать низкую, умеренную и высокую гетерогенность между исследованиями. Первая статья для чтения о гетерогенности в метаанализе.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "riley2011",
+    "title": "Interpretation of random effects meta-analyses",
+    "authors": "Riley RD, Higgins JP, Deeks JJ.",
+    "year": 2011,
+    "journal": "BMJ",
+    "doi": "10.1136/bmj.d549",
+    "pmid": "21310794",
+    "pmcid": null,
+    "open_access": false,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "Explains that a random-effects summary estimates an average effect and recommends reporting a prediction interval showing the range of effects expected in a new setting. Encourages honest reporting of between-study variation.",
+    "summary_ru": "Объясняется, что суммарная оценка модели случайных эффектов — это средний эффект, и рекомендуется приводить интервал прогноза, показывающий диапазон ожидаемых эффектов в новых условиях. Способствует честному отражению вариабельности между исследованиями.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "page2021",
+    "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+    "authors": "Page MJ, McKenzie JE, Bossuyt PM, et al.",
+    "year": 2021,
+    "journal": "BMJ",
+    "doi": "10.1136/bmj.n71",
+    "pmid": "33782057",
+    "pmcid": "PMC8005924",
+    "open_access": true,
+    "topics": [
+      "methods"
+    ],
+    "level": "core",
+    "summary_en": "The current reporting guideline for systematic reviews and meta-analyses, including the updated flow diagram and checklist. Required reading before writing any review of glioblastoma studies.",
+    "summary_ru": "Действующее руководство по представлению систематических обзоров и метаанализов, включая обновлённую блок-схему и контрольный список. Обязательно к прочтению перед написанием любого обзора исследований глиобластомы.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "mandel2018",
+    "title": "Inability of positive phase II clinical trials of investigational treatments to subsequently predict positive phase III clinical trials in glioblastoma",
+    "authors": "Mandel JJ, Yust-Katz S, Patel AJ, et al.",
+    "year": 2018,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/nox144",
+    "pmid": "29016865",
+    "pmcid": "PMC5761583",
+    "open_access": true,
+    "topics": [
+      "trials-design"
+    ],
+    "level": "core",
+    "summary_en": "Reviewed glioblastoma drugs that looked positive in phase II and found that almost none succeeded in phase III, pointing to single-arm designs and historical controls as major culprits.",
+    "summary_ru": "Анализ препаратов для лечения глиобластомы с положительными результатами II фазы показал, что почти ни один из них не подтвердил эффективность в III фазе; главными причинами названы одногрупповой дизайн и исторический контроль.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "vanderbeek2018",
+    "title": "The clinical trials landscape for glioblastoma: is it adequate to develop new treatments?",
+    "authors": "Vanderbeek AM, Rahman R, Fell G, et al.",
+    "year": 2018,
+    "journal": "Neuro Oncol",
+    "doi": "10.1093/neuonc/noy027",
+    "pmid": "29518210",
+    "pmcid": "PMC6280141",
+    "open_access": true,
+    "topics": [
+      "trials-design"
+    ],
+    "level": "advanced",
+    "summary_en": "Surveyed registered glioblastoma trials and found that most were small, single-arm and slow to report, with few reaching randomised testing. Explains structural reasons for slow progress.",
+    "summary_ru": "Анализ зарегистрированных клинических исследований глиобластомы показал, что большинство из них небольшие, одногрупповые и медленно публикуют результаты, а до рандомизированной проверки доходят немногие. Объясняет структурные причины медленного прогресса.",
+    "note_en": null,
+    "note_ru": null
+  },
+  {
+    "id": "bagley2022",
+    "title": "Glioblastoma Clinical Trials: Current Landscape and Opportunities for Improvement",
+    "authors": "Bagley SJ, Kothari S, Rahman R, et al.",
+    "year": 2022,
+    "journal": "Clin Cancer Res",
+    "doi": "10.1158/1078-0432.CCR-21-2750",
+    "pmid": "34561269",
+    "pmcid": "PMC9044253",
+    "open_access": true,
+    "topics": [
+      "trials-design",
+      "start"
+    ],
+    "level": "start",
+    "summary_en": "Accessible review of what goes wrong in glioblastoma trials—patient selection, control arms, endpoints, drug delivery into the brain—and of newer approaches such as adaptive platform trials and window-of-opportunity studies.",
+    "summary_ru": "Доступный обзор проблем клинических исследований глиобластомы — отбор пациентов, контрольные группы, конечные точки, доставка препаратов в мозг — и новых подходов, таких как адаптивные платформенные исследования и исследования «окна возможностей».",
+    "note_en": null,
+    "note_ru": null
+  }
+]

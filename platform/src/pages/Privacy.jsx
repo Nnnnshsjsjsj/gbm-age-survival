@@ -16,13 +16,13 @@ export default function Privacy() {
       <p className="lede mt-4">{t('privacy_sub')}</p>
       <section className="mt-12" aria-labelledby="pv-store">
         <h2 id="pv-store" className="h3">{t('pv_store_h')}</h2>
-        {list(['pv_email', 'pv_handle', 'pv_profile', 'pv_posts', 'pv_summaries'], IconCheck, 'var(--accent)')}
+        {list(['pv_prefs', 'pv_export'], IconCheck, 'var(--accent)')}
       </section>
       <section className="mt-12" aria-labelledby="pv-never">
         <h2 id="pv-never" className="h3">{t('pv_never_h')}</h2>
-        {list(['pv_rows', 'pv_files', 'pv_tracking'], IconX, 'var(--red)')}
+        {list(['pv_rows', 'pv_files', 'pv_accounts', 'pv_tracking'], IconX, 'var(--red)')}
       </section>
-      {['pv_who', 'pv_where', 'pv_delete'].map((k) => (
+      {['pv_links', 'pv_where'].map((k) => (
         <section key={k} className="rule mt-10" aria-labelledby={`${k}-h`} style={{ gridTemplateColumns: '1fr' }}>
           <div>
             <h2 id={`${k}-h`} className="h3">{t(`${k}_h`)}</h2>

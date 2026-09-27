@@ -109,12 +109,13 @@ export function UseNotice() {
 }
 
 /** Calm fallback when accounts are not available yet. */
-export function CalmBanner({ className = '' }) {
-  const t = useT();
+/** Placeholder while a lazily loaded page arrives. */
+export function PageSkeleton() {
   return (
-    <div className={`banner banner-accent ${className}`} role="status" data-testid="calm-banner">
-      <span className="pulse" aria-hidden="true" />
-      <p><b>{t('calm_title')}</b> {t('calm_body')}</p>
+    <div className="shell page" aria-busy="true">
+      <span className="skel skel-line" style={{ width: 140, height: 12 }} />
+      <span className="skel skel-line" style={{ width: '70%', height: 44, marginTop: 18 }} />
+      <span className="skel skel-line" style={{ width: '55%', height: 16, marginTop: 18 }} />
     </div>
   );
 }

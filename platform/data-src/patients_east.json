@@ -1,0 +1,1590 @@
+{
+  "generated": "2026-09-27",
+  "note": "Phone numbers copied from the page in each entry's `source`; null = not confirmed. Countries with needs_research=true were not verified in this pass.",
+  "countries": [
+    {
+      "code": "RS",
+      "name_en": "Serbia",
+      "name_ru": "Сербия",
+      "lat": 44.79,
+      "lng": 20.45,
+      "emergency": [
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "194"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "192"
+        },
+        {
+          "label_en": "Fire",
+          "label_ru": "Пожарная служба",
+          "number": "193"
+        }
+      ],
+      "emergency_source": "https://www.rts.rs/lat/vesti/drustvo/1105432/novi-brojevi-hitnih-sluzbi.html",
+      "entries": [
+        {
+          "id": "rs-centar-srce",
+          "name": "Centar Srce",
+          "name_local": "Центар Срце",
+          "url": "https://www.centarsrce.org/",
+          "kind": "crisis",
+          "phone": "0800 300 303",
+          "hours": "every day 17:00–23:00",
+          "langs": [
+            "sr"
+          ],
+          "free": true,
+          "desc_en": "Volunteer emotional-support and suicide-prevention line from Novi Sad; phone, e-mail and web chat.",
+          "desc_ru": "Волонтёрская линия эмоциональной поддержки и профилактики суицида (Нови-Сад): телефон, e-mail и чат.",
+          "source": "https://www.centarsrce.org/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-sos-lazalazarevic",
+          "name": "National SOS line for suicide prevention (Dr Laza Lazarević Clinic)",
+          "name_local": "Национална СОС линија за превенцију самоубиства",
+          "url": "https://www.lazalazarevic.rs/",
+          "kind": "crisis",
+          "phone": "011 7777 000",
+          "hours": "24/7",
+          "langs": [
+            "sr"
+          ],
+          "free": true,
+          "desc_en": "State 24-hour suicide-prevention line staffed by psychiatrists, psychologists and social workers.",
+          "desc_ru": "Государственная круглосуточная линия профилактики суицида; отвечают психиатры, психологи, социальные работники.",
+          "source": "https://www.lazalazarevic.rs/index.php/arhiva-vesti/630-otvorena-nacionalna-sos-linija-za-prevenciju-samoubistva-011-7777-000",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-nadel-116111",
+          "name": "NADEL – national children's helpline",
+          "name_local": "НАДЕЛ 116 111",
+          "url": "https://116111.rs/",
+          "kind": "crisis",
+          "phone": "116 111",
+          "hours": null,
+          "langs": [
+            "sr"
+          ],
+          "free": true,
+          "desc_en": "Free, confidential helpline and chat for children, teenagers, young adults and parents.",
+          "desc_ru": "Бесплатная анонимная линия и чат для детей, подростков, молодёжи и родителей.",
+          "source": "https://116111.rs/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-iors-psychosocial",
+          "name": "Institute for Oncology and Radiology of Serbia – psychosocial support counselling",
+          "name_local": "Институт за онкологију и радиологију Србије – Саветовалиште за психосоцијалну подршку",
+          "url": "https://www.ncrc.ac.rs/savetovaliste-za-psihosocijalnu-podrsku-i-rehabilitaciju/",
+          "kind": "mental",
+          "phone": "011 2067 158",
+          "hours": null,
+          "langs": [
+            "sr"
+          ],
+          "free": null,
+          "desc_en": "Psychologists, social workers and nurses support cancer patients and families from diagnosis to end of life; group programme 'Verujem u život'.",
+          "desc_ru": "Психологи, соцработники и медсёстры помогают онкопациентам и семьям от диагноза до конца жизни; группа «Верую в жизнь».",
+          "source": "https://www.ncrc.ac.rs/savetovaliste-za-psihosocijalnu-podrsku-i-rehabilitaciju/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-ionv-psychooncology",
+          "name": "Oncology Institute of Vojvodina – psycho-oncology counselling",
+          "name_local": "Институт за онкологију Војводине – психоонколошко саветовалиште",
+          "url": "http://www.onk.ns.ac.rs/pacijenti-savetovanje.htm",
+          "kind": "mental",
+          "phone": "021 480 5486",
+          "hours": "group sessions Mon/Tue/Thu; individual by appointment",
+          "langs": [
+            "sr"
+          ],
+          "free": null,
+          "desc_en": "Individual and group psychological support for patients and families in Sremska Kamenica; GP referral needed for outpatients.",
+          "desc_ru": "Индивидуальная и групповая психологическая помощь пациентам и семьям (Сремска-Каменица); амбулаторно — по направлению.",
+          "source": "http://www.onk.ns.ac.rs/pacijenti-savetovanje.htm",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-belhospice",
+          "name": "BELhospice",
+          "name_local": "БЕЛхоспис",
+          "url": "https://www.belhospice.org/",
+          "kind": "caregiver",
+          "phone": "0800 370 371",
+          "hours": "weekdays 08:00–16:00",
+          "langs": [
+            "sr",
+            "en"
+          ],
+          "free": true,
+          "desc_en": "Serbia's first palliative-care charity: free home palliative care for adults with cancer, family support and a free information/emotional-support line.",
+          "desc_ru": "Первая в Сербии паллиативная благотворительная организация: бесплатная помощь на дому взрослым с онкологией, поддержка семей, бесплатная линия.",
+          "source": "https://www.belhospice.org/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-nurdor",
+          "name": "NURDOR – National Association of Parents of Children with Cancer",
+          "name_local": "НУРДОР",
+          "url": "https://www.nurdor.org/",
+          "kind": "caregiver",
+          "phone": "0800 33 22 32",
+          "hours": null,
+          "langs": [
+            "sr"
+          ],
+          "free": true,
+          "desc_en": "Parent houses near paediatric oncology centres in Belgrade, Novi Sad and Niš, plus psychosocial support for children with cancer and families.",
+          "desc_ru": "Родительские дома у детских онкоцентров Белграда, Нови-Сада и Ниша; психосоциальная поддержка детей с онкологией и их семей.",
+          "source": "https://www.nurdor.org/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-ukcs-neurosurgery",
+          "name": "University Clinical Centre of Serbia – Neurosurgery Clinic (neuro-oncology)",
+          "name_local": "Клиника за неурохирургију УКЦС",
+          "url": "https://kcs.ac.rs/klinike/klinika-za-neurohirurgiju/",
+          "kind": "tumour",
+          "phone": "+381 11 366 34 49",
+          "hours": null,
+          "langs": [
+            "sr"
+          ],
+          "free": null,
+          "desc_en": "National neurosurgery centre with neuro-oncology departments and a day hospital for chemotherapy in brain-tumour patients.",
+          "desc_ru": "Национальный нейрохирургический центр с нейроонкологическими отделениями и дневным стационаром химиотерапии.",
+          "source": "https://kcs.ac.rs/klinike/klinika-za-neurohirurgiju/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "rs-iors-patient-orgs",
+          "name": "IORS – list of cancer patient associations",
+          "name_local": "ИОРС – удружења пацијената",
+          "url": "https://www.ncrc.ac.rs/radna-grupa-za-podrsku-pacijentima/",
+          "kind": "info",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "sr"
+          ],
+          "free": null,
+          "desc_en": "Institute's directory of Serbian cancer patient associations, including the rare-tumours association (UPRT).",
+          "desc_ru": "Перечень сербских ассоциаций онкопациентов от Института онкологии, включая ассоциацию редких опухолей (UPRT).",
+          "source": "https://www.ncrc.ac.rs/radna-grupa-za-podrsku-pacijentima/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "ME",
+      "name_en": "Montenegro",
+      "name_ru": "Черногория",
+      "lat": 42.44,
+      "lng": 19.26,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "BA",
+      "name_en": "Bosnia and Herzegovina",
+      "name_ru": "Босния и Герцеговина",
+      "lat": 43.86,
+      "lng": 18.41,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "HR",
+      "name_en": "Croatia",
+      "name_ru": "Хорватия",
+      "lat": 45.81,
+      "lng": 15.98,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://digital-strategy.ec.europa.eu/en/policies/112",
+      "entries": [
+        {
+          "id": "hr-kbc-crisis",
+          "name": "Centre for Crisis and Suicide Prevention – KBC Zagreb",
+          "name_local": "Centar za krizna stanja i prevenciju suicida – KBC Zagreb",
+          "url": "https://www.kbc-zagreb.hr/",
+          "kind": "crisis",
+          "phone": "01 2376 470",
+          "hours": "24/7",
+          "langs": [
+            "hr"
+          ],
+          "free": null,
+          "desc_en": "Round-the-clock crisis intervention at Zagreb University Hospital Centre.",
+          "desc_ru": "Круглосуточная кризисная помощь при Клиническом больничном центре Загреба.",
+          "source": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "hr-psych-help-line",
+          "name": "Psychological help telephone",
+          "name_local": "Telefon za psihološku pomoć",
+          "url": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/",
+          "kind": "crisis",
+          "phone": "01 4828 888",
+          "hours": "weekdays 10:00–22:00",
+          "langs": [
+            "hr"
+          ],
+          "free": null,
+          "desc_en": "Telephone psychological support line listed by the Croatian Institute of Public Health.",
+          "desc_ru": "Телефон психологической помощи из перечня Хорватского института общественного здравоохранения.",
+          "source": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "hr-hrabri-telefon",
+          "name": "Hrabri telefon",
+          "name_local": "Hrabri telefon",
+          "url": "https://www.hrabritelefon.hr/",
+          "kind": "crisis",
+          "phone": "116 111 (children); 0800 0800 (parents)",
+          "hours": "Mon–Fri 09:00–20:00",
+          "langs": [
+            "hr"
+          ],
+          "free": true,
+          "desc_en": "Anonymous support for children, teenagers and parents by phone, WhatsApp and e-mail.",
+          "desc_ru": "Анонимная поддержка детей, подростков и родителей по телефону, WhatsApp и e-mail.",
+          "source": "https://www.hrabritelefon.hr/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "hr-hzjz-counselling",
+          "name": "HZJZ Mental Health Counselling Centre",
+          "name_local": "Savjetovalište za mentalno zdravlje HZJZ",
+          "url": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/",
+          "kind": "mental",
+          "phone": "01 4863 363",
+          "hours": "Wed 11:00–15:00",
+          "langs": [
+            "hr"
+          ],
+          "free": true,
+          "desc_en": "Free, anonymous short-term counselling for adults (up to 10 sessions) in Zagreb; no referral needed.",
+          "desc_ru": "Бесплатное анонимное краткосрочное консультирование взрослых (до 10 встреч) в Загребе, без направления.",
+          "source": "https://www.hzjz.hr/savjetovaliste-za-mentalno-zdravlje/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "hr-sve-za-nju",
+          "name": "SVE za NJU",
+          "name_local": "Udruga SVE za NJU",
+          "url": "https://www.svezanju.hr/",
+          "kind": "mental",
+          "phone": "01 641 8765",
+          "hours": null,
+          "langs": [
+            "hr"
+          ],
+          "free": true,
+          "desc_en": "Psychological help centre for women with cancer and their families: counselling, workshops, free accommodation during treatment.",
+          "desc_ru": "Центр психологической помощи женщинам с онкологией и их семьям: консультации, мастерские, жильё на время лечения.",
+          "source": "https://www.svezanju.hr/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "hr-hlpr",
+          "name": "Croatian League Against Cancer",
+          "name_local": "Hrvatska liga protiv raka",
+          "url": "https://www.hlpr.hr/",
+          "kind": "tumour",
+          "phone": "+385 1 3775 572",
+          "hours": null,
+          "langs": [
+            "hr"
+          ],
+          "free": null,
+          "desc_en": "National cancer NGO: education, peer-support groups and awareness campaigns.",
+          "desc_ru": "Национальная противораковая организация: просвещение, группы взаимной поддержки, кампании.",
+          "source": "https://www.hlpr.hr/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "hr-nismo-same",
+          "name": "Nismo same",
+          "name_local": "Udruga Nismo same",
+          "url": "https://www.nismosame.com/",
+          "kind": "tumour",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "hr"
+          ],
+          "free": null,
+          "desc_en": "Support network for women with cancer: support groups, art therapy, patient taxi and personal stories.",
+          "desc_ru": "Сеть поддержки женщин с онкологией: группы поддержки, арт-терапия, такси для пациентов, истории.",
+          "source": "https://www.nismosame.com/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "hr-necu-rak",
+          "name": "'Neću rak' – HZJZ cancer information portal",
+          "name_local": "Neću rak (HZJZ)",
+          "url": "https://necurak.hzjz.hr/",
+          "kind": "info",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "hr"
+          ],
+          "free": true,
+          "desc_en": "Public-health portal on cancer prevention and national screening programmes.",
+          "desc_ru": "Портал общественного здравоохранения о профилактике рака и национальном скрининге.",
+          "source": "https://www.hzjz.hr/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "MK",
+      "name_en": "North Macedonia",
+      "name_ru": "Северная Македония",
+      "lat": 41.99,
+      "lng": 21.43,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "SI",
+      "name_en": "Slovenia",
+      "name_ru": "Словения",
+      "lat": 46.06,
+      "lng": 14.51,
+      "emergency": [
+        {
+          "label_en": "Emergency (ambulance, fire)",
+          "label_ru": "Экстренные службы (скорая, пожарные)",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/",
+      "entries": [
+        {
+          "id": "si-klic-v-dusevni-stiski",
+          "name": "Call in Mental Distress",
+          "name_local": "Klic v duševni stiski",
+          "url": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/",
+          "kind": "crisis",
+          "phone": "01 520 99 00",
+          "hours": "daily 19:00–07:00",
+          "langs": [
+            "sl"
+          ],
+          "free": true,
+          "desc_en": "Night-time line for anyone in mental distress.",
+          "desc_ru": "Ночная линия для людей в психологическом кризисе.",
+          "source": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "si-samarijan",
+          "name": "Samarijan and Sopotnik confidential lines",
+          "name_local": "Zaupna telefona Samarijan in Sopotnik",
+          "url": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/",
+          "kind": "crisis",
+          "phone": "116 123",
+          "hours": "24/7",
+          "langs": [
+            "sl"
+          ],
+          "free": true,
+          "desc_en": "Round-the-clock confidential emotional-support line.",
+          "desc_ru": "Круглосуточная конфиденциальная линия эмоциональной поддержки.",
+          "source": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "si-tom",
+          "name": "TOM telephone for children and adolescents",
+          "name_local": "TOM telefon",
+          "url": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/",
+          "kind": "crisis",
+          "phone": "116 111",
+          "hours": "daily 12:00–20:00",
+          "langs": [
+            "sl"
+          ],
+          "free": true,
+          "desc_en": "Free helpline for children and teenagers.",
+          "desc_ru": "Бесплатная линия для детей и подростков.",
+          "source": "https://nijz.si/zivljenjski-slog/dusevno-zdravje/pomoc-v-dusevni-stiski/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "si-oi-psychooncology",
+          "name": "Institute of Oncology Ljubljana – Psycho-oncology Department",
+          "name_local": "Onkološki inštitut Ljubljana – Oddelek za psihoonkologijo",
+          "url": "https://www.onko-i.si/za-bolnike/podporno-zdravljenje/psihoonkoloska-obravnava",
+          "kind": "mental",
+          "phone": "01 5879 170",
+          "hours": "07:30–08:00 (phone; temporarily reduced)",
+          "langs": [
+            "sl"
+          ],
+          "free": null,
+          "desc_en": "Counselling, crisis intervention, psychotherapy and psychiatric care for patients and relatives; referral required.",
+          "desc_ru": "Консультирование, кризисная помощь, психотерапия и психиатрия для пациентов и близких; нужно направление.",
+          "source": "https://www.onko-i.si/za-bolnike/podporno-zdravljenje/psihoonkoloska-obravnava",
+          "checked": "2026-09"
+        },
+        {
+          "id": "si-oi-patients",
+          "name": "Institute of Oncology Ljubljana – information for patients",
+          "name_local": "Onkološki inštitut Ljubljana – za bolnike",
+          "url": "https://www.onko-i.si/",
+          "kind": "info",
+          "phone": "080 29 00",
+          "hours": "Mon–Fri 07:30–15:00 (Wed to 17:00)",
+          "langs": [
+            "sl"
+          ],
+          "free": true,
+          "desc_en": "National cancer centre: patient booklets, FAQs and a call centre.",
+          "desc_ru": "Национальный онкоцентр: брошюры для пациентов, ответы на вопросы, колл-центр.",
+          "source": "https://www.onko-i.si/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "si-protiraku",
+          "name": "Association of Slovenian Cancer Societies",
+          "name_local": "Zveza slovenskih društev za boj proti raku",
+          "url": "https://www.protiraku.si/",
+          "kind": "tumour",
+          "phone": "01 430 97 80",
+          "hours": null,
+          "langs": [
+            "sl"
+          ],
+          "free": null,
+          "desc_en": "Umbrella of 11 regional cancer societies; prevention, screening information and public education.",
+          "desc_ru": "Объединение 11 региональных противораковых обществ; профилактика, скрининг, просвещение.",
+          "source": "https://www.protiraku.si/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "BG",
+      "name_en": "Bulgaria",
+      "name_ru": "Болгария",
+      "lat": 42.7,
+      "lng": 23.32,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://digital-strategy.ec.europa.eu/en/policies/112",
+      "entries": [
+        {
+          "id": "bg-116111",
+          "name": "National Telephone Line for Children",
+          "name_local": "Национална телефонна линия за деца",
+          "url": "https://sacp.government.bg/",
+          "kind": "crisis",
+          "phone": "116 111",
+          "hours": "24/7",
+          "langs": [
+            "bg"
+          ],
+          "free": true,
+          "desc_en": "Free, round-the-clock helpline for children run by the State Agency for Child Protection.",
+          "desc_ru": "Бесплатная круглосуточная линия для детей Государственного агентства по защите детей.",
+          "source": "https://sacp.government.bg/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "RO",
+      "name_en": "Romania",
+      "name_ru": "Румыния",
+      "lat": 44.43,
+      "lng": 26.1,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://digital-strategy.ec.europa.eu/en/policies/112",
+      "entries": [
+        {
+          "id": "ro-arps",
+          "name": "Romanian Alliance for Suicide Prevention – helpline",
+          "name_local": "Alianța Română de Prevenție a Suicidului",
+          "url": "https://antisuicid.ro/",
+          "kind": "crisis",
+          "phone": "0800 801 200",
+          "hours": "Fri–Sun 19:00–07:00",
+          "langs": [
+            "ro"
+          ],
+          "free": true,
+          "desc_en": "Free weekend-night telephone support for adults at risk of suicide.",
+          "desc_ru": "Бесплатная ночная линия по выходным для взрослых в суицидальном кризисе.",
+          "source": "https://antisuicid.ro/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ro-hospice-casa-sperantei",
+          "name": "HOSPICE Casa Speranței",
+          "name_local": "HOSPICE Casa Speranței",
+          "url": "https://www.hospice.ro/",
+          "kind": "caregiver",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "ro"
+          ],
+          "free": true,
+          "desc_en": "Free palliative care in Brașov and Bucharest for adults with cancer and children with life-limiting illness, incl. psychological and social support.",
+          "desc_ru": "Бесплатная паллиативная помощь в Брашове и Бухаресте взрослым с онкологией и детям; психологическая и социальная поддержка.",
+          "source": "https://www.hospice.ro/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "RU",
+      "name_en": "Russia",
+      "name_ru": "Россия",
+      "lat": 55.76,
+      "lng": 37.62,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Fire and rescue",
+          "label_ru": "Пожарные и спасатели",
+          "number": "101"
+        }
+      ],
+      "emergency_source": "https://78.mchs.gov.ru/deyatelnost/propaganda/propaganda-sredi-naseleniya/polezno-znat/vyzov-ekstrennyh-sluzhb",
+      "entries": [
+        {
+          "id": "ru-msph-051",
+          "name": "Moscow Psychological Help Service (MSPPN) – emergency line",
+          "name_local": "Московская служба психологической помощи населению",
+          "url": "https://msph.ru/",
+          "kind": "crisis",
+          "phone": "051 (landline, Moscow); 8 (495) 051 (mobile)",
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Moscow city service for emergency psychological help by phone, plus in-person and remote counselling.",
+          "desc_ru": "Городская служба экстренной психологической помощи по телефону, очные и дистанционные консультации.",
+          "source": "https://msph.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-mchs-psy",
+          "name": "EMERCOM Emergency Psychological Help Centre",
+          "name_local": "Центр экстренной психологической помощи МЧС России",
+          "url": "https://psi.mchs.gov.ru/",
+          "kind": "crisis",
+          "phone": "+7 (495) 989-50-50",
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Federal emergency psychological help by phone, plus anonymous questions and confidential online consultations with psychologists.",
+          "desc_ru": "Федеральная экстренная психологическая помощь по телефону, анонимные вопросы и конфиденциальные онлайн-консультации.",
+          "source": "https://psi.mchs.gov.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-children-helpline",
+          "name": "All-Russian children's helpline",
+          "name_local": "Детский телефон доверия",
+          "url": "https://telefon-doveria.ru/",
+          "kind": "crisis",
+          "phone": "8-800-2000-122",
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Free, anonymous helpline for children and teenagers in difficult situations; parents may also call.",
+          "desc_ru": "Бесплатный анонимный телефон доверия для детей и подростков; звонить могут и родители.",
+          "source": "https://telefon-doveria.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-yasnoe-utro",
+          "name": "Clear Morning – cancer psychological support hotline",
+          "name_local": "«Ясное утро»",
+          "url": "https://yasnoeutro.ru/",
+          "kind": "mental",
+          "phone": "8-800-100-0191",
+          "hours": "24/7",
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Free, anonymous, round-the-clock psychological hotline for people with cancer and their relatives.",
+          "desc_ru": "Бесплатная анонимная круглосуточная психологическая линия для людей с онкологией и их близких.",
+          "source": "https://yasnoeutro.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-oncologica",
+          "name": "Oncologica foundation",
+          "name_local": "Фонд «Онкологика»",
+          "url": "https://oncologica.ru/",
+          "kind": "mental",
+          "phone": "8 800 350 57 85",
+          "hours": "daily 08:00–22:00 Moscow time",
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Helps adults with cancer and relatives: psychologists, lawyers, peer mentors, second opinions, accommodation and transport.",
+          "desc_ru": "Помогает взрослым с онкологией и близким: психологи, юристы, равные консультанты, второе мнение, жильё, такси.",
+          "source": "https://oncologica.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-zdravstvuy",
+          "name": "Association of Oncology Patients 'Zdravstvuy!'",
+          "name_local": "Ассоциация онкологических пациентов «Здравствуй!»",
+          "url": "https://www.russcpa.ru/",
+          "kind": "tumour",
+          "phone": "8 (800) 301-02-09",
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "National cancer-patient association with 50+ regional branches; free legal and psychological consultations and a hotline.",
+          "desc_ru": "Всероссийская ассоциация онкопациентов, более 50 отделений; бесплатные юридические и психологические консультации, горячая линия.",
+          "source": "https://www.russcpa.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-dvizhenie",
+          "name": "Movement Against Cancer",
+          "name_local": "Движение против рака",
+          "url": "https://www.rakpobedim.ru/",
+          "kind": "tumour",
+          "phone": "8 800 200 47 32",
+          "hours": "Mon–Fri 08:00–14:00 Moscow time",
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Patient movement helping with access to medicines, legal questions, disability status and psychological support.",
+          "desc_ru": "Общественное движение: помощь с лекарственным обеспечением, юридическими вопросами, инвалидностью, психологическая поддержка.",
+          "source": "https://www.rakpobedim.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-khabensky",
+          "name": "Konstantin Khabensky Charitable Foundation",
+          "name_local": "Благотворительный фонд Константина Хабенского",
+          "url": "https://bfkh.ru/",
+          "kind": "tumour",
+          "phone": "8 800 250-93-05",
+          "hours": "Mon–Fri 11:00–19:00 Moscow time",
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Helps children and young adults (to 45) with brain and spinal-cord tumours: diagnostics, treatment, rehabilitation, family support.",
+          "desc_ru": "Помогает детям и молодым взрослым (до 45 лет) с опухолями головного и спинного мозга: диагностика, лечение, реабилитация.",
+          "source": "https://bfkh.ru/help/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-oncobrain",
+          "name": "Oncobrain – brain tumour information portal",
+          "name_local": "Портал об опухолях мозга Oncobrain",
+          "url": "https://oncobrain.ru/",
+          "kind": "info",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Expert-reviewed Russian portal on diagnosis, treatment and rehabilitation of brain tumours in children and adults, incl. glioma.",
+          "desc_ru": "Проверенный экспертами портал о диагностике, лечении и реабилитации при опухолях мозга у детей и взрослых, включая глиомы.",
+          "source": "https://www.bfkh.ru/who-are-we/news/vmeste-silnee-fond-khabenskogo-perezapustil-portal-ob-opukholyakh-mozga-oncobrain-/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-nenaprasno-ask",
+          "name": "'Just Ask' – free oncology reference service (Ne Naprasno Foundation)",
+          "name_local": "«Просто спросить» – фонд «Не напрасно»",
+          "url": "https://nenaprasno.ru/ask",
+          "kind": "info",
+          "phone": null,
+          "hours": "written answer in 3–5 days",
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Free online service: send a question about a cancer diagnosis or treatment and get an answer from trained oncologists.",
+          "desc_ru": "Бесплатный онлайн-сервис: вопрос о диагнозе или лечении — ответ онкологов, выпускников Высшей школы онкологии.",
+          "source": "https://nenaprasno.ru/ask",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-rosoncoweb-patients",
+          "name": "RUSSCO – materials for patients",
+          "name_local": "RUSSCO – материалы для пациентов",
+          "url": "https://www.rosoncoweb.ru/activities/patient/",
+          "kind": "info",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Russian Society of Clinical Oncology patient pages: guides, videos, myths and facts about cancer treatment.",
+          "desc_ru": "Страницы RUSSCO для пациентов: памятки, видео, мифы и факты о лечении рака.",
+          "source": "https://www.rosoncoweb.ru/activities/patient/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-burdenko",
+          "name": "Burdenko National Medical Research Centre of Neurosurgery",
+          "name_local": "НМИЦ нейрохирургии им. ак. Н. Н. Бурденко",
+          "url": "https://www.nsi.ru/patients/",
+          "kind": "tumour",
+          "phone": "+7 (499) 972-86-68",
+          "hours": "daily 08:00–20:00",
+          "langs": [
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Russia's leading neurosurgery centre, with a dedicated glial-tumour department; patient information on consultations and admission.",
+          "desc_ru": "Ведущий нейрохирургический центр России с отделением глиальных опухолей; информация о консультациях и госпитализации.",
+          "source": "https://www.nsi.ru/patients/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-vera-hotline",
+          "name": "Vera Hospice Fund – palliative care hotline",
+          "name_local": "Фонд «Вера» – горячая линия помощи неизлечимо больным",
+          "url": "https://fondvera.ru/",
+          "kind": "caregiver",
+          "phone": "8 800 700 84 36",
+          "hours": "24/7",
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Free round-the-clock hotline for people with incurable illness and their families: pain relief, rights, home care.",
+          "desc_ru": "Бесплатная круглосуточная линия для неизлечимо больных и их близких: обезболивание, права, уход дома.",
+          "source": "https://fondvera.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-pro-palliativ",
+          "name": "Pro Palliativ – caregiver information portal",
+          "name_local": "«Про паллиатив»",
+          "url": "https://pro-palliativ.ru/",
+          "kind": "caregiver",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Vera Fund portal for families: practical home-care guides, coping with loss, and the 'Mobile Caregiver' app.",
+          "desc_ru": "Портал фонда «Вера» для семей: практика ухода дома, поддержка в горе, приложение «Мобильная сиделка».",
+          "source": "https://pro-palliativ.ru/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ru-moscow-palliative",
+          "name": "Moscow Multidisciplinary Palliative Care Centre",
+          "name_local": "Московский многопрофильный центр паллиативной помощи",
+          "url": "https://cpmdzm.ru/",
+          "kind": "caregiver",
+          "phone": "+7 499 444-04-57",
+          "hours": "24/7",
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Moscow city palliative service; coordination centre for new patients (home visits, hospices).",
+          "desc_ru": "Городская паллиативная служба Москвы; координационный центр для новых пациентов (выездная служба, хосписы).",
+          "source": "https://cpmdzm.ru/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "BY",
+      "name_en": "Belarus",
+      "name_ru": "Беларусь",
+      "lat": 53.9,
+      "lng": 27.56,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Милиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Fire and rescue",
+          "label_ru": "Пожарные и спасатели",
+          "number": "101"
+        }
+      ],
+      "emergency_source": "https://minobl.mchs.gov.by/novosti/318136/",
+      "entries": [
+        {
+          "id": "by-133",
+          "name": "National emergency psychological help line 133",
+          "name_local": "Экстренная психологическая помощь 133",
+          "url": "https://mentalhealth.by/jekstrennaja-psihologicheskaja-pomoshh/",
+          "kind": "crisis",
+          "phone": "133",
+          "hours": "24/7",
+          "langs": [
+            "ru",
+            "be"
+          ],
+          "free": true,
+          "desc_en": "Nationwide 24-hour line answered by healthcare-system psychologists; free from Beltelecom, A1, MTS and life:).",
+          "desc_ru": "Круглосуточная линия, отвечают психологи системы здравоохранения; бесплатно с Белтелеком, A1, МТС, life:).",
+          "source": "https://mentalhealth.by/jekstrennaja-psihologicheskaja-pomoshh/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "by-children-line",
+          "name": "Children's helpline",
+          "name_local": "Детская линия помощи",
+          "url": "https://gkdpnd.by/",
+          "kind": "crisis",
+          "phone": "8-801-100-16-11",
+          "hours": null,
+          "langs": [
+            "ru",
+            "be"
+          ],
+          "free": true,
+          "desc_en": "Free helpline for children and teenagers in emotional crisis.",
+          "desc_ru": "Бесплатная линия для детей и подростков в эмоциональном кризисе.",
+          "source": "https://gkdpnd.by/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "by-omr-psychology",
+          "name": "N.N. Alexandrov National Cancer Centre – psychological help group",
+          "name_local": "РНПЦ онкологии и медицинской радиологии им. Н.Н. Александрова – группа психологической помощи",
+          "url": "https://omr.by/o-nas/otdeleniya/vse-otdelenya/mediko-psikhologicheskoe-otdelenie",
+          "kind": "mental",
+          "phone": "+375 (17) 389-96-91",
+          "hours": "8:30–17:00",
+          "langs": [
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Psychological counselling and neuropsychological rehabilitation for cancer patients and their relatives; self-referral possible.",
+          "desc_ru": "Психологическое консультирование и нейропсихологическая реабилитация для онкопациентов и их родственников.",
+          "source": "https://omr.by/o-nas/otdeleniya/vse-otdelenya/mediko-psikhologicheskoe-otdelenie",
+          "checked": "2026-09"
+        },
+        {
+          "id": "by-omr-neurosurgery",
+          "name": "N.N. Alexandrov National Cancer Centre – oncological neurosurgery department",
+          "name_local": "РНПЦ ОМР им. Н.Н. Александрова – онкологическое (нейрохирургическое) отделение",
+          "url": "https://omr.by/o-nas/otdeleniya/vse-otdelenya/onkologicheskoe-nejrokhirurgicheskoe-otdelenie",
+          "kind": "tumour",
+          "phone": "+375 (17) 389-99-00",
+          "hours": "Mon–Fri 08:00–16:12 (call centre)",
+          "langs": [
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "National department treating primary and metastatic brain and spinal tumours, including gliomas.",
+          "desc_ru": "Отделение, где лечат первичные и метастатические опухоли головного и спинного мозга, включая глиомы.",
+          "source": "https://omr.by/o-nas/otdeleniya/vse-otdelenya/onkologicheskoe-nejrokhirurgicheskoe-otdelenie",
+          "checked": "2026-09"
+        },
+        {
+          "id": "by-oncopatient",
+          "name": "ONCOPATIENT.by – community of cancer patients",
+          "name_local": "ONCOPATIENT.by",
+          "url": "https://oncopatient.by/",
+          "kind": "info",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Belarusian information hub on treatment, side effects, rehabilitation, psychological support and patients' rights.",
+          "desc_ru": "Белорусский ресурс о лечении, побочных эффектах, реабилитации, психологической поддержке и правах пациентов.",
+          "source": "https://oncopatient.by/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "by-minsk-palliative",
+          "name": "Minsk City Clinical Palliative Care Centre (hospice)",
+          "name_local": "Городской клинический центр паллиативной медицинской помощи (Хоспис)",
+          "url": "https://mhospice.of.by/",
+          "kind": "caregiver",
+          "phone": "+375 17 272-80-84",
+          "hours": null,
+          "langs": [
+            "ru"
+          ],
+          "free": null,
+          "desc_en": "Minsk's public hospice and palliative care centre; hotline listed on the official site.",
+          "desc_ru": "Государственный хоспис и центр паллиативной помощи Минска; горячая линия указана на сайте.",
+          "source": "https://mhospice.of.by/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "by-children-hospice",
+          "name": "Belarusian Children's Hospice",
+          "name_local": "Белорусский детский хоспис",
+          "url": "https://hospice.by/",
+          "kind": "caregiver",
+          "phone": "+375 17 5035715",
+          "hours": null,
+          "langs": [
+            "ru",
+            "be"
+          ],
+          "free": true,
+          "desc_en": "Charity providing palliative, psychological, social and spiritual help to seriously ill children and their families.",
+          "desc_ru": "Благотворительная организация: паллиативная, психологическая, социальная и духовная помощь тяжелобольным детям и семьям.",
+          "source": "https://hospice.by/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "UA",
+      "name_en": "Ukraine",
+      "name_ru": "Украина",
+      "lat": 50.45,
+      "lng": 30.52,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "103"
+        },
+        {
+          "label_en": "Police",
+          "label_ru": "Полиция",
+          "number": "102"
+        },
+        {
+          "label_en": "Fire and rescue (SES)",
+          "label_ru": "Пожарные и спасатели (ГСЧС)",
+          "number": "101"
+        }
+      ],
+      "emergency_source": "https://www.kmu.gov.ua/news/bezpechna-ua-iak-pratsiuie-systema-ekstrenoi-dopomohy-naselenniu-za-iedynym-nomerom-112",
+      "entries": [
+        {
+          "id": "ua-lyudyna-v-bidi",
+          "name": "'Person in trouble' crisis line",
+          "name_local": "«Людина в біді»",
+          "url": "https://howareu.com/hot-lines",
+          "kind": "crisis",
+          "phone": "0 800 21 01 60",
+          "hours": "24/7",
+          "langs": [
+            "uk"
+          ],
+          "free": true,
+          "desc_en": "Free 24-hour crisis line listed by the national mental-health programme 'Ty yak?'.",
+          "desc_ru": "Бесплатная круглосуточная кризисная линия из перечня национальной программы «Ти як?».",
+          "source": "https://howareu.com/hot-lines",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ua-lastrada",
+          "name": "La Strada-Ukraine national hotline",
+          "name_local": "Національна гаряча лінія «Ла Страда-Україна»",
+          "url": "https://la-strada.org.ua/garyachi-liniyi",
+          "kind": "crisis",
+          "phone": "116 123 (mobile); 0 800 500 335",
+          "hours": "24/7",
+          "langs": [
+            "uk"
+          ],
+          "free": true,
+          "desc_en": "Psychological and legal consultations for adults (violence, trafficking, discrimination).",
+          "desc_ru": "Психологические и юридические консультации для взрослых (насилие, торговля людьми, дискриминация).",
+          "source": "https://la-strada.org.ua/garyachi-liniyi",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ua-children-line",
+          "name": "National hotline for children and youth",
+          "name_local": "Національна дитяча гаряча лінія",
+          "url": "https://la-strada.org.ua/garyachi-liniyi",
+          "kind": "crisis",
+          "phone": "116 111 (mobile); 0 800 500 225",
+          "hours": "24/7",
+          "langs": [
+            "uk"
+          ],
+          "free": true,
+          "desc_en": "Anonymous support for children, teenagers and students; adults may call about a child.",
+          "desc_ru": "Анонимная поддержка детей, подростков и студентов; взрослые могут звонить по вопросам ребёнка.",
+          "source": "https://la-strada.org.ua/garyachi-liniyi",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ua-vartozhyty-5522",
+          "name": "#VARTOZHYTY – psychological support line 5522",
+          "name_local": "#ВАРТОЖИТИ – лінія 5522",
+          "url": "https://vartozhyty.com.ua/",
+          "kind": "mental",
+          "phone": "5522",
+          "hours": "Mon–Fri 11:00–19:00",
+          "langs": [
+            "uk"
+          ],
+          "free": true,
+          "desc_en": "Free counselling for cancer patients, relatives and friends by psychologists trained in psycho-oncology.",
+          "desc_ru": "Бесплатные консультации для онкопациентов, родных и друзей; психологи с подготовкой по психоонкологии.",
+          "source": "https://vartozhyty.com.ua/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ua-athena",
+          "name": "Athena. Women Against Cancer – 'Patient Has Rights' hotline",
+          "name_local": "«Афіна. Жінки проти раку» – «Пацієнт має право»",
+          "url": "https://www.athena-wac.com/",
+          "kind": "tumour",
+          "phone": "068-911-33-33; 066-911-33-33",
+          "hours": "Mon–Fri 10:00–18:00",
+          "langs": [
+            "uk"
+          ],
+          "free": false,
+          "desc_en": "Cancer-patient community; hotline explains free services, medicine access and what to do if treatment is refused.",
+          "desc_ru": "Сообщество онкопациентов; линия о бесплатной помощи, доступе к лекарствам и отказах в лечении (звонок платный).",
+          "source": "https://www.kmu.gov.ua/news/moz-zapratsiuvala-hariacha-liniia-dlia-patsiientiv-z-onkolohiieiu-patsiient-maie-pravo",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ua-nci",
+          "name": "National Cancer Institute of Ukraine",
+          "name_local": "Національний інститут раку",
+          "url": "https://unci.org.ua/",
+          "kind": "info",
+          "phone": "+38 (044) 334-64-18",
+          "hours": "Mon–Fri 08:00–16:30",
+          "langs": [
+            "uk"
+          ],
+          "free": null,
+          "desc_en": "Ukraine's national cancer centre in Kyiv; FAQ for patients on referrals, free treatment and documents.",
+          "desc_ru": "Национальный онкоцентр Украины (Киев); ответы пациентам о направлениях, бесплатном лечении, документах.",
+          "source": "https://unci.org.ua/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ua-tabletochki",
+          "name": "Tabletochki Charity Foundation",
+          "name_local": "Благодійний фонд «Таблеточки»",
+          "url": "https://tabletochki.org/",
+          "kind": "caregiver",
+          "phone": "+380 67 464 87 74",
+          "hours": null,
+          "langs": [
+            "uk"
+          ],
+          "free": true,
+          "desc_en": "Supports children with cancer and families: medicines, diagnostics, psychological and palliative support, housing near hospitals.",
+          "desc_ru": "Помогает детям с онкологией и семьям: лекарства, обследования, психологическая и паллиативная поддержка, жильё.",
+          "source": "https://tabletochki.org/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "KZ",
+      "name_en": "Kazakhstan",
+      "name_ru": "Казахстан",
+      "lat": 51.17,
+      "lng": 71.45,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "UZ",
+      "name_en": "Uzbekistan",
+      "name_ru": "Узбекистан",
+      "lat": 41.3,
+      "lng": 69.24,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "KG",
+      "name_en": "Kyrgyzstan",
+      "name_ru": "Киргизия",
+      "lat": 42.87,
+      "lng": 74.59,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "AM",
+      "name_en": "Armenia",
+      "name_ru": "Армения",
+      "lat": 40.18,
+      "lng": 44.51,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "GE",
+      "name_en": "Georgia",
+      "name_ru": "Грузия",
+      "lat": 41.72,
+      "lng": 44.79,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "AZ",
+      "name_en": "Azerbaijan",
+      "name_ru": "Азербайджан",
+      "lat": 40.41,
+      "lng": 49.87,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "MD",
+      "name_en": "Moldova",
+      "name_ru": "Молдова",
+      "lat": 47.01,
+      "lng": 28.86,
+      "emergency": [],
+      "emergency_source": null,
+      "entries": [],
+      "needs_research": true
+    },
+    {
+      "code": "LV",
+      "name_en": "Latvia",
+      "name_ru": "Латвия",
+      "lat": 56.95,
+      "lng": 24.11,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        },
+        {
+          "label_en": "Ambulance",
+          "label_ru": "Скорая помощь",
+          "number": "113"
+        }
+      ],
+      "emergency_source": "https://www.nmpd.gov.lv/",
+      "entries": [
+        {
+          "id": "lv-skalbes-116123",
+          "name": "Skalbes – state-funded 24-hour crisis line",
+          "name_local": "Skalbes – valsts apmaksāts krīzes tālrunis",
+          "url": "https://www.skalbes.lv/",
+          "kind": "crisis",
+          "phone": "116123",
+          "hours": "24/7",
+          "langs": [
+            "lv"
+          ],
+          "free": true,
+          "desc_en": "Free round-the-clock psychological first aid by phone.",
+          "desc_ru": "Бесплатная круглосуточная первая психологическая помощь по телефону.",
+          "source": "https://www.skalbes.lv/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lv-skalbes-crisis",
+          "name": "Skalbes crisis and counselling centre",
+          "name_local": "Krīžu un konsultāciju centrs «Skalbes»",
+          "url": "https://www.skalbes.lv/",
+          "kind": "mental",
+          "phone": "+371 67222922",
+          "hours": "24/7",
+          "langs": [
+            "lv"
+          ],
+          "free": null,
+          "desc_en": "Riga crisis centre (since 1997): crisis line plus face-to-face counselling on weekdays (some services free).",
+          "desc_ru": "Кризисный центр в Риге (с 1997): кризисная линия и очные консультации по будням (часть бесплатно).",
+          "source": "https://www.skalbes.lv/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lv-116111",
+          "name": "Children and adolescents' trust line",
+          "name_local": "Uzticības tālrunis 116111",
+          "url": "https://www.bac.gov.lv/lv",
+          "kind": "crisis",
+          "phone": "116111",
+          "hours": null,
+          "langs": [
+            "lv"
+          ],
+          "free": null,
+          "desc_en": "State helpline for children, teenagers and parents run by the State Children's Rights Protection service.",
+          "desc_ru": "Государственный телефон доверия для детей, подростков и родителей.",
+          "source": "https://www.bac.gov.lv/lv",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lv-oncology-centre",
+          "name": "Latvian Oncology Centre (Riga East University Hospital)",
+          "name_local": "Latvijas Onkoloģijas centrs (RAKUS)",
+          "url": "https://aslimnica.lv/",
+          "kind": "tumour",
+          "phone": "+371 67000610",
+          "hours": null,
+          "langs": [
+            "lv"
+          ],
+          "free": null,
+          "desc_en": "Latvia's main cancer treatment centre; unified appointment line.",
+          "desc_ru": "Главный онкологический центр Латвии; единая линия записи.",
+          "source": "https://aslimnica.lv/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "LT",
+      "name_en": "Lithuania",
+      "name_ru": "Литва",
+      "lat": 54.69,
+      "lng": 25.28,
+      "emergency": [
+        {
+          "label_en": "Single emergency number",
+          "label_ru": "Единый номер экстренных служб",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://bpc.lrv.lt/",
+      "entries": [
+        {
+          "id": "lt-vilties-linija",
+          "name": "Hope Line",
+          "name_local": "Vilties linija",
+          "url": "https://www.viltieslinija.lt/",
+          "kind": "crisis",
+          "phone": "116123",
+          "hours": "24/7",
+          "langs": [
+            "lt"
+          ],
+          "free": true,
+          "desc_en": "Free round-the-clock emotional support for adults by phone, chat and e-mail.",
+          "desc_ru": "Бесплатная круглосуточная эмоциональная поддержка взрослых: телефон, чат, e-mail.",
+          "source": "https://www.viltieslinija.lt/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lt-jaunimo-linija",
+          "name": "Youth Line",
+          "name_local": "Jaunimo linija",
+          "url": "https://www.jaunimolinija.lt/",
+          "kind": "crisis",
+          "phone": "0 800 28888",
+          "hours": "24/7",
+          "langs": [
+            "lt"
+          ],
+          "free": true,
+          "desc_en": "Free, confidential emotional support for people aged 16–35 by phone and chat.",
+          "desc_ru": "Бесплатная конфиденциальная поддержка для людей 16–35 лет по телефону и в чате.",
+          "source": "https://www.jaunimolinija.lt/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lt-vaiku-linija",
+          "name": "Children's Line",
+          "name_local": "Vaikų linija",
+          "url": "https://www.vaikulinija.lt/",
+          "kind": "crisis",
+          "phone": "116 111",
+          "hours": null,
+          "langs": [
+            "lt"
+          ],
+          "free": true,
+          "desc_en": "Free, anonymous emotional support for children and adolescents by phone and online.",
+          "desc_ru": "Бесплатная анонимная поддержка детей и подростков по телефону и онлайн.",
+          "source": "https://www.vaikulinija.lt/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lt-pola",
+          "name": "POLA – Cancer Patients' Support Association",
+          "name_local": "Pagalbos onkologiniams ligoniams asociacija (POLA)",
+          "url": "https://www.pola.lt/",
+          "kind": "tumour",
+          "phone": "+370 620 74646",
+          "hours": null,
+          "langs": [
+            "lt"
+          ],
+          "free": true,
+          "desc_en": "Patient association offering free psychological, legal and dietitian consultations, volunteer guides and the POLA card.",
+          "desc_ru": "Ассоциация пациентов: бесплатные консультации психолога, юриста, диетолога, волонтёры-проводники, карта POLA.",
+          "source": "https://www.pola.lt/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lt-nvi",
+          "name": "National Cancer Institute",
+          "name_local": "Nacionalinis vėžio institutas",
+          "url": "https://nvi.lt/",
+          "kind": "info",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "lt"
+          ],
+          "free": null,
+          "desc_en": "Lithuania's national cancer centre in Vilnius (clinic, research and cancer registry).",
+          "desc_ru": "Национальный институт рака Литвы (клиника, исследования, канцер-регистр).",
+          "source": "https://nvi.lt/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "lt-hospisas",
+          "name": "Blessed M. Sopoćko Hospice",
+          "name_local": "Palaimintojo M. Sopočkos hospisas",
+          "url": "https://www.hospisas.lt/",
+          "kind": "caregiver",
+          "phone": "+370 640 44 501",
+          "hours": null,
+          "langs": [
+            "lt"
+          ],
+          "free": null,
+          "desc_en": "Vilnius hospice with inpatient and home palliative care for adults and children; equipment rental.",
+          "desc_ru": "Хоспис в Вильнюсе: стационар и помощь на дому взрослым и детям, прокат оборудования.",
+          "source": "https://www.hospisas.lt/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    },
+    {
+      "code": "EE",
+      "name_en": "Estonia",
+      "name_ru": "Эстония",
+      "lat": 59.44,
+      "lng": 24.75,
+      "emergency": [
+        {
+          "label_en": "Emergency (ambulance, rescue, police)",
+          "label_ru": "Экстренные службы (скорая, спасатели, полиция)",
+          "number": "112"
+        }
+      ],
+      "emergency_source": "https://www.112.ee/",
+      "entries": [
+        {
+          "id": "ee-eluliin",
+          "name": "Eluliin emotional support line",
+          "name_local": "Eluliin",
+          "url": "https://www.eluliin.ee/",
+          "kind": "crisis",
+          "phone": "655 8088 (Estonian); 655 5688 (Russian)",
+          "hours": "Russian line 19:00–07:00",
+          "langs": [
+            "et",
+            "ru"
+          ],
+          "free": true,
+          "desc_en": "Anonymous, confidential emotional-support lines in Estonian and Russian.",
+          "desc_ru": "Анонимные конфиденциальные линии эмоциональной поддержки на эстонском и русском.",
+          "source": "https://www.eluliin.ee/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ee-lasteabi",
+          "name": "Child helpline",
+          "name_local": "Lasteabi",
+          "url": "https://www.lasteabi.ee/",
+          "kind": "crisis",
+          "phone": "116 111",
+          "hours": "24/7",
+          "langs": [
+            "et",
+            "ru",
+            "en"
+          ],
+          "free": true,
+          "desc_en": "Free 24-hour helpline and chat for children and people worried about a child.",
+          "desc_ru": "Бесплатная круглосуточная линия и чат для детей и взрослых, обеспокоенных ребёнком.",
+          "source": "https://www.lasteabi.ee/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ee-ohvriabi",
+          "name": "Victim support crisis line (Social Insurance Board)",
+          "name_local": "Ohvriabi kriisitelefon",
+          "url": "https://www.palunabi.ee/et",
+          "kind": "crisis",
+          "phone": "116006",
+          "hours": "24/7",
+          "langs": [
+            "et"
+          ],
+          "free": true,
+          "desc_en": "State 24-hour crisis line for people affected by violence or trauma.",
+          "desc_ru": "Государственная круглосуточная кризисная линия для пострадавших от насилия или травмы.",
+          "source": "https://www.palunabi.ee/et",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ee-peaasi",
+          "name": "Peaasi.ee mental health portal",
+          "name_local": "Peaasi.ee",
+          "url": "https://peaasi.ee/",
+          "kind": "mental",
+          "phone": null,
+          "hours": null,
+          "langs": [
+            "et"
+          ],
+          "free": true,
+          "desc_en": "Mental-health information, self-help tools and e-counselling; free counselling for young people up to 26.",
+          "desc_ru": "Информация о психическом здоровье, самопомощь и онлайн-консультации; бесплатно для молодёжи до 26 лет.",
+          "source": "https://peaasi.ee/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ee-vahiliit",
+          "name": "Estonian Cancer Society",
+          "name_local": "Eesti Vähiliit",
+          "url": "https://www.cancer.ee/",
+          "kind": "tumour",
+          "phone": "6311727",
+          "hours": null,
+          "langs": [
+            "et",
+            "ru",
+            "en"
+          ],
+          "free": null,
+          "desc_en": "Cancer NGO with a counselling phone line, e-counselling, patient information rooms and support groups.",
+          "desc_ru": "Противораковая организация: телефон консультаций, онлайн-консультации, инфокомнаты, группы поддержки.",
+          "source": "https://www.cancer.ee/",
+          "checked": "2026-09"
+        },
+        {
+          "id": "ee-kingitud-elu",
+          "name": "Kingitud Elu cancer treatment foundation",
+          "name_local": "Vähiravifond Kingitud Elu",
+          "url": "https://www.kingitudelu.ee/",
+          "kind": "tumour",
+          "phone": "+372 52 35 856",
+          "hours": null,
+          "langs": [
+            "et"
+          ],
+          "free": true,
+          "desc_en": "Charity funding modern cancer medicines not covered by the state health insurance.",
+          "desc_ru": "Благотворительный фонд, оплачивающий современные онкопрепараты, не покрываемые страховкой.",
+          "source": "https://www.kingitudelu.ee/",
+          "checked": "2026-09"
+        }
+      ],
+      "needs_research": false
+    }
+  ]
+}

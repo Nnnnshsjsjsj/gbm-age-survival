@@ -1,0 +1,351 @@
+{
+ "entries": [
+  {
+   "id": "intl-ibta",
+   "name": "International Brain Tumour Alliance (IBTA)",
+   "name_local": null,
+   "url": "https://theibta.org/",
+   "kind": "tumour",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Global network of brain tumour patient and carer groups; free Brain Tumour magazine, member map and list of trial portals.",
+   "desc_ru": "Глобальная сеть организаций пациентов с опухолями мозга и их близких: бесплатный журнал, карта организаций, список порталов исследований.",
+   "source": "https://theibta.org/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-btc",
+   "name": "The Brain Tumour Charity (UK)",
+   "name_local": null,
+   "url": "https://www.thebraintumourcharity.org/",
+   "kind": "tumour",
+   "phone": "0808 800 0004",
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Large UK brain tumour charity with detailed online glioblastoma information, online support groups and interactive guides.",
+   "desc_ru": "Крупнейший британский фонд по опухолям мозга: подробная информация о глиобластоме, онлайн-группы и интерактивные руководства.",
+   "source": "https://www.thebraintumourcharity.org/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-esmo-glioma",
+   "name": "ESMO — Glioma: A Guide for Patients",
+   "name_local": null,
+   "url": "https://www.esmo.org/for-patients/patient-guides/glioma",
+   "kind": "info",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "European Society for Medical Oncology patient guide explaining glioma diagnosis and treatment.",
+   "desc_ru": "Руководство Европейского общества медицинской онкологии для пациентов о диагностике и лечении глиом.",
+   "source": "https://www.esmo.org/for-patients/patient-guides/glioma",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-nci-second-opinion",
+   "name": "NCI — Finding Cancer Care (incl. second opinions)",
+   "name_local": null,
+   "url": "https://www.cancer.gov/about-cancer/managing-care/services",
+   "kind": "info",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en",
+    "es"
+   ],
+   "free": true,
+   "desc_en": "Explains how to find cancer specialists and why second opinions are common and usually welcomed by doctors.",
+   "desc_ru": "Как найти онкологов и почему второе мнение — обычная практика, которую врачи, как правило, приветствуют.",
+   "source": "https://www.cancer.gov/about-cancer/managing-care/services",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-ctgov",
+   "name": "ClinicalTrials.gov",
+   "name_local": null,
+   "url": "https://clinicaltrials.gov/",
+   "kind": "directory",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Free NIH/NLM registry of clinical studies worldwide; search by condition (e.g. glioblastoma) and location.",
+   "desc_ru": "Бесплатный реестр клинических исследований со всего мира (NIH/NLM); поиск по заболеванию (например, глиобластома) и месту.",
+   "source": "https://clinicaltrials.gov/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-ctis",
+   "name": "EU Clinical Trials (CTIS public search)",
+   "name_local": null,
+   "url": "https://euclinicaltrials.eu/",
+   "kind": "directory",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Official EU/EEA database of individual clinical trials run under the EU Clinical Trials Regulation; mainly technical in tone.",
+   "desc_ru": "Официальная база клинических исследований ЕС/ЕЭЗ по Регламенту ЕС; изложение в основном техническое.",
+   "source": "https://euclinicaltrials.eu/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-nbts-trials",
+   "name": "NBTS Clinical Trial Finder",
+   "name_local": null,
+   "url": "https://braintumor.org/brain-tumors/diagnosis-treatment/stages-of-treatment/clinical-trial-finder/",
+   "kind": "directory",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Brain-tumour-specific trial matcher: tailored results by location, diagnosis, grade, biomarkers and prior treatment; results downloadable.",
+   "desc_ru": "Подбор исследований именно по опухолям мозга: учитывает место, диагноз, степень, биомаркеры и лечение; результаты можно скачать.",
+   "source": "https://braintumor.org/brain-tumors/diagnosis-treatment/stages-of-treatment/clinical-trial-finder/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-befrienders",
+   "name": "Befrienders Worldwide",
+   "name_local": null,
+   "url": "https://befrienders.org/find-support-now/",
+   "kind": "directory",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Global network of emotional-support helplines; search tool to find the nearest confidential centre.",
+   "desc_ru": "Глобальная сеть линий эмоциональной поддержки; поиск ближайшего конфиденциального центра.",
+   "source": "https://befrienders.org/find-support-now/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-findahelpline",
+   "name": "Find A Helpline",
+   "name_local": null,
+   "url": "https://findahelpline.com/",
+   "kind": "directory",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Vetted directory of free, confidential crisis lines in 175+ countries by phone, text or chat.",
+   "desc_ru": "Проверенный каталог бесплатных кризисных линий в 175+ странах: телефон, SMS или чат.",
+   "source": "https://findahelpline.com/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-iasp",
+   "name": "IASP — Crisis centres & helplines",
+   "name_local": null,
+   "url": "https://www.iasp.info/crisis-centres-helplines/",
+   "kind": "directory",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "International Association for Suicide Prevention page linking to global helpline directories; IASP itself does not provide crisis support.",
+   "desc_ru": "Страница Международной ассоциации по предотвращению суицида со ссылками на каталоги линий; сама IASP помощь не оказывает.",
+   "source": "https://www.iasp.info/crisis-centres-helplines/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-who-mental",
+   "name": "WHO — Mental health",
+   "name_local": null,
+   "url": "https://www.who.int/health-topics/mental-health",
+   "kind": "info",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en",
+    "ru"
+   ],
+   "free": true,
+   "desc_en": "World Health Organization overview of mental health, risk and protective factors, and access to care.",
+   "desc_ru": "Обзор ВОЗ о психическом здоровье, факторах риска и защиты и доступе к помощи.",
+   "source": "https://www.who.int/health-topics/mental-health",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-who-palliative",
+   "name": "WHO — Palliative care fact sheet",
+   "name_local": null,
+   "url": "https://www.who.int/news-room/fact-sheets/detail/palliative-care",
+   "kind": "info",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en",
+    "ru"
+   ],
+   "free": true,
+   "desc_en": "Explains what palliative care is — physical, psychological, social and spiritual support for patients and families.",
+   "desc_ru": "Что такое паллиативная помощь: физическая, психологическая, социальная и духовная поддержка пациентов и семей.",
+   "source": "https://www.who.int/news-room/fact-sheets/detail/palliative-care",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-iahpc",
+   "name": "IAHPC Global Directory of palliative care",
+   "name_local": null,
+   "url": "https://iahpc.org/resources/catalogue/global-directory-of-institutions-and-organizations",
+   "kind": "directory",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Free searchable directory of hospices and palliative care organisations worldwide; listings are self-submitted, not endorsed.",
+   "desc_ru": "Бесплатный каталог хосписов и паллиативных организаций мира; записи добавляют сами организации, без проверки IAHPC.",
+   "source": "https://iahpc.org/resources/catalogue/global-directory-of-institutions-and-organizations",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-ehospice",
+   "name": "ehospice",
+   "name_local": null,
+   "url": "https://ehospice.com/",
+   "kind": "info",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en",
+    "es",
+    "fr"
+   ],
+   "free": true,
+   "desc_en": "Global news on hospice and palliative care with regional editions (Africa, Asia Pacific, India, Latin America, etc.).",
+   "desc_ru": "Новости о хосписной и паллиативной помощи в мире с региональными выпусками (Африка, АТР, Индия, Латинская Америка и др.).",
+   "source": "https://ehospice.com/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-dougy",
+   "name": "The Dougy Center",
+   "name_local": null,
+   "url": "https://www.dougy.org/",
+   "kind": "caregiver",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en",
+    "es"
+   ],
+   "free": true,
+   "desc_en": "Free grief toolkits for children, teens and parents, including loss after serious illness, plus a worldwide support directory.",
+   "desc_ru": "Бесплатные материалы о горе для детей, подростков и родителей, в т.ч. после тяжёлой болезни; каталог служб поддержки по миру.",
+   "source": "https://www.dougy.org/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-cbuk",
+   "name": "Child Bereavement UK (with Winston's Wish)",
+   "name_local": null,
+   "url": "https://www.childbereavementuk.org/",
+   "kind": "caregiver",
+   "phone": "0800 02 888 40",
+   "hours": "Mon–Fri 8:00–20:00 (UK)",
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Free UK helpline and guidance for families when someone is not expected to live and after a death; Winston's Wish has joined it.",
+   "desc_ru": "Бесплатная британская линия и советы семьям, когда близкий умирает и после смерти; Winston's Wish теперь объединена с ней.",
+   "source": "https://www.childbereavementuk.org/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-macmillan-children",
+   "name": "Macmillan — Talking to children and teenagers when an adult has cancer",
+   "name_local": null,
+   "url": "https://www.macmillan.org.uk/cancer-information-and-support/stories-and-media/booklets/talking-to-children-and-teenagers-when-an-adult-has-cancer",
+   "kind": "caregiver",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Free booklet (online, PDF, audio) on explaining a parent's cancer to children; translations available on request.",
+   "desc_ru": "Бесплатная брошюра (онлайн, PDF, аудио) о том, как объяснить детям болезнь родителя; перевод по запросу.",
+   "source": "https://www.macmillan.org.uk/cancer-information-and-support/stories-and-media/booklets/talking-to-children-and-teenagers-when-an-adult-has-cancer",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-hope",
+   "name": "Hope Support Services (UK)",
+   "name_local": null,
+   "url": "https://www.hopesupport.org.uk/",
+   "kind": "caregiver",
+   "phone": "01989 566317",
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "Free, confidential online support (Hope Online) for young people aged 5–25 when a loved one has a serious illness.",
+   "desc_ru": "Бесплатная конфиденциальная онлайн-поддержка (Hope Online) для детей и молодёжи 5–25 лет, чей близкий тяжело болен.",
+   "source": "https://www.hopesupport.org.uk/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-ylvc",
+   "name": "Young Lives vs Cancer (UK)",
+   "name_local": null,
+   "url": "https://www.younglivesvscancer.org.uk/",
+   "kind": "caregiver",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en"
+   ],
+   "free": true,
+   "desc_en": "UK charity (formerly CLIC Sargent) supporting children and young people aged 0–25 with cancer and their families; social care by phone or chat.",
+   "desc_ru": "Британский фонд (ранее CLIC Sargent) помогает детям и молодым людям 0–25 лет с раком и их семьям; соцработники по телефону или в чате.",
+   "source": "https://www.younglivesvscancer.org.uk/",
+   "checked": "2026-09"
+  },
+  {
+   "id": "intl-griefshare",
+   "name": "GriefShare",
+   "name_local": null,
+   "url": "https://www.griefshare.org/",
+   "kind": "caregiver",
+   "phone": null,
+   "hours": null,
+   "langs": [
+    "en",
+    "es"
+   ],
+   "free": null,
+   "desc_en": "Faith-based (Christian) weekly grief support groups worldwide, in person and online; cost free to about $25.",
+   "desc_ru": "Христианские группы поддержки в горе по всему миру, очно и онлайн; стоимость от бесплатно до ~25 долларов.",
+   "source": "https://www.griefshare.org/",
+   "checked": "2026-09"
+  }
+ ]
+}
