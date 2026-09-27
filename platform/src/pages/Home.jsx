@@ -230,7 +230,7 @@ function ChapterCohorts() {
       <svg width="0" height="0" aria-hidden="true" style={{ position: 'absolute' }}>
         <defs><linearGradient id="g-pool" x1="0" x2="1"><stop offset="0" stopColor="#5EF2B8" /><stop offset="1" stopColor="#4CC9F0" /></linearGradient></defs>
       </svg>
-      <HorizontalStrip label={t('ch4_strip')} head={(
+      <HorizontalStrip label={t('ch4_strip')} hint={t('swipe_hint')} head={(
         <div className="shell st-ch4-head" data-pose="cohorts">
           <Reveal className="kicker kicker-dot">{t('ch4_kicker')}</Reveal>
           <Reveal as="h2" className="st-h2" id="ch4-h" i={1}>{t('ch4_title')}</Reveal>

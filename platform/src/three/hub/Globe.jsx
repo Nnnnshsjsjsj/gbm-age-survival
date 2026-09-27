@@ -78,6 +78,7 @@ function Scene({ land, countries, selected, onSelect, still, light, names }) {
     const pick = (e) => {
       const r = el.getBoundingClientRect();
       ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+      ray.params.Points.threshold = e.pointerType === 'mouse' ? 0.045 : 0.1;
       ray.setFromCamera(ndc, camera);
       const hits = mkRef.current ? ray.intersectObject(mkRef.current) : [];
       // only the side facing us
@@ -91,7 +92,7 @@ function Scene({ land, countries, selected, onSelect, still, light, names }) {
     const off = dragToTurn(el, turn.current, { pitchLimit: 1.1, onTap: (e) => { const i = pick(e); if (i != null) onSelect(countries[i].code); } });
     let raf = 0;
     const move = (e) => {
-      if (turn.current.dragging || raf) return;
+      if (e.pointerType !== 'mouse' || turn.current.dragging || raf) return;
       raf = requestAnimationFrame(() => { raf = 0; const i = pick(e); setHover(i); el.style.cursor = i != null ? 'pointer' : 'grab'; });
     };
     const leave = () => setHover(null);

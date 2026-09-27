@@ -29,7 +29,7 @@ export default function Analyse() {
   const View = VIEW[step];
 
   return (
-    <div className="shell page">
+    <div className="shell page wizard">
       <PageHead kicker={t('wiz_kicker')} title={t('wiz_title')} sub={t('wiz_sub')}>
         <p className="small mt-3 inline-flex items-center gap-2"><IconLock width={16} height={16} />{t('wiz_private')}</p>
       </PageHead>

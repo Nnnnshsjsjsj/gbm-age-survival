@@ -70,7 +70,7 @@ export default function StepUpload({ go }) {
           <div>
             <h3 className="kicker mb-2">{t('up_preview')}</h3>
             <div className="tw">
-              <table className="tbl text-[13px]">
+              <table className="tbl tbl-raw text-[13px]">
                 <thead><tr>{f.headers.map((h) => <th key={h}>{h}</th>)}</tr></thead>
                 <tbody>{f.rows.slice(0, 5).map((r, i) => <tr key={i}>{f.headers.map((h) => <td key={h} className="whitespace-nowrap">{String(r[h] ?? '')}</td>)}</tr>)}</tbody>
               </table>

@@ -48,6 +48,9 @@ export const guidesEn = {
   all: 'All', copy: 'Copy', copied: 'Copied', loading_catalogue: 'Loading the catalogue…',
   model_note: 'Illustration built from a mathematical model, not patient data.',
 
+  hub_paths_short: 'Reading paths', hub_models_short: '3D models', hub_faq_short: 'Questions', hub_good_short: 'Good practice', hub_map_legend: 'Highlight a group in the map', hub_open: 'Open',
+  pt_sec_help: 'Help now', pt_sec_dir: 'Near you', pt_sec_intl: 'International', pt_sec_topics: 'Questions', pt_sec_read: 'Reading',
+  swipe_hint: 'Swipe for all 13 cohorts →', show_all_n: 'Show all {n}', read_summary: 'Read more', jump_to: 'On this page',
   // research hub
   hub_kicker: 'Research hub · glioblastoma',
   hub_h1_a: 'Start in glioblastoma research', hub_h1_b: 'without getting lost.',
@@ -184,6 +187,9 @@ export const guidesRu = {
   all: 'Все', copy: 'Копировать', copied: 'Скопировано', loading_catalogue: 'Загружаем каталог…',
   model_note: 'Иллюстрация построена по математической модели, а не по данным пациентов.',
 
+  hub_paths_short: 'Маршруты', hub_models_short: '3D-модели', hub_faq_short: 'Вопросы', hub_good_short: 'Хорошая практика', hub_map_legend: 'Выделить группу на карте', hub_open: 'Открыть',
+  pt_sec_help: 'Помощь сейчас', pt_sec_dir: 'Рядом с вами', pt_sec_intl: 'Международные', pt_sec_topics: 'Вопросы', pt_sec_read: 'Чтение',
+  swipe_hint: 'Листайте: все 13 когорт →', show_all_n: 'Показать все ({n})', read_summary: 'Читать дальше', jump_to: 'На этой странице',
   hub_kicker: 'Для исследователей · глиобластома',
   hub_h1_a: 'Начать изучать глиобластому', hub_h1_b: 'и не заблудиться.',
   hub_lede: 'Путеводитель по области: что читать сначала, где лежат данные, какими инструментами пользуются и как всё это связано. У каждого пункта есть понятное резюме на русском и английском.',

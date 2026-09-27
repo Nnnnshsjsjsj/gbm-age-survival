@@ -1,4 +1,4 @@
-import{r as je,g as ux}from"./vendor-_nAbmPak.js";import{j as vi}from"./index-DTDMISTy.js";/**
+import{r as je,g as ux}from"./vendor-_nAbmPak.js";import{j as vi}from"./index-DeUWq8NZ.js";/**
  * @license
  * Copyright 2010-2024 Three.js Authors
  * SPDX-License-Identifier: MIT

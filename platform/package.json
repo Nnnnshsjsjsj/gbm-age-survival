@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "test": "node --test tests/*.test.js",
-    "e2e": "node e2e/wizard.spec.mjs"
+    "e2e": "node e2e/wizard.spec.mjs",
+    "audit:mobile": "node e2e/mobile-audit.mjs",
+    "views:mobile": "node e2e/mobile-views.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",

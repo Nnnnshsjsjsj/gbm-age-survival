@@ -4,6 +4,7 @@ import { useApp } from '../../context/AppContext.jsx';
 import { IconArrowUpRight, IconCopy, IconCheck, IconAlert } from '../../components/Icons.jsx';
 import { citation, doiUrl, pubmedUrl, pmcUrl } from '../../lib/hub.js';
 import { scrollToEl } from '../../motion/core.js';
+import { useMedia } from '../../hooks/useMedia.js';
 
 export const TOPICS = ['start', 'classification', 'epidemiology', 'age', 'treatment', 'trials-design', 'genomics', 'heterogeneity', 'microenvironment', 'imaging', 'methods'];
 export const LEVELS = ['start', 'core', 'advanced'];
@@ -69,6 +70,9 @@ export function PaperRow({ p, step, compact = false }) {
   const summary = lang === 'ru' ? p.summary_ru || p.summary_en : p.summary_en;
   const note = lang === 'ru' ? p.note_ru || p.note_en : p.note_en;
   const href = p.doi ? doiUrl(p.doi) : p.pmid ? pubmedUrl(p.pmid) : null;
+  const phone = useMedia('(max-width: 640px)');
+  const [open, setOpen] = useState(false);
+  const clamp = phone && !open && (summary || '').length > 170;
   return (
     <article className={`paper${compact ? ' compact' : ''}`} id={compact ? undefined : `item-${p.id}`}>
       <div className="paper-meta mono">
@@ -81,7 +85,8 @@ export function PaperRow({ p, step, compact = false }) {
         {href ? <a href={href} target="_blank" rel="noopener">{p.title}</a> : p.title}
       </h3>
       <p className="paper-auth">{p.authors}</p>
-      <p className="paper-sum">{summary}</p>
+      <p className={`paper-sum${clamp ? ' clamp' : ''}`}>{summary}</p>
+      {clamp && <button type="button" className="more-btn" onClick={() => setOpen(true)}>{t('read_summary')}</button>}
       {note && <p className="paper-note"><IconAlert width={15} height={15} /><span><b>{t('hub_caveat')}.</b> {note}</span></p>}
       <div className="paper-links">
         {p.doi && <a className="linkchip" href={doiUrl(p.doi)} target="_blank" rel="noopener">DOI<IconArrowUpRight width={13} height={13} /></a>}

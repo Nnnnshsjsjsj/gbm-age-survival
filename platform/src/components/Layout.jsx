@@ -89,6 +89,29 @@ function useSurfaceMotion(path) {
   }, [path]);
 }
 
+/** Copies each table's column headers onto its cells (data-label) so phones can show a table as one card per row. */
+function useTableLabels(path) {
+  useEffect(() => {
+    const main = document.getElementById('main');
+    if (!main) return undefined;
+    let raf = 0;
+    const label = () => {
+      raf = 0;
+      for (const tbl of main.querySelectorAll('table.tbl')) {
+        const heads = [...tbl.querySelectorAll('thead th')].map((th) => th.textContent.trim());
+        if (!heads.length) continue;
+        for (const tr of tbl.querySelectorAll('tbody tr')) {
+          [...tr.children].forEach((td, i) => { if (heads[i] && td.dataset.label !== heads[i]) td.dataset.label = heads[i]; });
+        }
+      }
+    };
+    label();
+    const mo = new MutationObserver(() => { if (!raf) raf = requestAnimationFrame(label); });
+    mo.observe(main, { childList: true, subtree: true });
+    return () => { mo.disconnect(); cancelAnimationFrame(raf); };
+  }, [path]);
+}
+
 function Footer() {
   const { t, lang } = useApp();
   return (
@@ -193,6 +216,7 @@ export default function Layout() {
   }, [loc.hash, path]);
 
   useSurfaceMotion(path);
+  useTableLabels(path);
 
   const sheetGroups = [[null, NAV], ['nav_tools', TOOLS], ['nav_guides', GUIDES], [null, [ABOUT]]];
 
@@ -221,6 +245,7 @@ export default function Layout() {
             </button>
             <span className="topsep" aria-hidden="true" />
             <Link to="/patients#help" className="btn btn-soft btn-sm helpbtn" data-space="family">{t('nav_help')}</Link>
+            <Link to="/patients#help" className="helpicon" data-space="family" aria-label={t('nav_help')}><IconHeart /></Link>
             <button type="button" className="iconbtn menubtn" aria-label={t('menu')} aria-expanded={sheet} onClick={() => setSheet(true)}><IconMenu /></button>
           </div>
         </div>

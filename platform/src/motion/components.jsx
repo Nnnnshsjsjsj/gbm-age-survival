@@ -147,7 +147,7 @@ export function ScrollWords({ text, as: Tag = 'p', className = '', accent = '' }
  * Horizontal strip inside vertical scroll: pinned on wide screens with motion allowed, a plain grid otherwise.
  * `onProgress(p)` reports 0..1 while pinned.
  */
-export function HorizontalStrip({ children, className = '', onProgress, label, head = null }) {
+export function HorizontalStrip({ children, className = '', onProgress, label, head = null, hint = null }) {
   const wrap = useRef(null);
   const track = useRef(null);
   const [pinned, setPinned] = useState(false);
@@ -171,7 +171,8 @@ export function HorizontalStrip({ children, className = '', onProgress, label, h
   return (
     <div ref={wrap} className={`hstrip ${pinned ? 'is-pinned' : ''} ${className}`} aria-label={label} role={label ? 'region' : undefined}>
       {head && <div className="hstrip-head">{head}</div>}
-      <div ref={track} className="hstrip-track">{Children.toArray(children)}</div>
+      <div ref={track} className="hstrip-track" tabIndex={pinned ? undefined : 0}>{Children.toArray(children)}</div>
+      {hint && !pinned && <p className="hstrip-hint" aria-hidden="true">{hint}</p>}
     </div>
   );
 }

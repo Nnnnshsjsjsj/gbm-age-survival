@@ -132,6 +132,7 @@ function MriModel() {
             <li><i style={{ background: '#555' }} />{t('m_mri_legend_core')}</li>
             <li><i style={{ background: seq === 'flair' ? '#e6e6e6' : '#6a6a6a' }} />{t('m_mri_legend_oedema')}</li>
           </ul>
+          <p className="tiny mri-conv-m mt-3">{t('m_mri_conv')}</p>
         </div>
         <div className="mri-views">
           <figure className="mri-flat">

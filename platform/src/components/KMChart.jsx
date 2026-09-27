@@ -16,6 +16,7 @@ export function ChartSkeleton() {
 export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, legend = true, draw = false }) {
   const t = useT();
   const id = useId();
+  const cid = `km${id.replace(/[^a-zA-Z0-9]/g, '')}`;
   const [ref, size] = useSize();
   const W = Math.max(280, size.width || 760);
   const H = Math.max(220, size.height || 400);
@@ -43,6 +44,7 @@ export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, 
       <div className="chartbox" ref={ref}>
         <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby={`${id}-title`} preserveAspectRatio="none">
           <title id={`${id}-title`}>{title}</title>
+          <defs><clipPath id={`${cid}-clip`}><rect x={m.l} y={m.t - 4} width={W - m.l - m.r + 2} height={H - m.t - m.b + 8} /></clipPath></defs>
           {[0, 0.25, 0.5, 0.75, 1].map((p) => (
             <g key={p}>
               <line x1={m.l} x2={W - m.r} y1={y(p)} y2={y(p)} stroke={p === 0 ? 'var(--line-strong)' : 'var(--line)'} strokeDasharray={p === 0 ? undefined : '2 4'} />
@@ -54,6 +56,7 @@ export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, 
           ))}
           <text x={(m.l + W - m.r) / 2} y={H - 6} textAnchor="middle" fontSize={fs} fill="var(--muted)">{t('x_months')}</text>
           {!narrow && <text transform={`translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`} textAnchor="middle" fontSize={fs} fill="var(--muted)">{t('y_share')}</text>}
+          <g clipPath={`url(#${cid}-clip)`}>
           {showCI && series.map((s, i) => s.km.lo && (
             <path key={`b${i}`} className={draw ? 'km-band' : undefined} style={draw ? { '--i': i } : undefined} d={band(s.km.t, s.km.lo.map((v) => (Number.isFinite(v) ? v : 0)), s.km.hi.map((v) => (Number.isFinite(v) ? v : 1)))} fill={s.color} opacity=".14" />
           ))}
@@ -61,6 +64,7 @@ export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, 
             <path key={`l${i}`} d={step(s.km.t, s.km.s)} fill="none" stroke={s.color} strokeWidth={s.dashed ? 1.75 : 2.25} strokeDasharray={s.dashed ? '5 5' : undefined} strokeLinejoin="round" vectorEffect={draw ? undefined : 'non-scaling-stroke'}
               pathLength={draw && !s.dashed ? 1 : undefined} className={s.dashed ? undefined : `glowline${draw ? ' km-draw' : ''}`} style={{ color: s.color, '--i': i }} />
           ))}
+          </g>
         </svg>
       </div>
       {legend && (

@@ -11,6 +11,8 @@ Source for https://nnnnshsjsjsj.github.io/gbm-age-survival/ (React + Vite + Tail
 | `npm run dev` | local dev server |
 | `npm test` | engine tests (51, node:test) |
 | `npm run build` | production build into `../docs` (emptied first) |
+| `npm run audit:mobile` | touch-emulated phone/tablet audit (360, 390, 768, 1024): full-page screenshots, overflow, small tap targets, tiny text → `AUDIT_URL` defaults to a local server on :4180 |
+| `npm run views:mobile` | viewport screenshots of key phone moments with motion on (`W`/`H` env for tablets) |
 | `npm run e2e` | Playwright run against `../docs` with every outside host **blocked**; covers the tools, the story, the Brain lab and both guides, and writes screenshots to `e2e/shots/` |
 
 ## Layout
@@ -47,3 +49,16 @@ Source for https://nnnnshsjsjsj.github.io/gbm-age-survival/ (React + Vite + Tail
   globe's land dots. To correct a phone number, edit the matching `data-src/patients_*.json` entry and re-run merge.
 - 3D scenes for the guides live in `src/three/hub/` and load lazily; the MRI model (`src/lib/mriModel.js`) is plain JS,
   so the 2D slice works without WebGL.
+
+## v7: phones and tablets
+
+- Touch devices (`pointer: coarse`) get 40–44px controls everywhere; hover-only effects are off.
+- Tables turn into one labelled card per row on phones (`Layout.jsx` copies header text into `data-label`);
+  wide data previews keep sideways scrolling with `tbl-raw`.
+- Forest plots switch to a stacked layout below 560px: name and numbers on one line, the interval under it at full width.
+- Story: the 13 cohort cards swipe (scroll-snap) below 1024px. KM curves are clipped to the plot area.
+- Guides: a sticky "on this page" bar, filter chips that swipe, summaries that open on tap, four services per group with
+  "Show all", the 3D picture stays in view (sticky) while you move the model controls, and the constellation shows a
+  preview card on tap (tap again or press Open). A support shortcut (heart) sits in the top bar on phones and tablets.
+- Analyse: Back/Next stay at the bottom of the screen on phones.
+- `npm run e2e` includes a touch-phone phase (swipe strip, labelled tables, 40px targets, sticky wizard bar, star tap).

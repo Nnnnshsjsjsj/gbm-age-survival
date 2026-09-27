@@ -28,7 +28,7 @@ function layout(items, groups) {
   return { centers, pos };
 }
 
-function Scene({ items, groups, pathIds, activeGroup, hovered, setHovered, onPick, onGroup, still, light, groupLabels }) {
+function Scene({ items, groups, pathIds, activeGroup, hovered, setHovered, onPick, onGroup, still, light, groupLabels, openLabel = 'Open', onPreview, touch }) {
   const { gl, camera, size } = useThree();
   const root = useRef(null);
   const turn = useRef({ yaw: 0.4, pitch: 0.12, dragging: false, last: 0 });
@@ -111,21 +111,30 @@ function Scene({ items, groups, pathIds, activeGroup, hovered, setHovered, onPic
     const pick = (e) => {
       const r = el.getBoundingClientRect();
       ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+      ray.params.Points.threshold = e.pointerType === 'mouse' ? 0.09 : 0.2;
       ray.setFromCamera(ndc, camera);
       const hit = pointsRef.current ? ray.intersectObject(pointsRef.current)[0] : null;
       return hit ? hit.index : null;
     };
-    const off = dragToTurn(el, turn.current, { onTap: (e) => { const i = pick(e); if (i != null) onPick(items[i].id); } });
+    // mouse: click opens; touch: first tap shows the title, a second tap (or the Open button) opens
+    const off = dragToTurn(el, turn.current, { onTap: (e) => {
+      const i = pick(e);
+      if (i == null) { setHovered(null); return; }
+      if (e.pointerType === 'mouse' || hoveredRef.current === i) onPick(items[i].id);
+      else setHovered(i);
+    } });
     let raf = 0;
     const move = (e) => {
-      if (turn.current.dragging || raf) return;
+      if (e.pointerType !== 'mouse' || turn.current.dragging || raf) return;
       raf = requestAnimationFrame(() => { raf = 0; const i = pick(e); setHovered(i); el.style.cursor = i != null ? 'pointer' : 'grab'; });
     };
-    const leave = () => setHovered(null);
+    const leave = (e) => { if (e.pointerType === 'mouse') setHovered(null); };
     el.addEventListener('pointermove', move); el.addEventListener('pointerleave', leave);
     el.style.cursor = 'grab';
     return () => { off(); cancelAnimationFrame(raf); el.removeEventListener('pointermove', move); el.removeEventListener('pointerleave', leave); };
   }, [gl, camera, ray, items, onPick, setHovered]);
+  const hoveredRef = useRef(hovered);
+  hoveredRef.current = hovered;
 
   useFrame((_, dt) => {
     const t = turn.current; const c = cur.current;
@@ -162,9 +171,9 @@ function Scene({ items, groups, pathIds, activeGroup, hovered, setHovered, onPic
           </Html>
         );
       })}
-      {hv && (
-        <Html position={[pos[hovered * 3], pos[hovered * 3 + 1], pos[hovered * 3 + 2]]} zIndexRange={[30, 0]} style={{ pointerEvents: 'none' }}>
-          <div className="cst-tip"><b>{hv.label}</b>{hv.sub && <span>{hv.sub}</span>}</div>
+      {hv && !touch && (
+        <Html position={[pos[hovered * 3], pos[hovered * 3 + 1], pos[hovered * 3 + 2]]} zIndexRange={[30, 0]}>
+          <div className="cst-tip"><b>{hv.label}</b>{hv.sub && <span>{hv.sub}</span>}<button type="button" tabIndex={-1} onClick={() => onPick(hv.id)}>{openLabel} →</button></div>
         </Html>
       )}
     </group>
@@ -176,6 +185,9 @@ export default function Constellation(props) {
   const wrap = useRef(null);
   const [visible, setVisible] = useState(true);
   const [hovered, setHovered] = useState(null);
+  const [touch] = useState(() => { try { return matchMedia('(hover: none)').matches; } catch { return false; } });
+  useEffect(() => { if (touch) props.onPreview?.(hovered != null ? props.items[hovered] : null); }, [hovered, touch]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (props.clearPreview) setHovered(null); }, [props.clearPreview]);
   useEffect(() => {
     const el = wrap.current;
     if (!el || typeof IntersectionObserver === 'undefined') return undefined;
@@ -187,7 +199,7 @@ export default function Constellation(props) {
     <div ref={wrap} className="cst-wrap">
       <Canvas dpr={[1, 1.75]} frameloop={visible ? 'always' : 'never'} camera={{ position: [0, 0.2, 7.2], fov: 38, near: 0.1, far: 50 }}
         gl={{ antialias: true, alpha: true }} onCreated={({ gl }) => gl.setClearColor(0x000000, 0)}>
-        <Scene {...props} hovered={hovered} setHovered={setHovered} />
+        <Scene {...props} touch={touch} hovered={hovered} setHovered={setHovered} />
       </Canvas>
     </div>
   );

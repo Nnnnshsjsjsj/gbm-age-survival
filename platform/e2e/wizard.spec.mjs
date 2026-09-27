@@ -438,6 +438,57 @@ async function phaseGuides(browser, width) {
   await ctx.close();
 }
 
+/* ------------------------------------------------------------------ phase T: a real phone (touch, coarse pointer) */
+async function phaseTouch(browser) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
+  await ctx.route((u) => !LOCAL.includes(u.hostname), (r) => r.abort());
+  const page = await ctx.newPage();
+  const errors = []; page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto(`${base}#/`);
+  await page.locator('.hstrip-track .cohort-card h3').first().waitFor({ timeout: 30000 });
+  const strip = await page.evaluate(() => { const t = document.querySelector('.hstrip-track'); return { sw: t.scrollWidth, cw: t.clientWidth, snap: getComputedStyle(t).scrollSnapType }; });
+  ok(strip.sw > strip.cw * 3 && /x/.test(strip.snap), `phone: cohort cards swipe sideways (${JSON.stringify(strip)})`);
+  ok(await page.locator('.helpicon').isVisible(), 'phone: support shortcut in the top bar');
+
+  await page.goto(`${base}#/pool`);
+  await page.waitForFunction(() => document.querySelectorAll('.fp-stacked svg').length >= 2, null, { timeout: 30000 });
+  const tbl = await page.evaluate(() => { const th = document.querySelector('.tbl thead'); const td = document.querySelector('.tbl tbody td:nth-child(2)'); return { head: getComputedStyle(th).display, label: td?.dataset.label || '' }; });
+  ok(tbl.head === 'none' && tbl.label.length > 0, `phone: tables become labelled cards (${JSON.stringify(tbl)})`);
+  await noOverflow(page, 'pool (phone)');
+  const small = await page.evaluate(() => [...document.querySelectorAll('.footer a')].filter((a) => a.getBoundingClientRect().height < 40).length);
+  ok(small === 0, `phone: footer links are at least 40px tall (${small} smaller)`);
+
+  await page.goto(`${base}#/analyse`);
+  await page.getByRole('button', { name: 'Try the demo file' }).tap();
+  await page.getByText('demo_cohort_messy.csv').waitFor();
+  await page.getByRole('button', { name: 'Next' }).tap();
+  await page.getByRole('heading', { name: 'Map your columns' }).waitFor();
+  const bar = await page.evaluate(() => { const b = document.querySelector('.wizard section > .actions:last-child'); const r = b.getBoundingClientRect(); return { pos: getComputedStyle(b).position, bottom: Math.round(r.bottom), vh: innerHeight }; });
+  ok(bar.pos === 'sticky' && bar.bottom <= bar.vh + 1, `phone: Back/Next bar stays at the bottom (${JSON.stringify(bar)})`);
+
+  await page.goto(`${base}#/hub`);
+  await page.locator('.secnav').waitFor();
+  await page.locator('.cst-wrap canvas').waitFor({ timeout: 60000 });
+  await page.evaluate(() => document.querySelector('.hub-map').scrollIntoView({ block: 'center' }));
+  await page.waitForTimeout(2000);
+  const box = await page.locator('.cst-wrap canvas').boundingBox();
+  let hit = false;
+  for (let fy = 0.2; fy < 0.9 && !hit; fy += 0.05) for (let fx = 0.15; fx < 0.9 && !hit; fx += 0.05) {
+    await page.touchscreen.tap(box.x + box.width * fx, box.y + box.height * fy);
+    await page.waitForTimeout(40);
+    hit = (await page.locator('.cst-card').count()) > 0;
+  }
+  ok(hit, 'phone: tapping a star shows its preview card');
+  await page.locator('.cst-card .btn-primary').tap();
+  await page.waitForFunction(() => { const f = document.querySelector('.flash'); if (!f) return false; const r = f.getBoundingClientRect(); return r.top > 0 && r.top < innerHeight; }, null, { timeout: 10000 });
+  await page.goto(`${base}#/patients`);
+  await page.locator('#pt-country').selectOption('RS');
+  ok(await page.locator('#help a[href^="tel:"]').count() >= 2, 'phone: tap-to-call numbers');
+  await noOverflow(page, 'patients (phone)');
+  ok(errors.length === 0, `phone: page errors: ${errors.join(' | ')}`);
+  await ctx.close();
+}
+
 async function main() {
   await rm(shots, { recursive: true, force: true });
   await mkdir(shots, { recursive: true });
@@ -456,7 +507,8 @@ async function main() {
       if (process.env.E2E_ONLY_3D) { log(`PASS (3D only): ${written.length} screenshots`); return; }
     }
     for (const w of [1280, 390]) { log(`guides with motion at ${w}px`); await phaseGuides(browser, w); }
-    log(`PASS: ${written.length} screenshots in e2e/shots; age HR 1.022 (1.003–1.041); everything works offline; Research hub search, filters, paths, toolbox, cell-state entropy, MRI slicer; Patients & families by country; Brain lab + WebGL + fallback; story with and without motion; no page errors`);
+    log('a real phone: touch and coarse pointer'); await phaseTouch(browser);
+    log(`PASS: ${written.length} screenshots in e2e/shots; age HR 1.022 (1.003–1.041); everything works offline; Research hub search, filters, paths, toolbox, cell-state entropy, MRI slicer; Patients & families by country; phone touch checks; Brain lab + WebGL + fallback; story with and without motion; no page errors`);
   } catch (e) {
     failed = e;
   } finally {

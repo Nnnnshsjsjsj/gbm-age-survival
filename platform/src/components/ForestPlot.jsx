@@ -61,8 +61,75 @@ export default function ForestPlot({ items, title, compact = false, animate = fa
   };
   const anim = (cls, i, extra = {}) => (animate ? { className: cls, style: { '--d': `${200 + i * 55}ms`, ...extra } } : {});
 
+  // Phones and narrow columns: each study gets two lines, the name and numbers on top and the interval underneath at
+  // full width. Nothing scrolls sideways and nothing is cut.
+  if (size.width && size.width < 560) {
+    const SW = Math.round(size.width);
+    const L = 6, R = 6;
+    const sx = (v) => L + (Math.min(Math.max(v, xmin), xmax) - xmin) / (xmax - xmin) * (SW - L - R);
+    const hOf = (r) => (r.type === 'header' ? 28 : 50);
+    const ys = []; let acc = 6;
+    for (const r of items) { ys.push(acc); acc += hOf(r); }
+    const SH = acc + 30;
+    const numsW = 138;
+    const room = SW - numsW - 18;
+    const charsFor = (bold) => Math.max(10, Math.floor(room / (bold ? 8.3 : 7.4)));
+    const chars = charsFor(false);
+    const cut = (l, bold) => { const t2 = String(l); const n = charsFor(bold); return t2.length > n ? `${t2.slice(0, n - 1).trimEnd()}…` : t2; };
+    const base = SH - 24;
+    return (
+      <div ref={ref} className="fp-wrap"><div className="fp-stacked">
+        <svg viewBox={`0 0 ${SW} ${SH}`} width={SW} height={SH} role="img" aria-labelledby={`${id}-t`} style={{ display: 'block', maxWidth: '100%', overflow: 'visible' }}>
+          <title id={`${id}-t`}>{title}</title>
+          <defs>
+            <linearGradient id={`${id}-g`} x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" style={{ stopColor: 'var(--accent)' }} />
+              <stop offset="1" style={{ stopColor: 'var(--accent-2)' }} />
+            </linearGradient>
+          </defs>
+          {ticks.map((v) => (
+            <g key={v}>
+              <line x1={sx(v)} x2={sx(v)} y1={4} y2={base} stroke="var(--line)" strokeDasharray="2 4" />
+              <text className="mono" x={sx(v)} y={SH - 6} textAnchor="middle" fontSize="10.5" fill="var(--dim)">{v.toFixed(dec)}</text>
+            </g>
+          ))}
+          <line x1={L} x2={SW - R} y1={base} y2={base} stroke="var(--line-strong)" />
+          {xmin <= 1 && xmax >= 1 && <line x1={sx(1)} x2={sx(1)} y1={4} y2={base} stroke="var(--line-strong)" strokeWidth="1.25" />}
+          {items.map((r, i) => {
+            const y0 = ys[i];
+            if (r.type === 'header') return <text key={i} className="mono" x={L} y={y0 + 18} fontSize="10.5" fontWeight="500" letterSpacing=".12em" fill="var(--dim)">{r.label.toUpperCase()}</text>;
+            const ty = y0 + 17, by = y0 + 35;
+            const bold = r.type === 'pooled' || r.highlight;
+            const numTxt = r.type === 'pred' ? `${fmt(r.lo)}–${fmt(r.hi)}` : `${fmt(r.hr)} (${fmt(r.lo)}–${fmt(r.hi)})`;
+            const col = r.color || 'var(--accent)';
+            const sq = r.highlight ? 11 : r.weight != null ? 5 + Math.sqrt(r.weight) * 9 : 8;
+            return (
+              <g key={i}>
+                {r.highlight && <rect x={0} y={y0 + 2} width={SW} height={46} fill="var(--accent-soft)" rx="8" />}
+                {r.type === 'pooled' && <line x1={0} x2={SW} y1={y0} y2={y0} stroke="var(--line)" />}
+                <rect x={0} y={y0 + 4} width={SW} height={20} fill="var(--bg)" opacity=".72" rx="4" />
+                <text x={L} y={ty} fontSize="13" fontWeight={bold ? 600 : 400} fill={r.type === 'pred' ? 'var(--muted)' : 'var(--ink)'}>
+                  {cut(r.label, bold)}{r.sub && `${r.label} ${r.sub}`.length <= (bold ? charsFor(true) : chars) && <tspan fill="var(--dim)" fontSize="11">{`  ${r.sub}`}</tspan>}
+                </text>
+                <text className="mono" x={SW - R} y={ty} textAnchor="end" fontSize="11.5" fontWeight={bold ? 500 : 400} fill="var(--ink)" fillOpacity=".9">{numTxt}</text>
+                {r.type === 'pred' && <line x1={sx(r.lo)} x2={sx(r.hi)} y1={by} y2={by} stroke="var(--accent-2)" strokeWidth="5" strokeLinecap="round" opacity=".3" />}
+                {r.type === 'pooled' && <polygon points={`${sx(r.lo)},${by} ${sx(r.hr)},${by - 8} ${sx(r.hi)},${by} ${sx(r.hr)},${by + 8}`} fill={`url(#${id}-g)`} />}
+                {r.type === 'row' && (
+                  <>
+                    <line x1={sx(r.lo)} x2={sx(r.hi)} y1={by} y2={by} stroke={col} strokeWidth={r.highlight ? 2.5 : 2} strokeLinecap="round" />
+                    <rect x={sx(r.hr) - sq / 2} y={by - sq / 2} width={sq} height={sq} rx="2" fill={col} />
+                  </>
+                )}
+              </g>
+            );
+          })}
+        </svg>
+      </div></div>
+    );
+  }
+
   return (
-    <div ref={ref} className="tw">
+    <div ref={ref} className="fp-wrap"><div className="tw">
       <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-labelledby={`${id}-t`} style={{ display: 'block', maxWidth: 'none', overflow: 'visible' }}>
         <title id={`${id}-t`}>{title}</title>
         <defs>
@@ -118,6 +185,6 @@ export default function ForestPlot({ items, title, compact = false, animate = fa
           );
         })}
       </svg>
-    </div>
+    </div></div>
   );
 }

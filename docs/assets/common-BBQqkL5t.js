@@ -1,4 +1,4 @@
-import{g as s,y as m,A as h}from"./extends-CL69wfjW.js";function g({light:t=!1,scale:o=1}={}){return new s({transparent:!0,depthWrite:!1,blending:t?m:h,uniforms:{uScale:{value:o},uPx:{value:1},uLight:{value:t?1:0}},vertexShader:`
+import{g as s,y as m,A as h}from"./extends-CnXfhndJ.js";function g({light:t=!1,scale:o=1}={}){return new s({transparent:!0,depthWrite:!1,blending:t?m:h,uniforms:{uScale:{value:o},uPx:{value:1},uLight:{value:t?1:0}},vertexShader:`
       attribute vec3 color; attribute float size; attribute float alpha;
       uniform float uScale; uniform float uPx;
       varying vec3 vColor; varying float vAlpha;

@@ -10,6 +10,7 @@ import { Notice } from '../components/ui.jsx';
 import { IconSearch, IconX, IconArrowRight, IconArrowUpRight, IconHeart, IconChevronDown, IconSparkle, IconCheckCircle } from '../components/Icons.jsx';
 import { LINKS } from '../components/Layout.jsx';
 import Models from './hub/Models.jsx';
+import SectionNav from '../components/SectionNav.jsx';
 import { PaperRow, ToolCard, TOPICS, LEVELS, CATS, GROUPS, paperGroup, toolGroup, flash } from './hub/items.jsx';
 
 const QUICK = ['MGMT', 'WHO 2021', 'single-cell', 'Cox', 'BraTS', 'TCGA', 'meta-analysis', 'CAR-T'];
@@ -36,16 +37,26 @@ function Hero({ data, q, setQ, onPick, pathIds, activeGroup, setActiveGroup }) {
     ...data.toolbox.map((x) => ({ id: x.id, group: toolGroup(x), label: x.name, sub: t(`cat_${x.cat}`) })),
   ] : []), [data, t]);
   const groupLabels = useMemo(() => Object.fromEntries(GROUPS.map((g) => [g.key, t(g.label)])), [t]);
+  const [preview, setPreview] = useState(null);
+  const [clear, setClear] = useState(0);
   const journals = useMemo(() => (data ? [...new Set(data.papers.map((p) => p.journal))].slice(0, 22) : []), [data]);
 
   return (
     <section className="hub-hero" aria-labelledby="hub-h1">
-      <div className="hub-map" aria-hidden="true">
+      <div className="hub-map">
         {data && (
-          <BrainStage fallback={null}>
+          <div aria-hidden="true" className="contents"><BrainStage fallback={null}>
             <Constellation items={items} groups={theme === 'light' ? GROUPS.map((g) => ({ ...g, color: g.light })) : GROUPS} groupLabels={groupLabels} pathIds={pathIds} activeGroup={activeGroup}
-              onPick={onPick} onGroup={(g) => setActiveGroup((a) => (a === g ? null : g))} still={env.still} light={theme === 'light'} />
-          </BrainStage>
+              onPick={onPick} onGroup={(g) => setActiveGroup((a) => (a === g ? null : g))} still={env.still} light={theme === 'light'} openLabel={t('hub_open')}
+              onPreview={setPreview} clearPreview={clear} />
+          </BrainStage></div>
+        )}
+        {preview && (
+          <div className="cst-card" role="status">
+            <b>{preview.label}</b><span>{preview.sub}</span>
+            <button type="button" className="btn btn-primary btn-sm" onClick={() => { onPick(preview.id); setClear((n) => n + 1); }}>{t('hub_open')}</button>
+            <button type="button" className="x" aria-label={t('close')} onClick={() => setClear((n) => n + 1)}><IconX width={14} height={14} /></button>
+          </div>
         )}
       </div>
       <div className="shell hub-hero-in">
@@ -74,6 +85,14 @@ function Hero({ data, q, setQ, onPick, pathIds, activeGroup, setActiveGroup }) {
         )}
         <p className="tiny hub-maphint mt-6"><IconSparkle width={14} height={14} />{t('hub_map_hint')}</p>
       </div>
+      {data && (
+        <div className="cst-legend" role="group" aria-label={t('hub_map_legend')}>
+          {GROUPS.map((g) => (
+            <button key={g.key} type="button" aria-pressed={activeGroup === g.key} style={{ '--c': theme === 'light' ? g.light : g.color }}
+              onClick={() => setActiveGroup((a) => (a === g.key ? null : g.key))}><i aria-hidden="true" />{groupLabels[g.key]}</button>
+          ))}
+        </div>
+      )}
       {journals.length > 0 && <Marquee items={journals} className="hub-marquee" label="Journals" />}
     </section>
   );
@@ -185,7 +204,7 @@ function Library({ data, filt, setFilt }) {
         <Reveal as="h2" className="st-h2" id="lib-h" i={1}>{t('hub_lib_title')}</Reveal>
         <Reveal as="p" className="lede mt-5" i={2}>{t('hub_lib_sub')}</Reveal>
         <div className="filters mt-10">
-          <div role="group" aria-label={t('hub_f_topic')} className="chips">
+          <div role="group" aria-label={t('hub_f_topic')} className="chips xrow-m">
             <button type="button" className="chip" aria-pressed={!topic} onClick={() => set({ topic: null })}>{t('all')} <span className="text-dim">{data.papers.length}</span></button>
             {TOPICS.map((x) => (
               <button key={x} type="button" className="chip" aria-pressed={topic === x} onClick={() => set({ topic: topic === x ? null : x })}>
@@ -225,6 +244,8 @@ function Library({ data, filt, setFilt }) {
 /* ---------------------------------------------------------------- 03 toolbox */
 function Toolbox({ data, cat, setCat }) {
   const { t } = useApp();
+  const [limit, setLimit] = useState(12);
+  useEffect(() => { setLimit(12); }, [cat]);
   const counts = useMemo(() => Object.fromEntries(CATS.map((c) => [c, data.toolbox.filter((x) => x.cat === c).length])), [data]);
   const order = { start: 0, core: 1, advanced: 2 };
   const list = useMemo(() => data.toolbox.filter((x) => x.cat === cat).sort((a, b) => order[a.level] - order[b.level]), [data, cat]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -242,8 +263,13 @@ function Toolbox({ data, cat, setCat }) {
           ))}
         </div>
         <div className="tool-grid mt-6" id="tb-panel" role="tabpanel" aria-labelledby={`tbt-${cat}`}>
-          {list.map((x) => <ToolCard key={x.id} x={x} />)}
+          {list.slice(0, limit).map((x) => <ToolCard key={x.id} x={x} />)}
         </div>
+        {list.length > limit && (
+          <div className="mt-6 text-center">
+            <button type="button" className="btn btn-soft" onClick={() => setLimit(list.length)}>{t('show_all_n', { n: list.length })}</button>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -311,6 +337,11 @@ export default function Hub() {
       {!data && <div className="shell page"><p className="small mono">{t('loading_catalogue')}</p></div>}
       {data && (
         <>
+          <SectionNav label={t('jump_to')} items={[
+            { id: 'paths', n: '01', label: t('hub_paths_short') }, { id: 'library', n: '02', label: t('hub_library') },
+            { id: 'toolbox', n: '03', label: t('hub_toolbox') }, { id: 'models', n: '04', label: t('hub_models_short') },
+            { id: 'faq', n: '05', label: t('hub_faq_short') }, { id: 'practice', n: '06', label: t('hub_good_short') },
+          ]} />
           <Results data={data} q={q} setQ={setQ} />
           <Paths data={data} byId={byId} active={pathIdx} setActive={setPathIdx}
             onShow={() => { setShowPath(true); setActiveGroup(null); scrollToEl(0); }} />

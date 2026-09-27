@@ -10,6 +10,8 @@ import { reducedMotion, isMobile, scrollToEl } from '../motion/core.js';
 import { Notice } from '../components/ui.jsx';
 import { IconPhone, IconArrowUpRight, IconArrowRight, IconChevronDown, IconHeart, IconGlobe, IconBook, IconInfo, IconUsers, IconClock, IconShield } from '../components/Icons.jsx';
 import { LINKS } from '../components/Layout.jsx';
+import SectionNav from '../components/SectionNav.jsx';
+import { useMedia } from '../hooks/useMedia.js';
 
 const REGIONS = {
   europe: ['RS', 'ME', 'BA', 'HR', 'MK', 'SI', 'BG', 'RO', 'GB', 'IE', 'DE', 'AT', 'CH', 'FR', 'BE', 'NL', 'LU', 'IT', 'ES', 'PT', 'GR', 'CY', 'MT', 'SE', 'NO', 'DK', 'FI', 'IS', 'PL', 'CZ', 'SK', 'HU', 'LV', 'LT', 'EE', 'UA', 'BY', 'MD'],
@@ -189,6 +191,20 @@ function HelpNow({ country, countryName }) {
   );
 }
 
+/** On phones a long group shows its first four services and a button for the rest. */
+function EntryList({ list }) {
+  const { t } = useApp();
+  const phone = useMedia('(max-width: 640px)');
+  const [all, setAll] = useState(false);
+  const shown = phone && !all ? list.slice(0, 4) : list;
+  return (
+    <>
+      <div className="entry-grid">{shown.map((e) => <Entry key={e.id} e={e} />)}</div>
+      {shown.length < list.length && <button type="button" className="btn btn-soft dir-more w-full" onClick={() => setAll(true)}>{t('show_all_n', { n: list.length })}</button>}
+    </>
+  );
+}
+
 /* ---------------------------------------------------------------- directory */
 function Directory({ country, countryName }) {
   const { t } = useApp();
@@ -212,7 +228,7 @@ function Directory({ country, countryName }) {
                     <p className="small">{t(`kind_${g.key}_b`)}</p>
                   </div>
                 </div>
-                <div className="entry-grid">{list.map((e) => <Entry key={e.id} e={e} />)}</div>
+                <EntryList list={list} />
               </div>
             );
           })}
@@ -276,7 +292,7 @@ function Reading({ items }) {
               {[[null, t('all')], ['en', 'EN'], ['ru', 'RU']].map(([k, l]) => <button key={l} type="button" aria-pressed={lng === k} onClick={() => setLng(k)}>{l}</button>)}
             </div>
           </div>
-          <div role="group" aria-label={t('pt_f_aud')} className="chips">
+          <div role="group" aria-label={t('pt_f_aud')} className="chips xrow-m">
             <button type="button" className="chip" aria-pressed={!aud} onClick={() => setAud(null)}>{t('all')}</button>
             {AUD.map((a) => <button key={a} type="button" className="chip" aria-pressed={aud === a} onClick={() => setAud(aud === a ? null : a)}>{t(`aud_${a}`)}</button>)}
           </div>
@@ -339,6 +355,10 @@ export default function Patients() {
   return (
     <div className="patients" data-space="family">
       <Hero data={data} land={land} code={code} setCode={setCode} countryName={countryName} />
+      <SectionNav label={t('jump_to')} items={[
+        { id: 'help', label: t('pt_sec_help') }, ...(country ? [{ id: 'directory', label: t('pt_sec_dir') }] : []),
+        { id: 'international', label: t('pt_sec_intl') }, { id: 'topics', label: t('pt_sec_topics') }, { id: 'reading', label: t('pt_sec_read') },
+      ]} />
       <HelpNow country={country} countryName={countryName} />
       <Directory country={country} countryName={countryName} />
       <section className="pt-sec" id="international" aria-labelledby="intl-h">
