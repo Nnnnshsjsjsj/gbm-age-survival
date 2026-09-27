@@ -132,7 +132,7 @@ export default function Families() {
       </div>
       {tab === 'forum' ? <Forum space="family" board={board || null} /> : (
         <div className="shell page">
-          <div className="pagehead"><div className="kicker">{t('res_kicker')}</div><h1 className="h1">{t('res_title')}</h1><p className="sub">{t('res_sub')}</p></div>
+          <div className="pagehead"><div className="kicker kicker-dot">{t('res_kicker')}</div><h1 className="h1">{t('res_title')}</h1><p className="sub">{t('res_sub')}</p></div>
           <Resources />
         </div>
       )}

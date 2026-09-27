@@ -66,7 +66,7 @@ export default function StepCompare({ go }) {
       <input id={`sh-${key}`} className="input" type={type} value={share[key]} onChange={(e) => setShare({ ...share, [key]: e.target.value })} {...extra} />
     </div>
   );
-  const download = <button type="button" className="btn btn-ghost" onClick={() => downloadJson(summary, 'plateau-summary.json')}><IconDownload />{t('download_json')}</button>;
+  const download = <button type="button" className="btn btn-ghost" onClick={() => downloadJson(summary, 'cohortex-summary.json')}><IconDownload />{t('download_json')}</button>;
 
   return (
     <section className="grid gap-4" aria-labelledby="cmp-h">

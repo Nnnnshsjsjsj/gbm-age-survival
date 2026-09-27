@@ -45,20 +45,20 @@ export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, 
           <title id={`${id}-title`}>{title}</title>
           {[0, 0.25, 0.5, 0.75, 1].map((p) => (
             <g key={p}>
-              <line x1={m.l} x2={W - m.r} y1={y(p)} y2={y(p)} stroke="var(--line)" strokeDasharray={p === 0 ? undefined : '3 5'} />
+              <line x1={m.l} x2={W - m.r} y1={y(p)} y2={y(p)} stroke={p === 0 ? 'var(--line-strong)' : 'var(--line)'} strokeDasharray={p === 0 ? undefined : '2 4'} />
               <text className="mono" x={m.l - 10} y={y(p) + 4} textAnchor="end" fontSize={fs} fill="var(--dim)">{Math.round(p * 100)}%</text>
             </g>
           ))}
           {ticks.map((mo) => (
             <text key={mo} className="mono" x={x(mo)} y={y(0) + 20} textAnchor="middle" fontSize={fs} fill="var(--dim)">{mo}</text>
           ))}
-          <text x={(m.l + W - m.r) / 2} y={H - 6} textAnchor="middle" fontSize={fs + 0.5} fill="var(--muted)">{t('x_months')}</text>
-          {!narrow && <text transform={`translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`} textAnchor="middle" fontSize={fs + 0.5} fill="var(--muted)">{t('y_share')}</text>}
+          <text x={(m.l + W - m.r) / 2} y={H - 6} textAnchor="middle" fontSize={fs} fill="var(--muted)">{t('x_months')}</text>
+          {!narrow && <text transform={`translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`} textAnchor="middle" fontSize={fs} fill="var(--muted)">{t('y_share')}</text>}
           {showCI && series.map((s, i) => s.km.lo && (
-            <path key={`b${i}`} d={band(s.km.t, s.km.lo.map((v) => (Number.isFinite(v) ? v : 0)), s.km.hi.map((v) => (Number.isFinite(v) ? v : 1)))} fill={s.color} opacity=".12" />
+            <path key={`b${i}`} d={band(s.km.t, s.km.lo.map((v) => (Number.isFinite(v) ? v : 0)), s.km.hi.map((v) => (Number.isFinite(v) ? v : 1)))} fill={s.color} opacity=".14" />
           ))}
           {series.map((s, i) => (
-            <path key={`l${i}`} d={step(s.km.t, s.km.s)} fill="none" stroke={s.color} strokeWidth={s.dashed ? 2 : 2.5} strokeDasharray={s.dashed ? '6 5' : undefined} strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+            <path key={`l${i}`} d={step(s.km.t, s.km.s)} fill="none" stroke={s.color} strokeWidth={s.dashed ? 1.75 : 2.25} strokeDasharray={s.dashed ? '5 5' : undefined} strokeLinejoin="round" vectorEffect="non-scaling-stroke" className={s.dashed ? undefined : 'glowline'} style={{ color: s.color }} />
           ))}
         </svg>
       </div>

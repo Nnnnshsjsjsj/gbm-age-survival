@@ -52,8 +52,9 @@ const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 const written = [];
 
 /** New page with error collection and network policy. mode: 'blocked' | 'mock' */
-async function openPage(browser, { width, dark = false, mode = 'blocked', mock = null }) {
-  const ctx = await browser.newContext({ viewport: { width, height: width < 500 ? 844 : 900 }, colorScheme: dark ? 'dark' : 'light', reducedMotion: 'reduce' });
+async function openPage(browser, { width, mode = 'blocked', mock = null }) {
+  // colorScheme 'light' on purpose: the app must stay dark by default whatever the OS prefers.
+  const ctx = await browser.newContext({ viewport: { width, height: width < 500 ? 844 : 900 }, colorScheme: 'light', reducedMotion: 'reduce' });
   const page = await ctx.newPage();
   const errors = { page: [], console: [], hosts: new Set() };
   page.on('pageerror', (e) => errors.page.push(String(e)));
@@ -75,15 +76,15 @@ async function openPage(browser, { width, dark = false, mode = 'blocked', mock =
   return { ctx, page, errors };
 }
 
-const shotName = (name, width, dark) => `${name}-${width}${dark ? '-dark' : ''}.png`;
-async function shot(page, name, width, dark = false) {
-  const file = shotName(name, width, dark);
+const shotName = (name, width, variant) => `${name}-${width}${variant ? `-${variant}` : ''}.png`;
+async function shot(page, name, width, variant = '') {
+  const file = shotName(name, width, variant);
   await page.waitForTimeout(120);
   await page.screenshot({ path: path.join(shots, file), fullPage: true });
   written.push(file);
 }
 async function modalShot(page, name, width) {
-  const file = shotName(name, width, false);
+  const file = shotName(name, width, '');
   await page.waitForTimeout(250);
   await page.screenshot({ path: path.join(shots, file), fullPage: false });
   written.push(file);
@@ -172,11 +173,12 @@ async function phaseBlocked(browser, width) {
   await go(page, '/');
   await page.getByRole('heading', { level: 1 }).waitFor();
   ok(/side by side/.test(await page.locator('h1').innerText()), 'home headline');
-  ok(await page.title() === 'plateau — glioblastoma cohorts, side by side', 'document title');
+  ok(await page.title() === 'cohortex — glioblastoma cohorts, side by side', 'document title');
+  ok(await page.evaluate(() => document.documentElement.dataset.theme) === 'dark', 'dark is the default theme');
   await page.waitForTimeout(400);
   ok(await page.getByTestId('chip-researchers').count() === 0, 'live researchers chip hidden when stats fail');
   await noOverflow(page, 'home'); await checkLabels(page, 'home');
-  await shot(page, T('home'), width);
+  await shot(page, 'home', width, 'dark');
 
   await go(page, '/explore');
   await page.waitForFunction(() => document.querySelectorAll('svg[role="img"] path').length > 2);
@@ -220,7 +222,7 @@ async function phaseBlocked(browser, width) {
   await noOverflow(page, 'families'); await checkLabels(page, 'families');
   await shot(page, 'families', width);
 
-  for (const [route, name, heading] of [['/about', 'about', 'About plateau'], ['/rules', 'rules', 'House rules'], ['/privacy', 'privacy', 'What we keep, and what we never see'], ['/account', 'account', 'You are not signed in'], ['/mod', 'mod', 'This desk is for moderators'], ['/nope', 'notfound', 'This page does not exist']]) {
+  for (const [route, name, heading] of [['/about', 'about', 'About cohortex'], ['/rules', 'rules', 'House rules'], ['/privacy', 'privacy', 'What we keep, and what we never see'], ['/account', 'account', 'You are not signed in'], ['/mod', 'mod', 'This desk is for moderators'], ['/nope', 'notfound', 'This page does not exist']]) {
     await go(page, route);
     await page.getByRole('heading', { name: heading }).first().waitFor();
     await noOverflow(page, name);
@@ -277,16 +279,20 @@ async function phaseBlocked(browser, width) {
   await ctx.close();
 }
 
-async function darkHome(browser, width) {
-  const { ctx, page, errors } = await openPage(browser, { width, dark: true });
+async function lightHome(browser, width) {
+  // Dark is the default; the light theme is an explicit, remembered choice.
+  const { ctx, page, errors } = await openPage(browser, { width });
+  await ctx.addInitScript(() => { try { localStorage.setItem('plateau-theme', 'light'); } catch { /* storage off */ } });
   await go(page, '/');
   await page.getByRole('heading', { level: 1 }).waitFor();
-  await noOverflow(page, 'home dark');
-  await shot(page, 'home', width, true);
+  ok(await page.evaluate(() => document.documentElement.dataset.theme) === 'light', 'light theme applied from storage');
+  await noOverflow(page, 'home light');
+  await page.waitForTimeout(400);
+  await shot(page, 'home', width, 'light');
   await go(page, '/explore');
   await page.waitForFunction(() => document.querySelectorAll('svg[role="img"] path').length > 2);
-  await shot(page, 'explore', width, true);
-  ok(errors.page.length === 0, `dark: page errors: ${errors.page.join(' | ')}`);
+  await shot(page, 'explore', width, 'light');
+  ok(errors.page.length === 0, `light: page errors: ${errors.page.join(' | ')}`);
   await ctx.close();
 }
 
@@ -457,7 +463,7 @@ async function main() {
   try {
     if (!process.env.E2E_ONLY_MOCK) {
       for (const w of [1280, 390]) { log(`phase A (Supabase blocked) at ${w}px`); await phaseBlocked(browser, w); }
-      for (const w of [1280, 390]) await darkHome(browser, w);
+      for (const w of [1280, 390]) await lightHome(browser, w);
     }
     for (const w of [1280, 390]) { log(`phase B (Supabase mocked) at ${w}px`); await phaseMocked(browser, w, 'research'); }
     await phaseMocked(browser, 1280, 'family');

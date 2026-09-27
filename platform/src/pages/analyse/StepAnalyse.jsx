@@ -133,7 +133,7 @@ export default function StepAnalyse({ go }) {
           </div>
           <CopyButton text={methods} />
         </div>
-        <p className="text-[15px] leading-relaxed max-w-[80ch] p-4 rounded-[8px] bg-tint">{methods}</p>
+        <p className="methods">{methods}</p>
       </div>
 
       <div className="actions">

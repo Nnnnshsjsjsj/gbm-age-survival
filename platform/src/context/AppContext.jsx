@@ -7,21 +7,20 @@ const write = (k, v) => { try { if (v == null) localStorage.removeItem(k); else 
 
 export function AppProvider({ children }) {
   const [lang, setLang] = useState(() => (read('plateau-lang') === 'ru' ? 'ru' : 'en'));
-  const [theme, setTheme] = useState(() => { const v = read('plateau-theme'); return v === 'light' || v === 'dark' ? v : 'auto'; });
+  // Dark is the default regardless of the OS preference; an explicit choice is remembered.
+  const [theme, setTheme] = useState(() => (read('plateau-theme') === 'light' ? 'light' : 'dark'));
 
   useEffect(() => { document.documentElement.lang = lang; write('plateau-lang', lang); }, [lang]);
   useEffect(() => {
     const el = document.documentElement;
-    if (theme === 'auto') delete el.dataset.theme; else el.dataset.theme = theme;
-    write('plateau-theme', theme === 'auto' ? null : theme);
+    el.dataset.theme = theme;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = theme === 'light' ? '#F6F8F7' : '#07090A';
+    write('plateau-theme', theme);
   }, [theme]);
 
   const toggleLang = useCallback(() => setLang((l) => (l === 'en' ? 'ru' : 'en')), []);
-  const isDark = () => {
-    const cur = document.documentElement.dataset.theme;
-    if (cur) return cur === 'dark';
-    try { return matchMedia('(prefers-color-scheme: dark)').matches; } catch { return false; }
-  };
+  const isDark = () => document.documentElement.dataset.theme !== 'light';
   const toggleTheme = useCallback(() => setTheme(isDark() ? 'light' : 'dark'), []);
   const t = useCallback((key, params) => translate(lang, key, params), [lang]);
   const value = useMemo(() => ({ lang, t, toggleLang, theme, toggleTheme, isDark }), [lang, t, toggleLang, theme, toggleTheme]);

@@ -54,7 +54,7 @@ try {
   log('profile created', `@${handle}`);
   await dialog.getByRole('button', { name: 'Go to the research space' }).click();
 
-  await page.getByRole('link', { name: 'Using plateau' }).first().click();
+  await page.getByRole('link', { name: 'Using cohortex' }).first().click();
   await page.getByRole('button', { name: 'New post' }).first().click();
   await page.locator('#np-title').fill(title);
   await page.locator('#np-body').fill('Automated live smoke test. A moderator can reject this.');

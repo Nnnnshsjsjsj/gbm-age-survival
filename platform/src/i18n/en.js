@@ -1,4 +1,4 @@
-// English UI copy for plateau. Plain, short sentences. No hype, no "predict", no "your survival".
+// English UI copy for cohortex. Plain, short sentences. No hype, no "predict", no "your survival".
 export const enApp = {
   // shell
   skip: 'Skip to content',
@@ -9,7 +9,7 @@ export const enApp = {
   menu: 'Menu', close: 'Close', join: 'Join', log_in: 'Log in', sign_out: 'Sign out', continue: 'Continue', cancel: 'Cancel',
   working: 'Working…', save: 'Save changes', saved: 'Saved.', optional: '(optional)', clear: 'Clear', all: 'All',
   delete: 'Delete', confirm_delete: 'Delete it', yes: 'yes', no: 'no', breadcrumbs: 'Breadcrumbs',
-  footer_left: '© 2026 plateau · Belgrade · a student research project',
+  footer_left: '© 2026 cohortex · Belgrade · a student research project',
   space_research: 'Research space', space_family: 'Family space',
   banner_tag: 'Research and teaching only.',
   banner: 'Group-level results from de-identified research data. Not for decisions about anyone\'s care.',
@@ -41,10 +41,10 @@ export const enApp = {
   try_again: 'Try again', p_value: 'p',
 
   // home
-  home_kicker: 'Glioblastoma · open cohort data · est. 2026',
+  home_kicker: 'Open glioblastoma cohort data',
   home_h1_a: 'Glioblastoma cohorts,', home_h1_hl: 'side by side', home_h1_b: '.',
-  home_lede: 'plateau puts your cohort next to the big public ones. Kaplan–Meier curves, Cox models and a living meta-analysis of thirteen cohorts, all computed in your browser. Your patients\' rows never leave your computer.',
-  home_cta1: 'Analyse your cohort', home_cta2: 'Explore the data', home_numbers: 'plateau in numbers',
+  home_lede: 'cohortex puts your cohort next to the big public ones. Kaplan–Meier curves, Cox models and a living meta-analysis of thirteen cohorts, computed in your browser. Your patients\' rows never leave your computer.',
+  home_cta1: 'Analyse your cohort', home_cta2: 'Explore the data', home_numbers: 'cohortex in numbers',
   hero_tail: 'long-term tail',
   chip_patients_n: '1,392', chip_refs: 'reference cohorts', chip_patients: 'patients', chip_pool: 'cohorts in the pool', chip_rows: 'rows uploaded', chip_researchers: 'researchers', chip_tests: 'engine tests',
   how_kicker: 'How it works', how_title: 'Three steps. One browser tab.',
@@ -70,7 +70,7 @@ export const enApp = {
   fine_mod_tag: 'Moderation', fine_mod_b: 'A human reads first.', fine_mod: 'Every new post is read by a human before it appears. Replies go live and can be removed.',
   fine_sep_tag: 'Separation', fine_sep_b: 'Two spaces, one wall.', fine_sep: 'Family posts are visible only to family members. Researchers never see them.',
   quote_kicker: 'Why it exists',
-  quote: '“We built plateau because a 40-patient hospital series deserves the same analysis as TCGA.”',
+  quote: '“We built cohortex because a 40-patient hospital series deserves the same analysis as TCGA.”',
   quote_by: '— the author · student researcher, Belgrade',
   read_rules: 'Read the rules',
 
@@ -155,12 +155,12 @@ export const enApp = {
   res_kicker: 'Resources', res_title: 'Where to find help',
   res_sub: 'Patient organisations and information lines. We are not affiliated with any of them.',
   res_error: 'The list could not be loaded. Try again later.', res_filter: 'Filter by region',
-  res_disclaimer: 'Listed for information only. plateau does not endorse any service. In an emergency, call your local emergency number.',
+  res_disclaimer: 'Listed for information only. cohortex does not endorse any service. In an emergency, call your local emergency number.',
   region_international: 'International', region_europe: 'Europe', region_uk: 'United Kingdom', region_usa: 'United States', region_canada: 'Canada', region_serbia: 'Serbia', region_russia: 'Russia',
 
   // join
   join_step: 'Step {n} of {of}',
-  join_t1: 'Join plateau', join_s1: 'Pick the space that fits you.',
+  join_t1: 'Join cohortex', join_s1: 'Pick the space that fits you.',
   join_t2: 'Create your sign-in', join_s2: 'Your email is never shown to anyone. It is only used to sign in.',
   join_t3: 'Choose a handle', join_s3: 'This is the name other members see. You can edit the other details later.',
   join_t4: 'The rules, briefly', join_s4: 'Read them once. Moderators apply them to every post.',
@@ -254,12 +254,12 @@ export const enApp = {
   pv_foot: 'Questions about your data?',
 
   // about
-  about_kicker: 'About', about_title: 'About plateau',
+  about_kicker: 'About', about_title: 'About cohortex',
   about_lede: 'A student research project from Belgrade. It grew out of a paper on age at diagnosis and overall survival in glioblastoma.',
   about_numbers: 'The numbers',
   about_paper: 'Read the paper', about_paper_t: 'The paper',
   about_paper_1: 'The paper asks one question: how much does age at diagnosis change overall survival in glioblastoma, and is the effect the same across cohorts, countries and treatment eras?',
-  about_paper_2: 'It analyses four public cohorts with individual patient data and pools published estimates from nine more. plateau runs the same analysis on any cohort you bring.',
+  about_paper_2: 'It analyses four public cohorts with individual patient data and pools published estimates from nine more. cohortex runs the same analysis on any cohort you bring.',
   about_pdf_en: 'Paper (English, PDF)', about_pdf_ru: 'Paper (Russian, PDF)',
   about_methods_t: 'Methods',
   about_methods_1: 'Survival curves are Kaplan–Meier estimates with Greenwood variance and log(−log) 95% confidence intervals.',
@@ -269,11 +269,11 @@ export const enApp = {
   about_data_t: 'Data sources',
   about_data: 'TCGA-GBM (cBioPortal gbm_tcga), CGGA (mRNAseq_693 and mRNAseq_325), MSK-IMPACT (cBioPortal glioma_mskcc_2019) and CPTAC-GBM (cBioPortal gbm_cptac_2021). All are public, de-identified research datasets.',
   about_device_t: 'Not a medical device',
-  about_device: 'plateau is a research and teaching tool. It is not a medical device and must not be used to make decisions about anyone\'s care.',
+  about_device: 'cohortex is a research and teaching tool. It is not a medical device and must not be used to make decisions about anyone\'s care.',
   about_contact_t: 'Contact', about_contact_h: 'Write to the moderators',
-  about_contact: 'Questions, bug reports and moderation appeals: open an issue on GitHub, or post in the "Using plateau" board.',
+  about_contact: 'Questions, bug reports and moderation appeals: open an issue on GitHub, or post in the "Using cohortex" board.',
   about_contact_pw: 'Forgot your password? Open an issue with your handle only. Never post your email or password in public. A moderator will reply with next steps.',
-  about_issue: 'Open a GitHub issue', about_board: 'Using plateau board',
+  about_issue: 'Open a GitHub issue', about_board: 'Using cohortex board',
 
   // not found
   nf_title: 'This page does not exist', nf_body: 'The link may be old. Everything is still one click away.', nf_home: 'Back to home',
@@ -284,7 +284,7 @@ export const enApp = {
   'board_finding-data_t': 'Finding data', 'board_finding-data_b': 'Where the cohorts are, how to get access, what each dataset really contains.',
   'board_papers_t': 'Reading group', 'board_papers_b': 'One paper at a time. Post the link, your summary, and the part you did not understand.',
   'board_show-your-work_t': 'Show your work', 'board_show-your-work_b': 'Posters, theses, preprints, code. Get feedback before a judge or a reviewer sees it.',
-  'board_platform-help_t': 'Using plateau', 'board_platform-help_b': 'Bugs, feature requests and how-to questions about this site.',
+  'board_platform-help_t': 'Using cohortex', 'board_platform-help_b': 'Bugs, feature requests and how-to questions about this site.',
   'board_tcga-gbm_t': 'TCGA-GBM', 'board_tcga-gbm_b': '593 patients, diagnosed 1989–2013. Questions and notes about the TCGA glioblastoma data.',
   'board_cgga_t': 'CGGA', 'board_cgga_b': '218 primary glioblastoma patients from the Chinese Glioma Genome Atlas.',
   'board_msk-impact_t': 'MSK-IMPACT', 'board_msk-impact_b': '485 patients sequenced at Memorial Sloan Kettering, 2014–2018.',
@@ -308,4 +308,25 @@ export const enApp = {
   share_help: 'Only this summary is sent: no patient rows, and age-band counts under 10 are replaced by null. A moderator reviews it before it joins the pool.',
   download_json: 'Download JSON',
   share_sent: 'Sent. It is waiting for review.',
+
+  // cohortex v4 — home, footer, about
+  home_note: 'No upload · No account needed for the tools · EN / RU',
+  home_sources: 'Data from', home_sources_pub: '9 published series',
+  win_title: 'age effect · 13 cohorts', win_pooled: 'Pooled HR per year of age', win_ci: '95% CI, Hartung–Knapp', win_pi: 'Prediction interval',
+  win_i2: 'Heterogeneity', win_k: 'Cohorts', win_live: 'Computed in this tab', win_ref: 'reference, individual data', win_pub: 'published estimate',
+  bento_kicker: 'What is inside', bento_title: 'Careful statistics, without the setup.',
+  bento_sub: 'The methods from the paper, tested against lifelines, running on your file.',
+  b1_t: 'Your cohort on the forest plot', b1_b: 'Your age effect next to four reference cohorts and the pooled estimate. Shown here with the demo file.',
+  b2_t: 'Cox models, checked', b2_b: 'Efron ties, nested models, and a methods paragraph you can paste.',
+  b3_t: 'Proportional hazards', b3_b: 'Scaled Schoenfeld residuals test the key assumption for you.', b3_pass: 'assumption holds', b3_warn: 'check the residuals',
+  b4_t: 'Privacy by construction', b4_b: 'Your file is parsed in memory. There is no upload endpoint to send it to.', b4_metric: 'bytes uploaded',
+  b5_t: 'Living meta-analysis', b5_b: 'Random effects with Hartung–Knapp intervals. It updates when a shared summary is approved.',
+  b6_t: 'Bilingual', b6_b: 'Every screen, result and methods paragraph, in English and Russian.',
+  b_demo: 'Demo cohort',
+  b_overlap: 'Overlaps pooled CI', b_pooled: 'Pooled, k = 5',
+  cta_kicker: 'Start now', cta_title: 'Bring your cohort.', cta_body: 'A CSV and five minutes. Nothing leaves your computer.',
+  footer_mission: 'Open tools for glioblastoma survival data, built as a student research project.',
+  footer_product: 'Product', footer_community: 'Community', footer_project: 'Project', footer_people: 'People', footer_paper: 'Paper',
+  footer_copy: '© 2026 cohortex · Belgrade', footer_status: 'All tools run offline in your browser',
+  about_name: 'cohort + cortex: many cohorts, one brain tumour.',
 };

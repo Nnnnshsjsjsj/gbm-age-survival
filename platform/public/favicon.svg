@@ -1,5 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="plateau">
-  <rect width="64" height="64" rx="15" fill="#16794A"/>
-  <path d="M12 15 H18 V28 H25 V35 H31 V39.5 H52" fill="none" stroke="#FFFFFF" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 49 H52" stroke="#FFFFFF" stroke-opacity=".32" stroke-width="2.6" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="cohortex">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5EF2B8"/><stop offset="1" stop-color="#4CC9F0"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0A0F0E"/><rect x="0.5" y="0.5" width="63" height="63" rx="15.5" fill="none" stroke="#FFFFFF" stroke-opacity=".10"/>
+  <path d="M12 12 L22 12 L22 22 L32 22 L32 32 L42 32 L42 42 L52 42" fill="none" stroke="url(#g)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".55" filter="url(#glow)"/>
+  <path d="M12 12 L22 12 L22 22 L32 22 L32 32 L42 32 L42 42 L52 42" fill="none" stroke="url(#g)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+  <circle cx="12" cy="12" r="3.3" fill="url(#g)"/><circle cx="12" cy="22" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="12" cy="32" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="12" cy="42" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="12" cy="52" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="22" cy="12" r="3.3" fill="url(#g)"/><circle cx="22" cy="22" r="3.3" fill="url(#g)"/><circle cx="22" cy="32" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="22" cy="42" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="22" cy="52" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="32" cy="12" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="32" cy="22" r="3.3" fill="url(#g)"/><circle cx="32" cy="32" r="3.3" fill="url(#g)"/><circle cx="32" cy="42" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="32" cy="52" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="42" cy="12" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="42" cy="22" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="42" cy="32" r="3.3" fill="url(#g)"/><circle cx="42" cy="42" r="3.3" fill="url(#g)"/><circle cx="42" cy="52" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="52" cy="12" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="52" cy="22" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="52" cy="32" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/><circle cx="52" cy="42" r="3.3" fill="url(#g)"/><circle cx="52" cy="52" r="2.0" fill="#FFFFFF" fill-opacity="0.14"/>
 </svg>

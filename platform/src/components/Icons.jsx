@@ -1,3 +1,4 @@
+import { useId } from 'react';
 // Inline SVG icons, Lucide-style: 24px grid, 1.75 stroke, round caps. Always aria-hidden next to text.
 const base = { width: 24, height: 24, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.75, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true, focusable: 'false' };
 const mk = (paths) => function Icon(props) { return <svg {...base} {...props}>{paths}</svg>; };
@@ -45,13 +46,38 @@ export const IconSettings = mk(<><circle cx="12" cy="12" r="3" /><path d="M19.4 
 export const IconInbox = mk(<><path d="M3 13h5l1.5 3h5L16 13h5" /><path d="M5.5 5h13L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6Z" /></>);
 export const IconSparkle = mk(<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6" />);
 
-/** The plateau mark: green square with a white step curve that settles into a flat tail. */
-export function Mark({ size = 28, className = '' }) {
+export const IconArrowUpRight = mk(<path d="M7 17 17 7M8 7h9v9" />);
+export const IconCpu = mk(<><rect x="6" y="6" width="12" height="12" rx="2" /><path d="M10 10h4v4h-4zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" /></>);
+
+/**
+ * The cohortex mark, drawn inline so it follows the theme: a 5×5 dot matrix whose lit dots trace a
+ * Kaplan–Meier step curve. Colours come from --logo-* and --brand-* tokens.
+ */
+const LIT = [[12, 12], [22, 12], [22, 22], [32, 22], [32, 32], [42, 32], [42, 42], [52, 42]];
+const STEP = 'M12 12 L22 12 L22 22 L32 22 L32 32 L42 32 L42 42 L52 42';
+export function Logo({ size = 26, className = '', glow = true }) {
+  const raw = useId();
+  const id = `lg${raw.replace(/[^a-zA-Z0-9]/g, '')}`;
+  const lit = new Set(LIT.map(([x, y]) => `${x},${y}`));
+  const dots = [];
+  for (const x of [12, 22, 32, 42, 52]) for (const y of [12, 22, 32, 42, 52]) if (!lit.has(`${x},${y}`)) dots.push([x, y]);
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false" className={className} style={{ borderRadius: size * 0.234, flex: 'none', display: 'block' }}>
-      <rect width="64" height="64" rx="15" fill="var(--brand)" />
-      <path d="M12 15 H18 V28 H25 V35 H31 V39.5 H52" fill="none" stroke="var(--on-brand)" strokeWidth="5.2" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M12 49 H52" stroke="var(--on-brand)" strokeOpacity=".32" strokeWidth="2.6" strokeLinecap="round" />
+    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false" className={`logo-mark ${className}`}>
+      <defs>
+        <linearGradient id={`${id}-g`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" style={{ stopColor: 'var(--brand-1)' }} />
+          <stop offset="1" style={{ stopColor: 'var(--brand-2)' }} />
+        </linearGradient>
+        <filter id={`${id}-f`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" /></filter>
+      </defs>
+      <rect width="64" height="64" rx="16" style={{ fill: 'var(--logo-bg)' }} />
+      <rect x="0.5" y="0.5" width="63" height="63" rx="15.5" fill="none" style={{ stroke: 'var(--logo-stroke)' }} />
+      {dots.map(([x, y]) => <circle key={`${x}-${y}`} cx={x} cy={y} r="2" style={{ fill: 'var(--logo-dot)' }} />)}
+      {glow && <path d={STEP} fill="none" stroke={`url(#${id}-g)`} strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" opacity=".55" filter={`url(#${id}-f)`} />}
+      <path d={STEP} fill="none" stroke={`url(#${id}-g)`} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" opacity=".9" />
+      {LIT.map(([x, y]) => <circle key={`l${x}-${y}`} cx={x} cy={y} r="3.3" fill={`url(#${id}-g)`} />)}
     </svg>
   );
 }
+/** Kept for older imports. */
+export const Mark = Logo;

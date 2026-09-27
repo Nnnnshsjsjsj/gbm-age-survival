@@ -29,6 +29,8 @@ export function Modal({ open, onClose, title, sub, children, wide = false, sheet
       const items = [...node.querySelectorAll(FOCUSABLE)].filter((el) => el.offsetParent !== null || el === document.activeElement);
       if (!items.length) { e.preventDefault(); return; }
       const a = items[0], z = items[items.length - 1];
+      // Focus has not reached the dialog yet (initial focus runs on the next frame): pull it in.
+      if (!node.contains(document.activeElement)) { e.preventDefault(); (e.shiftKey ? z : a).focus(); return; }
       if (e.shiftKey && (document.activeElement === a || !node.contains(document.activeElement))) { e.preventDefault(); z.focus(); }
       else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
     };
@@ -45,9 +47,8 @@ export function Modal({ open, onClose, title, sub, children, wide = false, sheet
   return createPortal(
     <div className={`scrim${sheet ? ' sheet' : ''}`} onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div ref={ref} className={`modal${wide ? ' wide' : ''}`} role="dialog" aria-modal="true" aria-labelledby={labelledBy || (title ? `${id}-t` : undefined)} tabIndex={-1}>
-        {sheet ? <div className="grab" aria-hidden="true" /> : (
-          <button type="button" className="iconbtn modal-x" onClick={onClose} aria-label={t('close')}><IconX /></button>
-        )}
+        {sheet && <div className="grab" aria-hidden="true" />}
+        <button type="button" className="iconbtn modal-x" onClick={onClose} aria-label={t('close')}><IconX /></button>
         {title && <h2 id={`${id}-t`}>{title}</h2>}
         {sub && <p className="msub">{sub}</p>}
         {children}
@@ -61,7 +62,7 @@ export function Modal({ open, onClose, title, sub, children, wide = false, sheet
 export function PageHead({ kicker, title, sub, children, className = '' }) {
   return (
     <header className={`pagehead ${className}`}>
-      {kicker && <div className="kicker">{kicker}</div>}
+      {kicker && <div className="kicker kicker-dot">{kicker}</div>}
       <h1 className="h1">{title}</h1>
       {sub && <p className="sub">{sub}</p>}
       {children}
@@ -69,10 +70,10 @@ export function PageHead({ kicker, title, sub, children, className = '' }) {
   );
 }
 
-export function SectionHead({ kicker, title, sub, id }) {
+export function SectionHead({ kicker, title, sub, id, center = false }) {
   return (
-    <div className="section-head">
-      {kicker && <div className="kicker">{kicker}</div>}
+    <div className={`section-head reveal${center ? ' center' : ''}`}>
+      {kicker && <div className="kicker kicker-dot">{kicker}</div>}
       <h2 className="h2" id={id}>{title}</h2>
       {sub && <p className="sub">{sub}</p>}
     </div>

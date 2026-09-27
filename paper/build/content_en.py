@@ -412,8 +412,8 @@ BODY = [
       "the definition of a medical device in the EU regulation and in the Serbian law aligned with it; and a single "
       "number such as a median of 13 months, shown to a person without context, does harm. Group-level results are a "
       "different matter. They are what this paper reports, and they are what teaching and research need."),
-("p", "The replacement is a web application called plateau, after the flat tail of a survival curve where the "
-      "long-term survivors are, served from the project repository on GitHub Pages in English and Russian. Its Explore "
+("p", "The replacement is a web application called cohortex (cohort + cortex: many cohorts, one brain "
+      "tumour), served from the project repository on GitHub Pages in English and Russian. Its Explore "
       "section shows Kaplan-Meier curves by age band, with confidence bands, for each of the four individual-patient "
       "cohorts, together with the forest plot of the meta-analysis. It never draws a group of fewer than 10 patients. "
       "Its Analyse section is for students and "
@@ -747,8 +747,8 @@ BODY = [
      ["95% prediction interval, all thirteen", "", "", "1.012–1.045", ""]]),
 ("fig", "fig11_metaforest", "Figure 11. Forest plot of the hazard ratio per year of age in four individual-patient cohorts (blue) and nine published cohorts (red), with the pooled estimates and the 95% prediction interval. The grey row overlaps our CGGA cohort and is shown but not pooled."),
 ("fig", "fig12_metareg", "Figure 12. Meta-regression of each cohort's age hazard ratio on its median age. Bubble size is the random-effects weight."),
-("h2", "3.13. The plateau application"),
-("p", "Figure 13 shows the Explore section of plateau. The reader picks a cohort and sees its survival curves by age band "
+("h2", "3.13. The cohortex application"),
+("p", "Figure 13 shows the Explore section of cohortex. The reader picks a cohort and sees its survival curves by age band "
       "with confidence bands, a table of patients, deaths, median survival and survival at 12 and 24 months per band, "
       "the log-rank p value, and the cohort's age hazard ratio; below that sits the forest plot of Figure 11. The "
       "platform's analysis wizard produces, for a user's own file, the same outputs as Sections 3.1 to 3.7 of this "
@@ -756,7 +756,7 @@ BODY = [
       "60-patient cohort simulated with a known hazard ratio of 1.030, the platform estimated 1.022 (95% CI 1.003 to "
       "1.042), which is also what lifelines gives for the same file. Both tools state on their first screen that they "
       "show how groups fared in research cohorts and are not for decisions about any person."),
-("fig", "fig13_explorer", "Figure 13. The plateau home page. The same site holds the Explore, Analyse and Pool tools and the two moderated communities, in English and Russian."),
+("fig", "fig13_explorer", "Figure 13. The cohortex home page. The same site holds the Explore, Analyse and Pool tools and the two moderated communities, in English and Russian."),
 
 ("h1", "4. Discussion"),
 ("h2", "4.1. Main findings"),
@@ -983,8 +983,8 @@ APPENDICES = [
       "in both languages with its build script. Each script prints the numbers it is responsible for, so any value in "
       "this paper can be traced to one line of output. The proportional-hazards and heterogeneity computations run in "
       "under a minute on a laptop."),
-("h2", "Appendix D. The plateau application"),
-("p", "plateau is served at nnnnshsjsjsj.github.io/gbm-age-survival from the docs/ folder of the repository; its source "
+("h2", "Appendix D. The cohortex application"),
+("p", "cohortex is served at nnnnshsjsjsj.github.io/gbm-age-survival from the docs/ folder of the repository; its source "
       "is in platform/. It is a React application. Its statistics engine (platform/src/engine/) is a set of plain "
       "JavaScript modules for the Kaplan-Meier estimator, the log-rank test, Cox regression with Efron tie handling, the "
       "Schoenfeld test and random-effects meta-analysis, with tests in platform/tests/ that compare them with lifelines "

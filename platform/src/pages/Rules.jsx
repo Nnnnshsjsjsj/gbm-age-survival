@@ -22,7 +22,7 @@ export default function Rules() {
   );
   return (
     <div className="shell-narrow doc">
-      <div className="kicker">{t('rules_kicker')}</div>
+      <div className="kicker kicker-dot">{t('rules_kicker')}</div>
       <h1 className="h1 mt-3">{t('rules_title')}</h1>
       <p className="lede mt-4">{t('rules_sub')}</p>
       <nav className="toc" aria-label={t('rules_title')}>

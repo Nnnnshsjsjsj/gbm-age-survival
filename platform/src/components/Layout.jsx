@@ -7,8 +7,8 @@ import { Modal } from './ui.jsx';
 import JoinModal from './JoinModal.jsx';
 import LoginModal from './LoginModal.jsx';
 import {
-  Mark, IconMenu, IconMoon, IconSun, IconHome, IconCompass, IconChart, IconLayers, IconBook, IconHeart, IconInfo,
-  IconShield, IconUser, IconLogOut, IconGlobe, IconChevronDown,
+  Logo, IconMenu, IconMoon, IconSun, IconHome, IconCompass, IconChart, IconLayers, IconBook, IconHeart, IconInfo,
+  IconShield, IconUser, IconLogOut, IconGlobe, IconChevronDown, IconArrowUpRight,
 } from './Icons.jsx';
 
 const REPO = 'https://github.com/Nnnnshsjsjsj/gbm-age-survival';
@@ -37,10 +37,97 @@ const TITLES = [
 
 function Wordmark() {
   return (
-    <Link to="/" className="wordmark" aria-label="plateau, home">
-      <Mark size={28} />
-      <span className="name" aria-hidden="true">plateau<span className="bar" /></span>
+    <Link to="/" className="wordmark" aria-label="cohortex, home">
+      <Logo size={26} />
+      <span className="name" aria-hidden="true">cohort<span className="ex">ex</span></span>
     </Link>
+  );
+}
+
+/** Pointer spotlight for .spot cards and fade-up for .reveal blocks. Both stay off under reduced motion. */
+function useSurfaceMotion(path) {
+  useEffect(() => {
+    let reduce = false;
+    try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { /* old browser */ }
+    if (reduce) return undefined;
+    let raf = 0, last = null;
+    const onMove = (e) => {
+      if (e.pointerType && e.pointerType !== 'mouse') return;
+      last = e;
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const el = last.target instanceof Element ? last.target.closest('.spot') : null;
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', `${last.clientX - r.left}px`);
+        el.style.setProperty('--my', `${last.clientY - r.top}px`);
+      });
+    };
+    document.addEventListener('pointermove', onMove, { passive: true });
+    return () => { document.removeEventListener('pointermove', onMove); if (raf) cancelAnimationFrame(raf); };
+  }, []);
+
+  useEffect(() => {
+    let reduce = false;
+    try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { /* old browser */ }
+    if (reduce || typeof IntersectionObserver === 'undefined') { document.documentElement.classList.remove('motion'); return undefined; }
+    document.documentElement.classList.add('motion');
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    const scan = () => document.querySelectorAll('.reveal:not(.in)').forEach((el) => io.observe(el));
+    scan();
+    const main = document.getElementById('main');
+    const mo = main ? new MutationObserver(scan) : null;
+    if (mo) mo.observe(main, { childList: true, subtree: true });
+    return () => { io.disconnect(); mo?.disconnect(); };
+  }, [path]);
+}
+
+function Footer() {
+  const { t, lang } = useApp();
+  return (
+    <footer className="footer">
+      <div className="shell">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <Wordmark />
+            <p>{t('footer_mission')}</p>
+          </div>
+          <nav aria-label={t('footer_product')}>
+            <h2>{t('footer_product')}</h2>
+            <ul>
+              <li><Link to="/explore">{t('nav_explore')}</Link></li>
+              <li><Link to="/analyse">{t('nav_analyse')}</Link></li>
+              <li><Link to="/pool">{t('nav_pool')}</Link></li>
+            </ul>
+          </nav>
+          <nav aria-label={t('footer_community')}>
+            <h2>{t('footer_community')}</h2>
+            <ul>
+              <li><Link to="/research">{t('nav_research')}</Link></li>
+              <li><Link to="/families">{t('nav_families')}</Link></li>
+              <li><Link to="/people">{t('footer_people')}</Link></li>
+            </ul>
+          </nav>
+          <nav aria-label={t('footer_project')}>
+            <h2>{t('footer_project')}</h2>
+            <ul>
+              <li><Link to="/about">{t('nav_about')}</Link></li>
+              <li><Link to="/rules">{t('nav_rules')}</Link></li>
+              <li><Link to="/privacy">{t('nav_privacy')}</Link></li>
+              <li><a href={LINKS.repo} rel="noopener">GitHub<IconArrowUpRight /></a></li>
+              <li><a href={lang === 'ru' ? LINKS.paperRu : LINKS.paperEn} rel="noopener">{t('footer_paper')}<IconArrowUpRight /></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div className="footer-bottom">
+          <span>{t('footer_copy')}</span>
+          <span className="status">{t('footer_status')}</span>
+        </div>
+      </div>
+    </footer>
   );
 }
 
@@ -89,7 +176,7 @@ export default function Layout() {
   useEffect(() => { window.scrollTo(0, 0); setSheet(false); }, [path]);
   useEffect(() => {
     const hit = TITLES.find(([p]) => path.startsWith(p));
-    document.title = hit ? `${t(hit[1])} · plateau` : 'plateau — glioblastoma cohorts, side by side';
+    document.title = hit ? `${t(hit[1])} · cohortex` : 'cohortex — glioblastoma cohorts, side by side';
   }, [path, t]);
   useEffect(() => {
     if (!loc.hash) return;
@@ -104,11 +191,16 @@ export default function Layout() {
     if (auth.needsProfile && uid && nudged.current !== uid && !ui.join) { nudged.current = uid; ui.openJoin({ step: 3 }); }
   }, [auth.needsProfile, auth.user, ui]);
 
+  useSurfaceMotion(path);
+
   const nav = auth.isAdmin ? [...NAV, { to: '/mod', key: 'nav_mod', icon: IconShield }] : NAV;
   const joinSpace = family ? 'family' : undefined;
 
   return (
-    <div className="min-h-screen flex flex-col" data-space={family ? 'family' : 'research'}>
+    <div className="app min-h-screen flex flex-col" data-space={family ? 'family' : 'research'}>
+      <div className={`backdrop${path === '/' ? ' home' : ''}`} aria-hidden="true">
+        <div className="grid" /><div className="glow glow-a" /><div className="glow glow-b" />
+      </div>
       <a href="#main" className="skip" onClick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>{t('skip')}</a>
       <header className="topbar">
         <div className="shell topbar-in">
@@ -124,7 +216,11 @@ export default function Layout() {
               <IconMoon className="theme-moon" /><IconSun className="theme-sun" />
             </button>
             {auth.user ? <UserMenu /> : (
-              <button type="button" className="btn btn-primary btn-sm" onClick={() => ui.openJoin({ space: joinSpace })}>{t('join')}</button>
+              <>
+                <span className="topsep" aria-hidden="true" />
+                <button type="button" className="btn btn-text btn-sm signin" onClick={ui.openLogin}>{t('log_in')}</button>
+                <button type="button" className="btn btn-primary btn-sm" onClick={() => ui.openJoin({ space: joinSpace })}>{t('join')}</button>
+              </>
             )}
             <button type="button" className="iconbtn menubtn" aria-label={t('menu')} aria-expanded={sheet} onClick={() => setSheet(true)}><IconMenu /></button>
           </div>
@@ -133,40 +229,32 @@ export default function Layout() {
 
       <Modal open={sheet} onClose={() => setSheet(false)} sheet labelledBy="sheet-h">
         <h2 id="sheet-h" className="sr-only">{t('menu')}</h2>
+        <div className="sheet-top wordmark" aria-hidden="true"><Logo size={26} /><span className="name">cohort<span className="ex">ex</span></span></div>
         <nav aria-label={t('nav_label')}>
           {nav.map((item) => {
             const Icon = item.icon;
             return <Link key={item.to} to={item.to} className="sheetitem" aria-current={isActive(item, path) ? 'page' : undefined} onClick={() => setSheet(false)}><Icon />{t(item.key)}</Link>;
           })}
         </nav>
-        <div className="h-px bg-line my-2 mx-2" />
-        <button type="button" className="sheetitem" onClick={toggleLang} lang={lang === 'en' ? 'ru' : 'en'}><IconGlobe />{t('lang_toggle')}</button>
-        <button type="button" className="sheetitem" onClick={toggleTheme}><IconMoon className="theme-moon" /><IconSun className="theme-sun" />{t('theme_toggle')}</button>
-        {auth.user ? (
-          <>
-            <Link to="/account" className="sheetitem" onClick={() => setSheet(false)}><IconUser />{t('nav_account')}</Link>
-            <button type="button" className="sheetitem" onClick={() => { setSheet(false); auth.signOut(); }}><IconLogOut />{t('sign_out')}</button>
-          </>
-        ) : (
-          <button type="button" className="sheetitem" onClick={() => { setSheet(false); ui.openLogin(); }}><IconUser />{t('log_in')}</button>
-        )}
+        <div className="mt-6 grid">
+          <button type="button" className="sheetitem small-item" onClick={toggleLang} lang={lang === 'en' ? 'ru' : 'en'}><IconGlobe />{t('lang_toggle')}</button>
+          <button type="button" className="sheetitem small-item" onClick={toggleTheme}><IconMoon className="theme-moon" /><IconSun className="theme-sun" />{t('theme_toggle')}</button>
+          {auth.user ? (
+            <>
+              <Link to="/account" className="sheetitem small-item" onClick={() => setSheet(false)}><IconUser />{t('nav_account')}</Link>
+              <button type="button" className="sheetitem small-item" onClick={() => { setSheet(false); auth.signOut(); }}><IconLogOut />{t('sign_out')}</button>
+            </>
+          ) : (
+            <button type="button" className="sheetitem small-item" onClick={() => { setSheet(false); ui.openLogin(); }}><IconUser />{t('log_in')}</button>
+          )}
+        </div>
       </Modal>
 
       <main id="main" className="flex-1 w-full" tabIndex={-1}>
         <Outlet />
       </main>
 
-      <footer className="footer">
-        <div className="shell footer-in">
-          <p>{t('footer_left')}</p>
-          <nav aria-label={t('footer_nav')}>
-            <Link to="/rules">{t('nav_rules')}</Link>
-            <Link to="/privacy">{t('nav_privacy')}</Link>
-            <Link to="/about">{t('nav_about')}</Link>
-            <a href={LINKS.repo} rel="noopener">GitHub</a>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
 
       <JoinModal />
       <LoginModal />

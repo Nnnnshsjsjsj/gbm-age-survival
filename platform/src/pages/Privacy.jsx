@@ -11,7 +11,7 @@ export default function Privacy() {
   );
   return (
     <div className="shell-narrow doc">
-      <div className="kicker">{t('privacy_kicker')}</div>
+      <div className="kicker kicker-dot">{t('privacy_kicker')}</div>
       <h1 className="h1 mt-3">{t('privacy_title')}</h1>
       <p className="lede mt-4">{t('privacy_sub')}</p>
       <section className="mt-12" aria-labelledby="pv-store">

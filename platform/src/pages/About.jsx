@@ -7,9 +7,10 @@ export default function About() {
   const { t, lang } = useApp();
   return (
     <div className="shell-narrow doc">
-      <div className="kicker">{t('about_kicker')}</div>
+      <div className="kicker kicker-dot">{t('about_kicker')}</div>
       <h1 className="h1 mt-3">{t('about_title')}</h1>
       <p className="lede mt-4">{t('about_lede')}</p>
+      <p className="namenote">{t('about_name')}</p>
       <div className="btnrow mt-8">
         <a className="btn btn-primary" href={lang === 'ru' ? LINKS.paperRu : LINKS.paperEn} rel="noopener"><IconFile />{t('about_paper')}</a>
         <a className="btn btn-ghost" href={LINKS.repo} rel="noopener"><IconGithub />GitHub</a>

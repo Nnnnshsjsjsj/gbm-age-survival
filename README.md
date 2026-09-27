@@ -1,6 +1,6 @@
-# plateau — glioblastoma cohorts, side by side
+# cohortex — glioblastoma cohorts, side by side
 
-![plateau](docs/brand/lockup.svg)
+![cohortex](brand/lockup.svg)
 
 *Research repository: intratumoral heterogeneity, age at diagnosis and overall survival in glioblastoma*
 
@@ -29,8 +29,8 @@ platform in which other researchers can compare their own cohort with these, wit
 ```
 analysis/    all Python scripts; run_all.sh reproduces everything; fetch_data.py downloads the large raw inputs
              legacy_calculator/  the withdrawn per-patient calculator (kept for the record, not deployed)
-docs/        what GitHub Pages serves: the built plateau app (do not edit by hand; built from platform/)
-platform/    plateau: React + Vite app, the JavaScript statistics engine (src/engine), its tests (tests/),
+docs/        what GitHub Pages serves: the built cohortex app (do not edit by hand; built from platform/)
+platform/    cohortex: React + Vite app, the JavaScript statistics engine (src/engine), its tests (tests/),
              the Supabase schema (supabase/migrations/0002_plateau.sql) and browser tests (e2e/)
 app/         legacy_calculator/ and legacy_explorer/: earlier versions, kept for the record
 data/        harmonised patient-level tables for TCGA, CGGA, MSK-IMPACT and CPTAC; Neftel gene lists;
@@ -59,7 +59,7 @@ npm run build     # writes ../docs (the whole site)
 npm run e2e       # browser test of the whole wizard (needs a prior build)
 ```
 
-Accounts and the two communities run on Supabase (schema `plateau`, see `platform/supabase/migrations/0002_plateau.sql`).
+Accounts and the two communities run on Supabase (internal schema name `plateau`, see `platform/supabase/migrations/0002_plateau.sql`).
 Moderators are listed in `plateau.admin_emails`. See `platform/README_PLATFORM.md` for the live test.
 
 ## Data sources
