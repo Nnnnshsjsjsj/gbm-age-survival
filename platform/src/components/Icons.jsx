@@ -11,6 +11,7 @@ export const IconX = mk(<path d="M6 6l12 12M18 6 6 18" />);
 export const IconChevronRight = mk(<path d="m9 6 6 6-6 6" />);
 export const IconChevronDown = mk(<path d="m6 9 6 6 6-6" />);
 export const IconArrowRight = mk(<path d="M5 12h14M13 6l6 6-6 6" />);
+export const IconArrowDown = mk(<path d="M12 5v14M6 13l6 6 6-6" />);
 export const IconArrowLeft = mk(<path d="M19 12H5M11 18l-6-6 6-6" />);
 export const IconUpload = mk(<><path d="M12 15V4M7 9l5-5 5 5" /><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" /></>);
 export const IconCheck = mk(<path d="M5 12.5 10 17 19 7" />);
@@ -46,6 +47,7 @@ export const IconSettings = mk(<><circle cx="12" cy="12" r="3" /><path d="M19.4 
 export const IconInbox = mk(<><path d="M3 13h5l1.5 3h5L16 13h5" /><path d="M5.5 5h13L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6Z" /></>);
 export const IconSparkle = mk(<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6" />);
 
+export const IconBrain = mk(<><path d="M9 4.5a3 3 0 0 0-3 3 3 3 0 0 0-2 5.2A3 3 0 0 0 7 18a2.5 2.5 0 0 0 5 .5V5.5A2.5 2.5 0 0 0 9 4.5Z" /><path d="M15 4.5a3 3 0 0 1 3 3 3 3 0 0 1 2 5.2A3 3 0 0 1 17 18a2.5 2.5 0 0 1-5 .5" /><path d="M9 9.5h1M14 9.5h1M8.5 14H10M14 14h1.5" /></>);
 export const IconArrowUpRight = mk(<path d="M7 17 17 7M8 7h9v9" />);
 export const IconCpu = mk(<><rect x="6" y="6" width="12" height="12" rx="2" /><path d="M10 10h4v4h-4zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" /></>);
 

@@ -9,7 +9,7 @@ validates it in CGGA, tests whether two bulk measures of intratumoral heterogene
 the age effect across 13 cohorts and about 40,800 patients, and releases an open cohort explorer and a browser-based
 platform in which other researchers can compare their own cohort with these, without their data leaving their computer.
 
-**Live site:** https://nnnnshsjsjsj.github.io/gbm-age-survival/ — Explore, Analyse and Pool for everyone; a moderated research space and a separate family space for signed-in members
+**Live site:** https://nnnnshsjsjsj.github.io/gbm-age-survival/ — a scroll-driven story around an interactive 3D brain with a glioblastoma, a Brain lab to explore it, and — Explore, Analyse and Pool for everyone; a moderated research space and a separate family space for signed-in members
 **Paper:** [`paper/Research_Paper_EN.pdf`](paper/Research_Paper_EN.pdf) · [`paper/Research_Paper_RU.pdf`](paper/Research_Paper_RU.pdf)
 
 ## Findings in one table

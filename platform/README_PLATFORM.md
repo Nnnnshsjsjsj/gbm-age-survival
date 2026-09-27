@@ -46,3 +46,15 @@ and `HEADED=1` to watch the browser.
 - `src/i18n/` English and Russian strings (`science.js` for the analysis tools, `en.js` / `ru.js` for the rest).
 - Design tokens are CSS variables in `src/styles.css`; the family space remaps `--accent*` to the warm colour.
 - `public/platform/index.html` redirects old `/platform/` links to the root; `public/404.html` sends unknown paths home.
+
+## v5: the story and the Brain lab (`IMMERSIVE_SPEC.md`)
+
+- `src/three/` is the procedural brain: `noise.js` (seeded 3D simplex), `anatomy.js` (hemispheres lofted from a
+  coronal "D" section with gyri, Sylvian and central fissures, cerebellum with folia, brainstem, tumour layers,
+  infiltrating cells), `materials.js` (holographic cortex shader, tumour layers, stencil cross-section caps),
+  `brainScene.js` (plain three.js assembly + picking). `Brain.jsx`, `StoryCanvas.jsx`, `LabCanvas.jsx` are the
+  React Three Fiber wrappers and load lazily in their own chunk. `storyStore.js` holds the scroll poses.
+- `src/motion/` is the motion system: Lenis + GSAP ScrollTrigger per route (`core.js`), `SplitText`, `Reveal`,
+  `Magnetic`, `Marquee`, `CountUp`, `ScrollWords`, `HorizontalStrip`, `Cursor`, and the `Preloader`.
+- No WebGL (or `?nogl` before the `#`) shows the SVG illustration. Reduced motion: no Lenis, no pins, static brain.
+- The `npm run e2e` run renders WebGL through SwiftShader and also writes the story / Brain lab screenshots.

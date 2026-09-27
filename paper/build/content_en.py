@@ -429,7 +429,11 @@ BODY = [
       "discussion boards per dataset and per method and a directory of researchers, and a family space for patients, "
       "caregivers and relatives, whose posts only other family members can read, with a list of verified support "
       "organisations. Every new post in either space is read by a moderator before it appears, and the family space "
-      "does not allow medical advice."),
+      "does not allow medical advice. The home page tells the study as a scroll-driven story around an interactive 3D "
+      "model of a brain with a glioblastoma, and a Brain lab page lets the reader turn the model, cut through it and "
+      "switch its layers on and off: the necrotic core, the enhancing rim, the oedema, and the infiltrating cells "
+      "coloured by the four Neftel states. The model is generated mathematically in the browser and is an "
+      "illustration, not a patient scan."),
 ("p", "The statistics inside the platform are our own JavaScript implementation, because sending data to a server was "
       "not acceptable. We verified it against lifelines on all four reference cohorts: 51 automated tests require the "
       "Cox coefficients and standard errors to match to 0.001, the Kaplan-Meier estimates to 0.001, the log-rank "

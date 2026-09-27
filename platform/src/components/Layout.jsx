@@ -5,10 +5,12 @@ import { useAuth } from '../context/AuthContext.jsx';
 import { useUI } from '../context/UIContext.jsx';
 import { Modal } from './ui.jsx';
 import JoinModal from './JoinModal.jsx';
+import { useSmoothScroll, scrollToEl } from '../motion/core.js';
+import { Cursor } from '../motion/components.jsx';
 import LoginModal from './LoginModal.jsx';
 import {
   Logo, IconMenu, IconMoon, IconSun, IconHome, IconCompass, IconChart, IconLayers, IconBook, IconHeart, IconInfo,
-  IconShield, IconUser, IconLogOut, IconGlobe, IconChevronDown, IconArrowUpRight,
+  IconShield, IconUser, IconLogOut, IconGlobe, IconChevronDown, IconArrowUpRight, IconBrain, IconUsers,
 } from './Icons.jsx';
 
 const REPO = 'https://github.com/Nnnnshsjsjsj/gbm-age-survival';
@@ -20,18 +22,23 @@ export const LINKS = {
 };
 
 const NAV = [
-  { to: '/', key: 'nav_home', icon: IconHome, match: (p) => p === '/' },
+  { to: '/', key: 'nav_story', icon: IconHome, match: (p) => p === '/' },
+  { to: '/brain', key: 'nav_brain', icon: IconBrain },
   { to: '/explore', key: 'nav_explore', icon: IconCompass },
   { to: '/analyse', key: 'nav_analyse', icon: IconChart },
   { to: '/pool', key: 'nav_pool', icon: IconLayers },
-  { to: '/research', key: 'nav_research', icon: IconBook, match: (p) => p.startsWith('/research') || p.startsWith('/people') },
-  { to: '/families', key: 'nav_families', icon: IconHeart },
-  { to: '/about', key: 'nav_about', icon: IconInfo },
 ];
+const COMMUNITY = [
+  { to: '/research', key: 'nav_research', icon: IconBook },
+  { to: '/families', key: 'nav_families', icon: IconHeart },
+  { to: '/people', key: 'nav_people', icon: IconUsers },
+];
+const ABOUT = { to: '/about', key: 'nav_about', icon: IconInfo };
+const inCommunity = (p) => COMMUNITY.some((c) => p === c.to || p.startsWith(`${c.to}/`)) || p === '/community';
 const isActive = (item, path) => (item.match ? item.match(path) : path === item.to || path.startsWith(`${item.to}/`));
 
 const TITLES = [
-  ['/explore', 'explore_title'], ['/analyse', 'wiz_title'], ['/pool', 'pool_title'], ['/research', 'nav_research'], ['/people', 'people_title'],
+  ['/brain', 'lab_title'], ['/explore', 'explore_title'], ['/analyse', 'wiz_title'], ['/pool', 'pool_title'], ['/research', 'nav_research'], ['/people', 'people_title'],
   ['/families', 'nav_families'], ['/mod', 'mod_title'], ['/account', 'acct_title'], ['/rules', 'rules_title'], ['/privacy', 'privacy_title'], ['/about', 'about_title'],
 ];
 
@@ -101,6 +108,7 @@ function Footer() {
               <li><Link to="/explore">{t('nav_explore')}</Link></li>
               <li><Link to="/analyse">{t('nav_analyse')}</Link></li>
               <li><Link to="/pool">{t('nav_pool')}</Link></li>
+              <li><Link to="/brain">{t('nav_brain')}</Link></li>
             </ul>
           </nav>
           <nav aria-label={t('footer_community')}>
@@ -128,6 +136,38 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+/** "Community ▾": a disclosure with three links. Escape or a click outside closes it. */
+function CommunityMenu({ path }) {
+  const { t } = useApp();
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => { setOpen(false); }, [path]);
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDoc = (e) => { if (!ref.current?.contains(e.target)) setOpen(false); };
+    const onKey = (e) => { if (e.key === 'Escape') { setOpen(false); ref.current?.querySelector('button')?.focus(); } };
+    document.addEventListener('mousedown', onDoc); document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('mousedown', onDoc); document.removeEventListener('keydown', onKey); };
+  }, [open]);
+  const active = inCommunity(path);
+  return (
+    <div className="relative navdrop" ref={ref}>
+      <button type="button" className="navlink" aria-expanded={open} aria-controls="community-menu" data-active={active || undefined} onClick={() => setOpen((o) => !o)}>
+        {t('nav_community')}<IconChevronDown width={14} height={14} className="chev" />
+      </button>
+      {open && (
+        <div className="menu navmenu" id="community-menu">
+          <div className="mhead">{t('nav_community_menu')}</div>
+          {COMMUNITY.map((c) => {
+            const Icon = c.icon;
+            return <Link key={c.to} to={c.to} aria-current={path.startsWith(c.to) ? 'page' : undefined} onClick={() => setOpen(false)}><Icon width={18} height={18} />{t(c.key)}</Link>;
+          })}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -173,15 +213,17 @@ export default function Layout() {
   const [sheet, setSheet] = useState(false);
   const family = path.startsWith('/families');
 
-  useEffect(() => { window.scrollTo(0, 0); setSheet(false); }, [path]);
+  useSmoothScroll(path);
+  useEffect(() => { setSheet(false); }, [path]);
   useEffect(() => {
     const hit = TITLES.find(([p]) => path.startsWith(p));
     document.title = hit ? `${t(hit[1])} · cohortex` : 'cohortex — glioblastoma cohorts, side by side';
   }, [path, t]);
   useEffect(() => {
     if (!loc.hash) return;
-    const el = document.getElementById(loc.hash.slice(1));
-    if (el) requestAnimationFrame(() => el.scrollIntoView({ block: 'start' }));
+    const id = loc.hash.slice(1);
+    const t1 = setTimeout(() => { if (document.getElementById(id)) scrollToEl(id, { immediate: true }); }, 60);
+    return () => clearTimeout(t1);
   }, [loc.hash, path]);
 
   // Signed in but no profile yet (signed up, then closed the tab): continue at the handle step, once per session.
@@ -193,12 +235,13 @@ export default function Layout() {
 
   useSurfaceMotion(path);
 
-  const nav = auth.isAdmin ? [...NAV, { to: '/mod', key: 'nav_mod', icon: IconShield }] : NAV;
+  const extra = auth.isAdmin ? [{ to: '/mod', key: 'nav_mod', icon: IconShield }] : [];
+  const sheetNav = [...NAV, ...COMMUNITY, ABOUT, ...extra];
   const joinSpace = family ? 'family' : undefined;
 
   return (
     <div className="app min-h-screen flex flex-col" data-space={family ? 'family' : 'research'}>
-      <div className={`backdrop${path === '/' ? ' home' : ''}`} aria-hidden="true">
+      <div className={`backdrop${path === '/' ? ' home' : ''}${path === '/brain' ? ' is-lab' : ''}`} aria-hidden="true">
         <div className="grid" /><div className="glow glow-a" /><div className="glow glow-b" />
       </div>
       <a href="#main" className="skip" onClick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>{t('skip')}</a>
@@ -206,7 +249,11 @@ export default function Layout() {
         <div className="shell topbar-in">
           <Wordmark />
           <nav className="mainnav" aria-label={t('nav_label')}>
-            {nav.map((item) => (
+            {NAV.map((item) => (
+              <Link key={item.to} to={item.to} className="navlink" aria-current={isActive(item, path) ? 'page' : undefined}>{t(item.key)}</Link>
+            ))}
+            <CommunityMenu path={path} />
+            {[ABOUT, ...extra].map((item) => (
               <Link key={item.to} to={item.to} className="navlink" aria-current={isActive(item, path) ? 'page' : undefined}>{t(item.key)}</Link>
             ))}
           </nav>
@@ -231,9 +278,15 @@ export default function Layout() {
         <h2 id="sheet-h" className="sr-only">{t('menu')}</h2>
         <div className="sheet-top wordmark" aria-hidden="true"><Logo size={26} /><span className="name">cohort<span className="ex">ex</span></span></div>
         <nav aria-label={t('nav_label')}>
-          {nav.map((item) => {
+          {sheetNav.map((item) => {
             const Icon = item.icon;
-            return <Link key={item.to} to={item.to} className="sheetitem" aria-current={isActive(item, path) ? 'page' : undefined} onClick={() => setSheet(false)}><Icon />{t(item.key)}</Link>;
+            const first = item === COMMUNITY[0];
+            return (
+              <div key={item.to} className="contents">
+                {first && <div className="sheetgroup">{t('nav_community')}</div>}
+                <Link to={item.to} className="sheetitem" aria-current={isActive(item, path) ? 'page' : undefined} onClick={() => setSheet(false)}><Icon />{t(item.key)}</Link>
+              </div>
+            );
           })}
         </nav>
         <div className="mt-6 grid">
@@ -258,6 +311,7 @@ export default function Layout() {
 
       <JoinModal />
       <LoginModal />
+      <Cursor dragLabel={t('cursor_drag')} />
     </div>
   );
 }

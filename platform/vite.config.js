@@ -8,11 +8,13 @@ export default defineConfig({
   build: {
     outDir: '../docs',
     emptyOutDir: true,
-    chunkSizeWarningLimit: 800,
+    // the lazy 3D chunk (three + react-three-fiber) is large by nature; the main chunk stays well under 400 kB
+    chunkSizeWarningLimit: 1200,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
+          motion: ['gsap', 'gsap/ScrollTrigger', 'lenis'],
         },
       },
     },

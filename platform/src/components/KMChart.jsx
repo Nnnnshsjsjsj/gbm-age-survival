@@ -13,7 +13,7 @@ export function ChartSkeleton() {
  * SVG step plot of one or more Kaplan–Meier curves, drawn at the container's pixel size so text stays readable.
  * series: [{ label, km, color, dashed? }] where km has t, s, lo, hi.
  */
-export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, legend = true }) {
+export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, legend = true, draw = false }) {
   const t = useT();
   const id = useId();
   const [ref, size] = useSize();
@@ -55,10 +55,11 @@ export default function KMChart({ series, title, showCI = true, tmax: tmaxProp, 
           <text x={(m.l + W - m.r) / 2} y={H - 6} textAnchor="middle" fontSize={fs} fill="var(--muted)">{t('x_months')}</text>
           {!narrow && <text transform={`translate(14 ${(m.t + H - m.b) / 2}) rotate(-90)`} textAnchor="middle" fontSize={fs} fill="var(--muted)">{t('y_share')}</text>}
           {showCI && series.map((s, i) => s.km.lo && (
-            <path key={`b${i}`} d={band(s.km.t, s.km.lo.map((v) => (Number.isFinite(v) ? v : 0)), s.km.hi.map((v) => (Number.isFinite(v) ? v : 1)))} fill={s.color} opacity=".14" />
+            <path key={`b${i}`} className={draw ? 'km-band' : undefined} style={draw ? { '--i': i } : undefined} d={band(s.km.t, s.km.lo.map((v) => (Number.isFinite(v) ? v : 0)), s.km.hi.map((v) => (Number.isFinite(v) ? v : 1)))} fill={s.color} opacity=".14" />
           ))}
           {series.map((s, i) => (
-            <path key={`l${i}`} d={step(s.km.t, s.km.s)} fill="none" stroke={s.color} strokeWidth={s.dashed ? 1.75 : 2.25} strokeDasharray={s.dashed ? '5 5' : undefined} strokeLinejoin="round" vectorEffect="non-scaling-stroke" className={s.dashed ? undefined : 'glowline'} style={{ color: s.color }} />
+            <path key={`l${i}`} d={step(s.km.t, s.km.s)} fill="none" stroke={s.color} strokeWidth={s.dashed ? 1.75 : 2.25} strokeDasharray={s.dashed ? '5 5' : undefined} strokeLinejoin="round" vectorEffect={draw ? undefined : 'non-scaling-stroke'}
+              pathLength={draw && !s.dashed ? 1 : undefined} className={s.dashed ? undefined : `glowline${draw ? ' km-draw' : ''}`} style={{ color: s.color, '--i': i }} />
           ))}
         </svg>
       </div>

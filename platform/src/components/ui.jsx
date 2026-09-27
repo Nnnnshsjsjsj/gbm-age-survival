@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useT } from '../context/AppContext.jsx';
 import { IconX, IconInfo, IconCheck, IconAlert, IconCopy, IconLock } from './Icons.jsx';
+import { lockScroll } from '../motion/core.js';
 
 /* ---------------------------------------------------------------- Modal
    Focus is trapped inside, Escape closes, focus returns to the element that opened it. */
@@ -20,6 +21,7 @@ export function Modal({ open, onClose, title, sub, children, wide = false, sheet
     returnTo.current = document.activeElement;
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    lockScroll(true);
     const node = ref.current;
     const first = (initialFocus && node.querySelector(initialFocus)) || node.querySelector('[data-autofocus]') || node.querySelector(FOCUSABLE) || node;
     requestAnimationFrame(() => { const cur = document.activeElement; if (!(cur && node.contains(cur) && cur !== node)) first.focus({ preventScroll: true }); });
@@ -38,6 +40,7 @@ export function Modal({ open, onClose, title, sub, children, wide = false, sheet
     return () => {
       document.removeEventListener('keydown', onKey, true);
       document.body.style.overflow = prevOverflow;
+      lockScroll(false);
       const back = returnTo.current;
       if (back && typeof back.focus === 'function' && document.contains(back)) back.focus({ preventScroll: true });
     };
@@ -45,7 +48,7 @@ export function Modal({ open, onClose, title, sub, children, wide = false, sheet
 
   if (!open) return null;
   return createPortal(
-    <div className={`scrim${sheet ? ' sheet' : ''}`} onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+    <div className={`scrim${sheet ? ' sheet' : ''}`} data-lenis-prevent onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div ref={ref} className={`modal${wide ? ' wide' : ''}`} role="dialog" aria-modal="true" aria-labelledby={labelledBy || (title ? `${id}-t` : undefined)} tabIndex={-1}>
         {sheet && <div className="grab" aria-hidden="true" />}
         <button type="button" className="iconbtn modal-x" onClick={onClose} aria-label={t('close')}><IconX /></button>

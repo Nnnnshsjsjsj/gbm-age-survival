@@ -40,6 +40,12 @@ export default function About() {
         </ul>
       </section>
 
+      <section className="mt-12 prose" id="heterogeneity" aria-labelledby="a-het">
+        <h2 id="a-het" className="h3 text-ink">{t('about_het_t')}</h2>
+        <p className="mt-3">{t('about_het_1')}</p>
+        <p>{t('about_het_2')}</p>
+      </section>
+
       <section className="mt-12 prose" aria-labelledby="a-data">
         <h2 id="a-data" className="h3 text-ink">{t('about_data_t')}</h2>
         <p className="mt-3">{t('about_data')}</p>

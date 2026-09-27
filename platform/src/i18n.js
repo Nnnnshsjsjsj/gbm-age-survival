@@ -2,9 +2,10 @@
 import { scienceEn, scienceRu } from './i18n/science.js';
 import { enApp } from './i18n/en.js';
 import { ruApp } from './i18n/ru.js';
+import { storyEn, storyRu } from './i18n/story.js';
 
-export const en = { ...scienceEn, ...enApp };
-export const ru = { ...scienceRu, ...ruApp };
+export const en = { ...scienceEn, ...enApp, ...storyEn };
+export const ru = { ...scienceRu, ...ruApp, ...storyRu };
 export const LANGS = { en, ru };
 
 export function translate(lang, key, params) {

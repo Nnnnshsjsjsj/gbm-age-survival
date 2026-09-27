@@ -18,6 +18,7 @@ import Account from './pages/Account.jsx';
 import Rules from './pages/Rules.jsx';
 import Privacy from './pages/Privacy.jsx';
 import About from './pages/About.jsx';
+import BrainLab from './pages/BrainLab.jsx';
 import NotFound from './pages/NotFound.jsx';
 
 const router = createHashRouter([
@@ -26,6 +27,7 @@ const router = createHashRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'brain', element: <BrainLab /> },
       { path: 'explore', element: <Explore /> },
       { path: 'analyse', element: <Analyse /> },
       { path: 'analyse/:step', element: <Analyse /> },

@@ -172,11 +172,12 @@ async function phaseBlocked(browser, width) {
 
   await go(page, '/');
   await page.getByRole('heading', { level: 1 }).waitFor();
-  ok(/side by side/.test(await page.locator('h1').innerText()), 'home headline');
+  ok(/measured/.test(await page.locator('h1').innerText()), 'home headline');
   ok(await page.title() === 'cohortex — glioblastoma cohorts, side by side', 'document title');
   ok(await page.evaluate(() => document.documentElement.dataset.theme) === 'dark', 'dark is the default theme');
   await page.waitForTimeout(400);
   ok(await page.getByTestId('chip-researchers').count() === 0, 'live researchers chip hidden when stats fail');
+  await reducedStory(page, width);
   await noOverflow(page, 'home'); await checkLabels(page, 'home');
   await shot(page, 'home', width, 'dark');
 
@@ -293,6 +294,121 @@ async function lightHome(browser, width) {
   await page.waitForFunction(() => document.querySelectorAll('svg[role="img"] path').length > 2);
   await shot(page, 'explore', width, 'light');
   ok(errors.page.length === 0, `light: page errors: ${errors.page.join(' | ')}`);
+  await ctx.close();
+}
+
+/* ------------------------------------------------------------------ the story and the Brain lab */
+const CHAPTERS = ['One tumour, four layers.', 'Four cell states in every tumour.', 'Every year of age raises the hazard of death by about', 'Thirteen cohorts, one direction.', 'Bring your cohort. It never leaves this tab.', 'People around the numbers.'];
+
+/** Reduced motion: every chapter heading is there and visible without scrolling tricks (no Lenis, no pins). */
+async function reducedStory(page, width) {
+  for (const name of CHAPTERS) ok(await page.getByRole('heading', { name, exact: false }).count() >= 1, `story heading "${name}"`);
+  const r = await page.evaluate(() => ({
+    lenis: !!window.lenis,
+    pins: document.querySelectorAll('.pin-spacer').length,
+    hidden: [...document.querySelectorAll('.reveal, .st-h2, .st-kinetic, .st-caps li, .split-word')].filter((el) => Number(getComputedStyle(el).opacity) < 0.99 || getComputedStyle(el).transform !== 'none').length,
+    motionClass: document.documentElement.classList.contains('motion'),
+    canvas: !!document.querySelector('[data-testid="brain-canvas"], [data-testid="brain-fallback"]'),
+  }));
+  ok(!r.lenis, `reduced motion: no Lenis (${width})`);
+  ok(r.pins === 0, `reduced motion: no pinned sections (${r.pins})`);
+  ok(!r.motionClass && r.hidden === 0, `reduced motion: all story content visible (${r.hidden} hidden)`);
+  ok(r.canvas, 'story: brain canvas or fallback present');
+}
+
+async function waitBrain(page, timeout = 120000) {
+  await page.waitForFunction(() => document.documentElement.dataset.brain === 'ready', null, { timeout });
+  await page.waitForTimeout(600);
+}
+
+async function phaseBrainLab(browser, width) {
+  const { ctx, page, errors } = await openPage(browser, { width });
+  await go(page, '/brain');
+  await page.getByRole('heading', { name: 'Brain lab', level: 1 }).waitFor();
+  await page.locator('.lab-viewer canvas').waitFor({ timeout: 60000 });
+  ok(await page.evaluate(() => { const c = document.querySelector('.lab-viewer canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); }), 'Brain lab: WebGL canvas with a live context');
+  await waitBrain(page);
+  const tris = Number(await page.evaluate(() => document.documentElement.dataset.brainTris));
+  log(`  brain triangles at ${width}px: ${tris}`);
+  ok(tris > 20000 && tris < 400000, `triangle budget (${tris})`);
+  if (width < 900) await page.getByRole('tab', { name: 'Layers' }).click();
+  const oedema = page.getByTestId('layer-oedema');
+  ok(await oedema.getAttribute('aria-pressed') === 'true', 'oedema layer starts on');
+  await oedema.click();
+  ok(await oedema.getAttribute('aria-pressed') === 'false', 'layer toggle flips aria-pressed');
+  await oedema.click();
+  await page.getByTestId('colour-state').click();
+  ok(await page.getByTestId('colour-state').getAttribute('aria-checked') === 'true', 'colour by cell state');
+  await page.getByTestId('colour-single').click();
+  if (width < 900) await page.getByRole('tab', { name: 'View' }).click();
+  await page.keyboard.press('2');
+  ok(await page.getByRole('button', { name: /Side/ }).getAttribute('aria-pressed') === 'true', 'key 2 selects the side view');
+  await page.getByRole('button', { name: /Reset view/ }).click();
+  await checkLabels(page, 'brain lab'); await noOverflow(page, 'brain lab');
+  ok(errors.page.length === 0, `brain lab: page errors: ${errors.page.join(' | ')}`);
+  ok(errors.console.length === 0, `brain lab: console errors: ${errors.console.join(' | ')}`);
+  await ctx.close();
+
+  // no WebGL → the static illustration
+  const fb = await openPage(browser, { width });
+  await fb.page.goto(`${base}?nogl#/brain`);
+  await fb.page.getByTestId('brain-fallback').waitFor();
+  ok(await fb.page.locator('.lab-viewer canvas').count() === 0, 'fallback: no canvas without WebGL');
+  if (width >= 900) await shot(fb.page, 'brainlab-fallback', width);
+  await fb.page.goto(`${base}?nogl#/`);
+  await fb.page.getByTestId('brain-fallback').waitFor();
+  ok(fb.errors.page.length === 0, `fallback: page errors: ${fb.errors.page.join(' | ')}`);
+  await fb.ctx.close();
+}
+
+/** Motion on (as a visitor would see it): preloader, hero, every chapter, and the Brain lab states. */
+async function phaseImmersive(browser, width) {
+  const ctx = await browser.newContext({ viewport: { width, height: width < 500 ? 844 : 900 }, colorScheme: 'dark', reducedMotion: 'no-preference' });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(String(e)));
+  await page.route((u) => FONT_HOSTS.includes(u.hostname) || SUPA.test(u.hostname), (r) => r.abort());
+  const view = async (name) => { const file = `${name}-${width}.png`; await page.screenshot({ path: path.join(shots, file) }); written.push(file); };
+
+  await page.goto(`${base}#/`);
+  await page.getByTestId('preloader').waitFor();
+  await page.waitForTimeout(420);
+  await view('preloader');
+  await page.getByTestId('preloader').waitFor({ state: 'detached', timeout: 10000 });
+  await waitBrain(page);
+  await page.waitForTimeout(1800);
+  await view('story-hero');
+  const motion = await page.evaluate(() => ({ lenis: !!window.lenis, pins: document.querySelectorAll('.pin-spacer').length }));
+  ok(motion.lenis, 'motion: Lenis runs');
+  if (width >= 1024) ok(motion.pins >= 2, `motion: tumour chapter and cohort strip are pinned (${motion.pins})`);
+
+  const spots = width >= 1024
+    ? [['ch1', 0.35, 'story-ch1-tumour'], ['ch1', 1.3, 'story-ch1-infiltration'], ['ch2', 0.05, 'story-ch2-states'], ['ch2', 1.25, 'story-ch2-manifesto'], ['ch3', 0.1, 'story-ch3-age'], ['ch3', 0.95, 'story-ch3-km'], ['ch4', 0.9, 'story-ch4-cohorts'], ['ch4', 2.2, 'story-ch4-forest'], ['ch5', 0.05, 'story-ch5-cohort'], ['ch6', 0.05, 'story-ch6-people']]
+    : [['ch1', 0.0, 'story-ch1-tumour'], ['ch2', 0.0, 'story-ch2-states'], ['ch2', 1.0, 'story-ch2-manifesto'], ['ch3', 0.0, 'story-ch3-age'], ['ch4', 0.0, 'story-ch4-cohorts'], ['ch5', 0.0, 'story-ch5-cohort'], ['ch6', 0.0, 'story-ch6-people']];
+  for (const [id, frac, name] of spots) {
+    const y = await page.evaluate(([id, frac]) => { const el = document.getElementById(id); return el.getBoundingClientRect().top + window.scrollY + frac * window.innerHeight; }, [id, frac]);
+    await page.evaluate((y) => window.lenis.scrollTo(y, { immediate: true }), y);
+    await page.waitForTimeout(2600);
+    await view(name);
+  }
+  await noOverflow(page, 'story (motion)');
+
+  // Brain lab: default, cross-section, cell-state colouring
+  await page.goto(`${base}#/brain`);
+  await waitBrain(page);
+  await page.waitForTimeout(1500);
+  await view('brainlab-default');
+  if (width < 900) await page.getByRole('tab', { name: 'Layers' }).click();
+  await page.getByTestId('cut-toggle').check({ force: true });
+  await page.waitForTimeout(1500);
+  await view('brainlab-section');
+  await page.getByTestId('cut-toggle').uncheck({ force: true });
+  await page.getByTestId('colour-state').click();
+  if (width < 900) await page.getByRole('tab', { name: 'View' }).click();
+  await page.getByRole('button', { name: /Tumour close-up/ }).click();
+  await page.waitForTimeout(2600);
+  await view('brainlab-cells');
+  ok(errors.length === 0, `immersive: page errors: ${errors.join(' | ')}`);
   await ctx.close();
 }
 
@@ -458,16 +574,22 @@ async function main() {
   await rm(shots, { recursive: true, force: true });
   await mkdir(shots, { recursive: true });
   const server = await serve();
-  const browser = await chromium.launch({ executablePath: EXEC, headless: true });
+  // SwiftShader gives headless Chromium a WebGL context, so the 3D brain really renders in these runs.
+  const browser = await chromium.launch({ executablePath: EXEC, headless: true, args: ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] });
   let failed = null;
   try {
-    if (!process.env.E2E_ONLY_MOCK) {
+    if (!process.env.E2E_ONLY_MOCK && !process.env.E2E_ONLY_3D) {
       for (const w of [1280, 390]) { log(`phase A (Supabase blocked) at ${w}px`); await phaseBlocked(browser, w); }
       for (const w of [1280, 390]) await lightHome(browser, w);
     }
+    if (!process.env.E2E_ONLY_MOCK) {
+      for (const w of [1280, 390]) { log(`Brain lab at ${w}px`); await phaseBrainLab(browser, w); }
+      for (const w of [1280, 390]) { log(`immersive story with motion at ${w}px`); await phaseImmersive(browser, w); }
+      if (process.env.E2E_ONLY_3D) { log(`PASS (3D only): ${written.length} screenshots`); return; }
+    }
     for (const w of [1280, 390]) { log(`phase B (Supabase mocked) at ${w}px`); await phaseMocked(browser, w, 'research'); }
     await phaseMocked(browser, 1280, 'family');
-    log(`PASS: ${written.length} screenshots in e2e/shots; age HR 1.022 (1.003–1.041); calm fallback with Supabase blocked; join flow and forum with Supabase mocked; no page errors`);
+    log(`PASS: ${written.length} screenshots in e2e/shots; age HR 1.022 (1.003–1.041); calm fallback with Supabase blocked; join flow and forum with Supabase mocked; Brain lab + WebGL + fallback; story with and without motion; no page errors`);
   } catch (e) {
     failed = e;
   } finally {

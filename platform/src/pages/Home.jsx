@@ -1,41 +1,23 @@
+// Home = the story. One fixed WebGL canvas behind the page; the brain travels with the scroll (storyStore.js).
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext.jsx';
 import { useCommunity } from '../context/CommunityContext.jsx';
-import { SectionHead } from '../components/ui.jsx';
+import KMChart, { GROUP_COLORS, ChartSkeleton } from '../components/KMChart.jsx';
 import ForestPlot, { ForestSkeleton } from '../components/ForestPlot.jsx';
-import { IconArrowRight, IconUpload, IconChart, IconLayers, IconCheck, IconCheckCircle, IconAlert, IconLock } from '../components/Icons.jsx';
-import { heroPool, demoAnalysis, ciOf } from '../lib/showcase.js';
+import { BrainStage, StoryCanvas, BrainFallback } from '../components/BrainStage.jsx';
+import { IconArrowRight, IconArrowDown, IconUpload, IconChart, IconLayers, IconBook, IconHeart, IconShield, IconLock } from '../components/Icons.jsx';
+import { referenceStats, allReferenceStats, loadPublished } from '../lib/reference.js';
 import { metaRandomEffects } from '../engine/index.js';
-import { methodsParagraph } from '../lib/methods.js';
-import { translate } from '../i18n.js';
-import { fmt, pText } from '../lib/format.js';
+import { fmt } from '../lib/format.js';
+import { ScrollTrigger, reducedMotion, isMobile, scrollToEl } from '../motion/core.js';
+import { SplitText, Reveal, Magnetic, Marquee, CountUp, ScrollWords, HorizontalStrip, useInView } from '../motion/components.jsx';
+import Preloader, { shouldShowPreloader } from '../motion/Preloader.jsx';
+import { story, POSES } from '../three/storyStore.js';
+import { STATE_COLORS } from '../three/palette.js';
 
-const reduced = () => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch { return true; } };
-
-/** Counts up once when it scrolls into view. Screen readers get the final value only. */
-function CountUp({ value, format = (v) => String(v) }) {
-  const ref = useRef(null);
-  const [shown, setShown] = useState(() => (reduced() || value === 0 ? value : 0));
-  useEffect(() => {
-    if (reduced() || value === 0 || typeof IntersectionObserver === 'undefined') { setShown(value); return undefined; }
-    let raf = 0;
-    const io = new IntersectionObserver(([en]) => {
-      if (!en.isIntersecting) return;
-      io.disconnect();
-      const t0 = performance.now(), dur = 1200;
-      const tick = (now) => {
-        const p = Math.min(1, (now - t0) / dur);
-        setShown(Math.round(value * (1 - (1 - p) ** 3)));
-        if (p < 1) raf = requestAnimationFrame(tick);
-      };
-      raf = requestAnimationFrame(tick);
-    }, { threshold: 0.4 });
-    if (ref.current) io.observe(ref.current);
-    return () => { io.disconnect(); cancelAnimationFrame(raf); };
-  }, [value]);
-  return <span ref={ref}><span aria-hidden="true">{format(shown)}</span><span className="sr-only">{format(value)}</span></span>;
-}
+const Z = 1.959964;
+const SOURCES = ['TCGA-GBM', 'CGGA', 'MSK-IMPACT', 'CPTAC-GBM', 'RTOG 0525', 'SEER', 'Ohio BTS', 'Copenhagen', 'Norway', 'Dana-Farber', 'Western Norway', 'RANO resect', 'Bergen–Oslo'];
 
 function usePromise(fn) {
   const [state, setState] = useState({ data: null, error: null });
@@ -47,260 +29,382 @@ function usePromise(fn) {
   return state;
 }
 
-/** The product visual: a glass window with the live 13-cohort forest plot. Real component, real numbers. */
-function HeroWindow() {
+/** The 13 cohorts with the fields the cards need (same sources and maths as the Pool page). */
+async function loadCohorts() {
+  const [refs, pub] = await Promise.all([allReferenceStats(), loadPublished()]);
+  const studies = [
+    ...refs.map((r) => ({ label: r.name, country: r.country, years: r.years, n: r.stats.n, type: 'ref', logHR: r.stats.cox.beta[0], se: r.stats.cox.se[0] })),
+    ...pub.filter((p) => p.pooled && p.lo_year > 0 && p.hi_year > p.lo_year).map((p) => ({
+      label: p.cohort.replace(/\s*\(([^)]*)\)$/, ''), cite: (p.cohort.match(/\(([^)]*)\)$/) || [])[1], country: p.country, years: p.years, n: p.n, type: 'pub',
+      logHR: Math.log(p.HR_year), se: (Math.log(p.hi_year) - Math.log(p.lo_year)) / (2 * Z),
+    })),
+  ];
+  const meta = metaRandomEffects(studies.map((s) => s.logHR), studies.map((s) => s.se));
+  return { studies: studies.map((s) => ({ ...s, hr: Math.exp(s.logHR), lo: Math.exp(s.logHR - Z * s.se), hi: Math.exp(s.logHR + Z * s.se) })), meta };
+}
+
+/* ---------------------------------------------------------------- hero */
+function Hero({ play }) {
   const { t } = useApp();
-  const { data, error } = usePromise(heroPool);
+  return (
+    <section className="st-hero" id="story-top" data-pose="hero" aria-labelledby="st-h1">
+      <div className="shell st-hero-in">
+        <span className="eyebrow st-kick">{t('st_kicker')}</span>
+        <div className="st-hero-bottom">
+          <h1 className="st-display" id="st-h1">
+            <SplitText lines={[{ text: t('st_h1_a') }, { text: t('st_h1_b'), className: 'hl' }]} play={play} stagger={90} />
+          </h1>
+          <div className="st-hero-side">
+            <p className="lede">{t('st_lede')}</p>
+            <div className="btnrow mt-7">
+              <Magnetic>
+                <button type="button" className="btn btn-primary btn-lg" onClick={() => scrollToEl('ch1', { offset: 0 })}>{t('st_cta1')}<IconArrowDown /></button>
+              </Magnetic>
+              <Link to="/analyse" className="btn btn-ghost btn-lg">{t('st_cta2')}</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Marquee items={SOURCES} className="st-marquee" label={t('st_sources')} />
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- chapter 01: the tumour (pinned) */
+const CAPS = [['core', 'cap_core'], ['rim', 'cap_rim'], ['oedema', 'cap_oedema'], ['infiltration', 'cap_infil']];
+
+function ChapterTumour({ motion }) {
+  const { t } = useApp();
+  const sec = useRef(null);
+  const stage = useRef(null);
+  const [step, setStep] = useState(motion ? -1 : CAPS.length - 1);
+  useEffect(() => {
+    if (!motion) return undefined;
+    const st = ScrollTrigger.create({
+      trigger: sec.current, start: 'top top', end: '+=150%', pin: stage.current, scrub: true, anticipatePin: 1,
+      onUpdate: (s) => {
+        const n = Math.min(CAPS.length - 1, Math.floor(s.progress * (CAPS.length + 0.6)));
+        setStep(n);
+        CAPS.forEach(([k], i) => { story.labels[k] = s.isActive && n >= i; });
+      },
+      onToggle: (s) => { if (!s.isActive) CAPS.forEach(([k]) => { story.labels[k] = false; }); },
+    });
+    return () => { st.kill(); CAPS.forEach(([k]) => { story.labels[k] = false; }); };
+  }, [motion]);
+
+  return (
+    <section className="st-chapter st-ch1" id="ch1" ref={sec} aria-labelledby="ch1-h">
+      <div className="st-stage" ref={stage} data-pose="tumour">
+        <div className="shell st-split">
+          <div className="st-copy">
+            <div className="kicker kicker-dot">{t('ch1_kicker')}</div>
+            <h2 className="st-h2" id="ch1-h">{t('ch1_title')}</h2>
+            <p className="st-sub">{t('ch1_sub')}</p>
+            <ol className="st-caps">
+              {CAPS.map(([k, key], i) => (
+                <li key={k} className={step >= i ? 'on' : ''} aria-current={step === i ? 'step' : undefined}>
+                  <span className="n mono">{String(i + 1).padStart(2, '0')}</span>
+                  <p><b>{t(`${key}_t`)}</b> — {t(`${key}_b`)}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div className="shell">
+        <ul className="st-facts" aria-label={t('facts_label')}>
+          {[['14.6', 1, 'fact_os'], ['7.1', 1, 'fact_5y'], ['66', 0, 'fact_age']].map(([v, d, k], i) => (
+            <Reveal as="li" key={k} i={i}>
+              <div className="v"><CountUp value={Number(v)} decimals={d} className="g" /><span className="u">{t(`${k}_u`)}</span></div>
+              <p className="l">{t(`${k}_l`)}</p>
+              <p className="src mono">{t(`${k}_src`)}</p>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- chapter 02: four cell states */
+const STATES = [['MES', 'state_mes'], ['AC', 'state_ac'], ['OPC', 'state_opc'], ['NPC', 'state_npc']];
+function ChapterStates() {
+  const { t } = useApp();
+  return (
+    <section className="st-chapter st-ch2" id="ch2" aria-labelledby="ch2-h">
+      <div className="shell st-split" data-pose="states">
+        <div className="st-copy">
+          <Reveal className="kicker kicker-dot">{t('ch2_kicker')}</Reveal>
+          <Reveal as="h2" className="st-h2" id="ch2-h" i={1}>{t('ch2_title')}</Reveal>
+          <Reveal as="p" className="st-sub" i={2}>{t('ch2_sub')}</Reveal>
+          <ul className="st-states">
+            {STATES.map(([code, key], i) => (
+              <Reveal as="li" key={code} i={i}>
+                <span className="chip-state mono" style={{ '--c': STATE_COLORS[i] }}><i aria-hidden="true" />{code}</span>
+                <span>{t(key)}</span>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="shell st-manifesto" data-pose="words">
+        <ScrollWords text={t('ch2_manifesto')} className="st-words" accent={t('ch2_manifesto_hl')} />
+        <div className="st-rho">
+          <span className="k mono">{t('ch2_stats_label')}</span>
+          <ul>
+            <li><b className="mono">ρ = 0.04</b><span>TCGA, n = 437</span></li>
+            <li><b className="mono">ρ = 0.07</b><span>CGGA, n = 218</span></li>
+            <li><b className="mono">MATH ρ = −0.18</b><span>n = 375</span></li>
+          </ul>
+          <Link className="st-link" to="/about#heterogeneity">{t('ch2_link')}<IconArrowRight /></Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- chapter 03: age */
+function ChapterAge() {
+  const { t } = useApp();
+  const { data } = usePromise(() => referenceStats('tcga_gbm'));
+  const [ref, inView] = useInView({ threshold: 0.25 });
+  const groups = data ? data.bands.groups.filter((g) => !g.suppressed) : [];
+  const series = groups.map((g, i) => ({ label: `${g.label} (n=${g.n})`, km: g.km, color: GROUP_COLORS[i] }));
+  return (
+    <section className="st-chapter st-ch3" id="ch3" aria-labelledby="ch3-h">
+      <div className="shell">
+        <div className="st-age" data-pose="age">
+          <div />
+          <div>
+            <Reveal className="kicker kicker-dot">{t('ch3_kicker')}</Reveal>
+            <h2 className="st-kinetic" id="ch3-h">
+              {t('ch3_title_a')} <CountUp value={3} format={(v) => `${Math.round(v)}%`} className="hl" />{t('ch3_title_b')}
+            </h2>
+            <Reveal as="p" className="st-sub" i={1}>{t('ch3_sub')}</Reveal>
+          </div>
+        </div>
+        <div className="st-km" ref={ref}>
+          <Reveal className="card card-pad glass">
+            <p className="kicker mb-3">{t('ch3_km_title')}</p>
+            {data && inView ? <KMChart series={series} title={t('ch3_km_title')} tmax={60} draw /> : <ChartSkeleton />}
+          </Reveal>
+          <ul className="st-tiles">
+            {(groups.length ? groups : [{ label: '<50' }, { label: '50–59' }, { label: '60–69' }, { label: '≥70' }]).map((g, i) => (
+              <Reveal as="li" key={g.label} i={i} style={{ '--c': GROUP_COLORS[i] }}>
+                <span className="k mono"><i aria-hidden="true" />{g.label}</span>
+                <span className="v mono">{g.median != null ? fmt(g.median, 1) : '—'}</span>
+                <span className="u">{t('ch3_median')}, {t('ch3_months')}</span>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- chapter 04: thirteen cohorts */
+function Glyph({ lo, hr, hi, pooled }) {
+  const x = (v) => 4 + ((Math.min(1.06, Math.max(0.995, v)) - 0.995) / 0.065) * 112;
+  return (
+    <svg className="glyph" viewBox="0 0 120 20" aria-hidden="true">
+      <line x1={x(1)} x2={x(1)} y1="2" y2="18" stroke="var(--line-strong)" strokeDasharray="2 2" />
+      <line x1={x(lo)} x2={x(hi)} y1="10" y2="10" stroke={pooled ? 'url(#g-pool)' : 'var(--accent-2)'} strokeWidth="2" strokeLinecap="round" />
+      {pooled ? <path d={`M${x(lo)} 10 L${x(hr)} 4 L${x(hi)} 10 L${x(hr)} 16 Z`} fill="url(#g-pool)" /> : <rect x={x(hr) - 3} y="7" width="6" height="6" rx="1.5" fill="var(--accent)" />}
+    </svg>
+  );
+}
+
+function ChapterCohorts() {
+  const { t } = useApp();
+  const { data, error } = usePromise(loadCohorts);
+  const [ref, inView] = useInView({ threshold: 0.12 });
   const items = data ? [
-    ...data.studies.map((s, i) => ({ type: 'row', label: s.label, ...ciOf(s.logHR, s.se), color: s.type === 'ref' ? 'var(--accent)' : 'var(--accent-2)', weight: data.meta.weights[i] })),
+    ...data.studies.map((s) => ({ type: 'row', label: s.label, sub: `n=${s.n}`, hr: s.hr, lo: s.lo, hi: s.hi, color: s.type === 'ref' ? 'var(--accent)' : 'var(--accent-2)', weight: undefined })),
     { type: 'pooled', label: t('cmp_pooled'), sub: `k=${data.studies.length}`, hr: data.meta.HR, lo: data.meta.loHK, hi: data.meta.hiHK },
     ...(data.meta.predLo != null ? [{ type: 'pred', label: t('pool_pi'), lo: data.meta.predLo, hi: data.meta.predHi }] : []),
   ] : null;
-  const n = data ? data.studies.reduce((a, s) => a + (s.n || 0), 0) : 0;
+  const m = data?.meta;
   return (
-    <div className="window" data-testid="hero-window">
-      <div className="window-bar">
-        <span className="tl" aria-hidden="true" /><span className="tl" aria-hidden="true" /><span className="tl" aria-hidden="true" />
-        <span className="window-title">{t('win_title')}</span>
-        <span className="window-live">{t('win_live')}</span>
-      </div>
-      <div className="window-body">
-        <div className="window-main">
-          <div className="window-legend" aria-hidden="true">
-            <span><i style={{ background: 'var(--accent)' }} />{t('win_ref')}</span>
-            <span><i style={{ background: 'var(--accent-2)' }} />{t('win_pub')}</span>
-          </div>
-          {items ? <ForestPlot items={items} title={t('forest_title')} compact animate />
-            : error ? <p className="small py-12">{t('error_load', { what: 'reference' })}</p>
-              : <div style={{ minHeight: 400, paddingTop: 12 }}><ForestSkeleton rows={14} /></div>}
+    <section className="st-chapter st-ch4" id="ch4" aria-labelledby="ch4-h">
+      <svg width="0" height="0" aria-hidden="true" style={{ position: 'absolute' }}>
+        <defs><linearGradient id="g-pool" x1="0" x2="1"><stop offset="0" stopColor="#5EF2B8" /><stop offset="1" stopColor="#4CC9F0" /></linearGradient></defs>
+      </svg>
+      <HorizontalStrip label={t('ch4_strip')} head={(
+        <div className="shell st-ch4-head" data-pose="cohorts">
+          <Reveal className="kicker kicker-dot">{t('ch4_kicker')}</Reveal>
+          <Reveal as="h2" className="st-h2" id="ch4-h" i={1}>{t('ch4_title')}</Reveal>
+          <Reveal as="p" className="st-sub" i={2}>{t('ch4_sub')}</Reveal>
         </div>
-        <div className="window-side">
-          <div className="wstat">
-            <div className="k">{t('win_pooled')}</div>
-            <div className="v g">{data ? fmt(data.meta.HR) : '—'}</div>
+      )}>
+        {(data ? data.studies : Array.from({ length: 6 }, () => null)).map((s, i) => (
+          <article key={s ? s.label : i} className="card cohort-card">
+            {s ? (
+              <>
+                <div className="cc-top"><span className="mono cc-n">{String(i + 1).padStart(2, '0')}</span><span className={`cc-type ${s.type}`}>{t(s.type === 'ref' ? 'ch4_ref' : 'ch4_pub')}</span></div>
+                <h3>{s.label}</h3>
+                <p className="cc-meta mono">{s.country} · {s.years} · n = {s.n.toLocaleString('en-US')}</p>
+                <div className="cc-hr"><span className="k">{t('ch4_hr')}</span><span className="v mono">{fmt(s.hr, 3)}</span></div>
+                <p className="cc-ci mono">{t('ch4_ci')} {fmt(s.lo, 3)}–{fmt(s.hi, 3)}</p>
+                <Glyph lo={s.lo} hr={s.hr} hi={s.hi} />
+              </>
+            ) : <span className="skel skel-block" style={{ height: 180 }} />}
+          </article>
+        ))}
+        <article className="card cohort-card pooled gborder">
+          <div className="cc-top"><span className="mono cc-n">Σ</span><span className="cc-type pooled">{t('ch4_pooled')}</span></div>
+          <h3 className="hl">{m ? `${fmt(m.HR, 3)}` : '—'}</h3>
+          <p className="cc-meta">{t('ch4_hr')}</p>
+          <p className="cc-ci mono">{m ? `${t('ch4_ci')} ${fmt(m.loHK, 3)}–${fmt(m.hiHK, 3)}` : ' '}</p>
+          <p className="cc-ci mono">{m && m.predLo != null ? `${t('pool_pi')} ${fmt(m.predLo, 3)}–${fmt(m.predHi, 3)}` : ' '}</p>
+          {m && <Glyph lo={m.predLo ?? m.loHK} hr={m.HR} hi={m.predHi ?? m.hiHK} pooled />}
+        </article>
+      </HorizontalStrip>
+      <div className="shell st-forest" ref={ref}>
+        <Reveal className="card card-pad glass">
+          <div className="flex flex-wrap items-baseline justify-between gap-3 mb-3">
+            <p className="kicker">{t('ch4_forest')}</p>
+            <Link to="/pool" className="st-link">{t('ch4_open_pool')}<IconArrowRight /></Link>
           </div>
-          <div className="wstat">
-            <div className="k">{t('win_ci')}</div>
-            <div className="v sm">{data ? `${fmt(data.meta.loHK)}–${fmt(data.meta.hiHK)}` : '—'}</div>
-          </div>
-          <div className="wstat">
-            <div className="k">{t('win_k')}</div>
-            <div className="v sm">{data ? data.studies.length : '—'}</div>
-            <div className="s">{data ? `n = ${n.toLocaleString('en-US')}` : ' '}</div>
-          </div>
-          <div className="wstat">
-            <div className="k">{t('win_i2')}</div>
-            <div className="v sm">{data ? `I² ${Math.round(data.meta.I2)}%` : '—'}</div>
-          </div>
-        </div>
+          {items && inView ? <ForestPlot items={items} title={t('ch4_forest')} animate />
+            : error ? <p className="small py-8">{t('error_load', { what: 'reference' })}</p> : <ForestSkeleton rows={15} />}
+        </Reveal>
       </div>
-    </div>
+    </section>
   );
 }
 
-function Bento() {
-  const { t, lang } = useApp();
-  const demo = usePromise(demoAnalysis);
-  const pool = usePromise(heroPool);
-
-  const five = useMemo(() => {
-    if (!demo.data || !pool.data) return null;
-    const m = demo.data.analysis.ageModel.model;
-    const refs = pool.data.refs;
-    const meta = metaRandomEffects([...refs.map((r) => r.stats.cox.beta[0]), m.beta[0]], [...refs.map((r) => r.stats.cox.se[0]), m.se[0]]);
-    return [
-      { type: 'row', label: t('b_demo'), sub: `n=${demo.data.analysis.n}`, hr: m.hr[0], lo: m.lo[0], hi: m.hi[0], color: 'var(--accent)', highlight: true },
-      ...refs.map((r) => ({ type: 'row', label: r.name, sub: `n=${r.stats.n}`, hr: r.stats.cox.hr[0], lo: r.stats.cox.lo[0], hi: r.stats.cox.hi[0], color: 'var(--accent-2)' })),
-      { type: 'pooled', label: t('cmp_pooled'), sub: `k=${refs.length + 1}`, hr: meta.HR, lo: meta.loHK, hi: meta.hiHK },
-    ];
-  }, [demo.data, pool.data, t]);
-
-  const methods = demo.data ? methodsParagraph(lang, demo.data.analysis, { dropped: demo.data.checks.dropped, timeUnit: demo.data.mapping.timeUnit }) : '';
-  const sch = demo.data ? demo.data.analysis.schoenfeldP : null;
-  const schOk = sch != null && sch > 0.05;
-  const meta = pool.data?.meta;
-
+/* ---------------------------------------------------------------- chapter 05: your cohort */
+function ChapterYou() {
+  const { t } = useApp();
   return (
-    <div className="bento">
-      <article className="card spot ba reveal">
-        <p className="blabel">{t('win_live')}</p>
-        <h3>{t('b1_t')}</h3>
-        <p className="bt">{t('b1_b')}</p>
-        {five && (
-          <div className="minitiles">
-            <div><div className="k">{t('b_demo')}</div><div className="v">{fmt(five[0].hr)}</div></div>
-            <div><div className="k">{t('b_pooled')}</div><div className="v">{fmt(five[five.length - 1].hr)}</div></div>
-            <div><div className="k">{t('b_overlap')}</div><div className="v">{five[0].lo <= five[five.length - 1].hi && five[0].hi >= five[five.length - 1].lo ? <><IconCheck />{t('yes')}</> : t('no')}</div></div>
+    <section className="st-chapter st-ch5" id="ch5" aria-labelledby="ch5-h">
+      <div className="shell st-you" data-pose="you">
+        <div />
+        <Reveal className="st-panel gborder glass">
+          <div className="kicker kicker-dot">{t('ch5_kicker')}</div>
+          <h2 className="st-h2" id="ch5-h">{t('ch5_title')}</h2>
+          <ol className="st-steps">
+            {[[IconUpload, 'ch5_s1'], [IconChart, 'ch5_s2'], [IconLayers, 'ch5_s3']].map(([Icon, k], i) => (
+              <li key={k}><span className="ic" aria-hidden="true"><Icon /></span><span className="n mono">{String(i + 1).padStart(2, '0')}</span><b>{t(`${k}_t`)}</b><span>{t(`${k}_b`)}</span></li>
+            ))}
+          </ol>
+          <div className="st-panel-foot">
+            <Magnetic><Link to="/analyse" className="btn btn-primary btn-lg">{t('ch5_cta')}<IconArrowRight /></Link></Magnetic>
+            <span className="mono st-bytes"><IconLock width={16} height={16} />{t('ch5_bytes')}</span>
           </div>
-        )}
-        <div className="bvis">
-          {five ? <ForestPlot items={five} title={t('forest_title')} compact /> : <div style={{ minHeight: 220 }}><ForestSkeleton rows={6} /></div>}
-        </div>
-      </article>
-      <article className="card spot bb reveal" style={{ '--i': 1 }}>
-        <h3>{t('b2_t')}</h3>
-        <p className="bt">{t('b2_b')}</p>
-        <div className="bvis">
-          <div className="snippet" aria-hidden="true">{methods || ' '}</div>
-        </div>
-      </article>
-      <article className="card spot bc reveal" style={{ '--i': 2 }}>
-        <h3>{t('b3_t')}</h3>
-        <p className="bt">{t('b3_b')}</p>
-        <div className="bvis">
-          {demo.data ? (
-            <span className={`checkpill${schOk ? '' : ' warn'}`}>{schOk ? <IconCheckCircle /> : <IconAlert />}{pText(sch)} · {t(schOk ? 'b3_pass' : 'b3_warn')}</span>
-          ) : <span className="skel" style={{ width: 220, height: 34, borderRadius: 999 }} />}
-        </div>
-      </article>
-      <article className="card spot bd reveal">
-        <span className="lockbox" aria-hidden="true"><IconLock /></span>
-        <h3>{t('b4_t')}</h3>
-        <p className="bt">{t('b4_b')}</p>
-        <div className="bvis bigmetric"><span className="v">0</span><span className="k">{t('b4_metric')}</span></div>
-      </article>
-      <article className="card spot be reveal" style={{ '--i': 1 }}>
-        <h3>{t('b5_t')}</h3>
-        <p className="bt">{t('b5_b')}</p>
-        <div className="bvis kv">
-          <div><span>I²</span><b>{meta ? `${Math.round(meta.I2)}%` : '—'}</b></div>
-          <div><span>{t('pool_pi')}</span><b>{meta && meta.predLo != null ? `${fmt(meta.predLo)}–${fmt(meta.predHi)}` : '—'}</b></div>
-          <div><span>τ</span><b>{meta ? fmt(meta.tau, 4) : '—'}</b></div>
-        </div>
-      </article>
-      <article className="card spot bf reveal" style={{ '--i': 2 }}>
-        <h3>{t('b6_t')}</h3>
-        <p className="bt">{t('b6_b')}</p>
-        <div className="bvis" aria-hidden="true">
-          <span className="langtoggle"><span className={lang === 'en' ? 'on' : ''}>EN</span><span className={lang === 'ru' ? 'on' : ''}>RU</span></span>
-          <div className="bilines">
-            <span lang={lang}>{translate(lang, 'hr_year')}</span>
-            <span lang={lang === 'en' ? 'ru' : 'en'}>{translate(lang === 'en' ? 'ru' : 'en', 'hr_year')}</span>
-          </div>
-        </div>
-      </article>
-    </div>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
-export default function Home() {
-  const { t, lang } = useApp();
+/* ---------------------------------------------------------------- chapter 06: people */
+function ChapterPeople() {
+  const { t } = useApp();
   const { stats } = useCommunity();
   const researchers = stats && Number(stats.researchers) > 0 ? Number(stats.researchers) : 0;
-  const nf = (v) => v.toLocaleString(lang === 'ru' ? 'ru-RU' : 'en-US');
+  return (
+    <section className="st-chapter st-ch6" id="ch6" aria-labelledby="ch6-h">
+      <div className="shell" data-pose="people">
+        <Reveal className="kicker kicker-dot">{t('ch6_kicker')}</Reveal>
+        <Reveal as="h2" className="st-h2" id="ch6-h" i={1}>{t('ch6_title')}</Reveal>
+        <div className="st-people">
+          <Reveal className="card spot st-person" data-space="research">
+            <span className="ic" aria-hidden="true"><IconBook /></span>
+            <h3>{t('nav_research')}</h3>
+            <p>{t('ch6_research')}</p>
+            {researchers > 0 && <p className="mono small" data-testid="chip-researchers"><span className="live" aria-hidden="true" />{researchers} {t('chip_researchers')}</p>}
+            <Link to="/research" className="st-link">{t('ch6_research_link')}<IconArrowRight /></Link>
+          </Reveal>
+          <Reveal className="card spot st-person" data-space="family" i={1}>
+            <span className="ic" aria-hidden="true"><IconHeart /></span>
+            <h3>{t('nav_families')}</h3>
+            <p>{t('ch6_family')}</p>
+            <Link to="/families" className="st-link">{t('ch6_family_link')}<IconArrowRight /></Link>
+          </Reveal>
+        </div>
+        <Reveal as="p" className="st-mod mono"><IconShield width={16} height={16} />{t('ch6_mod')}</Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------- page */
+export default function Home() {
+  const { t, theme } = useApp();
+  const root = useRef(null);
+  const [intro, setIntro] = useState(() => shouldShowPreloader());
+  const [env] = useState(() => ({ reduce: reducedMotion(), mobile: isMobile() }));
+  const motion = !env.reduce && !env.mobile;
+  story.travel = motion;
+  story.still = env.reduce;
+
+  const labels = useMemo(() => ({
+    core: t('lbl_core'), rim: t('lbl_rim'), oedema: t('lbl_oedema'), infiltration: t('lbl_infiltration'),
+    frontal: t('lbl_frontal'), temporal: t('lbl_temporal'), cerebellum: t('lbl_cerebellum'),
+  }), [t]);
+
+  // keyframes for the travelling brain: one per [data-pose] marker, at the scroll position where it is centred
+  useEffect(() => {
+    if (!motion) { story.frames = [{ at: 0, pose: POSES.hero }]; return undefined; }
+    const marks = [...root.current.querySelectorAll('[data-pose]')];
+    const sts = marks.map((el) => ScrollTrigger.create({ trigger: el, start: el.dataset.pose === 'hero' ? 'top top' : 'center center' }));
+    const tumourSec = root.current.querySelector('#ch1');
+    const compute = () => {
+      const frames = sts.map((st, i) => ({ at: st.start, pose: POSES[marks[i].dataset.pose] }));
+      const pin = ScrollTrigger.getAll().find((s) => s.pin && s.trigger === tumourSec);
+      const tumour = frames.find((f) => f.pose === POSES.tumour);
+      if (tumour && pin) { tumour.at = pin.start + 1; frames.push({ at: pin.end - 1, pose: POSES.tumour }); }
+      story.frames = frames.sort((a, b) => a.at - b.at);
+    };
+    compute();
+    ScrollTrigger.addEventListener('refresh', compute);
+    const onMove = (e) => { story.pointer.x = (e.clientX / window.innerWidth) * 2 - 1; story.pointer.y = (e.clientY / window.innerHeight) * 2 - 1; };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    return () => {
+      ScrollTrigger.removeEventListener('refresh', compute);
+      sts.forEach((s) => s.kill());
+      window.removeEventListener('pointermove', onMove);
+      story.frames = [{ at: 0, pose: POSES.hero }];
+      story.labels = {};
+    };
+  }, [motion]);
+
+  // no scrolling while the preloader runs
+  useEffect(() => {
+    if (!intro) { ScrollTrigger.refresh(); return undefined; }
+    window.lenis?.stop();
+    document.documentElement.classList.add('is-loading');
+    return () => { window.lenis?.start(); document.documentElement.classList.remove('is-loading'); };
+  }, [intro]);
+
+  // the 3D chunk and the geometry build are heavy: start them once the preloader curtain has lifted
+  const [stage, setStage] = useState(!intro);
+  useEffect(() => {
+    if (intro || stage) return undefined;
+    const id = setTimeout(() => setStage(true), 150);
+    return () => clearTimeout(id);
+  }, [intro, stage]);
+
+  const fallback = <div className="story-canvas hero-only fallback" aria-hidden="true"><BrainFallback title={t('st_brain_alt')} /></div>;
 
   return (
-    <div>
-      <section className="hero">
-        <div className="shell">
-          <div className="hero-copy">
-            <span className="eyebrow">{t('home_kicker')}</span>
-            <h1 className="display mt-7">
-              {t('home_h1_a')}<br />
-              <span className="hl">{t('home_h1_hl')}</span>{t('home_h1_b')}
-            </h1>
-            <p className="lede">{t('home_lede')}</p>
-            <div className="btnrow mt-9">
-              <Link to="/analyse" className="btn btn-primary btn-lg">{t('home_cta1')}<IconArrowRight /></Link>
-              <Link to="/explore" className="btn btn-ghost btn-lg">{t('home_cta2')}</Link>
-            </div>
-            <p className="hero-note">{t('home_note').split(' · ').map((x) => <span key={x}>{x}</span>)}</p>
-          </div>
-
-          <div className="hero-visual">
-            <HeroWindow />
-          </div>
-
-          <p className="sources">
-            <span className="lbl">{t('home_sources')}</span>
-            <b>TCGA-GBM</b><b>CGGA</b><b>MSK-IMPACT</b><b>CPTAC-GBM</b><b>{t('home_sources_pub')}</b>
-          </p>
-
-          <ul className={`statstrip${researchers > 0 ? ' five' : ''}`} aria-label={t('home_numbers')}>
-            <li><div className="v"><CountUp value={4} /></div><div className="k">{t('chip_refs')}</div></li>
-            <li><div className="v"><CountUp value={1392} format={nf} /></div><div className="k">{t('chip_patients')}</div></li>
-            <li><div className="v"><CountUp value={13} /></div><div className="k">{t('chip_pool')}</div></li>
-            <li><div className="v">0</div><div className="k">{t('chip_rows')}</div></li>
-            {researchers > 0 && <li data-testid="chip-researchers"><div className="v"><CountUp value={researchers} /></div><div className="k"><span className="live" aria-hidden="true" />{t('chip_researchers')}</div></li>}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="how-h">
-        <div className="shell">
-          <SectionHead kicker={t('how_kicker')} title={t('how_title')} sub={t('how_sub')} id="how-h" />
-          <div className="how track">
-            {[['01', IconUpload, 'how1'], ['02', IconChart, 'how2'], ['03', IconLayers, 'how3']].map(([n, Icon, k], i) => (
-              <div key={k} className="card card-pad spot reveal" style={{ '--i': i }}>
-                <div className="num"><span>{n}</span><span className="ic" aria-hidden="true"><Icon /></span></div>
-                <h3 className="h4">{t(`${k}_t`)}</h3>
-                <p>{t(`${k}_b`)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="bento-h">
-        <div className="shell">
-          <SectionHead kicker={t('bento_kicker')} title={t('bento_title')} sub={t('bento_sub')} id="bento-h" />
-          <Bento />
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="spaces-h">
-        <div className="shell">
-          <SectionHead kicker={t('spaces_kicker')} title={t('spaces_title')} sub={t('spaces_sub')} id="spaces-h" />
-          <div className="spaces">
-            {['research', 'family'].map((s, i) => (
-              <div key={s} data-space={s} className="card spacecard gborder reveal" style={{ '--i': i }}>
-                <span className="kicker-pill self-start">{t(s === 'research' ? 'space_research' : 'space_family')}</span>
-                <h3>{t(`spaces_${s}_t`)}</h3>
-                <ul>
-                  {[1, 2, 3].map((j) => <li key={j}><IconCheck />{t(`spaces_${s}_${j}`)}</li>)}
-                </ul>
-                <div>
-                  <Link to={s === 'research' ? '/research' : '/families'} className="btn btn-primary">{t(s === 'research' ? 'spaces_research_btn' : 'spaces_family_btn')}<IconArrowRight /></Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="fine-h">
-        <div className="shell duo">
-          <div className="reveal">
-            <div className="kicker kicker-dot">{t('fine_kicker')}</div>
-            <h2 className="h2 mt-4" id="fine-h">{t('fine_title')}</h2>
-            <ul className="quietlist mt-10">
-              {['data', 'prog', 'mod', 'sep'].map((k) => (
-                <li key={k}><span className="tag">{t(`fine_${k}_tag`)}</span><p><b>{t(`fine_${k}_b`)}</b> {t(`fine_${k}`)}</p></li>
-              ))}
-            </ul>
-          </div>
-          <figure className="card card-lg quote m-0 reveal" style={{ '--i': 1 }}>
-            <span className="kicker-pill">{t('quote_kicker')}</span>
-            <blockquote className="q m-0">{t('quote')}</blockquote>
-            <figcaption className="a">{t('quote_by')}</figcaption>
-            <Link to="/rules" className="btn btn-ghost">{t('read_rules')}</Link>
-          </figure>
-        </div>
-      </section>
-
-      <section className="section pt-0 border-t-0" aria-labelledby="cta-h">
-        <div className="shell">
-          <div className="ctaband gborder reveal">
-            <span className="kicker kicker-dot">{t('cta_kicker')}</span>
-            <h2 className="h2 mt-5" id="cta-h">{t('cta_title')}</h2>
-            <p className="sub">{t('cta_body')}</p>
-            <div className="btnrow">
-              <Link to="/analyse" className="btn btn-primary btn-lg">{t('home_cta1')}<IconArrowRight /></Link>
-              <Link to="/explore" className="btn btn-ghost btn-lg">{t('home_cta2')}</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="story" ref={root}>
+      {intro && <Preloader onDone={() => setIntro(false)} label={t('pre_label')} />}
+      {stage && (
+        <BrainStage fallback={fallback}>
+          <StoryCanvas mobile={env.mobile} still={env.reduce} theme={theme} labels={labels} />
+        </BrainStage>
+      )}
+      <Hero play={!intro} />
+      <ChapterTumour motion={motion} />
+      <ChapterStates />
+      <ChapterAge />
+      <ChapterCohorts />
+      <ChapterYou />
+      <ChapterPeople />
     </div>
   );
 }
+
