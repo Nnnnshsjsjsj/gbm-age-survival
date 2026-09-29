@@ -13,13 +13,14 @@ from scipy.stats import norm
 tcga, cgga, OUT = pd.read_csv(sys.argv[1]), pd.read_csv(sys.argv[2]), sys.argv[3]
 LANG = sys.argv[4] if len(sys.argv) > 4 else "en"
 L = {"en": dict(old="Older (≥59)", young="Younger (<59)", deaths="deaths", hr="HR per year", months="Months since diagnosis",
-                prob="Overall survival probability", ftitle="Age effect in the discovery and validation cohorts, matched adjustment sets",
+                prob="Overall survival probability", ftitle="Age effect in TCGA-GBM (discovery) and CGGA (validation)\nwith the same adjustment set in both cohorts",
                 xlab="Hazard ratio per additional year of age (95% CI)", tcga="TCGA-GBM (discovery)", cgga="CGGA (validation)",
-                models=["age alone", "+ sex", "+ MGMT", "+ IDH", "+ sex + MGMT + IDH"]),
+                models=["age alone", "+ sex", "+ MGMT", "+ IDH", "+ sex + MGMT + IDH"], hetlab="p for the difference between cohorts"),
      "ru": dict(old="Старшая (≥59)", young="Младшая (<59)", deaths="смертей", hr="ОР на год", months="Месяцы от постановки диагноза",
-                prob="Вероятность общей выживаемости", ftitle="Эффект возраста в исходной и валидационной когортах, одинаковые наборы поправок",
+                prob="Вероятность общей выживаемости", ftitle="Эффект возраста в TCGA-GBM (исходная когорта) и CGGA (валидационная)\nпри одинаковом наборе поправок в обеих когортах",
                 xlab="Отношение рисков на дополнительный год возраста (95 % ДИ)", tcga="TCGA-GBM (исходная)", cgga="CGGA (валидационная)",
-                models=["только возраст", "+ пол", "+ MGMT", "+ IDH", "+ пол + MGMT + IDH"])}[LANG]
+                models=["только возраст", "+ пол", "+ MGMT", "+ IDH", "+ пол + MGMT + IDH"], hetlab="p различия между когортами")}[LANG]
+HET = "_het"
 SUF = "" if LANG == "en" else "_" + LANG
 os.makedirs(OUT, exist_ok=True)
 plt.rcParams["font.family"] = "DejaVu Sans"
@@ -98,9 +99,10 @@ for i, r in zip(yy, mm):
     t, c = r["TCGA"], r["CGGA"]
     ax.errorbar(t["HR"], i + .17, xerr=[[t["HR"] - t["lo"]], [t["hi"] - t["HR"]]], fmt="o", color="#4C72B0", capsize=4, lw=1.8, ms=7, label=L["tcga"] if i == yy[0] else None)
     ax.errorbar(c["HR"], i - .17, xerr=[[c["HR"] - c["lo"]], [c["hi"] - c["HR"]]], fmt="s", color="#C44E52", capsize=4, lw=1.8, ms=7, label=L["cgga"] if i == yy[0] else None)
-    ax.text(1.058, i, f"p_het = {r['het_p']:.2f}", va="center", fontsize=9, color="0.35")
+    ax.text(1.0705, i, f"p{HET} = {r['het_p']:.2f}", va="center", ha="right", fontsize=9, color="0.35")
 ax.set_yticks(yy); ax.set_yticklabels([f"{lab}\nTCGA n={r['TCGA']['n']} | CGGA n={r['CGGA']['n']}" for lab, r in zip(L["models"], mm)], fontsize=9)
-ax.axvline(1, color="0.5", ls="--"); ax.set_xlim(0.985, 1.075); ax.set_xlabel(L["xlab"])
-ax.set_title(L["ftitle"], fontsize=10.5); ax.legend(loc="upper right", fontsize=9)
+ax.axvline(1, color="0.5", ls="--"); ax.set_xlim(0.985, 1.072); ax.set_xlabel(L["xlab"])
+ax.set_title(L["ftitle"], fontsize=10.5); ax.legend(loc="lower right", fontsize=9, framealpha=0.95)
+ax.set_ylim(-0.6, yy[0] + 0.95); ax.text(1.0705, yy[0] + 0.62, L["hetlab"], ha="right", va="center", fontsize=8.5, color="0.35", style="italic")
 f.tight_layout(); f.savefig(f"{OUT}/fig_compare_forest{SUF}.png", dpi=160); plt.close(f)
 print("written", OUT)

@@ -114,6 +114,12 @@ def table(caption, header, rows):
         for j, val in enumerate(row):
             c = t.rows[i].cells[j]; c.text = ""
             r = c.paragraphs[0].add_run(resolve(val)); r.font.size = Pt(10)
+    # Wide tables (7+ columns): one font step smaller so headers do not break mid-word.
+    if len(header) >= 7:
+        for row in t.rows:
+            for c in row.cells:
+                for p in c.paragraphs:
+                    for r in p.runs: r.font.size = Pt(8.5)
     nrows = len(t.rows)
     for ri, row in enumerate(t.rows):
         trPr_ = row._tr.get_or_add_trPr(); cs = OxmlElement("w:cantSplit"); cs.set(qn("w:val"), "true"); trPr_.append(cs)
@@ -133,6 +139,16 @@ def table(caption, header, rows):
     t.autofit = False
     tblW = OxmlElement("w:tblW"); tblW.set(qn("w:w"), str(int(16.0 / 2.54 * 1440))); tblW.set(qn("w:type"), "dxa"); t._tbl.tblPr.append(tblW)
     widths = [int(total * w[j] / s_) for j in range(ncol)]
+    # no column narrower than the longest single word in it (plus padding), so words never split across lines
+    import re as _re
+    minw = [Cm(0.6 + 0.215 * max(len(wd) for cell in [header[j]] + [r[j] for r in rows] for wd in _re.split(r"[\s/]+", str(cell)) or [""])) for j in range(ncol)]
+    minw = [min(mw, Cm(4.5)) for mw in minw]
+    free = total - sum(minw)
+    if free >= 0:
+        widths = [mw + free * w[j] / s_ for j, mw in enumerate(minw)]
+    else:
+        k = total / sum(minw); widths = [mw * k for mw in minw]
+    widths = [int(wd) for wd in widths]
     lay = OxmlElement("w:tblLayout"); lay.set(qn("w:type"), "fixed"); t._tbl.tblPr.append(lay)
     grid = t._tbl.tblGrid
     for j, gc in enumerate(grid.findall(qn("w:gridCol"))):
@@ -156,7 +172,9 @@ def figure(key, caption):
 
 def numbered(items):
     for i, it in enumerate(items, 1):
-        p = para(f"{i}. " + resolve(it), style="List Paragraph")
+        # items that carry their own label (H1…, Г1…) are not numbered again
+        own = it.split(" ")[0].rstrip(".") if it[:2] in ("H1","H2","H3","H4","Г1","Г2","Г3","Г4") else None
+        p = para((it if own else f"{i}. " + it) if False else (resolve(it) if own else f"{i}. " + resolve(it)), style="List Paragraph")
         p.paragraph_format.left_indent = Cm(0.75); p.paragraph_format.first_line_indent = Cm(-0.75)
         p.paragraph_format.space_after = Pt(4)
 

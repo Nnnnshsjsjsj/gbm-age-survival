@@ -200,15 +200,19 @@ BODY = [
 ("p", "The value of age as a predictor is well established in clinical trials, but trials enroll patients who are in "
       "relatively good condition [@curran1993;@gorlia2008]. In TCGA-GBM, age almost always appears as a correction "
       "term in studies aimed at some molecular marker. Its own effect size often goes unreported, or is reported "
-      "without a confidence interval. As far as we know, three questions have not been answered together for this "
-      "dataset. How stable is the age effect when we change which variables we correct for, given that each "
-      "correction also shrinks the sample? Does the effect stay the same throughout follow-up? How much of it is left "
-      "once we remove the IDH-mutant tumors that WHO CNS5 no longer counts as glioblastoma? And does the estimate from "
-      "TCGA replicate in an independent cohort from a different population and treatment era? A prognostic result that "
-      "has only been shown in one dataset is a hypothesis, not a finding [@royston2013]. Two further questions follow "
-      "from the heterogeneity literature. Is intratumoral heterogeneity, measured in bulk tumors, related to age, and "
-      "does it explain any part of the age effect? And how much does the age effect vary between cohorts, once more "
-      "than two are compared?"),
+      "without a confidence interval. As far as we know, six questions have not been answered together for this "
+      "dataset. Four concern the age effect itself; two follow from the heterogeneity literature and from comparing "
+      "cohorts."),
+("num", [
+    "How stable is the age effect when we change which variables we correct for, given that each correction also shrinks the sample?",
+    "Does the effect stay the same throughout follow-up?",
+    "How much of it is left once we remove the IDH-mutant tumors that WHO CNS5 no longer counts as glioblastoma?",
+    "Does the estimate from TCGA replicate in an independent cohort from a different population and treatment era? A prognostic result that has only been shown in one dataset is a hypothesis, not a finding [@royston2013].",
+    "Is intratumoral heterogeneity, measured in bulk tumors, related to age, and does it explain any part of the age effect?",
+    "How much does the age effect vary between cohorts, once more than two are compared?",
+]),
+("p", "Objectives 4 to 8 below answer these six questions in order; objectives 1 to 3 prepare the data and check that "
+      "the association exists at all."),
 ("h3", "Aim"),
 ("p", "To measure the association between age at diagnosis and overall survival in the TCGA-GBM dataset, to test "
       "whether that association is independent of sex, Karnofsky performance score, MGMT promoter methylation, IDH "
@@ -227,15 +231,22 @@ BODY = [
     "To release the analysis code, the harmonized cohorts and a browser-based platform in which other researchers can analyze their own cohort and compare it with these, without their patient data leaving their computer.",
 ]),
 ("h3", "Hypotheses"),
-("p", "Primary: patients younger than the median age of the group live longer than older patients, and each extra "
-      "year of age raises the risk of death even after correction for sex, performance status, MGMT status and IDH "
-      "status. The hypothesis is wrong if the corrected confidence interval for the hazard ratio includes 1.0. "
-      "Secondary: intratumoral heterogeneity is higher in older patients and accounts for part of the age effect, so "
-      "that the age hazard ratio falls when a heterogeneity score enters the model. This hypothesis is wrong if the "
-      "scores do not correlate with age and the age estimate does not move."),
+("p", "The primary hypothesis has four parts. Each is tested by its own objective and has its own condition for "
+      "being wrong."),
+("num", [
+    "H1 (median split; objective 2). Patients younger than the median age of the group live longer than patients at or above it. Wrong if the two groups' median survival does not differ and the log-rank test gives p ≥ 0.05.",
+    "H2 (gradient; objective 3). Survival falls from one age quartile to the next, not only between the two halves. Wrong if the quartiles' median survival is not in descending order and the four-group log-rank test gives p ≥ 0.05.",
+    "H3 (independent effect; objectives 4 and 5). Each extra year of age raises the risk of death after correction for sex, performance status, MGMT status and IDH status, and in IDH-wildtype tumors. Wrong if the corrected confidence interval for the hazard ratio per year includes 1.0.",
+    "H4 (replication; objective 6). In the independent CGGA cohort H1 and H3 hold again, and the estimate per year agrees with TCGA. The first part is wrong if the CGGA confidence interval includes 1.0; the second if the heterogeneity test between the two estimates gives p < 0.05.",
+]),
+("p", "Secondary hypothesis (objective 7): intratumoral heterogeneity is higher in older patients and accounts for part "
+      "of the age effect, so that the age hazard ratio falls when a heterogeneity score enters the model. It is wrong "
+      "if the scores do not correlate with age and the age estimate does not move. Objectives 8 and 9, the "
+      "meta-analysis and the platform, test no hypothesis: they place the estimate in context and make it reproducible."),
 ("h3", "Novelty"),
 ("p", "The link between age and survival in glioblastoma is not new. This study adds five things. It uses nested "
-      "models, which separate the effect of correcting for a variable from the effect of losing patients. It splits "
+      "models and reports, next to each one, the age-only estimate in the same patients, which separates the effect of "
+      "correcting for a variable from the effect of losing patients. It splits "
       "follow-up time to show how the age effect changes after the first year, and gives a separate estimate for "
       "IDH-wildtype tumors. It repeats the whole analysis in an independent cohort and tests formally whether the two "
       "estimates agree, which most TCGA-based prognostic papers skip. It tests, for the first time to our knowledge in "
@@ -245,12 +256,20 @@ BODY = [
 
 ("h1", "2. Materials and Methods"),
 ("h2", "2.1. Data source"),
-("p", "We took our data from cBioPortal for Cancer Genomics [@cerami2012;@gao2013], study identifier gbm_tcga "
+("p", "Four individual-patient cohorts appear in this study. The discovery cohort is TCGA-GBM, the glioblastomas of The "
+      "Cancer Genome Atlas (TCGA, USA). The validation cohort is CGGA, the Chinese Glioma Genome Atlas (Beijing). Two "
+      "more enter only the meta-analysis: MSK-IMPACT, the clinical sequencing cohort of Memorial Sloan Kettering Cancer "
+      "Center (Integrated Mutation Profiling of Actionable Cancer Targets, New York), and CPTAC-3, the glioblastomas of "
+      "the Clinical Proteomic Tumor Analysis Consortium (USA). All four are open, de-identified research datasets; in "
+      "each, patients gave documented informed consent under protocols approved by the ethics boards of the "
+      "contributing institutions [@tcga2008;@zhao2021;@jonsson2019;@wang2021]. We had no access to, and did not "
+      "request, any information that could identify a patient."),
+("p", "We took the TCGA-GBM data from cBioPortal for Cancer Genomics [@cerami2012;@gao2013], study identifier gbm_tcga "
       "(Glioblastoma Multiforme, TCGA, Firehose Legacy), downloaded on 25 July 2026. We used three tables: the "
       "clinical export with 619 sample rows, the IDH1 and IDH2 mutation table with 290 profiled samples, and the "
       "gene-level MGMT methylation values from two Illumina array platforms, HumanMethylation27 (HM27) and "
-      "HumanMethylation450 (HM450). The data carry no patient identifiers and were collected in studies with "
-      "documented informed consent under the TCGA program [@tcga2008]."),
+      "HumanMethylation450 (HM450). How CGGA, MSK-IMPACT and CPTAC were obtained and brought to the same format is "
+      "described in Sections 2.9 and 2.10."),
 ("h2", "2.2. Building the patient group"),
 ("p", "The clinical export held 619 rows for 606 patients, because 13 patients gave two samples each. Survival "
       "belongs to a patient and not to a sample, so we first reduced the table to one row per patient and kept the "
@@ -522,14 +541,18 @@ BODY = [
       "Karnofsky scores (r = −0.29), so part of what age measures in M1 is performance status. Sex itself carries a "
       "modest risk, HR 1.21 on its own and 1.33 once KPS is in the model, but it does not touch the age estimate. "
       "Dropping the 154 patients without KPS changes nothing (1.034 against 1.033), and excluding the two patients with "
-      "KPS 0 leaves M2 at 1.028."),
-("table", "Table 4. Hazard ratio for one extra year of age in five nested Cox models.",
-    ["Model", "Variables", "n", "Deaths", "HR per year (95% CI)", "p", "C-index"],
-    [["M1", "age", "593", "492", "1.034 (1.027–1.042)", "4.4 × 10⁻²¹", "0.655"],
-     ["M2", "age, sex, KPS", "439", "359", "1.028 (1.019–1.037)", "2.3 × 10⁻¹⁰", "0.666"],
-     ["M3", "age, MGMT", "413", "316", "1.036 (1.027–1.046)", "2.0 × 10⁻¹⁵", "0.667"],
-     ["M4", "age, IDH", "285", "226", "1.027 (1.015–1.040)", "1.5 × 10⁻⁵", "0.629"],
-     ["M5", "age, sex, KPS, MGMT, IDH", "174", "127", "1.032 (1.014–1.051)", "4.3 × 10⁻⁴", "0.676"]]),
+      "KPS 0 leaves M2 at 1.028. To separate the effect of a correction from the effect of a change of patients, Table 4 "
+      "also gives, for every model, the age-only estimate in the same patients. The change of patients barely matters: "
+      "age alone gives 1.033 in the 439 patients of M2, 1.037 in the 413 of M3, 1.031 in the 285 of M4 and 1.036 in "
+      "the 174 of M5. The shifts within each pair, from −0.005 (M2) to −0.001 (M3), are the net contribution of the "
+      "corrections."),
+("table", "Table 4. Hazard ratio for one extra year of age in five nested Cox models. n and deaths are the patients and events in the subset where every variable of the model is known. “Corrected” is the model with all listed variables; “age alone, same patients” is a model with age only, fitted on that same subset, so the difference between the two columns shows the contribution of the corrections and the difference between rows shows the contribution of the change of patients. HR, hazard ratio; p, Wald test for the age coefficient; C-index, Harrell's concordance, the share of patient pairs in which the model correctly predicts who dies first (0.5 is chance, 1.0 is perfect).",
+    ["Model", "Variables", "n / deaths", "Corrected: HR per year (95% CI)", "Age alone, same patients: HR per year (95% CI)", "p (age)", "C-index"],
+    [["M1", "age", "593 / 492", "1.034 (1.027–1.042)", "1.034 (1.027–1.042)", "4.4 × 10⁻²¹", "0.655"],
+     ["M2", "age, sex, KPS", "439 / 359", "1.028 (1.019–1.037)", "1.033 (1.025–1.042)", "2.3 × 10⁻¹⁰", "0.666"],
+     ["M3", "age, MGMT", "413 / 316", "1.036 (1.027–1.046)", "1.037 (1.028–1.047)", "2.0 × 10⁻¹⁵", "0.667"],
+     ["M4", "age, IDH", "285 / 226", "1.027 (1.015–1.040)", "1.031 (1.019–1.042)", "1.5 × 10⁻⁵", "0.629"],
+     ["M5", "age, sex, KPS, MGMT, IDH", "174 / 127", "1.032 (1.014–1.051)", "1.036 (1.020–1.052)", "4.3 × 10⁻⁴", "0.676"]]),
 ("fig", "fig5_forest", "Figure 5. Hazard ratio for one extra year of age in each of the five nested Cox models, with 95% confidence intervals. The dashed line marks a hazard ratio of 1.0, which would mean no effect."),
 ("p", "The other variables behaved the way the literature predicts (Table 5). In model M2, being male carried a hazard "
       "ratio of 1.33 (95% CI 1.07 to 1.66; p = 0.011), and every 10 extra points of KPS lowered the risk of death by "
@@ -675,7 +698,7 @@ BODY = [
 ("fig", "fig8_hetage", "Figure 8. Age at diagnosis against cell-state entropy in TCGA (left) and CGGA (right), with the least-squares line and the Spearman correlation."),
 ("fig", "fig9_math", "Figure 9. The MATH score in TCGA: against age (left), and Kaplan-Meier curves by MATH tertile (right)."),
 ("h2", "3.11. Heterogeneity did not predict survival or change the age effect"),
-("p", "Neither score separated patients by survival (Table 11, Figure 10). In TCGA, one standard deviation more "
+("p", "Neither score separated patients by survival (Tables 11a–11c, Figure 10). In TCGA, one standard deviation more "
       "entropy gave a hazard ratio of 1.03 (95% CI 0.92 to 1.14; p = 0.64), the tertiles had median survivals of "
       "14.9, 13.3 and 14.3 months (log-rank p = 0.68), and no dominant state differed from the astrocyte-like "
       "reference. In CGGA the continuous estimate was 1.02 per standard deviation (0.86 to 1.21; p = 0.78). The CGGA "
@@ -693,21 +716,25 @@ BODY = [
       "same as the IDH-wildtype estimate without it. The secondary hypothesis is therefore rejected on both counts: "
       "heterogeneity, as far as bulk data can measure it, is not higher in older patients, and it does not account for "
       "any part of the age effect."),
-("table", "Table 11. Cox models with heterogeneity scores. Scores are standardized, so their hazard ratios are per one standard deviation.",
-    ["Cohort, model", "n", "Deaths", "Age, HR per year (95% CI)", "Score, HR per SD (95% CI)", "p (score)"],
-    [["TCGA: age alone, entropy subset", "437", "367", "1.032 (1.024–1.040)", "—", "—"],
-     ["TCGA: entropy alone", "437", "367", "—", "1.03 (0.92–1.14)", "0.64"],
-     ["TCGA: age + entropy", "437", "367", "1.032 (1.024–1.040)", "0.99 (0.89–1.11)", "0.92"],
-     ["TCGA: age + entropy + sex + MGMT + IDH", "168", "128", "1.029 (1.012–1.046)", "0.89 (0.74–1.08)", "0.23"],
-     ["TCGA, IDH-wildtype: age + entropy", "187", "154", "1.025 (1.010–1.041)", "0.94 (0.78–1.12)", "0.47"],
-     ["TCGA: age alone, MATH subset", "375", "291", "1.036 (1.026–1.047)", "—", "—"],
-     ["TCGA: MATH alone", "375", "291", "—", "0.90 (0.80–1.00)", "0.057"],
-     ["TCGA: age + MATH", "375", "291", "1.037 (1.026–1.048)", "1.01 (0.90–1.14)", "0.87"],
-     ["TCGA: age + MATH + sex + MGMT + IDH", "235", "177", "1.036 (1.021–1.050)", "1.08 (0.89–1.30)", "0.45"],
-     ["CGGA: age alone", "218", "183", "1.020 (1.008–1.032)", "—", "—"],
-     ["CGGA: entropy alone", "218", "183", "—", "1.02 (0.86–1.21)", "0.78"],
-     ["CGGA: age + entropy", "218", "183", "1.020 (1.008–1.032)", "1.02 (0.86–1.20)", "0.83"],
-     ["CGGA: age + entropy + sex + MGMT + IDH", "194", "165", "1.013 (1.001–1.026)", "0.99 (0.84–1.18)", "0.94"]]),
+("table", "Table 11a. TCGA: Cox models with cell-state entropy. Entropy is standardized, so its hazard ratio is per one standard deviation (SD). The first row is age alone in the same 437 patients, the reference for the others.",
+    ["Model", "n / deaths", "Age, HR per year (95% CI)", "Entropy, HR per SD (95% CI)", "p (entropy)"],
+    [["Age alone", "437 / 367", "1.032 (1.024–1.040)", "—", "—"],
+     ["Entropy alone", "437 / 367", "—", "1.03 (0.92–1.14)", "0.64"],
+     ["Age + entropy", "437 / 367", "1.032 (1.024–1.040)", "0.99 (0.89–1.11)", "0.92"],
+     ["Age + entropy + sex + MGMT + IDH", "168 / 128", "1.029 (1.012–1.046)", "0.89 (0.74–1.08)", "0.23"],
+     ["IDH-wildtype only: age + entropy", "187 / 154", "1.025 (1.010–1.041)", "0.94 (0.78–1.12)", "0.47"]]),
+("table", "Table 11b. TCGA: Cox models with the MATH score. MATH is standardized; the first row is age alone in the same 375 patients.",
+    ["Model", "n / deaths", "Age, HR per year (95% CI)", "MATH, HR per SD (95% CI)", "p (MATH)"],
+    [["Age alone", "375 / 291", "1.036 (1.026–1.047)", "—", "—"],
+     ["MATH alone", "375 / 291", "—", "0.90 (0.80–1.00)", "0.057"],
+     ["Age + MATH", "375 / 291", "1.037 (1.026–1.048)", "1.01 (0.90–1.14)", "0.87"],
+     ["Age + MATH + sex + MGMT + IDH", "235 / 177", "1.036 (1.021–1.050)", "1.08 (0.89–1.30)", "0.45"]]),
+("table", "Table 11c. CGGA: Cox models with cell-state entropy, the same specifications as Table 11a.",
+    ["Model", "n / deaths", "Age, HR per year (95% CI)", "Entropy, HR per SD (95% CI)", "p (entropy)"],
+    [["Age alone", "218 / 183", "1.020 (1.008–1.032)", "—", "—"],
+     ["Entropy alone", "218 / 183", "—", "1.02 (0.86–1.21)", "0.78"],
+     ["Age + entropy", "218 / 183", "1.020 (1.008–1.032)", "1.02 (0.86–1.20)", "0.83"],
+     ["Age + entropy + sex + MGMT + IDH", "194 / 165", "1.013 (1.001–1.026)", "0.99 (0.84–1.18)", "0.94"]]),
 ("fig", "fig10_hetkm", "Figure 10. Kaplan-Meier curves by tertile of cell-state entropy in TCGA (left) and CGGA (right)."),
 ("h2", "3.12. The age effect across thirteen cohorts"),
 ("p", "The two extra individual-patient cohorts fell between TCGA and CGGA. In MSK-IMPACT (485 patients, 223 deaths, "
@@ -778,7 +805,7 @@ BODY = [
       "thirteen cohorts and about 40,800 patients the age effect pooled to 1.028 per year, with a prediction interval "
       "of 1.012 to 1.045 that contains both TCGA and CGGA."),
 ("h2", "4.2. What the results mean"),
-("p", "Three things about the result are worth discussing. The first is how stable it is. The five models differ both "
+("p", "Five things about the result are worth discussing. The first is how stable it is. The five models differ both "
       "in which variables they contain and in which patients they cover, from 593 patients down to 174, and the age "
       "estimate moves by less than one percentage point. Sex, KPS, MGMT and IDH status together explain very little "
       "of the age effect. Age must therefore act on survival mostly through routes that these four variables do not "

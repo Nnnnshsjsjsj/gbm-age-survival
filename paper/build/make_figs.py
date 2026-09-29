@@ -14,7 +14,7 @@ T={"en":dict(flow=[("cBioPortal export gbm_tcga\n619 rows, 606 patients",None),
      ("Final analysis cohort\n593 patients (97.9%)\n492 deaths, 101 censored","1 excluded: OS time = 0")],
      hist=("Age at diagnosis (years)","Patients","median = {m:.0f} y","TCGA-GBM age at diagnosis (n={n})"),
      km2=("Young (<59)","Old (>=59)","Months since diagnosis","Overall survival probability","Overall survival by age group","log-rank p = {p:.1e}"),
-     km4=("{a:.0f}-{b:.0f} y (n={n})","Overall survival by age quartile","log-rank p = {p:.1e}"),
+     km4=("Q{q} · {a:.0f}–{b:.0f} y (n={n})","Overall survival by age quartile","log-rank p = {p:.1e}"),
      forest=(["M1  age alone","M2  + sex + KPS","M3  + MGMT","M4  + IDH","M5  full"],"n={n}, {e} deaths","Hazard ratio per additional year of age (95% CI)","Age effect is stable across adjustment sets")),
    "ru":dict(flow=[("Выгрузка cBioPortal, gbm_tcga\n619 строк, 606 пациентов",None),
      ("Одна строка на пациента\n606 пациентов","13 пациентов с двумя образцами"),
@@ -23,7 +23,7 @@ T={"en":dict(flow=[("cBioPortal export gbm_tcga\n619 rows, 606 patients",None),
      ("Итоговая когорта\n593 пациента (97,9 %)\n492 умерших, 101 цензурированный","Исключён 1: время ОВ = 0")],
      hist=("Возраст на момент диагноза (лет)","Пациенты","медиана = {m:.0f} лет","TCGA-GBM: возраст на момент диагноза (n={n})"),
      km2=("Младшая (<59)","Старшая (≥59)","Месяцы от постановки диагноза","Вероятность общей выживаемости","Общая выживаемость по возрастным группам","лог-ранговый p = {p:.1e}"),
-     km4=("{a:.0f}–{b:.0f} лет (n={n})","Общая выживаемость по квартилям возраста","лог-ранговый p = {p:.1e}"),
+     km4=("Q{q} · {a:.0f}–{b:.0f} лет (n={n})","Общая выживаемость по квартилям возраста","лог-ранговый p = {p:.1e}"),
      forest=(["M1  только возраст","M2  + пол + Карновский","M3  + MGMT","M4  + IDH","M5  полная"],"n={n}, {e} смертей","Отношение рисков на год возраста (95 % ДИ)","Эффект возраста устойчив во всех спецификациях"))}
 
 for lang,t in T.items():
@@ -49,7 +49,6 @@ for lang,t in T.items():
     for y0,y1 in zip(ys[:-1],ys[1:]):
         ax.annotate("",xy=(3.4,y1+0.5),xytext=(3.4,y0-0.5),arrowprops=dict(arrowstyle="->",color="#2E5A88",lw=1.4))
     f.tight_layout(); f.savefig(f"figs/fig1_flow_{lang}.png",dpi=170); plt.close(f)
-    if lang=="en": continue
     # ---- Figure 2 hist
     f,ax=plt.subplots(figsize=(7,4.2))
     ax.hist(d.AGE,bins=25,color="#4C72B0",edgecolor="white"); ax.axvline(med,color="#C44E52",ls="--",lw=2,label=t["hist"][2].format(m=med))
@@ -66,8 +65,9 @@ for lang,t in T.items():
     f.tight_layout(); f.savefig(f"figs/fig3_km2_{lang}.png",dpi=160); plt.close(f)
     # ---- Figure 4 quartiles
     d["q"]=pd.qcut(d.AGE,4); f,ax=plt.subplots(figsize=(7.5,5))
-    for (lab,g),c in zip(d.groupby("q",observed=True),["#2E7D32","#4C72B0","#E1A100","#C44E52"]):
-        KaplanMeierFitter(label=t["km4"][0].format(a=lab.left,b=lab.right,n=len(g))).fit(g.OS_MONTHS,g.event).plot_survival_function(ax=ax,ci_show=False,color=c,lw=2)
+    # label each quartile by the ages it really contains (10–50, 51–59, 60–68, 69–89), exactly as in Table 3
+    for qi,((lab,g),c) in enumerate(zip(d.groupby("q",observed=True),["#2E7D32","#4C72B0","#E1A100","#C44E52"]),1):
+        KaplanMeierFitter(label=t["km4"][0].format(q=qi,a=g.AGE.min(),b=g.AGE.max(),n=len(g))).fit(g.OS_MONTHS,g.event).plot_survival_function(ax=ax,ci_show=False,color=c,lw=2)
     ml=multivariate_logrank_test(d.OS_MONTHS,d.q,d.event)
     ax.set_xlim(0,60); ax.set_ylim(0,1); ax.set_title(t["km4"][1]); ax.set_xlabel(t["km2"][2]); ax.set_ylabel(t["km2"][3])
     ax.text(.55,.80,t["km4"][2].format(p=ml.p_value),transform=ax.transAxes,bbox=dict(fc="white",ec="0.7"))

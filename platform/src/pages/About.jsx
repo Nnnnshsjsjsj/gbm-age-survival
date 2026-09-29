@@ -12,8 +12,8 @@ export default function About() {
       <p className="lede mt-4">{t('about_lede')}</p>
       <p className="namenote">{t('about_name')}</p>
       <div className="btnrow mt-8">
-        <a className="btn btn-primary" href={lang === 'ru' ? LINKS.paperRu : LINKS.paperEn} rel="noopener"><IconFile />{t('about_paper')}</a>
-        <a className="btn btn-ghost" href={LINKS.repo} rel="noopener"><IconGithub />GitHub</a>
+        <a className="btn btn-primary" href={lang === 'ru' ? LINKS.paperRu : LINKS.paperEn} target="_blank" rel="noopener"><IconFile />{t('about_paper')}</a>
+        <a className="btn btn-ghost" href={LINKS.repo} target="_blank" rel="noopener"><IconGithub />GitHub</a>
       </div>
 
       <ul className="statchips mt-10 list-none p-0" aria-label={t('about_numbers')}>
@@ -28,8 +28,8 @@ export default function About() {
         <p className="mt-3">{t('about_paper_1')}</p>
         <p>{t('about_paper_2')}</p>
         <p className="flex flex-wrap gap-x-4 gap-y-1">
-          <a href={LINKS.paperEn} rel="noopener" className="inline-flex items-center gap-1">{t('about_pdf_en')}<IconExternal width={14} height={14} /></a>
-          <a href={LINKS.paperRu} rel="noopener" className="inline-flex items-center gap-1">{t('about_pdf_ru')}<IconExternal width={14} height={14} /></a>
+          <a href={LINKS.paperEn} target="_blank" rel="noopener" className="inline-flex items-center gap-1">{t('about_pdf_en')}<IconExternal width={14} height={14} /></a>
+          <a href={LINKS.paperRu} target="_blank" rel="noopener" className="inline-flex items-center gap-1">{t('about_pdf_ru')}<IconExternal width={14} height={14} /></a>
         </p>
       </section>
 
@@ -62,7 +62,7 @@ export default function About() {
         <h2 id="a-contact" className="h3 mt-4">{t('about_contact_h')}</h2>
         <p className="small mt-2 max-w-[60ch]">{t('about_contact')}</p>
         <div className="btnrow mt-6">
-          <a className="btn btn-ghost" href={LINKS.issues} rel="noopener"><IconGithub />{t('about_issue')}</a>
+          <a className="btn btn-ghost" href={LINKS.issues} target="_blank" rel="noopener"><IconGithub />{t('about_issue')}</a>
           <Link className="btn btn-soft" to="/hub#suggest">{t('about_suggest')}</Link>
         </div>
       </section>

@@ -13,8 +13,8 @@ const REPO = 'https://github.com/Nnnnshsjsjsj/gbm-age-survival';
 export const LINKS = {
   repo: REPO,
   issues: `${REPO}/issues`,
-  paperEn: `${REPO}/blob/main/paper/Research_Paper_EN.pdf`,
-  paperRu: `${REPO}/blob/main/paper/Research_Paper_RU.pdf`,
+  paperEn: './papers/Research_Paper_EN.pdf',
+  paperRu: './papers/Research_Paper_RU.pdf',
 };
 
 const NAV = [
@@ -147,7 +147,7 @@ function Footer() {
               <li><Link to="/about">{t('nav_about')}</Link></li>
               <li><Link to="/privacy">{t('nav_privacy')}</Link></li>
               <li><a href={LINKS.repo} rel="noopener">GitHub<IconArrowUpRight /></a></li>
-              <li><a href={lang === 'ru' ? LINKS.paperRu : LINKS.paperEn} rel="noopener">{t('footer_paper')}<IconArrowUpRight /></a></li>
+              <li><a href={lang === 'ru' ? LINKS.paperRu : LINKS.paperEn} target="_blank" rel="noopener">{t('footer_paper')}<IconArrowUpRight /></a></li>
             </ul>
           </nav>
         </div>
